@@ -1,0 +1,314 @@
+arquivo,bairro,preposicao,aptos,nao_votaram,viraveis,locais_de_votacao,lat,lon
+lambe_bairro_vila_mariana_seed1.png,Vila Mariana,Na,90788,21218,33120,14,-23.58724,-46.635519
+lambe_bairro_ipiranga_seed1.png,Ipiranga,No,70694,16925,25839,13,-23.590137,-46.608202
+lambe_bairro_mooca_seed1.png,Mooca,Na,63945,15590,23282,10,-23.553548,-46.597798
+lambe_bairro_bela_vista_seed1.png,Bela Vista,Na,63622,17462,23187,10,-23.558664,-46.646622
+lambe_bairro_cidade_tiradentes_seed1.png,Cidade Tiradentes,Na,59100,14288,21717,13,-23.593242,-46.401505
+lambe_bairro_indianopolis_seed1.png,Indianópolis,Em,55711,13593,21040,8,-23.609065,-46.660813
+lambe_bairro_cohab_jose_bonifacio_seed1.png,Cohab José Bonifácio,Na,50665,11526,18766,10,-23.549978,-46.437235
+lambe_bairro_higienopolis_seed1.png,Higienópolis,Em,49638,13383,18190,6,-23.544646,-46.660317
+lambe_bairro_santana_seed1.png,Santana,Em,48283,12179,17707,13,-23.500182,-46.626319
+lambe_bairro_perdizes_seed1.png,Perdizes,Em,46258,10183,15502,7,-23.537202,-46.671602
+lambe_bairro_vila_gomes_cardim_seed1.png,Vila Gomes Cardim,Na,45834,9887,15961,9,-23.545752,-46.565826
+lambe_bairro_vila_formosa_seed1.png,Vila Formosa,Na,44041,10142,15904,11,-23.567076,-46.545648
+lambe_bairro_vila_carmosina_seed1.png,Vila Carmosina,Na,41256,9340,15003,8,-23.551261,-46.455809
+lambe_bairro_sao_joao_climaco_seed1.png,São João Clímaco,Em,41083,9741,14764,9,-23.622378,-46.590875
+lambe_bairro_americanopolis_seed1.png,Americanópolis,Em,40997,10764,16197,7,-23.674297,-46.648746
+lambe_bairro_itaim_paulista_seed1.png,Itaim Paulista,No,40219,8939,14509,10,-23.502273,-46.378746
+lambe_bairro_pinheiros_seed1.png,Pinheiros,Em,39348,9609,13929,9,-23.562232,-46.68949
+lambe_bairro_jardim_brasil_seed1.png,Jardim Brasil,No,38781,9376,14375,8,-23.480712,-46.575395
+lambe_bairro_liberdade_seed1.png,Liberdade,Na,38084,11822,15582,7,-23.560738,-46.637507
+lambe_bairro_vila_carrao_seed1.png,Vila Carrão,Na,38065,8636,13875,9,-23.555367,-46.536268
+lambe_bairro_consolacao_seed1.png,Consolação,Na,37221,9603,12513,6,-23.549311,-46.653596
+lambe_bairro_tatuape_seed1.png,Tatuapé,No,36471,8025,12891,7,-23.537899,-46.572905
+lambe_bairro_bras_seed1.png,Brás,No,35052,9791,13214,8,-23.540205,-46.613265
+lambe_bairro_jaguare_seed1.png,Jaguaré,No,34991,8127,12565,5,-23.550542,-46.742575
+lambe_bairro_lajeado_seed1.png,Lajeado,No,34852,7748,12567,9,-23.536838,-46.400933
+lambe_bairro_parque_paulistano_seed1.png,Parque Paulistano,No,34644,7171,11675,7,-23.486605,-46.429186
+lambe_bairro_santo_amaro_seed1.png,Santo Amaro,Em,34368,8763,13366,6,-23.652005,-46.702465
+lambe_bairro_penha_de_franca_seed1.png,Penha de França,Na,33943,8171,12445,10,-23.523886,-46.548097
+lambe_bairro_barra_funda_seed1.png,Barra Funda,Na,33105,9414,12497,5,-23.530914,-46.656722
+lambe_bairro_jardim_miriam_seed1.png,Jardim Miriam,No,32646,7805,12035,7,-23.681143,-46.636338
+lambe_bairro_chacara_santo_antonio_zona_sul_seed1.png,Chácara Santo Antônio (Zona Sul),Na,31632,7383,12035,5,-23.634219,-46.700796
+lambe_bairro_jardim_nossa_senhora_do_carmo_seed1.png,Jardim Nossa Senhora do Carmo,No,31151,7100,11361,6,-23.567659,-46.46952
+lambe_bairro_vila_guarani_seed1.png,Vila Guarani,Na,31037,7283,11723,7,-23.634476,-46.636798
+lambe_bairro_vila_maria_baixa_seed1.png,Vila Maria Baixa,Na,30835,6934,10696,8,-23.515839,-46.589348
+lambe_bairro_campo_belo_seed1.png,Campo Belo,No,29755,7113,11245,5,-23.616847,-46.678507
+lambe_bairro_saude_seed1.png,Saúde,Na,29135,6307,10686,7,-23.617552,-46.633632
+lambe_bairro_vila_re_seed1.png,Vila Ré,Na,28568,6421,10389,7,-23.527589,-46.49903
+lambe_bairro_jardim_paulista_seed1.png,Jardim Paulista,No,28351,7862,11204,4,-23.569657,-46.659528
+lambe_bairro_jardim_pedra_branca_seed1.png,Jardim Pedra Branca,No,28350,6855,10508,6,-23.488052,-46.639817
+lambe_bairro_jardim_helena_seed1.png,Jardim Helena,No,28306,5868,9667,6,-23.483951,-46.420283
+lambe_bairro_vila_matilde_seed1.png,Vila Matilde,Na,27264,6473,10102,5,-23.538634,-46.524976
+lambe_bairro_vila_leopoldina_seed1.png,Vila Leopoldina,Na,27189,6018,9847,7,-23.527701,-46.729976
+lambe_bairro_parque_boturussu_seed1.png,Parque Boturussu,No,27036,6653,10088,7,-23.499663,-46.48422
+lambe_bairro_jardim_planalto_seed1.png,Jardim Planalto,No,26927,6577,10028,5,-23.606042,-46.510326
+lambe_bairro_vila_medeiros_seed1.png,Vila Medeiros,Na,26919,6403,9925,6,-23.483605,-46.585893
+lambe_bairro_vila_pompeia_seed1.png,Vila Pompeia,Na,26656,5678,8947,4,-23.53063,-46.685808
+lambe_bairro_vila_prudente_seed1.png,Vila Prudente,Na,26596,6316,9786,5,-23.580007,-46.583739
+lambe_bairro_itaim_bibi_seed1.png,Itaim Bibi,No,26413,7076,10602,6,-23.58248,-46.674755
+lambe_bairro_lapa_seed1.png,Lapa,Na,26363,6060,9409,7,-23.521388,-46.705294
+lambe_bairro_jardim_guarani_seed1.png,Jardim Guarani,No,25890,6426,9746,7,-23.463967,-46.680074
+lambe_bairro_vila_antonieta_seed1.png,Vila Antonieta,Na,25650,5750,9284,5,-23.570638,-46.51458
+lambe_bairro_agua_branca_seed1.png,Água Branca,Na,25585,6727,9634,5,-23.527647,-46.67169
+lambe_bairro_jardim_sapopemba_seed1.png,Jardim Sapopemba,No,25238,5548,8853,5,-23.609111,-46.490564
+lambe_bairro_paraiso_seed1.png,Paraíso,No,25170,6084,9272,4,-23.572642,-46.643241
+lambe_bairro_cambuci_seed1.png,Cambuci,No,25011,6376,9440,4,-23.574151,-46.623533
+lambe_bairro_jardim_matarazzo_seed1.png,Jardim Matarazzo,No,24986,5314,8565,7,-23.488569,-46.474261
+lambe_bairro_chacara_santa_maria_seed1.png,Chácara Santa Maria,Na,24960,6013,9135,5,-23.686799,-46.793815
+lambe_bairro_vila_nova_conceicao_seed1.png,Vila Nova Conceição,Na,24816,6135,9415,4,-23.595101,-46.670753
+lambe_bairro_vila_perus_seed1.png,Vila Perus,Na,24608,6177,9098,4,-23.407009,-46.75665
+lambe_bairro_cidade_antonio_estevao_de_carvalho_seed1.png,Cidade Antônio Estevão de Carvalho,Na,24325,5714,8933,6,-23.534102,-46.4728
+lambe_bairro_vila_clementino_seed1.png,Vila Clementino,Na,24012,5672,9086,5,-23.598308,-46.637827
+lambe_bairro_parque_boa_esperanca_seed1.png,Parque Boa Esperança,No,23997,5368,8538,6,-23.601894,-46.451736
+lambe_bairro_vila_itaim_seed1.png,Vila Itaim,Na,23712,5368,8618,5,-23.490573,-46.392835
+lambe_bairro_jardim_cidade_pirituba_seed1.png,Jardim Cidade Pirituba,No,23463,5609,8727,6,-23.482371,-46.72596
+lambe_bairro_paraisopolis_seed1.png,Paraisópolis,Em,23347,5875,8547,5,-23.622482,-46.727292
+lambe_bairro_conjunto_habitacional_teotonio_vilela_seed1.png,Conjunto Habitacional Teotônio Vilela,No,22857,5205,8396,5,-23.60557,-46.501407
+lambe_bairro_jacana_seed1.png,Jaçanã,No,22735,5644,8422,5,-23.465034,-46.584614
+lambe_bairro_cidade_satelite_jardim_santa_barbara_seed1.png,Cidade Satélite (Jardim Santa Bárbara),Na,22616,5125,8090,5,-23.61166,-46.4687
+lambe_bairro_mirandopolis_seed1.png,Mirandópolis,Em,22187,5373,8425,4,-23.610637,-46.644212
+lambe_bairro_cidade_lider_seed1.png,Cidade Líder,Na,22170,5262,8330,5,-23.554551,-46.471388
+lambe_bairro_parque_grajau_seed1.png,Parque Grajaú,No,22061,5310,8196,4,-23.744859,-46.689141
+lambe_bairro_aclimacao_seed1.png,Aclimação,Na,21988,5353,8014,3,-23.564967,-46.63081
+lambe_bairro_vila_jacui_seed1.png,Vila Jacuí,Na,21956,4728,7649,5,-23.501172,-46.452558
+lambe_bairro_alto_da_mooca_seed1.png,Alto da Mooca,No,21938,5274,7951,3,-23.56052,-46.584132
+lambe_bairro_belenzinho_seed1.png,Belenzinho,No,21763,5298,7994,3,-23.540903,-46.593874
+lambe_bairro_vila_constanca_seed1.png,Vila Constança,Na,21268,5002,8003,5,-23.475333,-46.58723
+lambe_bairro_vila_cisper_seed1.png,Vila Císper,Na,21266,4492,7262,5,-23.492392,-46.495042
+lambe_bairro_tucuruvi_seed1.png,Tucuruvi,No,21190,5119,7927,4,-23.481295,-46.602279
+lambe_bairro_alto_de_pinheiros_seed1.png,Alto de Pinheiros,No,21180,4690,7877,4,-23.550723,-46.715587
+lambe_bairro_jardim_tiete_seed1.png,Jardim Tietê,No,21169,5183,7992,5,-23.598844,-46.491905
+lambe_bairro_jaragua_seed1.png,Jaraguá,No,20968,4811,7564,6,-23.45563,-46.746002
+lambe_bairro_jardim_comercial_seed1.png,Jardim Comercial,No,20814,5031,7792,4,-23.67676,-46.785208
+lambe_bairro_imirim_seed1.png,Imirim,No,20724,4835,7606,5,-23.491266,-46.64792
+lambe_bairro_cidade_moncoes_seed1.png,Cidade Monções,Na,20483,5253,7914,3,-23.6117,-46.687516
+lambe_bairro_parque_novo_mundo_seed1.png,Parque Novo Mundo,No,20387,4667,7090,5,-23.512205,-46.568779
+lambe_bairro_jardim_sao_paulo_zona_leste_seed1.png,Jardim São Paulo (Zona Leste),No,20159,4680,7351,5,-23.559365,-46.403656
+lambe_bairro_parque_residencial_cocaia_seed1.png,Parque Residencial Cocaia,No,19950,4485,7039,3,-23.742771,-46.670778
+lambe_bairro_vila_moinho_velho_seed1.png,Vila Moinho Velho,Na,19800,4815,7419,6,-23.612704,-46.602587
+lambe_bairro_cidade_ademar_seed1.png,Cidade Ademar,Na,19788,4748,7335,5,-23.672129,-46.658674
+lambe_bairro_vila_esperanca_seed1.png,Vila Esperança,Na,19754,4663,7262,4,-23.524888,-46.527234
+lambe_bairro_jardim_sao_pedro_seed1.png,Jardim São Pedro,No,19697,4910,7527,5,-23.549574,-46.429645
+lambe_bairro_cidade_patriarca_seed1.png,Cidade Patriarca,Na,19680,4302,7022,5,-23.536979,-46.504185
+lambe_bairro_sao_mateus_seed1.png,São Mateus,Em,19667,4705,7334,4,-23.601281,-46.482614
+lambe_bairro_santa_teresinha_seed1.png,Santa Teresinha,Em,19628,4172,6816,3,-23.491617,-46.63376
+lambe_bairro_parque_sao_domingos_seed1.png,Parque São Domingos,No,19581,4029,6841,6,-23.499781,-46.738242
+lambe_bairro_jardim_adutora_seed1.png,Jardim Adutora,No,19561,4722,7319,3,-23.61661,-46.506233
+lambe_bairro_parque_nacoes_unidas_seed1.png,Parque Nações Unidas,No,19419,4434,7011,4,-23.444125,-46.735947
+lambe_bairro_jardim_da_conquista_seed1.png,Jardim da Conquista,No,19181,4122,6450,4,-23.608577,-46.451626
+lambe_bairro_conjunto_habitacional_padre_jose_de_anchieta_seed1.png,Conjunto Habitacional Padre José de Anchieta,No,19158,4547,7142,4,-23.551121,-46.487106
+lambe_bairro_vila_santa_margarida_seed1.png,Vila Santa Margarida,Na,18971,4578,7116,5,-23.679683,-46.754925
+lambe_bairro_jardim_rodolfo_pirani_seed1.png,Jardim Rodolfo Pirani,No,18954,4267,6687,4,-23.628714,-46.461925
+lambe_bairro_vila_penteado_seed1.png,Vila Penteado,Na,18951,4628,7070,4,-23.472342,-46.683609
+lambe_bairro_vila_guilherme_seed1.png,Vila Guilherme,Na,18884,4119,6582,6,-23.508363,-46.60458
+lambe_bairro_jardim_das_oliveiras_seed1.png,Jardim das Oliveiras,No,18856,4105,6705,4,-23.491533,-46.377049
+lambe_bairro_jardim_japao_seed1.png,Jardim Japão,No,18778,4412,6849,6,-23.501422,-46.577906
+lambe_bairro_vila_alpina_seed1.png,Vila Alpina,Na,18704,4081,6704,4,-23.597909,-46.560182
+lambe_bairro_jardim_maringa_seed1.png,Jardim Maringá,No,18563,3981,6614,5,-23.55215,-46.514496
+lambe_bairro_butanta_seed1.png,Butantã,No,18561,4475,6699,3,-23.569047,-46.713746
+lambe_bairro_jardim_redil_seed1.png,Jardim Redil,No,18559,4046,6693,4,-23.531918,-46.444125
+lambe_bairro_parque_edu_chaves_seed1.png,Parque Edu Chaves,No,18349,4315,6735,5,-23.477955,-46.566392
+lambe_bairro_vila_progresso_seed1.png,Vila Progresso,Na,18330,4035,6704,4,-23.518742,-46.439688
+lambe_bairro_cidade_julia_seed1.png,Cidade Júlia,Na,18290,4780,7199,3,-23.690162,-46.638349
+lambe_bairro_vila_santana_seed1.png,Vila Santana,Na,18287,3878,6332,3,-23.528458,-46.455973
+lambe_bairro_parque_sao_lucas_seed1.png,Parque São Lucas,No,18235,4140,6609,5,-23.598611,-46.547287
+lambe_bairro_vila_afonso_celso_seed1.png,Vila Afonso Celso,Na,18088,4441,6841,3,-23.598841,-46.636558
+lambe_bairro_jardim_piracuama_seed1.png,Jardim Piracuama,No,18084,4070,6479,3,-23.640725,-46.761823
+lambe_bairro_rio_pequeno_seed1.png,Rio Pequeno,No,18080,4582,6737,3,-23.568995,-46.754614
+lambe_bairro_santa_cecilia_seed1.png,Santa Cecília,Na,18042,4577,6162,4,-23.539003,-46.653094
+lambe_bairro_jardim_america_seed1.png,Jardim América,No,18036,4484,6522,4,-23.559189,-46.678671
+lambe_bairro_jardim_camargo_novo_seed1.png,Jardim Camargo Novo,No,18028,3986,6345,4,-23.507574,-46.392639
+lambe_bairro_jardim_catanduva_seed1.png,Jardim Catanduva,No,18016,4394,6750,3,-23.635171,-46.760802
+lambe_bairro_vila_paiva_seed1.png,Vila Paiva,Na,18001,4107,6349,4,-23.500383,-46.600518
+lambe_bairro_vila_curuca_seed1.png,Vila Curuçá,Na,17944,3718,6294,4,-23.508786,-46.42181
+lambe_bairro_cidade_dutra_seed1.png,Cidade Dutra,Na,17919,4463,6826,4,-23.710836,-46.700563
+lambe_bairro_jardim_esmeralda_seed1.png,Jardim Esmeralda,No,17886,4169,6437,3,-23.582605,-46.749865
+lambe_bairro_capao_redondo_seed1.png,Capão Redondo,No,17881,4542,6900,3,-23.673897,-46.766655
+lambe_bairro_vila_romana_seed1.png,Vila Romana,Na,17827,4050,6194,4,-23.528173,-46.703177
+lambe_bairro_vila_das_belezas_seed1.png,Vila das Belezas,Na,17727,4131,6612,5,-23.646714,-46.744745
+lambe_bairro_vila_santa_catarina_seed1.png,Vila Santa Catarina,Na,17670,4195,6560,4,-23.652597,-46.657825
+lambe_bairro_chacara_inglesa_seed1.png,Chácara Inglesa,Na,17652,3864,6266,4,-23.493136,-46.728847
+lambe_bairro_parque_santo_antonio_seed1.png,Parque Santo Antônio,No,17610,4049,6395,5,-23.663538,-46.751396
+lambe_bairro_bosque_da_saude_seed1.png,Bosque da Saúde,No,17588,4269,6664,5,-23.612273,-46.623147
+lambe_bairro_jardim_umuarama_seed1.png,Jardim Umuarama,No,17515,3899,6260,3,-23.647073,-46.770244
+lambe_bairro_sacoma_seed1.png,Sacomã,No,17233,3886,5781,3,-23.610588,-46.597366
+lambe_bairro_vila_siqueira_seed1.png,Vila Siqueira,Na,17138,3966,6100,3,-23.502937,-46.680529
+lambe_bairro_vila_andrade_seed1.png,Vila Andrade,Na,16990,3698,6116,4,-23.632194,-46.741543
+lambe_bairro_engenheiro_goulart_seed1.png,Engenheiro Goulart,Em,16926,3562,5806,4,-23.502278,-46.520285
+lambe_bairro_parque_regina_seed1.png,Parque Regina,No,16917,3508,5800,3,-23.634881,-46.753958
+lambe_bairro_jardim_sao_luis_zona_oeste_seed1.png,Jardim São Luís (Zona Oeste),No,16909,4032,6146,3,-23.653019,-46.737563
+lambe_bairro_parque_do_lago_seed1.png,Parque do Lago,No,16898,4293,6440,3,-23.718631,-46.78194
+lambe_bairro_vila_nova_cachoeirinha_seed1.png,Vila Nova Cachoeirinha,Na,16839,3804,6073,4,-23.470451,-46.655441
+lambe_bairro_jardim_santa_fe_zona_sul_seed1.png,Jardim Santa Fé (Zona Sul),No,16797,3566,5860,3,-23.76517,-46.703565
+lambe_bairro_vila_sabrina_seed1.png,Vila Sabrina,Na,16791,3650,6005,5,-23.492657,-46.573112
+lambe_bairro_vila_nova_curuca_seed1.png,Vila Nova Curuçá,Na,16588,3719,5958,5,-23.517528,-46.420108
+lambe_bairro_parada_xv_de_novembro_seed1.png,Parada XV de Novembro,Na,16558,4030,6269,3,-23.528504,-46.436376
+lambe_bairro_jardim_paulistano_zona_norte_seed1.png,Jardim Paulistano (Zona Norte),No,16537,3922,5942,5,-23.461135,-46.709654
+lambe_bairro_parque_sao_rafael_seed1.png,Parque São Rafael,No,16507,3563,5965,4,-23.626501,-46.471778
+lambe_bairro_parelheiros_seed1.png,Parelheiros,Em,16503,4397,6659,4,-23.828402,-46.724292
+lambe_bairro_parque_santa_rita_seed1.png,Parque Santa Rita,No,16494,3766,6073,3,-23.516109,-46.415821
+lambe_bairro_parque_maria_helena_seed1.png,Parque Maria Helena,No,16417,3974,6153,3,-23.662521,-46.766925
+lambe_bairro_jardim_parque_morumbi_seed1.png,Jardim Parque Morumbi,No,16182,3640,5450,3,-23.621344,-46.732507
+lambe_bairro_parque_america_seed1.png,Parque América,No,16168,3422,5663,4,-23.738942,-46.686754
+lambe_bairro_jardim_lourdes_seed1.png,Jardim Lourdes,No,16164,3784,5993,4,-23.667829,-46.635699
+lambe_bairro_vila_progredior_seed1.png,Vila Progredior,Na,16146,4131,6290,2,-23.594566,-46.720316
+lambe_bairro_jardim_sao_francisco_seed1.png,Jardim São Francisco,No,16098,3646,5613,3,-23.625495,-46.447099
+lambe_bairro_jardim_myrna_seed1.png,Jardim Myrna,No,16030,3593,5674,4,-23.770591,-46.694905
+lambe_bairro_vila_bela_seed1.png,Vila Bela,Na,15919,3803,5959,3,-23.594293,-46.565985
+lambe_bairro_fazenda_da_juta_seed1.png,Fazenda da Juta,Na,15910,3317,5407,4,-23.613684,-46.487726
+lambe_bairro_vila_madalena_seed1.png,Vila Madalena,Na,15850,3922,5574,5,-23.554197,-46.690795
+lambe_bairro_jardim_sao_joao_seed1.png,Jardim São João,No,15816,3622,5699,4,-23.660136,-46.737049
+lambe_bairro_jardim_maristela_seed1.png,Jardim Maristela,No,15767,4234,6124,3,-23.469579,-46.698343
+lambe_bairro_jardim_laura_seed1.png,Jardim Laura,No,15729,3340,5545,3,-23.515273,-46.384592
+lambe_bairro_vila_independencia_seed1.png,Vila Independência,Na,15689,3633,5490,4,-23.597423,-46.593162
+lambe_bairro_freguesia_do_o_seed1.png,Freguesia do Ó,Na,15662,3138,5242,5,-23.495839,-46.698653
+lambe_bairro_parque_santa_madalena_seed1.png,Parque Santa Madalena,No,15662,3629,5651,4,-23.61283,-46.509051
+lambe_bairro_vila_regente_feijo_seed1.png,Vila Regente Feijó,Na,15626,3367,5419,3,-23.557234,-46.57248
+lambe_bairro_jardim_santo_andre_seed1.png,Jardim Santo André,No,15573,3683,5775,3,-23.630721,-46.443505
+lambe_bairro_vila_verde_seed1.png,Vila Verde,Na,15562,3534,5668,3,-23.51818,-46.452848
+lambe_bairro_jardim_aracati_seed1.png,Jardim Aracati,No,15491,3799,5772,2,-23.72083,-46.770516
+lambe_bairro_brasilandia_seed1.png,Brasilândia,Na,15426,4145,6040,3,-23.469514,-46.690768
+lambe_bairro_bom_retiro_seed1.png,Bom Retiro,No,15385,4330,6071,3,-23.528949,-46.63741
+lambe_bairro_jardim_das_laranjeiras_seed1.png,Jardim das Laranjeiras,No,15366,3705,5715,3,-23.604925,-46.435368
+lambe_bairro_vila_gustavo_seed1.png,Vila Gustavo,Na,15292,3565,5500,4,-23.481871,-46.592351
+lambe_bairro_parque_anhanguera_seed1.png,Parque Anhanguera,No,15236,3254,5251,5,-23.437998,-46.791602
+lambe_bairro_vila_olimpia_seed1.png,Vila Olímpia,Na,15157,4469,6370,2,-23.598948,-46.676748
+lambe_bairro_jardim_umarizal_seed1.png,Jardim Umarizal,No,15135,3434,5464,3,-23.619589,-46.754076
+lambe_bairro_vila_ema_seed1.png,Vila Ema,Na,15021,3648,5718,3,-23.59261,-46.536776
+lambe_bairro_conjunto_dos_bancarios_seed1.png,Conjunto dos Bancários,No,14996,3423,5408,3,-23.468776,-46.638644
+lambe_bairro_vila_rica_seed1.png,Vila Rica,Na,14945,3255,5347,3,-23.485616,-46.518096
+lambe_bairro_alto_da_lapa_seed1.png,Alto da Lapa,No,14876,3346,5249,5,-23.528274,-46.716262
+lambe_bairro_cohab_jardim_antartica_seed1.png,Cohab Jardim Antártica,Na,14710,3512,5436,3,-23.45775,-46.658227
+lambe_bairro_jardim_casa_blanca_seed1.png,Jardim Casa Blanca,No,14647,3523,5380,2,-23.655573,-46.747558
+lambe_bairro_vila_sao_francisco_seed1.png,Vila São Francisco,Na,14501,2929,5017,3,-23.518301,-46.4897
+lambe_bairro_vila_gumercindo_seed1.png,Vila Gumercindo,Na,14425,3365,5474,4,-23.604923,-46.616565
+lambe_bairro_jardim_dos_ipes_seed1.png,Jardim dos Ipês,No,14382,3160,5049,3,-23.499684,-46.41664
+lambe_bairro_brooklin_paulista_seed1.png,Brooklin Paulista,No,14380,3576,5528,2,-23.618239,-46.684844
+lambe_bairro_casa_verde_alta_seed1.png,Casa Verde Alta,Na,14376,3720,5558,3,-23.488277,-46.671055
+lambe_bairro_conjunto_habitacional_jova_rural_seed1.png,Conjunto Habitacional Jova Rural,No,14325,3573,5280,3,-23.455052,-46.580411
+lambe_bairro_vila_campestre_seed1.png,Vila Campestre,Na,14269,3366,5365,3,-23.655796,-46.647898
+lambe_bairro_jardim_soraia_seed1.png,Jardim Soraia,No,14241,3643,5374,3,-23.681229,-46.776872
+lambe_bairro_lauzane_paulista_seed1.png,Lauzane Paulista,No,14217,3180,5122,4,-23.476387,-46.646816
+lambe_bairro_bairro_do_limao_seed1.png,Bairro do Limão,No,14215,2907,4837,4,-23.501642,-46.673282
+lambe_bairro_jardim_pedro_jose_nunes_seed1.png,Jardim Pedro José Nunes,No,14177,2926,5034,5,-23.501453,-46.466732
+lambe_bairro_jardim_anhanguera_seed1.png,Jardim Anhanguera,No,13971,3333,5329,2,-23.666708,-46.690291
+lambe_bairro_vila_maria_alta_seed1.png,Vila Maria Alta,Na,13923,3068,4954,5,-23.505751,-46.586446
+lambe_bairro_vila_california_seed1.png,Vila Califórnia,Na,13885,3198,5074,3,-23.607207,-46.560988
+lambe_bairro_jardim_joao_xxiii_seed1.png,Jardim João XXIII,No,13769,3126,4944,2,-23.603752,-46.795769
+lambe_bairro_parque_residencial_vera_cruz_seed1.png,Parque Residencial Vera Cruz,No,13768,3538,5095,2,-23.74096,-46.782027
+lambe_bairro_vila_marina_seed1.png,Vila Marina,Na,13666,3365,5135,4,-23.484161,-46.706251
+lambe_bairro_agua_fria_seed1.png,Água Fria,Na,13665,3394,5029,3,-23.481876,-46.620017
+lambe_bairro_parque_brasil_seed1.png,Parque Brasil,No,13462,3334,4959,2,-23.736172,-46.694297
+lambe_bairro_vargem_grande_seed1.png,Vargem Grande,Na,13426,2870,4812,3,-23.861038,-46.7069
+lambe_bairro_jardim_peri_novo_seed1.png,Jardim Peri Novo,No,13390,3038,4796,2,-23.45776,-46.671493
+lambe_bairro_jardim_tua_seed1.png,Jardim Tua,No,13305,3261,5047,3,-23.50977,-46.397899
+lambe_bairro_jardim_guapira_seed1.png,Jardim Guapira,No,13128,3726,5248,3,-23.457216,-46.583645
+lambe_bairro_vila_moraes_seed1.png,Vila Moraes,Na,13082,3242,5032,2,-23.623965,-46.600807
+lambe_bairro_jardim_vista_alegre_seed1.png,Jardim Vista Alegre,No,13043,3537,5086,4,-23.450345,-46.687683
+lambe_bairro_pirajussara_seed1.png,Pirajussara,Em,13042,3738,5300,3,-23.637525,-46.77968
+lambe_bairro_jardim_sao_paulo_zona_norte_seed1.png,Jardim São Paulo (Zona Norte),No,12963,3137,4749,3,-23.493409,-46.615348
+lambe_bairro_jardim_iv_centenario_seed1.png,Jardim IV Centenário,No,12923,3048,4782,2,-23.584613,-46.498323
+lambe_bairro_vila_brasilandia_seed1.png,Vila Brasilândia,Na,12912,2911,4650,4,-23.446617,-46.71564
+lambe_bairro_chacara_california_seed1.png,Chácara Califórnia,Na,12811,2726,4482,3,-23.543543,-46.549475
+lambe_bairro_jardim_brasilia_seed1.png,Jardim Brasília,No,12763,2682,4507,4,-23.555802,-46.494011
+lambe_bairro_jardim_nakamura_seed1.png,Jardim Nakamura,No,12737,3164,4887,3,-23.697746,-46.773222
+lambe_bairro_vila_das_merces_seed1.png,Vila das Mercês,Na,12728,2841,4621,2,-23.628475,-46.605695
+lambe_bairro_grajau_seed1.png,Grajaú,No,12724,3073,4666,3,-23.75495,-46.68353
+lambe_bairro_vila_albertina_seed1.png,Vila Albertina,Na,12638,2912,4498,6,-23.496995,-46.689953
+lambe_bairro_parque_casa_de_pedra_seed1.png,Parque Casa de Pedra,No,12621,2875,4613,3,-23.439121,-46.58562
+lambe_bairro_ferreira_seed1.png,Ferreira,Em,12550,2581,4337,3,-23.59662,-46.74412
+lambe_bairro_socorro_seed1.png,Socorro,No,12531,3031,4694,4,-23.670577,-46.714511
+lambe_bairro_jardim_prudencia_seed1.png,Jardim Prudência,No,12486,2692,4466,2,-23.655194,-46.676479
+lambe_bairro_jardim_modelo_seed1.png,Jardim Modelo,No,12478,3046,4661,4,-23.671809,-46.768489
+lambe_bairro_jardim_rincao_seed1.png,Jardim Rincão,No,12473,2958,4538,3,-23.439687,-46.732904
+lambe_bairro_vila_silvia_seed1.png,Vila Sílvia,Na,12469,2262,4162,3,-23.49677,-46.501325
+lambe_bairro_jardim_maria_sampaio_seed1.png,Jardim Maria Sampaio,No,12369,2832,4426,2,-23.642799,-46.787195
+lambe_bairro_parque_novo_santo_amaro_seed1.png,Parque Novo Santo Amaro,No,12344,2931,4469,3,-23.697891,-46.784753
+lambe_bairro_cohab_adventista_seed1.png,Cohab Adventista,Na,12338,3016,4593,3,-23.667901,-46.779708
+lambe_bairro_parque_sao_luis_seed1.png,Parque São Luís,No,12330,2903,4507,3,-23.481907,-46.687586
+lambe_bairro_bortolandia_seed1.png,Bortolândia,Em,12283,3381,4990,2,-23.455014,-46.597107
+lambe_bairro_jardim_popular_seed1.png,Jardim Popular,No,12273,2302,4108,4,-23.5158,-46.5035
+lambe_bairro_cohab_castro_alves_seed1.png,Cohab Castro Alves,Na,12269,2813,4328,3,-23.579142,-46.402867
+lambe_bairro_se_seed1.png,Sé,Na,12235,3675,4737,2,-23.549946,-46.636674
+lambe_bairro_jabaquara_seed1.png,Jabaquara,No,12225,2929,4584,3,-23.64532,-46.640797
+lambe_bairro_jardim_ofelia_seed1.png,Jardim Ofélia,No,12171,2878,4496,2,-23.693471,-46.65303
+lambe_bairro_vila_isolina_mazzei_seed1.png,Vila Isolina Mazzei,Na,12171,2755,4429,3,-23.493461,-46.601703
+lambe_bairro_jardim_belcito_seed1.png,Jardim Belcito,No,12105,2582,4239,3,-23.767687,-46.680552
+lambe_bairro_vila_missionaria_seed1.png,Vila Missionária,Na,12102,3071,4667,3,-23.688576,-46.652247
+lambe_bairro_jardim_aurora_zona_leste_seed1.png,Jardim Aurora (Zona Leste),No,12055,2645,4300,2,-23.539062,-46.419146
+lambe_bairro_jardim_colombo_seed1.png,Jardim Colombo,No,12044,2949,4407,2,-23.604433,-46.727634
+lambe_bairro_jardim_iguatemi_seed1.png,Jardim Iguatemi,No,12031,2735,4313,2,-23.597051,-46.444082
+lambe_bairro_vila_pirituba_seed1.png,Vila Pirituba,Na,11992,3101,4569,2,-23.481325,-46.745897
+lambe_bairro_vila_elze_seed1.png,Vila Elze,Na,11990,2727,4264,2,-23.607931,-46.527493
+lambe_bairro_jardim_dona_leonor_mendes_de_barros_seed1.png,Jardim Dona Leonor Mendes de Barros,No,11985,3355,4825,2,-23.464285,-46.604404
+lambe_bairro_jardim_sao_jose_seed1.png,Jardim São José,No,11966,2352,3962,3,-23.547931,-46.713207
+lambe_bairro_jardim_colonial_seed1.png,Jardim Colonial,No,11937,2882,4596,2,-23.726004,-46.685325
+lambe_bairro_jardim_lucelia_seed1.png,Jardim Lucélia,No,11910,2703,4263,2,-23.762234,-46.673126
+lambe_bairro_chacara_belenzinho_seed1.png,Chácara Belenzinho,Na,11891,2804,4438,3,-23.575187,-46.539858
+lambe_bairro_jardim_guaianases_seed1.png,Jardim Guaianases,No,11877,2540,4205,3,-23.527753,-46.412085
+lambe_bairro_parque_dos_bancarios_seed1.png,Parque dos Bancários,No,11851,2698,4186,2,-23.600084,-46.510273
+lambe_bairro_jardim_nove_de_julho_seed1.png,Jardim Nove de Julho,No,11848,2370,4042,4,-23.588952,-46.486484
+lambe_bairro_vila_santa_lucia_seed1.png,Vila Santa Lúcia,Na,11847,2652,4238,3,-23.689424,-46.764672
+lambe_bairro_parque_dos_principes_seed1.png,Parque dos Príncipes,No,11844,2355,4093,1,-23.575392,-46.773701
+lambe_bairro_parque_cocaia_seed1.png,Parque Cocaia,No,11821,2574,4218,2,-23.752828,-46.680573
+lambe_bairro_vila_guacuri_seed1.png,Vila Guacuri,Na,11814,2725,4398,2,-23.70366,-46.633542
+lambe_bairro_vila_teresinha_seed1.png,Vila Teresinha,Na,11813,2485,4016,2,-23.459047,-46.694105
+lambe_bairro_jardim_guairaca_seed1.png,Jardim Guairacá,No,11743,2956,4531,3,-23.604607,-46.538078
+lambe_bairro_vila_rosaria_seed1.png,Vila Rosária,Na,11724,2627,4202,3,-23.502292,-46.435677
+lambe_bairro_limoeiro_seed1.png,Limoeiro,No,11675,2643,4180,3,-23.517301,-46.469784
+lambe_bairro_conjunto_inacio_monteiro_seed1.png,Conjunto Inácio Monteiro,No,11645,2710,4208,3,-23.570483,-46.399878
+lambe_bairro_vila_indiana_seed1.png,Vila Indiana,Na,11626,2503,3736,2,-23.571555,-46.72345
+lambe_bairro_jardim_celeste_seed1.png,Jardim Celeste,No,11608,2525,4149,2,-23.657441,-46.613911
+lambe_bairro_vila_buenos_aires_seed1.png,Vila Buenos Aires,Na,11598,2897,4383,3,-23.511566,-46.510264
+lambe_bairro_vila_dalila_seed1.png,Vila Dalila,Na,11582,3125,4578,3,-23.544787,-46.519161
+lambe_bairro_parque_cruzeiro_do_sul_seed1.png,Parque Cruzeiro do Sul,No,11526,2422,3960,4,-23.496924,-46.461199
+lambe_bairro_jardim_iva_seed1.png,Jardim Iva,No,11511,2239,3865,3,-23.588928,-46.51467
+lambe_bairro_jardim_ester_seed1.png,Jardim Ester,No,11499,3160,4577,2,-23.621114,-46.462253
+lambe_bairro_vila_friburgo_seed1.png,Vila Friburgo,Na,11452,2559,4194,3,-23.691531,-46.703641
+lambe_bairro_vila_tolstoi_seed1.png,Vila Tolstoi,Na,11451,2570,4067,2,-23.597686,-46.52533
+lambe_bairro_vila_carbone_seed1.png,Vila Carbone,Na,11410,2551,4063,2,-23.491322,-46.681045
+lambe_bairro_jardim_carumbe_seed1.png,Jardim Carumbé,No,11346,2934,4276,3,-23.458,-46.702007
+lambe_bairro_jardim_sao_carlos_seed1.png,Jardim São Carlos,No,11327,2720,4187,2,-23.682636,-46.657326
+lambe_bairro_vila_helena_seed1.png,Vila Helena,Na,11326,2388,3853,2,-23.482817,-46.416206
+lambe_bairro_jardim_irapiranga_seed1.png,Jardim Irapiranga,No,11302,2606,4035,2,-23.665778,-46.788642
+lambe_bairro_jardim_germania_seed1.png,Jardim Germânia,No,11301,2311,3910,2,-23.658511,-46.759782
+lambe_bairro_jardim_ipe_seed1.png,Jardim Ipê,No,11261,2697,4059,2,-23.656127,-46.770661
+lambe_bairro_parque_doroteia_seed1.png,Parque Dorotéia,No,11254,2778,4225,2,-23.701214,-46.644099
+lambe_bairro_jardim_sabia_seed1.png,Jardim Sabiá,No,11249,2468,4106,2,-23.783058,-46.690703
+lambe_bairro_recanto_campo_belo_seed1.png,Recanto Campo Belo,No,11241,2473,4028,2,-23.7918,-46.732
+lambe_bairro_vila_souza_seed1.png,Vila Souza,Na,11171,3080,4543,2,-23.435554,-46.717129
+lambe_bairro_jardim_das_flores_seed1.png,Jardim das Flores,No,11161,2479,4018,2,-23.673873,-46.739627
+lambe_bairro_vila_paranagua_seed1.png,Vila Paranaguá,Na,11152,2514,4048,3,-23.499377,-46.4753
+lambe_bairro_parque_tomas_saraiva_seed1.png,Parque Tomás Saraiva,No,11113,2687,4218,3,-23.581784,-46.537448
+lambe_bairro_pirituba_seed1.png,Pirituba,Em,11090,2171,3735,3,-23.497307,-46.727693
+lambe_bairro_vila_do_sol_seed1.png,Vila do Sol,Na,11051,2996,4219,2,-23.742486,-46.782781
+lambe_bairro_sitio_do_piqueri_seed1.png,Sítio do Piqueri,No,11047,2656,4018,2,-23.454375,-46.589468
+lambe_bairro_jardim_das_camelias_seed1.png,Jardim das Camélias,No,11045,2531,3996,3,-23.511801,-46.459981
+lambe_bairro_jardim_santa_adelia_seed1.png,Jardim Santa Adélia,No,11023,2751,4164,3,-23.613004,-46.482606
+lambe_bairro_vila_princesa_isabel_seed1.png,Vila Princesa Isabel,Na,10988,2893,4311,4,-23.546434,-46.41485
+lambe_bairro_jardim_bonfiglioli_seed1.png,Jardim Bonfiglioli,No,10977,2399,3787,2,-23.581033,-46.735945
+lambe_bairro_jardim_santa_cruz_seed1.png,Jardim Santa Cruz,No,10926,2392,3995,2,-23.640312,-46.596377
+lambe_bairro_sitio_morro_grande_seed1.png,Sítio Morro Grande,No,10867,2518,3954,3,-23.471504,-46.70295
+lambe_bairro_sitio_conceicao_seed1.png,Sítio Conceição,No,10809,2514,3860,2,-23.579147,-46.394232
+lambe_bairro_jardim_avelino_seed1.png,Jardim Avelino,No,10801,2271,3753,3,-23.584819,-46.570399
+lambe_bairro_jardim_picolo_seed1.png,Jardim Picolo,No,10800,2350,3764,2,-23.479383,-46.637938
+lambe_bairro_caninde_seed1.png,Canindé,No,10663,3204,4308,3,-23.523925,-46.621942
+lambe_bairro_jardim_niteroi_seed1.png,Jardim Niterói,No,10632,2616,4121,2,-23.682456,-46.66699
+lambe_bairro_parque_independencia_seed1.png,Parque Independência,No,10616,2713,4043,3,-23.686075,-46.788178
+lambe_bairro_jardim_norma_seed1.png,Jardim Norma,No,10559,2375,3957,2,-23.526616,-46.452694
+lambe_bairro_parque_fernanda_seed1.png,Parque Fernanda,No,10519,2604,3941,2,-23.674923,-46.789971
+lambe_bairro_jardim_ondina_seed1.png,Jardim Ondina,No,10459,2159,3609,2,-23.462847,-46.673147
+lambe_bairro_cangaiba_seed1.png,Cangaíba,Em,10352,2668,3970,3,-23.504811,-46.528019
+lambe_bairro_parque_savoy_city_seed1.png,Parque Savoy City,No,10349,2105,3616,3,-23.562745,-46.487227
+lambe_bairro_jardim_oriental_seed1.png,Jardim Oriental,No,10326,2506,3946,2,-23.645008,-46.646879
+lambe_bairro_cohab_prestes_maia_seed1.png,Cohab Prestes Maia,Na,10316,2419,3739,2,-23.566713,-46.407165
+lambe_bairro_nossa_senhora_do_o_seed1.png,Nossa Senhora do Ó,Em,10305,2502,3738,2,-23.497872,-46.70299
+lambe_bairro_planalto_paulista_seed1.png,Planalto Paulista,No,10203,2558,3929,3,-23.618427,-46.650869
+lambe_bairro_vila_joaniza_seed1.png,Vila Joaniza,Na,10188,2590,3997,2,-23.673432,-46.659043
+lambe_bairro_jardim_nordeste_seed1.png,Jardim Nordeste,No,10152,1878,3376,3,-23.528008,-46.479462
+lambe_bairro_guaianases_seed1.png,Guaianases,Em,10141,2577,3940,3,-23.539198,-46.423498
+lambe_bairro_jardim_nossa_senhora_aparecida_seed1.png,Jardim Nossa Senhora Aparecida,No,10084,2330,3587,2,-23.575708,-46.629914
+lambe_bairro_jardim_pedreira_seed1.png,Jardim Pedreira,No,10081,2574,3970,2,-23.691674,-46.665472
+lambe_bairro_vila_sonia_seed1.png,Vila Sônia,Na,10072,2101,3560,3,-23.596133,-46.734302
+lambe_bairro_parque_dom_joao_neri_seed1.png,Parque Dom João Neri,No,10024,2250,3702,2,-23.519681,-46.404903

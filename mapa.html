@@ -1,0 +1,272 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Mapa · Materiais até o 2º turno 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<style>
+:root{--bg:#8c070d;--ink:#ece6e6;--mut:#e6d3d3;--card:rgba(48,0,4,.42);--line:rgba(255,255,255,.12);--borda:rgba(255,255,255,.45)}
+*,*::before,*::after{box-sizing:border-box}html,body{height:100%;overflow:hidden}
+body{margin:0;background:var(--bg) url(tecido.jpg) 0 0/512px 512px;color:var(--ink);font:16.5px/1.5 -apple-system,Helvetica Neue,Arial,sans-serif;display:flex;flex-direction:column}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto 1fr;gap:10px 22px;align-items:center}header .busca{justify-self:end;width:100%}
+h1{margin:0;font-size:20px;color:#fff}
+.modo{display:flex;align-items:center;gap:8px}.modo span{color:#fff;font-size:16px;margin-right:2px}.modo a{color:#fff;text-decoration:none;font-size:17px;font-weight:600;border:1px solid var(--borda);border-radius:10px;padding:7px 16px;background:var(--card)}.modo a.on{background:#fff;color:#2a0608;border-color:#fff}
+.busca{position:relative;max-width:460px}
+.busca input{width:100%;background:var(--card);color:#fff;border:1px solid var(--borda);border-radius:10px;padding:10px 12px;font-size:16px}.busca input::placeholder{color:var(--mut)}
+.res{position:absolute;z-index:1000;top:100%;left:0;right:0;background:#4e0507;border:1px solid var(--borda);border-radius:10px;margin-top:4px;max-height:55vh;overflow:auto;box-shadow:0 8px 24px #0008}
+.res button{display:block;width:100%;text-align:left;background:none;border:0;color:#fff;padding:10px 12px;font-size:15.5px;cursor:pointer}
+.res button:hover,.res button.sel{background:var(--card)}.res small{color:var(--mut)}
+main{flex:1;display:flex;min-height:0;position:relative}
+#mapa{flex:1;background:#e8e4d9}
+#painel{width:460px;max-width:100%;overflow:auto;border-left:1px solid var(--line);padding:20px 22px 40px;background:var(--bg) url(tecido.jpg) 0 0/512px 512px}
+#painel h2{margin:0;font-size:28px;color:#fff;line-height:1.2}#painel .sub{color:var(--mut);margin:4px 0 16px;font-size:14px}
+.fechar{float:right;background:none;border:0;color:#fff;font-size:32px;cursor:pointer;line-height:1;margin:-4px -4px 0 8px}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 8px}.nums div{background:var(--card);border-radius:10px;padding:10px 12px}
+.nums b{display:block;font-size:23px;color:#fff;line-height:1.2}.nums span{font-size:13px;color:var(--mut)}
+#painel h3{font-size:20px;font-weight:700;color:#fff;margin:30px 0 12px;border-left:4px solid rgba(255,255,255,.75);padding-left:10px}
+.bloco{font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin:24px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+#painel h4{font-size:16px;color:#fff;font-weight:700;margin:20px 0 8px;opacity:.9}
+.item{margin:0 0 16px}.item .t{font-size:15.5px;font-weight:600;color:#fff;line-height:1.35;margin:0 0 8px}
+.grid{display:flex;flex-wrap:wrap;gap:10px}.c{width:120px;background:var(--card);border-radius:8px;overflow:hidden;position:relative}
+.c img{width:120px;height:120px;object-fit:cover;display:block;background:#000}.c .ext{height:120px;display:flex;align-items:center;justify-content:center;color:#fff}
+.c .dl{position:absolute;right:6px;bottom:6px;width:30px;height:30px;border-radius:50%;background:#fffe;color:#2a0608;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;text-decoration:none;box-shadow:0 1px 4px #0006}
+.pub{margin:6px 0;font-size:15.5px;line-height:1.45}.pub b{color:#fff;font-weight:700}
+.vazio{color:var(--mut);font-size:14.5px}
+.zips{display:flex;flex-direction:column;gap:8px;margin-top:22px}.zips .zip{margin:0}.zips .zip:first-child{background:#fff;color:#2a0608;border-color:#fff}.zips .zip:first-child small{color:#5a2a2a}
+.zip{background:var(--card);color:#fff;border:1px solid var(--borda);border-radius:10px;padding:9px 14px;font-size:15px;font-weight:600;cursor:pointer;text-align:left;width:100%;margin-top:6px}.zip small{display:block;font-weight:400;color:var(--mut);font-size:13px}.zip:disabled{opacity:.7;cursor:progress}
+.sups{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}.sups button{background:var(--card);color:#fff;border:1px solid var(--borda);border-radius:10px;padding:8px 13px;font-size:15px;cursor:pointer}
+.sups button .x{margin-left:10px;font-size:17px}.sups button .x::before{content:"+"}.sups button.on{background:#fff;color:#2a0608;border-color:#fff;font-weight:600}.sups button.on .x::before{content:"×"}
+.legenda{position:absolute;left:12px;bottom:24px;z-index:700;background:#3d0405e6;border-radius:10px;padding:8px 12px;font-size:13.5px;color:#fff;pointer-events:none;max-width:70%}
+.leaflet-container{font:inherit}
+.leaflet-control-attribution{background:#3d0405cc!important;color:var(--mut)!important}.leaflet-control-attribution a{color:var(--mut)!important}
+.leaflet-tooltip{background:#3d0405;color:#fff;border:1px solid var(--borda);font-size:14px}.leaflet-tooltip-top:before{border-top-color:#3d0405}
+.leaflet-bar a{background:#3d0405;color:#fff;border-color:var(--borda)}.leaflet-bar a:hover{background:var(--card)}
+#lb{position:fixed;inset:0;z-index:2000;background:rgba(10,0,0,.86);display:flex;align-items:center;justify-content:center}
+.lbbox{width:80vw;height:80vh;max-width:1400px;background:#1c0405;border-radius:14px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 10px 40px #000a}
+.lbtop{display:flex;gap:12px;align-items:center;padding:10px 12px 10px 16px;color:#fff}#lbt{flex:1;min-width:0;font-weight:600;font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#lbn{color:var(--mut);font-size:13px;white-space:nowrap}
+#lbdl{background:#fff;color:#2a0608;border-radius:9px;padding:7px 14px;text-decoration:none;font-weight:700;white-space:nowrap}#lbx{background:none;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer;padding:0 4px}
+#lbc{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 12px 12px}#lbc img,#lbc video{max-width:100%;max-height:100%;object-fit:contain;display:block}#lbc iframe{width:100%;height:100%;border:0;background:#fff;border-radius:6px}
+#lbc .pdfm{text-align:center;color:#fff}#lbc .pdfm img{max-height:60vh;margin:0 auto 14px}#lbc .pdfm a{color:#fff}
+.lbnav{position:fixed;top:50%;transform:translateY(-50%);width:52px;height:72px;border:0;border-radius:12px;background:rgba(255,255,255,.16);color:#fff;font-size:44px;line-height:1;cursor:pointer}#lbp{left:2vw}#lbnx{right:2vw}
+@media (max-width:760px){
+  header{padding:10px 14px;gap:8px 14px;grid-template-columns:1fr auto}header .busca{grid-column:1/-1;max-width:none}h1{font-size:16px}.modo a{font-size:15px;padding:6px 12px}.busca{flex-basis:100%;max-width:none}
+  #painel{position:absolute;left:0;right:0;bottom:0;width:auto;max-height:66vh;border-left:0;border-top:1px solid var(--borda);border-radius:16px 16px 0 0;z-index:900;box-shadow:0 -8px 24px #0009;padding:16px 16px 32px}
+  #painel h2{font-size:23px}.nums b{font-size:20px}#painel h3{font-size:18px}
+  .c{width:calc(33.3% - 7px)}.c img,.c .ext{width:100%;height:auto;aspect-ratio:1}
+  .legenda{font-size:12px;bottom:18px}
+  .lbbox{width:96vw;height:84vh}.lbnav{top:auto;bottom:2vh;transform:none;width:56px;height:52px;font-size:36px}#lbp{left:4vw}#lbnx{right:4vw}#lbn{display:none}
+}
+.hide{display:none!important}
+</style></head><body>
+<header><h1>Materiais até o 2º turno 2026</h1>
+<nav class="modo"><span>Modo:</span><a href="./">Galeria</a><a href="mapa.html" class="on">Mapa</a></nav>
+<div class="busca"><input id="q" placeholder="Busque cidade ou bairro" autocomplete="off" aria-label="Buscar cidade ou bairro"><div class="res hide" id="res"></div></div>
+</header>
+<main><div id="mapa"></div><div class="legenda">Toque num ponto ou busque o nome. Ponto maior: mais gente que não votou. Aproxime para ver cidades e bairros.</div>
+<aside id="painel" class="hide"></aside></main>
+<div id="lb" class="hide" role="dialog" aria-modal="true" aria-label="Arquivo"><div class="lbbox"><div class="lbtop"><span id="lbt"></span><span id="lbn"></span><a id="lbdl" download>↓ baixar</a><button id="lbx" aria-label="Fechar">×</button></div><div id="lbc"></div></div>
+<button id="lbp" class="lbnav" aria-label="Anterior">‹</button><button id="lbnx" class="lbnav" aria-label="Próximo">›</button></div>
+<script>
+const NOME = {"Flávio": "Flávio Bolsonaro", "Lula": "Lula"};
+const PUB = {nao_votou: "quem não votou", branco_nulo: "quem votou branco ou nulo", terceira_via: "quem votou em outro candidato", "70mais_familia": "70+ e grupo de família",
+  beneficiarios: "quem usa programa público", segurar_voto: "segurar o voto", disputa: "disputa apertada", trabalho_jovem: "trabalho e jovens", seguranca: "segurança pública", direita_mercado: "classe média escolarizada", ja_decidido_feed: "quem já decidiu", rua_impresso: "rua e impresso"};
+const fmt = n => (n || 0).toLocaleString("pt-BR");
+const norm = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const rotulo = p => p.nivel === "bairro" ? `${p.bairro} · ${p.municipio}/${p.uf}` : p.nivel === "cidade" ? `${p.municipio}/${p.uf}` : p.nome;
+const th = rel => "_thumbs/" + rel.replace(/[^a-zA-Z0-9]+/g, "_") + ".jpg";
+const ZOOM = {estado: 6, cidade: 11, bairro: 14};
+// eixos do kit (kit_territorio.py), na ordem da galeria
+const EIXO_NOME = {"confiança": "Flávio não é confiável", "soberania": "Vai entregar o Brasil pros EUA de Trump", "entrega": "Nunca fez nada de relevante",
+  "segurança": "Segurança pública", "existe": "O que existe e está em risco", "combina": "O que já combina com seu candidato", "respostas": "Respostas prontas", "cartão": "Cartão de bolso"};
+const ehLambeDeLugar = a => /^lambe\/(bairros|cidades|estados)\//.test(a);   // já aparece em "Lambe deste lugar"
+
+// abre no Brasil inteiro; esse é também o zoom mais afastado permitido
+const BRASIL = L.latLngBounds([-34.2, -74.2], [5.6, -32.3]);
+const mapa = L.map("mapa", {preferCanvas: true, zoomControl: true, maxBounds: BRASIL.pad(0.35), maxBoundsViscosity: 0.8});
+mapa.fitBounds(BRASIL); mapa.setMinZoom(mapa.getZoom());
+addEventListener("resize", () => { const z = mapa.getBoundsZoom(BRASIL); mapa.setMinZoom(z); });
+L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {maxZoom: 19, subdomains: "abc",
+  attribution: '&copy; colaboradores do <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, estilo <a href="https://www.hotosm.org/">Humanitarian OSM Team</a>, servido por <a href="https://openstreetmap.fr/">OSM France</a>'}).addTo(mapa);
+const camadas = {estado: L.layerGroup(), cidade: L.layerGroup(), cidadeComBairros: L.layerGroup(), bairro: L.layerGroup()};
+const COR = {fill: "#d3141e", borda: "#ffffff"};
+let pontos = [], porId = {}, marcado = null, ARQ = [], INFO = [], SUPS = new Set(["imprimir", "digital"]), atual = null;
+
+function raio(p) {
+  const k = {estado: 220, cidade: 60, bairro: 24}[p.nivel], min = {estado: 10, cidade: 7, bairro: 7}[p.nivel];
+  return Math.max(min, Math.min(28, Math.sqrt(p.numeros.nao_votaram || 0) / k));
+}
+function visiveis() {
+  const z = mapa.getZoom();
+  // cidades com bairros saem quando os bairros aparecem; as outras ficam em qualquer zoom
+  const quer = {estado: z <= 5, cidade: z >= 5, cidadeComBairros: z >= 5 && z <= 12, bairro: z >= 11};
+  for (const n in camadas) quer[n] ? camadas[n].addTo(mapa) : camadas[n].remove();
+}
+mapa.on("zoomend", visiveis);
+mapa.getContainer().appendChild(document.querySelector(".legenda"));   // a legenda fica dentro do mapa, sem invadir o painel
+
+// um arquivo: miniatura que abre no visualizador + botão de baixar
+function cel(a, titulo, formato, sup) {
+  const x = a.split(".").pop().toLowerCase();
+  return `<div class="c" data-a="${esc(a)}" data-t="${esc(titulo)}" data-v="${esc(formato)}" data-sup="${sup}"><a href="${esc(a)}" target="_blank" title="${esc(formato || x)}"><img loading="lazy" src="${esc(th(a))}" alt="" onerror="this.outerHTML='<div class=ext>${x}</div>'"></a><a class="dl" href="${esc(a)}" download title="baixar">↓</a></div>`;
+}
+// kit agrupado por peça (título), dentro de cada tipo
+function blocoKit(idx, sup) {
+  const grupos = new Map();
+  for (const i of idx) {
+    const a = ARQ[i], [t, v, fam, , eixo] = INFO[i] || [a, "", "", "", ""];
+    if (ehLambeDeLugar(a)) continue;
+    const grupo = EIXO_NOME[eixo] || fam || "outros";
+    const g = grupo + "§" + t;
+    if (!grupos.has(g)) grupos.set(g, {fam: grupo, t, fs: []});
+    grupos.get(g).fs.push(cel(a, t, v, sup));
+  }
+  const ORD = Object.values(EIXO_NOME).concat(["cards", "cortes", "bom dia", "figurinhas", "lambes", "cartões de bolso", "cards A6", "vagalumes"]);
+  const pos = f => { const i = ORD.indexOf(f); return i < 0 ? 99 : i; };
+  let h = "", famAtual = null;
+  for (const g of [...grupos.values()].sort((x, y) => pos(x.fam) - pos(y.fam))) {
+    if (g.fam !== famAtual) { famAtual = g.fam; h += `<h4>${esc(g.fam)}</h4>`; }
+    h += `<div class="item"><p class="t">${esc(g.t)}</p><div class="grid">${g.fs.join("")}</div></div>`;
+  }
+  return h;
+}
+function abrir(p, voar) {
+  if (voar) mapa.stop();
+  if (marcado) marcado.remove();
+  // lugar escolhido como alvo: círculo vermelho com anel branco e centro escuro
+  marcado = L.layerGroup([
+    L.circleMarker([p.lat, p.lon], {radius: Math.max(16, raio(p) + 8), color: "#ffffff", weight: 3, fillColor: "#d3141e", fillOpacity: 1, interactive: false}),
+    L.circleMarker([p.lat, p.lon], {radius: 9, color: "#ffffff", weight: 2.5, fillColor: "#1a0204", fillOpacity: 1, interactive: false}),
+  ]).addTo(mapa);
+  history.replaceState(null, "", "#" + p.id);
+  const n = p.numeros, sub = {estado: "estado", cidade: `cidade · ${p.uf}`, bairro: `bairro · ${p.municipio}/${p.uf}`}[p.nivel];
+  let h = `<button class="fechar" aria-label="Fechar">×</button><h2>${esc(p.nome)}</h2><div class="sub">${esc(sub)} · 1º turno de 2026, TSE</div>
+  <div class="nums"><div><b>${fmt(n.nao_votaram)}</b><span>não votaram (${(n.abstencao_pct || 0).toLocaleString("pt-BR")}% de ${fmt(n.aptos)})</span></div>
+  <div><b>${esc(NOME[n.lidera] || n.lidera || "—")}</b><span>na frente por ${fmt(n.margem)} votos</span></div>
+  <div style="grid-column:1/-1"><b>${fmt(n.viraveis)}</b><span>votos que ainda podem mudar: quem não votou, votou branco, nulo ou em outro candidato</span></div></div>`;
+  const lam = [p.lambe.pb && cel(p.lambe.pb, "Lambe de rua: " + p.nome, "preto e branco", "imprimir"), p.lambe.cor && cel(p.lambe.cor, "Lambe de rua: " + p.nome, "colorido", "imprimir")].filter(Boolean);
+  h += `<h3>Lambe deste lugar</h3>` + (lam.length ? `<div class="item grupo"><div class="grid">${lam.join("")}</div></div>` : `<p class="vazio">Ainda não há lambe para este lugar.</p>`);
+  if (p.publicos && p.publicos.length) h += `<h3>Por que este kit</h3>` + p.publicos.map(x => `<p class="pub"><b>${esc(PUB[x.publico] || x.publico.replace(/_/g, " "))}</b> · ${esc(x.motivo)}</p>`).join("");
+  const kit = p.kit || {}, temKit = (kit.imprimir || []).length + (kit.digital || []).length;
+  if (temKit) {
+    h += `<h3>Kit sugerido</h3><div class="sups">${[["imprimir", "Para imprimir"], ["digital", "Para redes digitais"]].map(([v, r]) => `<button data-sup="${v}" class="${SUPS.has(v) ? "on" : ""}">${r}<span class="x"></span></button>`).join("")}</div>`;
+    for (const [k, t] of [["imprimir", "para imprimir"], ["digital", "para redes"]]) {
+      const xs = kit[k] || [];
+      if (xs.length && SUPS.has(k)) h += `<div class="grupo"><p class="bloco">${t}</p>${blocoKit(xs, k)}</div>`;
+    }
+    h += `<div class="zips"><button class="zip" data-kit="tudo">↓ Baixar kit completo deste lugar<small>o lambe e todas as peças sugeridas, separadas em “para imprimir” e “para redes”</small></button>
+    <button class="zip" data-kit="imprimir">↓ Baixar kit para impressão<small>o lambe do lugar e as peças para imprimir</small></button>
+    <button class="zip" data-kit="digital">↓ Baixar kit para redes sociais<small>as peças para postar e mandar</small></button></div>`;
+  } else h += `<h3>Kit sugerido</h3><p class="vazio">Em preparação.</p>`;
+  const painel = document.getElementById("painel");
+  painel.innerHTML = h; painel.classList.remove("hide"); painel.scrollTop = 0;
+  painel.querySelector(".fechar").onclick = fechar;
+  atual = p;
+  painel.querySelectorAll(".sups button").forEach(b => b.onclick = () => {
+    const v = b.dataset.sup;
+    if (SUPS.has(v) && SUPS.size === 1) return;          // o único ligado não desliga
+    SUPS.has(v) ? SUPS.delete(v) : SUPS.add(v);
+    const y = painel.scrollTop; abrir(atual, false); painel.scrollTop = y;
+  });
+  painel.querySelectorAll(".zips .zip").forEach(b => b.onclick = () => zipKit(p, b, b.dataset.kit));
+  // o painel muda o tamanho do mapa: recalcular antes de voar (invalidateSize durante o flyTo gera LatLng NaN)
+  requestAnimationFrame(() => {
+    mapa.invalidateSize({pan: false});
+    if (voar) mapa.flyTo([p.lat, p.lon], Math.max(mapa.getZoom(), ZOOM[p.nivel]), {duration: .8});
+  });
+}
+function fechar() {
+  document.getElementById("painel").classList.add("hide");
+  if (marcado) marcado.remove(), marcado = null;
+  history.replaceState(null, "", location.pathname);
+  requestAnimationFrame(() => { mapa.stop(); mapa.invalidateSize({pan: false}); });
+}
+
+// visualizador: abre por cima; navega dentro do grupo (lambe, imprimir ou redes)
+let LB = [], LI = 0;
+const lb = document.getElementById("lb"), lbc = document.getElementById("lbc"), mob = matchMedia("(max-width:760px)");
+function mostra() {
+  const c = LB[LI], h = c.dataset.a, x = h.split(".").pop().toLowerCase(), v = c.dataset.v;
+  lbt.textContent = c.dataset.t; lbn.textContent = (LI + 1) + " / " + LB.length + (v ? " · " + v : "");
+  lbdl.href = h; lbdl.setAttribute("download", h.split("/").pop());
+  lbc.innerHTML = x === "mp4" ? `<video src="${h}" controls autoplay loop playsinline></video>`
+    : x === "pdf" ? (mob.matches ? `<div class="pdfm"><img src="${th(h)}" alt=""><a href="${h}" target="_blank">abrir o PDF inteiro</a></div>` : `<iframe src="${h}"></iframe>`)
+    : `<img src="${h}" alt="">`;
+  lbp.style.visibility = lbnx.style.visibility = LB.length > 1 ? "visible" : "hidden";
+}
+function abreLB(c) { LB = [...c.closest(".grupo").querySelectorAll(".c")]; LI = Math.max(0, LB.indexOf(c)); mostra(); lb.classList.remove("hide"); history.pushState({lb: 1}, ""); }
+function fechaLB(volta = true) { if (lb.classList.contains("hide")) return; lb.classList.add("hide"); lbc.innerHTML = ""; if (volta && history.state && history.state.lb) history.back(); }
+const anda = d => { LI = (LI + d + LB.length) % LB.length; mostra(); };
+document.addEventListener("click", e => { const a = e.target.closest(".c > a:not(.dl)"); if (!a) return; e.preventDefault(); abreLB(a.closest(".c")); });
+lbx.onclick = () => fechaLB(); lbp.onclick = () => anda(-1); lbnx.onclick = () => anda(1);
+lb.addEventListener("click", e => { if (e.target === lb || e.target === lbc || e.target.classList.contains("pdfm")) fechaLB(); });
+addEventListener("popstate", () => fechaLB(false));
+addEventListener("keydown", e => { if (lb.classList.contains("hide")) return; if (e.key === "Escape") fechaLB(); if (e.key === "ArrowLeft") anda(-1); if (e.key === "ArrowRight") anda(1); });
+let tx = null; lbc.addEventListener("touchstart", e => { tx = e.touches[0].clientX }, {passive: true});
+lbc.addEventListener("touchend", e => { if (tx === null) return; const d = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(d) > 50) anda(d < 0 ? 1 : -1); });
+
+// zip do kit do lugar: para imprimir / para redes → tipo → peça
+const limpa = s => (s || "").replace(/[\\/:*?"<>|\n\r]+/g, " ").replace(/\s+/g, " ").trim();
+async function zipKit(p, btn, qual = "tudo") {
+  const usados = new Set(), lista = [];
+  const poe = (a, pasta, base) => { const x = a.split(".").pop(); let n = pasta + "/" + base + "." + x, i = 2; while (usados.has(n)) n = pasta + "/" + base + " " + (i++) + "." + x; usados.add(n); lista.push({a, name: n}); };
+  const raiz = limpa(rotulo(p).replace(/\//g, " "));
+  const comImp = qual !== "digital", comDig = qual !== "imprimir";
+  if (comImp && p.lambe.pb) poe(p.lambe.pb, raiz + "/para imprimir/lambe de rua", "lambe " + limpa(p.nome) + " (preto e branco)");
+  if (comImp && p.lambe.cor) poe(p.lambe.cor, raiz + "/para imprimir/lambe de rua", "lambe " + limpa(p.nome) + " (colorido)");
+  for (const [k, pasta] of [["imprimir", "para imprimir"], ["digital", "para redes"]].filter(([k]) => k === "imprimir" ? comImp : comDig))
+    for (const i of (p.kit[k] || []).filter(i => !ehLambeDeLugar(ARQ[i]))) { const [t, v, fam] = INFO[i] || [ARQ[i], "", ""]; poe(ARQ[i], raiz + "/" + pasta + "/" + limpa(fam), limpa(t).slice(0, 90).replace(/[ .]+$/, "") + (v && v !== ARQ[i].split(".").pop() ? " (" + limpa(v) + ")" : "")); }
+  let alvo = null;
+  if (window.showSaveFilePicker) { try { alvo = await showSaveFilePicker({suggestedName: "kit " + raiz + (qual === "tudo" ? "" : qual === "imprimir" ? " impressão" : " redes") + ".zip", types: [{description: "zip", accept: {"application/zip": [".zip"]}}]}); } catch (e) { if (e.name === "AbortError") return; } }
+  const sm = btn.querySelector("small"), antes = sm.textContent; btn.disabled = true;
+  try {
+    const {downloadZip} = await import("https://cdn.jsdelivr.net/npm/client-zip@2/index.js"); let i = 0;
+    async function* arquivos() { for (const e of lista) { const r = await fetch(e.a); i++; sm.textContent = "baixando " + i + " de " + lista.length; yield {name: e.name, input: r}; } }
+    const resp = downloadZip(arquivos());
+    if (alvo) { const w = await alvo.createWritable(); await resp.body.pipeTo(w); }
+    else { const u = URL.createObjectURL(await resp.blob()), a = document.createElement("a"); a.href = u; a.download = "kit " + raiz + (qual === "tudo" ? "" : qual === "imprimir" ? " impressão" : " redes") + ".zip"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 120000); }
+    sm.textContent = "pronto";
+  } catch (e) { alert("Não deu para montar o zip: " + e.message); }
+  finally { btn.disabled = false; setTimeout(() => { sm.textContent = antes; }, 4000); }
+}
+
+// busca
+const q = document.getElementById("q"), res = document.getElementById("res");
+let achados = [], sel = 0;
+function buscar() {
+  const t = norm(q.value.trim());
+  if (t.length < 2) { res.classList.add("hide"); return; }
+  const ordem = {cidade: 0, estado: 1, bairro: 2};
+  achados = pontos.filter(p => p._busca.includes(t))
+    .sort((a, b) => (!a._nome.startsWith(t)) - (!b._nome.startsWith(t)) || ordem[a.nivel] - ordem[b.nivel] || (b.numeros.aptos - a.numeros.aptos)).slice(0, 12);
+  sel = 0;
+  res.innerHTML = achados.length ? achados.map((p, i) => `<button data-i="${i}" class="${i ? "" : "sel"}">${esc(rotulo(p))} <small>· ${p.nivel}</small></button>`).join("")
+    : `<button disabled><small>Nada encontrado. O mapa tem os 27 estados, as cidades com 50 mil eleitores ou mais e bairros de oito cidades.</small></button>`;
+  res.classList.remove("hide");
+}
+function escolher(i) { const p = achados[i]; if (!p) return; res.classList.add("hide"); q.value = rotulo(p); q.blur(); abrir(p, true); }
+q.addEventListener("input", buscar);
+q.addEventListener("keydown", e => {
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") { sel = (sel + (e.key === "ArrowDown" ? 1 : -1) + achados.length) % achados.length; res.querySelectorAll("button").forEach((b, i) => b.classList.toggle("sel", i === sel)); e.preventDefault(); }
+  if (e.key === "Enter") escolher(sel);
+  if (e.key === "Escape") res.classList.add("hide");
+});
+res.addEventListener("click", e => { const b = e.target.closest("button[data-i]"); if (b) escolher(+b.dataset.i); });
+document.addEventListener("click", e => { if (!e.target.closest(".busca")) res.classList.add("hide"); });
+
+fetch("mapa_dados.json").then(r => r.json()).then(d => {
+  const ps = pontos = d.lugares; ARQ = d.arquivos; INFO = d.info || [];
+  const comBairros = new Set(ps.filter(p => p.nivel === "bairro").map(p => p.uf + "|" + norm(p.municipio)));
+  for (const p of ps) {
+    porId[p.id] = p;
+    p._nome = norm(p.nome);
+    p._busca = norm([p.nome, p.bairro, p.municipio, p.uf, p.nivel === "estado" ? p.uf : ""].join(" "));
+    const camada = p.nivel === "cidade" && comBairros.has(p.uf + "|" + norm(p.municipio)) ? "cidadeComBairros" : p.nivel;
+    L.circleMarker([p.lat, p.lon], {radius: raio(p), color: COR.borda, weight: 2, opacity: 1, fillColor: COR.fill, fillOpacity: .9})
+      .bindTooltip(rotulo(p), {direction: "top"}).on("click", () => abrir(p, false)).addTo(camadas[camada]);
+  }
+  visiveis();
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (porId[id]) abrir(porId[id], true);
+});
+</script></body></html>
