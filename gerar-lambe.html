@@ -1,0 +1,54 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Lambe do seu lugar · Materiais até o 2º turno</title>
+<!-- 9/10: lambe de abstentos gerado na hora, no navegador, para qualquer cidade ou bairro (mesmo sketch do pipeline: pipeline/sketch/lambe.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<script src="gerar/lambe.js"></script>
+<style>
+@font-face{font-family:Archivo;src:url(https://cdn.jsdelivr.net/npm/@fontsource-variable/archivo@5.2.8/files/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{--verm:#a80911;--verde:#2e6b39;--mut:#4d4d4d;--linha:#e2e2e2}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#111;font:400 19px/1.5 Archivo,-apple-system,Helvetica Neue,Arial,sans-serif}
+.caixa{max-width:640px;margin:0 auto;padding:24px 18px 48px}
+nav a{color:#111;font-size:17px;margin-right:16px}
+h1{font-stretch:75%;font-weight:800;font-size:40px;line-height:1.05;margin:18px 0 10px}
+p{margin:0 0 12px}.mut{color:var(--mut);font-size:16.5px}
+.nota{background:var(--verde);color:#fff;border-radius:12px;padding:14px 16px;font-size:17px}
+.prev{margin:18px 0;border:1px solid var(--linha);border-radius:8px;overflow:hidden;background:#06100a;min-height:200px;display:flex;align-items:center;justify-content:center;color:#ccc}
+.prev canvas{width:100%!important;height:auto!important;display:block}
+.bts{display:grid;gap:10px}
+.bts button,.bts a{font:inherit;font-weight:750;font-size:19px;border-radius:12px;padding:14px 16px;cursor:pointer;text-align:center;text-decoration:none}
+.p1{background:var(--verm);color:#fff;border:0}.p2{background:#fff;color:var(--verm);border:2px solid var(--verm)}.p3{background:#fff;color:#111;border:1px solid #b9b9b9;font-weight:600!important;font-size:17px!important}
+:focus-visible{outline:3px solid #111;outline-offset:3px}
+</style></head><body><main class="caixa">
+<nav><a href="./">‹ Início</a><a href="mapa.html" id="volta">Voltar ao mapa</a></nav>
+<h1 id="tit">Lambe do seu lugar</h1>
+<p class="mut" id="sub"></p>
+<div class="prev" id="prev">Desenhando o lambe…</div>
+<div class="bts">
+<button class="p1" id="baixa">Baixar este lambe (PNG, folha A4)</button>
+<a class="p2" id="troca" href="#">Ver em preto e branco</a>
+<a class="p3" id="outra" href="#">Outra versão: as luzes mudam de lugar</a></div>
+<p class="nota" style="margin-top:20px">Cole só em parede ou muro particular, com autorização do dono, até meio metro quadrado. Nada no dia da eleição. O número é de quem vota neste lugar, segundo o TSE, não de quem mora nele.</p>
+<p class="mut">Números: votação por seção do 1º turno (TSE), somada pelos locais de votação. Material criado a partir de fatos e dados públicos verificados, sem IA.</p>
+</main>
+<script>
+const Q = new URLSearchParams(location.search);
+const nome = Q.get('bairro') || '', cid = Q.get('cidade') || '', pb = Q.get('pb') === '1', seed = +(Q.get('seed') || 1);
+document.getElementById('tit').textContent = 'Lambe de ' + nome;
+document.getElementById('sub').textContent = (cid ? cid + ' · ' : '') + Number(Q.get('naovotaram') || 0).toLocaleString('pt-BR') + ' pessoas não votaram no 1º turno';
+if (Q.get('volta')) document.getElementById('volta').href = 'mapa.html#' + Q.get('volta');
+function com(m) { const q = new URLSearchParams(location.search); for (const k in m) q.set(k, m[k]); return '?' + q.toString(); }
+document.getElementById('troca').href = com({pb: pb ? '0' : '1'});
+document.getElementById('troca').textContent = pb ? 'Ver colorido' : 'Ver em preto e branco';
+document.getElementById('outra').href = com({seed: seed % 9 + 1});
+// o sketch cria o canvas no body; aqui ele vai para a prévia quando termina
+const espera = setInterval(() => {
+  const c = document.querySelector('body > canvas, main canvas');
+  if (window.__done && c) { clearInterval(espera); const pv = document.getElementById('prev'); pv.textContent = ''; pv.appendChild(c); }
+}, 150);
+document.getElementById('baixa').onclick = () => {
+  const c = document.querySelector('canvas'); if (!c) return;
+  const slug = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+  c.toBlob(b => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = `lambe_${slug(cid)}_${slug(nome)}${pb ? '_pb' : ''}_v${seed}.png`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 6e4); }, 'image/png');
+};
+</script></body></html>

@@ -57,10 +57,27 @@ main{flex:1;display:flex;min-height:0;position:relative}
   .lbbox{width:96vw;height:84vh}.lbnav{top:auto;bottom:2vh;transform:none;width:56px;height:52px;font-size:36px}#lbp{left:4vw}#lbnx{right:4vw}#lbn{display:none}
 }
 .hide{display:none!important}
+/* 9/10: paleta da porta (lambe + verde) */
+@font-face{font-family:Archivo;src:url(https://cdn.jsdelivr.net/npm/@fontsource-variable/archivo@5.2.8/files/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{--bg:#fff;--ink:#111;--mut:#4d4d4d;--card:#f4f4f1;--line:#e2e2e2;--borda:#c9c9c9;--verm:#a80911;--verde:#2e6b39}
+body{background:#fff;color:#111;font-family:Archivo,-apple-system,Helvetica Neue,Arial,sans-serif}
+h1{color:#111;font-stretch:85%;font-weight:800}.modo a{color:#111;background:#fff;border:1px solid var(--borda)}.modo a.on{background:#111;color:#fff;border-color:#111}.modo span{color:#111}
+.busca input{background:#fff;color:#111;border:2px solid var(--verde)}.busca input::placeholder{color:#777}
+.res{background:#fff;border:1px solid var(--borda);box-shadow:0 8px 24px #0002}.res button{color:#111}.res button:hover,.res button.sel{background:#eaf2ec}.res small{color:#4d4d4d}
+#painel{background:#fff;border-left:1px solid var(--line)}#painel h2,#painel h3,#painel h4,.bloco,.item .t,.pub b,.nums b{color:#111}#painel h3{border-left-color:var(--verm)}.fechar{color:#111}
+.nums div{background:#eaf2ec}.nums span{color:#1f4a27}
+.c{background:var(--card)}.c img{background:#e9e9e6}.c .ext{color:#111}.c .dl{background:var(--verm);color:#fff;box-shadow:none}
+.zip{background:#fff;color:var(--verm);border:2px solid var(--verm)}.zip small{color:#4d4d4d}.zips .zip:first-child{background:var(--verm) url(tecido.jpg) 0 0/512px;color:#fff;border-color:var(--verm)}.zips .zip:first-child small{color:#f6dcdc}.zip.gerar{display:block;text-decoration:none;background:var(--verm) url(tecido.jpg) 0 0/512px;color:#fff;border:0;font-size:17px;padding:12px 14px}.zip.gerar small{color:#f6dcdc}
+.sups button{background:#fff;color:var(--verm);border:2px solid var(--verm)}.sups button.on{background:var(--verm);color:#fff;border-color:var(--verm)}
+.legenda{background:#ffffffee;color:#111;box-shadow:0 1px 6px #0002}
+.leaflet-control-attribution{background:#ffffffcc!important;color:#4d4d4d!important}.leaflet-control-attribution a{color:#4d4d4d!important}
+.leaflet-tooltip{background:#fff;color:#111;border:1px solid var(--borda)}.leaflet-tooltip-top:before{border-top-color:#fff}
+.leaflet-bar a{background:#fff;color:#111;border-color:var(--borda)}.leaflet-bar a:hover{background:#f4f4f1}
+@media (max-width:760px){#painel{border-top:1px solid var(--borda);box-shadow:0 -8px 24px #0003}}
 </style></head><body>
-<header><h1>Materiais até o 2º turno 2026</h1>
-<nav class="modo"><span>Modo:</span><a href="./">Galeria</a><a href="mapa.html" class="on">Mapa</a></nav>
-<div class="busca"><input id="q" placeholder="Busque cidade ou bairro" autocomplete="off" aria-label="Buscar cidade ou bairro"><div class="res hide" id="res"></div></div>
+<header><h1>Material por lugar</h1>
+<nav class="modo"><a href="./">‹ Início</a><a href="materiais.html">Todo o material</a></nav>
+<div class="busca"><input id="q" placeholder="Cidade, Bairro" autocomplete="off" aria-label="Buscar cidade ou bairro"><div class="res hide" id="res"></div></div>
 </header>
 <main><div id="mapa"></div><div class="legenda">Toque num ponto ou busque o nome. Ponto maior: mais gente que não votou. Aproxime para ver cidades e bairros.</div>
 <aside id="painel" class="hide"></aside></main>
@@ -130,11 +147,17 @@ function blocoKit(idx, sup) {
   }
   return h;
 }
+function linkGerar(p) {
+  const n = p.numeros, b = p.nivel === "bairro", nv = n.nao_votaram || 0;
+  return "gerar-lambe.html?" + new URLSearchParams({bairro: p.nome, cidade: b ? p.municipio : p.uf, escopo: b ? "bairro" : "cidade", naovotaram: nv, votos: n.viraveis || 0,
+    por_luz: nv <= 40000 ? 10 : nv <= 400000 ? 100 : 1000, fonte: "tse", locais: p.locais || 0, qr: "gerar/qr_tse.png", tam: "a4_300", seed: 1, pb: 0, volta: p.id});
+}
 function abrir(p, voar) {
   if (voar) mapa.stop();
-  if (marcado) marcado.remove();
+  if (marcado) marcado.remove(), marcado = null;
+  const temXY = p.lat != null && p.lon != null;
   // lugar escolhido como alvo: círculo vermelho com anel branco e centro escuro
-  marcado = L.layerGroup([
+  if (temXY) marcado = L.layerGroup([
     L.circleMarker([p.lat, p.lon], {radius: Math.max(16, raio(p) + 8), color: "#ffffff", weight: 3, fillColor: "#d3141e", fillOpacity: 1, interactive: false}),
     L.circleMarker([p.lat, p.lon], {radius: 9, color: "#ffffff", weight: 2.5, fillColor: "#1a0204", fillOpacity: 1, interactive: false}),
   ]).addTo(mapa);
@@ -145,8 +168,9 @@ function abrir(p, voar) {
   <div><b>${esc(NOME[n.lidera] || n.lidera || "—")}</b><span>na frente por ${fmt(n.margem)} votos</span></div>
   <div style="grid-column:1/-1"><b>${fmt(n.viraveis)}</b><span>votos que ainda podem mudar: quem não votou, votou branco, nulo ou em outro candidato</span></div></div>`;
   const lam = [p.lambe.pb && cel(p.lambe.pb, "Lambe de rua: " + p.nome, "preto e branco", "imprimir"), p.lambe.cor && cel(p.lambe.cor, "Lambe de rua: " + p.nome, "colorido", "imprimir")].filter(Boolean);
-  h += `<h3>Lambe deste lugar</h3>` + (lam.length ? `<div class="item grupo"><div class="grid">${lam.join("")}</div></div>` : `<p class="vazio">Ainda não há lambe para este lugar.</p>`);
+  h += `<h3>Lambe deste lugar</h3>` + (lam.length ? `<div class="item grupo"><div class="grid">${lam.join("")}</div></div>` : `<a class="zip gerar" href="${esc(linkGerar(p))}">Gerar o lambe deste lugar<small>na hora, para imprimir em A4, colorido ou em preto e branco</small></a>`);
   if (p.publicos && p.publicos.length) h += `<h3>Por que este kit</h3>` + p.publicos.map(x => `<p class="pub"><b>${esc(PUB[x.publico] || x.publico.replace(/_/g, " "))}</b> · ${esc(x.motivo)}</p>`).join("");
+  if (p.herda) h += `<p class="vazio" style="margin-top:22px">Este bairro ainda não tem kit próprio: abaixo, o kit da cidade de ${esc(p.herda)}.</p>`;
   const kit = p.kit || {}, temKit = (kit.imprimir || []).length + (kit.digital || []).length;
   if (temKit) {
     h += `<h3>Kit sugerido</h3><div class="sups">${[["imprimir", "Para imprimir"], ["digital", "Para redes digitais"]].map(([v, r]) => `<button data-sup="${v}" class="${SUPS.has(v) ? "on" : ""}">${r}<span class="x"></span></button>`).join("")}</div>`;
@@ -172,7 +196,7 @@ function abrir(p, voar) {
   // o painel muda o tamanho do mapa: recalcular antes de voar (invalidateSize durante o flyTo gera LatLng NaN)
   requestAnimationFrame(() => {
     mapa.invalidateSize({pan: false});
-    if (voar) mapa.flyTo([p.lat, p.lon], Math.max(mapa.getZoom(), ZOOM[p.nivel]), {duration: .8});
+    if (voar && temXY) mapa.flyTo([p.lat, p.lon], Math.max(mapa.getZoom(), ZOOM[p.nivel]), {duration: .8});
   });
 }
 function fechar() {
@@ -233,18 +257,54 @@ async function zipKit(p, btn, qual = "tudo") {
 // busca
 const q = document.getElementById("q"), res = document.getElementById("res");
 let achados = [], sel = 0;
-function buscar() {
-  const t = norm(q.value.trim());
+// 9/10: todas as cidades e bairros do Brasil, por estado, carregados só quando alguém busca ou abre o lugar
+const UFS = {}; let INDICE = null, ultimo = 0;
+function uf(u) {
+  u = u.toLowerCase();
+  if (!UFS[u]) UFS[u] = fetch("lugares/" + u + ".json").then(r => r.ok ? r.json() : {cidades: [], bairros: []}).then(d => {
+    d._cid = {}; for (const c of d.cidades) { c.nivel = "cidade"; d._cid[c.id] = c; } return d; });
+  return UFS[u];
+}
+function bairroP(b, d) {
+  const [id, nome, cid, lat, lon, aptos, nv, ap, lid, mg, vir, loc] = b, c = d._cid[cid] || porId[cid] || {};
+  return {id, nivel: "bairro", uf: id.slice(0, 2).toUpperCase(), municipio: c.municipio || c.nome || "", bairro: nome, nome, lat: lat ?? c.lat, lon: lon ?? c.lon,
+          numeros: {aptos, nao_votaram: nv, abstencao_pct: ap, lidera: lid, margem: mg, viraveis: vir}, locais: loc, lambe: {}, kit: c.kit || {}, publicos: c.publicos || [], herda: c.nome || c.municipio};
+}
+async function resolver(id) {
+  if (porId[id]) return porId[id];
+  const d = await uf(id.slice(0, 2)); if (d._cid[id]) return d._cid[id];
+  const b = d.bairros.find(x => x[0] === id); return b ? bairroP(b, d) : null;
+}
+async function buscar() {
+  const t = norm(q.value.trim()), meu = ++ultimo;
   if (t.length < 2) { res.classList.add("hide"); return; }
+  const [ct, bt] = t.split(",").map(s => s.trim());
   const ordem = {cidade: 0, estado: 1, bairro: 2};
-  achados = pontos.filter(p => p._busca.includes(t))
-    .sort((a, b) => (!a._nome.startsWith(t)) - (!b._nome.startsWith(t)) || ordem[a.nivel] - ordem[b.nivel] || (b.numeros.aptos - a.numeros.aptos)).slice(0, 12);
-  sel = 0;
-  res.innerHTML = achados.length ? achados.map((p, i) => `<button data-i="${i}" class="${i ? "" : "sel"}">${esc(rotulo(p))} <small>· ${p.nivel}</small></button>`).join("")
-    : `<button disabled><small>Nada encontrado. O mapa tem os 27 estados, as cidades com 50 mil eleitores ou mais e bairros de oito cidades.</small></button>`;
+  let lista = bt === undefined ? pontos.filter(p => p._busca.includes(t))
+    .sort((a, b) => (!a._nome.startsWith(t)) - (!b._nome.startsWith(t)) || ordem[a.nivel] - ordem[b.nivel] || (b.numeros.aptos - a.numeros.aptos)).slice(0, 12)
+    .map(p => ({p, rot: rotulo(p), niv: p.nivel})) : [];
+  if (!INDICE) INDICE = await fetch("lugares/indice.json").then(r => r.ok ? r.json() : []).then(a => a.map(x => ({id: x[0], rot: x[1], n: norm(x[1])})));
+  if (meu !== ultimo) return;
+  const cids = INDICE.filter(c => c.n.includes(ct)).sort((a, b) => (!a.n.startsWith(ct)) - (!b.n.startsWith(ct))).slice(0, 8);
+  if (bt !== undefined) {
+    const c = cids[0];
+    if (c) {
+      const d = await uf(c.id.slice(0, 2)); if (meu !== ultimo) return;
+      const lugar = c.rot.replace(/ \((\w\w)\)$/, "/$1");
+      lista = pontos.filter(p => p.nivel === "bairro" && p.id.startsWith(c.id + "_") && norm(p.bairro).includes(bt)).map(p => ({p, rot: rotulo(p), niv: "bairro"}))
+        .concat(d.bairros.filter(b => b[2] === c.id && norm(b[1]).includes(bt)).sort((a, b) => b[5] - a[5]).map(b => ({id: b[0], rot: b[1] + " · " + lugar, niv: "bairro"}))).slice(0, 12);
+      if (!lista.length) lista = [{id: c.id, rot: c.rot, niv: "cidade"}];
+    }
+  } else {
+    const ja = new Set(lista.map(a => a.p.id));
+    lista = lista.concat(cids.filter(c => !ja.has(c.id)).map(c => ({id: c.id, rot: c.rot, niv: "cidade"}))).slice(0, 12);
+  }
+  achados = lista; sel = 0;
+  res.innerHTML = lista.length ? lista.map((a, i) => `<button data-i="${i}" class="${i ? "" : "sel"}">${esc(a.rot)} <small>· ${a.niv}</small></button>`).join("")
+    : `<button disabled><small>Nada encontrado. Escreva a cidade e, depois de uma vírgula, o bairro: “Juiz de Fora, São Pedro”.</small></button>`;
   res.classList.remove("hide");
 }
-function escolher(i) { const p = achados[i]; if (!p) return; res.classList.add("hide"); q.value = rotulo(p); q.blur(); abrir(p, true); }
+async function escolher(i) { const a = achados[i]; if (!a) return; res.classList.add("hide"); const p = a.p || await resolver(a.id); if (!p) return; q.value = a.rot; q.blur(); abrir(p, true); }
 q.addEventListener("input", buscar);
 q.addEventListener("keydown", e => {
   if (e.key === "ArrowDown" || e.key === "ArrowUp") { sel = (sel + (e.key === "ArrowDown" ? 1 : -1) + achados.length) % achados.length; res.querySelectorAll("button").forEach((b, i) => b.classList.toggle("sel", i === sel)); e.preventDefault(); }
@@ -268,5 +328,7 @@ fetch("mapa_dados.json").then(r => r.json()).then(d => {
   visiveis();
   const id = decodeURIComponent(location.hash.slice(1));
   if (porId[id]) abrir(porId[id], true);
+  else if (id.startsWith("q=")) { q.value = id.slice(2); buscar().then(() => { if (achados.length === 1 || (achados[0] && achados[0].niv !== "cidade") || q.value.includes(",")) escolher(0); else q.focus(); }); }
+  else if (id) resolver(id).then(p => p && abrir(p, true));
 });
 </script></body></html>
