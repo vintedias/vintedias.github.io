@@ -10,7 +10,7 @@ body{margin:0;background:var(--pg);color:var(--tx);font:400 19px/1.5 Archivo,-ap
 main{max-width:600px;margin:0 auto;padding:28px 18px 56px}
 a{color:var(--lnk);text-underline-offset:3px}
 :focus-visible{outline:3px solid var(--foco);outline-offset:3px;border-radius:6px}
-.volta{display:inline-block;font-size:17px;margin-bottom:18px;text-decoration:none;border-bottom:1px solid var(--linha)}
+.volta{display:inline-flex;align-items:center;gap:6px;font-size:18px;font-weight:700;margin-bottom:20px;text-decoration:none;color:#111;border:2px solid #111;border-radius:999px;padding:8px 18px 8px 14px}.volta:hover{background:#111;color:#fff}
 h1{font-stretch:75%;font-weight:800;font-size:44px;line-height:1.02;margin:0 0 12px;letter-spacing:-.01em}
 h2{font-stretch:85%;font-weight:750;font-size:27px;line-height:1.15;margin:40px 0 14px}
 p{margin:0 0 14px}.mut{color:var(--mut)}
@@ -27,7 +27,16 @@ p{margin:0 0 14px}.mut{color:var(--mut)}
 .alt{display:inline-block;font-size:16px;margin-top:10px;color:var(--mut)}
 .nota{background:var(--info);color:var(--info-tx);border-radius:12px;padding:14px 16px;font-size:17px}.nota a{color:var(--info-tx)}
 @media (min-width:720px){main{max-width:880px}.pecas{grid-template-columns:1fr 1fr;column-gap:28px}}
-@media (min-width:1100px){main{max-width:1160px}.pecas{grid-template-columns:repeat(3,1fr)}}</style></head><body><main><a class="volta" href="./">‹ Início</a>
+@media (min-width:1100px){main{max-width:1160px}.pecas{grid-template-columns:repeat(3,1fr)}}.peca img{cursor:zoom-in}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,10,.88);display:flex;align-items:center;justify-content:center}#lb[hidden]{display:none}
+.lbbox{width:min(92vw,1100px);height:90vh;display:flex;flex-direction:column}
+.lbtop{display:flex;gap:10px;align-items:center;justify-content:flex-end;padding:0 0 10px;color:#fff}#lbn{margin-right:auto;font-size:15px;color:#ddd}
+.lbbt{font:inherit;font-weight:700;font-size:16px;border-radius:10px;padding:8px 14px;cursor:pointer;text-decoration:none;background:#fff;color:#111;border:0}#lbsh{background:var(--verm);color:#fff}
+#lbx{background:none;border:0;color:#fff;font-size:38px;line-height:1;cursor:pointer;padding:0 4px}
+#lbc{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}#lbc img{max-width:100%;max-height:100%;object-fit:contain;display:block;background:#fff}
+.lbnav{position:fixed;top:50%;transform:translateY(-50%);width:52px;height:72px;border:0;border-radius:12px;background:rgba(255,255,255,.18);color:#fff;font-size:44px;line-height:1;cursor:pointer}.lbnav:hover{background:rgba(255,255,255,.32)}#lbp{left:1.5vw}#lbnx{right:1.5vw}
+body.lbopen{overflow:hidden}
+@media (max-width:760px){.lbbox{width:96vw;height:84vh}.lbnav{top:auto;bottom:3vh;transform:none;width:56px;height:52px;font-size:36px}#lbp{left:4vw}#lbnx{right:4vw}#lbn{display:none}}</style></head><body><main><a class="volta" href="./">‹ Início</a>
 <h1>Para as redes</h1>
 <p>As 14 peças mais diretas, uma ideia por imagem. Toque em <b>Compartilhar</b> e escolha o WhatsApp ou o Instagram.</p>
 <p class="nota">Mande do seu número e do seu perfil. Não pague para impulsionar e não use lista de disparo. <a href="informacoes.html">O que pode e o que não pode</a></p>
@@ -61,8 +70,26 @@ p{margin:0 0 14px}.mut{color:var(--mut)}
 <a class="alt" href="cards/b01_risco_story.png" download>Baixar a versão para status (vertical)</a></li><li class="peca"><img src="kits/th/b05_maioria.jpg" alt="67% dos eleitores bolsonaristas querem as bets proibidas." loading="lazy" width="480" height="600">
 <div class="acoes"><button class="share" data-f="cards/b05_maioria_feed.png">Compartilhar</button><a class="bx" href="cards/b05_maioria_feed.png" download>Baixar</a></div>
 <a class="alt" href="cards/b05_maioria_story.png" download>Baixar a versão para status (vertical)</a></li></ul>
-<p style="margin-top:40px"><a href="materiais.html">Ver todos os materiais</a></p><p class="pe">Material de eleitor. Cada peça traz a fonte do fato. Feito com código, sem IA.</p></main><script>
+<p style="margin-top:40px"><a href="materiais.html">Ver todos os materiais</a></p><p class="pe">Material de eleitor. Cada peça traz a fonte do fato. Feito com código, sem IA.</p></main><div id="lb" hidden role="dialog" aria-modal="true" aria-label="Peça ampliada"><div class="lbbox"><div class="lbtop"><span id="lbn"></span>
+<button id="lbsh" class="lbbt">Compartilhar</button><a id="lbdl" class="lbbt" download>Baixar</a><button id="lbx" aria-label="Fechar">×</button></div>
+<div id="lbc"></div></div><button id="lbp" class="lbnav" aria-label="Anterior">‹</button><button id="lbnx" class="lbnav" aria-label="Próxima">›</button></div><script>
 document.querySelectorAll('.share').forEach(b=>{b.addEventListener('click',async()=>{
 const u=b.dataset.f;try{const r=await fetch(u),bl=await r.blob(),f=new File([bl],u.split('/').pop(),{type:bl.type});
 if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(e){if(e&&e.name=='AbortError')return}
-const a=document.createElement('a');a.href=u;a.download='';document.body.appendChild(a);a.click();a.remove()})});</script></body></html>
+const a=document.createElement('a');a.href=u;a.download='';document.body.appendChild(a);a.click();a.remove()})});(function(){const lb=document.getElementById('lb');if(!lb)return;let L=[],i=0,x0=null;
+const full=im=>{const li=im.closest('.peca');const f=li.querySelector('[data-f]'),a=li.querySelector('a[download]');return f?f.dataset.f:a?a.getAttribute('href'):im.src};
+function mostra(){const im=L[i],f=full(im);document.getElementById('lbc').innerHTML='<img src="'+f+'" alt="">';document.getElementById('lbc').firstChild.alt=im.alt||'';
+document.getElementById('lbn').textContent=(i+1)+' de '+L.length;const dl=document.getElementById('lbdl');dl.href=f;dl.setAttribute('download',f.split('/').pop());
+document.getElementById('lbsh').dataset.f=f;document.getElementById('lbp').style.visibility=document.getElementById('lbnx').style.visibility=L.length>1?'visible':'hidden'}
+function abre(im){const f=full(im);if(/\.pdf$/i.test(f)){window.open(f,'_blank');return}
+L=[...im.closest('ul').querySelectorAll('.peca img')].filter(x=>x.offsetParent&&!/\.pdf$/i.test(full(x)));i=Math.max(0,L.indexOf(im));mostra();lb.hidden=false;document.body.classList.add('lbopen');history.pushState({lb:1},'')}
+function fecha(volta){if(lb.hidden)return;lb.hidden=true;document.body.classList.remove('lbopen');if(volta!==false&&history.state&&history.state.lb)history.back()}
+const anda=d=>{i=(i+d+L.length)%L.length;mostra()};
+document.addEventListener('click',e=>{const im=e.target.closest('.peca img');if(im&&!lb.contains(im))abre(im)});
+document.getElementById('lbx').onclick=()=>fecha();document.getElementById('lbp').onclick=()=>anda(-1);document.getElementById('lbnx').onclick=()=>anda(1);
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.id==='lbc')fecha()});
+addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')fecha();if(e.key==='ArrowLeft')anda(-1);if(e.key==='ArrowRight')anda(1)});
+addEventListener('popstate',()=>fecha(false));
+lb.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});lb.addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)anda(d<0?1:-1);x0=null});
+document.getElementById('lbsh').onclick=async e=>{const u=e.currentTarget.dataset.f;try{const r=await fetch(u),b=await r.blob(),fl=new File([b],u.split('/').pop(),{type:b.type});
+if(navigator.canShare&&navigator.canShare({files:[fl]})){await navigator.share({files:[fl]});return}}catch(er){if(er&&er.name==='AbortError')return}document.getElementById('lbdl').click()};})();</script></body></html>

@@ -61,7 +61,7 @@ main{flex:1;display:flex;min-height:0;position:relative}
 @font-face{font-family:Archivo;src:url(https://cdn.jsdelivr.net/npm/@fontsource-variable/archivo@5.2.8/files/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
 :root{--bg:#fff;--ink:#111;--mut:#4d4d4d;--card:#f4f4f1;--line:#e2e2e2;--borda:#c9c9c9;--verm:#a80911;--verde:#2e6b39}
 body{background:#fff;color:#111;font-family:Archivo,-apple-system,Helvetica Neue,Arial,sans-serif}
-h1{color:#111;font-stretch:85%;font-weight:800}.modo a{color:#111;background:#fff;border:1px solid var(--borda)}.modo a.on{background:#111;color:#fff;border-color:#111}.modo span{color:#111}
+h1{color:#111;font-stretch:85%;font-weight:800}.modo a{color:#111;background:#fff;border:1px solid var(--borda)}.modo a.on{background:#111;color:#fff;border-color:#111}.modo span{color:#111}.modo a:first-child{font-weight:800;border:2px solid #111;border-radius:999px}.modo a:first-child:hover{background:#111;color:#fff}
 .busca input{background:#fff;color:#111;border:2px solid var(--verde)}.busca input::placeholder{color:#777}
 .res{background:#fff;border:1px solid var(--borda);box-shadow:0 8px 24px #0002}.res button{color:#111}.res button:hover,.res button.sel{background:#eaf2ec}.res small{color:#4d4d4d}
 #painel{background:#fff;border-left:1px solid var(--line)}#painel h2,#painel h3,#painel h4,.bloco,.item .t,.pub b,.nums b{color:#111}#painel h3{border-left-color:var(--verm)}.fechar{color:#111}
@@ -86,7 +86,7 @@ h1{color:#111;font-stretch:85%;font-weight:800}.modo a{color:#111;background:#ff
 <script>
 const NOME = {"Flávio": "Flávio Bolsonaro", "Lula": "Lula"};
 const PUB = {nao_votou: "quem não votou", branco_nulo: "quem votou branco ou nulo", terceira_via: "quem votou em outro candidato", "70mais_familia": "70+ e grupo de família",
-  beneficiarios: "quem usa programa público", segurar_voto: "segurar o voto", disputa: "disputa apertada", trabalho_jovem: "trabalho e jovens", seguranca: "segurança pública", direita_mercado: "classe média escolarizada", ja_decidido_feed: "quem já decidiu", rua_impresso: "rua e impresso"};
+  beneficiarios: "quem usa programa público", segurar_voto: "segurar o voto", disputa: "disputa apertada", trabalho_jovem: "trabalho e jovens", seguranca: "segurança pública", bolsa_familia: "Bolsa Família", saude: "saúde e covid", trabalho_6x1: "trabalho e escala 6x1", amazonia: "Amazônia", direita_mercado: "classe média escolarizada", ja_decidido_feed: "quem já decidiu", rua_impresso: "rua e impresso"};
 const fmt = n => (n || 0).toLocaleString("pt-BR");
 const norm = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
