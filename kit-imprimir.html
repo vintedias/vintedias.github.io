@@ -51,7 +51,7 @@ body.lbopen{overflow:hidden}
 <p style="margin-top:40px"><a href="materiais.html#imprimir">Ver todos os impressos</a>: lambes de todos os cards, de cada cidade e bairro, cartões, cards em A6.</p><p class="pe">Material de eleitor. Cada peça traz a fonte do fato. Feito com código, sem IA.</p></main><div id="lb" hidden role="dialog" aria-modal="true" aria-label="Peça ampliada"><div class="lbbox"><div class="lbtop"><span id="lbn"></span>
 <button id="lbsh" class="lbbt">Compartilhar</button><a id="lbdl" class="lbbt" download>Baixar</a><button id="lbx" aria-label="Fechar">×</button></div>
 <div id="lbc"></div></div><button id="lbp" class="lbnav" aria-label="Anterior">‹</button><button id="lbnx" class="lbnav" aria-label="Próxima">›</button></div><script>(function(){const lb=document.getElementById('lb');if(!lb)return;let L=[],i=0,x0=null;
-const full=im=>{const li=im.closest('.peca');const f=li.querySelector('[data-f]'),a=li.querySelector('a[download]');return f?f.dataset.f:a?a.getAttribute('href'):im.src};
+const full=im=>{const li=im.closest('.peca');const f=li.querySelector('.share[data-f]'),a=li.querySelector('a.share[download], a[download]');return f?f.dataset.f:a?a.getAttribute('href'):im.src};
 function mostra(){const im=L[i],f=full(im);document.getElementById('lbc').innerHTML='<img src="'+f+'" alt="">';document.getElementById('lbc').firstChild.alt=im.alt||'';
 document.getElementById('lbn').textContent=(i+1)+' de '+L.length;const dl=document.getElementById('lbdl');dl.href=f;dl.setAttribute('download',f.split('/').pop());
 document.getElementById('lbsh').dataset.f=f;document.getElementById('lbp').style.visibility=document.getElementById('lbnx').style.visibility=L.length>1?'visible':'hidden'}
