@@ -18,7 +18,7 @@ p{margin:0 0 14px}.mut{color:var(--mut)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}main{max-width:1240px}
 .ctl{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:22px 0 10px}.ctl>span{font-weight:700}
 .ag{display:flex;flex-wrap:wrap;gap:6px}.ag button{font:inherit;font-size:16px;background:#fff;color:#111;border:1.5px solid #111;border-radius:999px;padding:6px 14px;cursor:pointer}.ag button.on{background:#111;color:#fff}
-.leg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px;color:var(--mut);margin:6px 0}.leg span{display:inline-flex;align-items:center;gap:6px}
+.leg{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:17px;color:var(--tx);margin:8px 0}.leg b{font-size:20px;font-stretch:85%}.leg span{display:inline-flex;align-items:center;gap:6px}
 .d{display:inline-block;width:14px;height:14px;border-radius:50%;border:1.5px solid #fff;box-shadow:0 0 0 1px #ccc}.d.e{background:#c8102e}.d.dd{background:#1f4fa3}.d.f{background:#9a9a9a}.d.an{box-shadow:0 0 0 3px #111}.d.tr{opacity:.55}
 .opc{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:15px;margin:4px 0 10px}.opc input{margin-right:6px}
 #vis{width:100%;position:relative}#vis svg{display:block;width:100%;height:auto}
@@ -35,8 +35,8 @@ p{margin:0 0 14px}.mut{color:var(--mut)}
 <p class="nota">Estar na lista não é prova de crime. Toque numa bolinha para ver a ligação, a fonte e por que o autor a pôs naquele lado.</p>
 <div class="ctl"><span>Agrupar por:</span><div class="ag" role="radiogroup">
 <button data-g="todos" class="on">Todos</button><button data-g="eixo">Eixo do caso</button><button data-g="placar">Lado</button><button data-g="partido_epoca">Partido</button><button data-g="status">Investigação</button><button data-g="uf">Estado</button></div></div>
-<div class="leg"><span><i class="d e"></i>esquerda</span><span><i class="d dd"></i>direita</span><span><i class="d f"></i>sem lado: STF, órgãos de controle, sem partido</span></div>
-<div class="opc"><input type="checkbox" id="vfora" checked hidden><label><input type="checkbox" id="vnao"> mostrar também os não conferidos (só no placar do autor)</label></div>
+<div class="leg"><span><i class="d dd"></i><b id="nd"></b> direita</span><span><i class="d f"></i><b id="ns"></b> sem lado: STF, órgãos de controle, sem partido</span><span><i class="d e"></i><b id="ne"></b> esquerda</span></div>
+<div class="opc"><input type="checkbox" id="vfora" checked hidden><label><input type="checkbox" id="vnao" checked> mostrar também os não conferidos (só no placar do autor)</label></div>
 <div id="vis" aria-label="Pessoas ligadas ao caso Master"></div>
 <aside id="ficha" hidden></aside>
 <details class="lista"><summary>Ver como lista</summary><ul id="lst"></ul></details>
@@ -56,7 +56,7 @@ a.innerHTML=`<button class="x" aria-label="Fechar">×</button><h3>${esc(p.nome)}
 ${p.criterio_nosso?`<dt>Por que este lado</dt><dd>${esc(p.criterio_nosso)}</dd>`:''}<dt>No placar de Thiago Süssekind</dt><dd>${PLACAR[p.placar]}${p.criterio_placar?' · '+esc(p.criterio_placar):''}</dd>${p.nota_publica?`<dt>Depois</dt><dd>${esc(p.nota_publica)}</dd>`:''}
 <dt>Fontes</dt><dd>${(p.fontes||[]).map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\/(www\.)?/,'').split('/')[0])}</a>`).join(' · ')||'—'}</dd></dl>`;
 a.querySelector('.x').onclick=()=>{a.hidden=true}}
-let svg=null;function desenha(){const P=visiveis();const W=vis.clientWidth,mob=W<640,dur=matchMedia('(prefers-reduced-motion: reduce)').matches?0:750;
+let svg=null;function desenha(){const P=visiveis();const nn=l=>P.filter(p=>l.includes(p.lado)).length;document.getElementById('ne').textContent=nn(['esquerda']);document.getElementById('nd').textContent=nn(['direita']);document.getElementById('ns').textContent=nn(['instituicao','sem_lado']);const W=vis.clientWidth,mob=W<640,dur=matchMedia('(prefers-reduced-motion: reduce)').matches?0:750;
 let XY={},H,caixas=[],R;
 if(G==='todos'){ // ao abrir: todas as bolinhas num grande círculo, sem grupos nem textos
  const T=Math.min(W,mob?W:760);const raiz=d3.hierarchy({children:P.map(p=>({p}))}).sum(d=>d.p?1:0);d3.pack().size([T,T]).padding(3)(raiz);
