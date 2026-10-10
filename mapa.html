@@ -151,10 +151,10 @@ function raio(p) { return ESTILO[p.nivel].radius; }
 function visiveis() {
   // 9/10: faixas contadas a partir do zoom de abertura (Brasil inteiro), que vale como "5" em qualquer tela
   const z = faixa(mapa.getZoom());
-  const quer = {estado: z <= 7, cidade: z >= 6 && z <= 10, bairro: z >= 9};   // cidades convivem com os bairros enquanto eles estão agrupados
+  const quer = {estado: z <= 7, cidade: z >= 7 && z <= 10, bairro: z >= 9};   // faixas 5 e 6: só estados   // cidades convivem com os bairros enquanto eles estão agrupados
   for (const n in camadas) quer[n] ? camadas[n].addTo(mapa) : camadas[n].remove();
   desenha("cidade"); desenha("bairro");
-  if (z >= 6) carregaCidades();
+  if (z >= 7) carregaCidades();
   if (z >= 9) carregaBairros();   // antes disso a tela pega meio Brasil: dezenas de milhares de bairros travariam o celular
 }
 mapa.on("zoomend moveend", visiveis);
