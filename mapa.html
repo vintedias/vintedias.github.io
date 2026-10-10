@@ -112,6 +112,8 @@ const faixa = z => z - mapa.getMinZoom() + 5;   // o zoom de abertura (Brasil in
 const abs = f => f - 5 + mapa.getMinZoom();
 for (const [n, z] of [["pBairro", 410], ["pCidade", 420], ["pEstado", 430]]) mapa.createPane(n).style.zIndex = z;
 const PANE = {estado: "pEstado", cidade: "pCidade", bairro: "pBairro"};
+// 9/10: SVG por camada (não canvas): com canvas, a camada de cima (estados) cobria o mapa e roubava o clique das cidades e dos bairros
+const REND = {estado: L.svg({pane: "pEstado"}), cidade: L.svg({pane: "pCidade"}), bairro: L.svg({pane: "pBairro"})};
 // 9/10: grupos sem número e de tamanho fixo, calculados com supercluster (leve): só o que está na tela vira círculo.
 // Cidades agrupadas até a faixa 7 (soltas na 8); bairros agrupados até a 10 (soltos a partir da 11)
 const camadas = {estado: L.layerGroup(), cidade: L.layerGroup(), bairro: L.layerGroup()};
@@ -141,7 +143,7 @@ function desenha(n) {
 const ESTILO = {estado: {radius: 14, color: "#ffffff", weight: 3, fillColor: "#a80911", fillOpacity: .85},
   cidade: {radius: 8, color: "#a80911", weight: 2.5, fillColor: "#ffffff", fillOpacity: .85, opacity: .95},
   bairro: {radius: 4.5, color: "#ffffff", weight: 1, fillColor: "#a80911", fillOpacity: .75}};
-const ponto = p => L.circleMarker([p.lat, p.lon], {...ESTILO[p.nivel], pane: PANE[p.nivel]});
+const ponto = p => L.circleMarker([p.lat, p.lon], {...ESTILO[p.nivel], pane: PANE[p.nivel], renderer: REND[p.nivel]});
 const COR = {fill: "#d3141e", borda: "#ffffff"};
 let pontos = [], porId = {}, marcado = null, ARQ = [], INFO = [], SUPS = new Set(["digital"]), atual = null;
 
