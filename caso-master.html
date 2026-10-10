@@ -34,7 +34,7 @@ p{margin:0 0 14px}.mut{color:var(--mut)}
 <p>Daniel Vorcaro, dono do Banco Master, está preso preventivamente desde março de 2026 por uma fraude de R$ 12 bilhões contra um banco público. Cada bolinha é uma pessoa ligada ao caso, segundo o levantamento de <a href="https://thiagosussekind.substack.com/p/placar-do-escandalo-master-o-retrato" rel="noopener">Thiago Süssekind</a>, a partir de reportagens (texto de opinião, atualizado em 14/05/2026). O lado de cada pessoa segue o partido na época; ministros do STF e de órgãos de controle ficam sem lado. Na ficha, também a classificação do autor.</p>
 <p class="nota">Estar na lista não é prova de crime. Toque numa bolinha para ver a ligação, a fonte e por que o autor a pôs naquele lado.</p>
 <div class="ctl"><span>Agrupar por:</span><div class="ag" role="radiogroup">
-<button data-g="todos" class="on">Todos</button><button data-g="eixo">Eixo do caso</button><button data-g="placar">Lado</button><button data-g="inst">Instituição</button><button data-g="partido_epoca">Partido</button><button data-g="status">Investigação</button><button data-g="uf">Estado</button></div></div>
+<button data-g="todos" class="on">Todos</button><button data-g="eixo">Eixo do caso</button><button data-g="placar">Lado</button><button data-g="partido_epoca">Partido</button><button data-g="status">Investigação</button><button data-g="uf">Estado</button></div></div>
 <div class="leg"><span><i class="d e"></i>esquerda</span><span><i class="d dd"></i>direita</span><span><i class="d f"></i>sem lado: STF, órgãos de controle, sem partido</span></div>
 <div class="opc"><input type="checkbox" id="vfora" checked hidden><label><input type="checkbox" id="vnao"> mostrar também os não conferidos (só no placar do autor)</label></div>
 <div id="vis" aria-label="Pessoas ligadas ao caso Master"></div>
@@ -86,14 +86,18 @@ labs.each(function(c){const g=d3.select(this);g.selectAll('*').remove();const t=
  const d=c.ps.filter(p=>p.lado==='direita').length,e=c.ps.filter(p=>p.lado==='esquerda').length,s=g.append('text').attr('class','gs').attr('text-anchor','middle');
  s.append('tspan').attr('x',c.x+c.cw/2).attr('y',c.y+16+c.L.length*17+2).text(c.ps.length+(c.ps.length===1?' pessoa':' pessoas'));
  if(G!=='placar')s.append('tspan').attr('x',c.x+c.cw/2).attr('dy',15).text(`${d} direita × ${e} esquerda`)});
-const sel=svg.select('.dots').selectAll('circle').data(P,d=>d.id);sel.exit().remove();
-const novo=sel.enter().append('circle').attr('cx',d=>XY[d.id][0]).attr('cy',d=>XY[d.id][1]).attr('r',R).attr('tabindex',0).attr('role','button')
+const sel=svg.select('.dots').selectAll('circle.p').data(P,d=>d.id);sel.exit().remove();
+const novo=sel.enter().append('circle').attr('class','p').attr('cx',d=>XY[d.id][0]).attr('cy',d=>XY[d.id][1]).attr('r',R).attr('tabindex',0).attr('role','button')
  .on('click',(e,d)=>ficha(d)).on('keydown',(e,d)=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();ficha(d)}});novo.append('title');
-novo.merge(sel).attr('fill',d=>COR[d.lado]).attr('stroke',d=>d.id==='flavio-bolsonaro'?'#111':'#fff').attr('stroke-width',d=>d.id==='flavio-bolsonaro'?4:1.5)
+novo.merge(sel).attr('fill',d=>COR[d.lado]).attr('stroke','#fff').attr('stroke-width',d=>d.id==='flavio-bolsonaro'?3:1.5)
  .attr('aria-label',d=>d.nome+', '+LADO[d.lado]).call(c=>c.select('title').text(d=>d.nome+' · '+(d.cargo||'')))
  .transition().duration(dur).attr('cx',d=>XY[d.id][0]).attr('cy',d=>XY[d.id][1]).attr('r',R);
+const fl=P.filter(p=>p.id==='flavio-bolsonaro');   // Flávio: anel branco (borda da bolinha) e anel preto por fora, sempre
+const an=svg.select('.dots').selectAll('circle.anel').data(fl,d=>d.id);an.exit().remove();
+an.enter().append('circle').attr('class','anel').attr('fill','none').attr('stroke','#111').attr('stroke-width',3.5).attr('pointer-events','none').attr('cx',d=>XY[d.id][0]).attr('cy',d=>XY[d.id][1]).attr('r',R+3.2)
+ .merge(an).raise().transition().duration(dur).attr('cx',d=>XY[d.id][0]).attr('cy',d=>XY[d.id][1]).attr('r',R+3.2);
 const gsL=d3.groups(P,G==='todos'?(p=>LADO[p.lado]):grupoDe);
-document.getElementById('lst').innerHTML=gsL.map(([g,ps])=>`<li><b>${esc(g)}</b>: ${ps.map(p=>esc(p.nome)+' ('+LADO[p.lado]+')').join(', ')}</li>`).join('')}
+document.getElementById('lst').innerHTML=gsL.map(([g,ps])=>`<li><b>${esc(g)}</b>: ${ps.map(p=>esc(p.nome)).join(', ')}</li>`).join('')}
 document.querySelectorAll('.ag button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.ag button').forEach(x=>x.classList.toggle('on',x===b));G=b.dataset.g;desenha()});
 ['vfora','vnao'].forEach(i=>document.getElementById(i).onchange=desenha);
 let t0;addEventListener('resize',()=>{clearTimeout(t0);t0=setTimeout(()=>{svg=null;desenha()},200)});
