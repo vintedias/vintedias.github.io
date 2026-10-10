@@ -26,6 +26,7 @@ main h2{font-size:23px;margin:34px 0 12px}
 .portas{display:grid;gap:12px}
 .temas{display:grid;gap:12px}.tema{display:block;border:2px solid var(--verm);color:var(--verm);text-decoration:none;border-radius:14px;padding:16px 20px}.tema b{display:block;font-stretch:85%;font-weight:800;font-size:25px;line-height:1.1}.tema span{display:block;color:var(--tx);font-size:17px;margin-top:4px}.tema:hover{background:#fbf1f1}
 .todos{margin:16px 0 0;font-size:18px}
+.linha{display:block;background:#111;color:#fff;text-decoration:none;border-radius:14px;padding:20px 22px;margin:0}.linha b{display:block;font-stretch:80%;font-weight:850;font-size:30px;line-height:1.05}.linha span{display:block;color:#ccc;font-size:17px;margin-top:6px}.linha:hover{background:#333}
 .porta{display:block;background:var(--acao);color:var(--acao-tx);text-decoration:none;border-radius:14px;padding:18px 20px 17px;min-height:64px}
 .porta b{display:block;font-stretch:85%;font-weight:800;font-size:27px;line-height:1.1}
 .porta span{display:block;font-size:17px;margin-top:4px;color:var(--acao-sub)}
@@ -38,7 +39,7 @@ main h2{font-size:23px;margin:34px 0 12px}
 #res a{display:block;padding:12px 14px;color:#1b1b1f;text-decoration:none;border-top:1px solid #eedada;font-size:18px}
 #res li:first-child a{border-top:0}#res a:hover,#res a:focus-visible{background:#f1efe9;outline:0}
 #res small{color:#7a3a3e}
-.lugar .ou{display:block;text-align:center;margin:14px 0 0;background:#fff;color:var(--info);font-weight:750;font-size:18px;text-decoration:none;border-radius:10px;padding:12px}.lugar .ou:hover{background:#eaf2ec}
+.lugar .ou{display:block;text-align:center;margin:0 0 16px;background:#fff;color:#111;font-weight:800;font-size:21px;text-decoration:none;border-radius:10px;padding:12px}.lugar .ou:hover{background:#eaf2ec}
 .lista{list-style:none;margin:0;padding:0;border-top:1px solid var(--linha)}.lista a{display:block;padding:11px 0;border-bottom:1px solid var(--linha);text-decoration:none;font-size:19px}.lista a::after{content:' ›';color:var(--mut)}.lista .destaque a{font-weight:750;font-size:21px;color:var(--verm);font-stretch:90%}.lista .destaque a::after{content:''}.lista small{display:block;font-weight:400;font-size:16px;color:var(--tx);font-stretch:100%}
 .colA,.colB{display:contents}main{display:flex;flex-direction:column}.topo{order:0}.lugar{order:1}.assuntos{order:2}.kits{order:3}.info{order:4}.outras{order:5}.pe{order:6}.lista a:hover{color:var(--verm)}
 .outras{background:var(--info);color:#fff;border-radius:14px;padding:20px 22px 12px;margin-top:30px}.outras h2{margin:0 0 14px;color:#fff}.outras ul{list-style:none;padding:0;margin:0}.outras li{margin:0 0 16px;font-size:16.5px;color:var(--info-mut)}.outras li a{display:block;background:#fff;color:var(--info);font-weight:750;font-size:19px;text-decoration:none;border-radius:10px;padding:10px 14px;margin-bottom:6px}.outras li a::after{content:' ↗';font-weight:400}.outras li a:hover{background:#eaf2ec}
@@ -51,19 +52,21 @@ main{max-width:1160px;padding:56px 40px 48px;display:grid;grid-template-columns:
 .assuntos h2{margin-top:0}.portas{grid-template-columns:1fr 1fr;gap:16px;margin:0}.temas{grid-template-columns:1fr 1fr;gap:16px}.porta{padding:26px 26px 24px;min-height:150px}.porta b{font-size:34px}
 .lugar{margin:0}
 
-.pe{grid-area:pe}}</style></head><body><main>
+.pe{grid-area:pe}}
+@media (min-width:1320px){main{max-width:1440px}.temas{grid-template-columns:repeat(3,1fr)}.portas{grid-template-columns:1fr 1fr}}</style></head><body><main>
 <header class="topo"><p class="conta" id="conta">Faltam<br><span>16 dias</span></p>
 <div><p class="para" id="para">para o 2º turno, domingo, 25 de outubro.</p>
 <p class="lead">Encontre aqui materiais para imprimir e compartilhar nas redes, informações úteis, guias e links para outras plataformas.</p>
 <p class="nota2">Os materiais próprios foram feitos com código, sem IA, a partir de fatos e dados públicos verificados. Os materiais de terceiros passaram verificações antes de serem disponibilizados aqui.</p></div></header>
-<div class="colA"><section class="assuntos"><h2>Materiais por assunto:</h2><nav class="temas"><a class="tema" href="pouco-falados.html"><b>Assuntos pouco falados</b><span>10 fatos tirados de registros oficiais que apareceram pouco na imprensa</span></a><a class="tema" href="master.html"><b>Banco Master e Vorcaro</b><span>O filme, as versões e o que os registros mostram</span></a><a class="tema" href="confianca.html"><b>Flávio Bolsonaro não é confiável</b><span>Escritório, imóveis, milícia, segurança e o que ele diz</span></a><a class="tema" href="soberania.html"><b>Vai entregar o Brasil pros EUA de Trump</b><span>Rubio, o tarifaço e o que ele disse sobre Trump</span></a><a class="tema" href="entrega.html"><b>Nunca fez nada de relevante</b><span>O que mostram os registros do Senado e da Câmara</span></a><a class="tema" href="6x1-e-bets.html"><b>Fim da 6x1 e bets</b><span>Medidas que até eleitores bolsonaristas apoiam</span></a><a class="tema" href="existe.html"><b>O que existe e está em risco</b><span>Bom dia, animações e cards para família e 70+</span></a><a class="tema" href="combina.html"><b>Para quem votou em outro candidato</b><span>O que o programa de Lula tem igual ao de Cury, Renan, Caiado e Zema</span></a><a class="tema" href="videos.html"><b>Vídeos curtos</b><span>Trechos de entrevistas, com data e veículo</span></a></nav><p class="todos"><a href="materiais.html">Todo o material classificado por filtros</a> (141 peças): para quem distribui</p></section>
+<div class="colA"><section class="assuntos"><h2>Materiais por assunto:</h2><nav class="temas"><a class="tema" href="pouco-falados.html"><b>Assuntos pouco falados</b><span>10 fatos tirados de registros oficiais que apareceram pouco na imprensa</span></a><a class="tema" href="master.html"><b>Banco Master e Vorcaro</b><span>O filme, as versões e o que os registros mostram</span></a><a class="tema" href="confianca.html"><b>Flávio Bolsonaro não é confiável</b><span>Escritório, imóveis, milícia, segurança e o que ele diz</span></a><a class="tema" href="soberania.html"><b>Vai entregar o Brasil pros EUA de Trump</b><span>Rubio, o tarifaço e o que ele disse sobre Trump</span></a><a class="tema" href="entrega.html"><b>Nunca fez nada de relevante</b><span>O que mostram os registros do Senado e da Câmara</span></a><a class="tema" href="6x1-e-bets.html"><b>Fim da 6x1 e bets</b><span>Medidas que até eleitores bolsonaristas apoiam</span></a><a class="tema" href="existe.html"><b>O que existe e está em risco</b><span>Bom dia, animações e cards para família e 70+</span></a><a class="tema" href="combina.html"><b>Para quem votou em outro candidato</b><span>O que o programa de Lula tem igual ao de Cury, Renan, Caiado e Zema</span></a><a class="tema" href="videos.html"><b>Vídeos curtos</b><span>Trechos de entrevistas, com data e veículo</span></a></nav><p class="todos"><a href="materiais.html">Todo o material classificado por filtros</a> (142 peças): para quem distribui</p></section>
 <section class="kits"><h2>Baixar kits básicos:</h2><nav class="portas">
 <a class="porta" href="kit-redes.html"><b>Para as redes</b><span>14 peças escolhidas para WhatsApp e Instagram</span></a>
 <a class="porta" href="kit-imprimir.html"><b>Para imprimir</b><span>Lambes e cartões de bolso em PDF</span></a>
-</nav></section></div>
-<div class="colB"><section class="lugar"><label for="q"><b>Materiais por cidade ou bairro</b></label>
+</nav><h2 class="dados">Dados:</h2><a class="linha" href="linha-do-tempo.html"><b>Linha do tempo de Flávio Bolsonaro</b><span>Os fatos mais graves, em ordem, com a fonte de cada um</span></a><a class="linha" href="caso-master.html" style="margin-top:10px"><b>Caso Master: quem aparece e como</b><span>Cada pessoa ligada ao caso, agrupada por eixo, lado, partido ou instituição</span></a></section></div>
+<div class="colB"><section class="lugar"><a class="ou" href="mapa.html">Abrir mapa completo</a>
+<label for="q"><b>Materiais por cidade ou bairro:</b></label>
 <input id="q" type="search" placeholder="Cidade, Bairro" autocomplete="off" enterkeyhint="search">
-<ul id="res" hidden></ul><a class="ou" href="mapa.html">Abrir mapa completo</a></section>
+<ul id="res" hidden></ul></section>
 <section class="info"><h2>Informações úteis</h2><ul class="lista">
 <li class="destaque"><a href="informacoes.html#redes">5 formas de agir nas redes<small>(o que fazer e o que não fazer)</small></a></li>
 <li><a href="informacoes.html#pode">O que pode e o que não pode</a></li>

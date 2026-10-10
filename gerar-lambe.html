@@ -17,16 +17,17 @@ p{margin:0 0 12px}.mut{color:var(--mut);font-size:16.5px}
 .prev canvas{width:100%!important;height:auto!important;display:block}
 .bts{display:grid;gap:10px}
 .bts button,.bts a{font:inherit;font-weight:750;font-size:19px;border-radius:12px;padding:14px 16px;cursor:pointer;text-align:center;text-decoration:none}
-.p1{background:var(--verm);color:#fff;border:0}.p2{background:#fff;color:var(--verm);border:2px solid var(--verm)}.p3{background:#fff;color:#111;border:1px solid #b9b9b9;font-weight:600!important;font-size:17px!important}
+.p1{background:var(--verm);color:#fff;border:0}.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chave{display:inline-flex;border:2px solid var(--verm);border-radius:12px;overflow:hidden;justify-self:start}.chave a{padding:10px 16px;font-weight:700;font-size:17px;text-decoration:none;color:var(--verm);background:#fff}.chave a.on{background:var(--verm);color:#fff}.p2{background:#fff;color:var(--verm);border:2px solid var(--verm)}.p3{background:#fff;color:#111;border:1px solid #b9b9b9;font-weight:600!important;font-size:17px!important}
 :focus-visible{outline:3px solid #111;outline-offset:3px}
 </style></head><body><main class="caixa">
-<nav><a href="./">‹ Início</a><a href="mapa.html" id="volta">Voltar ao mapa</a></nav>
+<nav><a href="mapa.html" id="volta">‹ Voltar ao mapa</a></nav>
 <h1 id="tit">Lambe do seu lugar</h1>
 <p class="mut" id="sub"></p>
 <div class="prev" id="prev">Desenhando o lambe…</div>
 <div class="bts">
-<button class="p1" id="baixa">Baixar este lambe (PNG, folha A4)</button>
-<a class="p2" id="troca" href="#">Ver em preto e branco</a>
+<div class="chave" role="radiogroup" aria-label="Versão"><a id="vr" role="radio" href="#">Para as redes</a><a id="vi" role="radio" href="#">Para imprimir</a></div>
+<div class="duo"><button class="p1" id="compartilha">Compartilhar</button><button class="p2" id="baixa">Baixar</button></div>
 <a class="p3" id="outra" href="#">Outra versão: as luzes mudam de lugar</a></div>
 <p class="nota" style="margin-top:20px">Cole só em parede ou muro particular, com autorização do dono, até meio metro quadrado. Nada no dia da eleição. O número é de quem vota neste lugar, segundo o TSE, não de quem mora nele.</p>
 <p class="mut">Números: votação por seção do 1º turno (TSE), somada pelos locais de votação. Material criado a partir de fatos e dados públicos verificados, sem IA.</p>
@@ -38,14 +39,26 @@ document.getElementById('tit').textContent = 'Lambe de ' + nome;
 document.getElementById('sub').textContent = (cid ? cid + ' · ' : '') + Number(Q.get('naovotaram') || 0).toLocaleString('pt-BR') + ' pessoas não votaram no 1º turno';
 if (Q.get('volta')) document.getElementById('volta').href = 'mapa.html#' + Q.get('volta');
 function com(m) { const q = new URLSearchParams(location.search); for (const k in m) q.set(k, m[k]); return '?' + q.toString(); }
-document.getElementById('troca').href = com({pb: pb ? '0' : '1'});
-document.getElementById('troca').textContent = pb ? 'Ver colorido' : 'Ver em preto e branco';
+// "para as redes" = colorido; "para imprimir" = preto e branco
+const vr = document.getElementById('vr'), vi = document.getElementById('vi');
+vr.href = com({pb: '0'}); vi.href = com({pb: '1'});
+(pb ? vi : vr).classList.add('on'); (pb ? vi : vr).setAttribute('aria-checked', 'true'); (pb ? vr : vi).setAttribute('aria-checked', 'false');
 document.getElementById('outra').href = com({seed: seed % 9 + 1});
 // o sketch cria o canvas no body; aqui ele vai para a prévia quando termina
 const espera = setInterval(() => {
   const c = document.querySelector('body > canvas, main canvas');
   if (window.__done && c) { clearInterval(espera); const pv = document.getElementById('prev'); pv.textContent = ''; pv.appendChild(c); }
 }, 150);
+function arquivo(cb) {
+  const c = document.querySelector('canvas'); if (!c) return;
+  const slug = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+  c.toBlob(b => cb(b, `lambe_${slug(cid)}_${slug(nome)}${pb ? '_pb' : ''}_v${seed}.png`), 'image/png');
+}
+document.getElementById('compartilha').onclick = () => arquivo(async (b, n) => {
+  const f = new File([b], n, {type: 'image/png'});
+  try { if (navigator.canShare && navigator.canShare({files: [f]})) { await navigator.share({files: [f]}); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = n; a.click();
+});
 document.getElementById('baixa').onclick = () => {
   const c = document.querySelector('canvas'); if (!c) return;
   const slug = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');

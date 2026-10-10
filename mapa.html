@@ -3,6 +3,7 @@
 <title>Mapa · Materiais até o 2º turno 2026</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/supercluster@8.0.1/dist/supercluster.min.js"></script>
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <style>
 :root{--bg:#8c070d;--ink:#ece6e6;--mut:#e6d3d3;--card:rgba(48,0,4,.42);--line:rgba(255,255,255,.12);--borda:rgba(255,255,255,.45)}
@@ -57,6 +58,7 @@ main{flex:1;display:flex;min-height:0;position:relative}
   .lbbox{width:96vw;height:84vh}.lbnav{top:auto;bottom:2vh;transform:none;width:56px;height:52px;font-size:36px}#lbp{left:4vw}#lbnx{right:4vw}#lbn{display:none}
 }
 .hide{display:none!important}
+.grp{border-radius:50%;cursor:pointer}.grp-c{background:rgba(255,255,255,.85);border:2.5px solid rgba(168,9,17,.9)}.grp-b{background:rgba(168,9,17,.7);border:2px solid #fff}
 /* 9/10: paleta da porta (lambe + verde) */
 @font-face{font-family:Archivo;src:url(https://cdn.jsdelivr.net/npm/@fontsource-variable/archivo@5.2.8/files/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
 :root{--bg:#fff;--ink:#111;--mut:#4d4d4d;--card:#f4f4f1;--line:#e2e2e2;--borda:#c9c9c9;--verm:#a80911;--verde:#2e6b39}
@@ -76,10 +78,10 @@ h1{color:#111;font-stretch:85%;font-weight:800}.modo a{color:#111;background:#ff
 @media (max-width:760px){#painel{border-top:1px solid var(--borda);box-shadow:0 -8px 24px #0003}}
 </style></head><body>
 <header><h1>Material por lugar</h1>
-<nav class="modo"><a href="./">‹ Início</a><a href="materiais.html">Todo o material</a></nav>
+<nav class="modo"><a href="./">‹ Início</a></nav>
 <div class="busca"><input id="q" placeholder="Cidade, Bairro" autocomplete="off" aria-label="Buscar cidade ou bairro"><div class="res hide" id="res"></div></div>
 </header>
-<main><div id="mapa"></div><div class="legenda">Toque num ponto ou busque o nome. Ponto maior: mais gente que não votou. Aproxime para ver cidades e bairros.</div>
+<main><div id="mapa"></div><div class="legenda">Círculo grande: estado · anel: cidade · ponto: bairro (maiores: grupos). Aproxime para ver mais, ou busque “Cidade, Bairro”.</div>
 <aside id="painel" class="hide"></aside></main>
 <div id="lb" class="hide" role="dialog" aria-modal="true" aria-label="Arquivo"><div class="lbbox"><div class="lbtop"><span id="lbt"></span><span id="lbn"></span><a id="lbdl" download>↓ baixar</a><button id="lbx" aria-label="Fechar">×</button></div><div id="lbc"></div></div>
 <button id="lbp" class="lbnav" aria-label="Anterior">‹</button><button id="lbnx" class="lbnav" aria-label="Próximo">›</button></div>
@@ -92,7 +94,7 @@ const norm = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
 const rotulo = p => p.nivel === "bairro" ? `${p.bairro} · ${p.municipio}/${p.uf}` : p.nivel === "cidade" ? `${p.municipio}/${p.uf}` : p.nome;
 const th = rel => "_thumbs/" + rel.replace(/^lambes\//, "lambe/").replace(/[^a-zA-Z0-9]+/g, "_") + ".jpg";   // lambes de lugar moram em /lambes/; miniaturas aqui
-const ZOOM = {estado: 6, cidade: 11, bairro: 14};
+const ZOOM = {estado: 6, cidade: 10, bairro: 14};
 // eixos do kit (kit_territorio.py), na ordem da galeria
 const EIXO_NOME = {"confiança": "Flávio não é confiável", "soberania": "Vai entregar o Brasil pros EUA de Trump", "entrega": "Nunca fez nada de relevante",
   "segurança": "Segurança pública", "existe": "O que existe e está em risco", "combina": "O que já combina com seu candidato", "respostas": "Respostas prontas", "cartão": "Cartão de bolso"};
@@ -105,21 +107,55 @@ mapa.fitBounds(BRASIL); mapa.setMinZoom(mapa.getZoom());
 addEventListener("resize", () => { const z = mapa.getBoundsZoom(BRASIL); mapa.setMinZoom(z); });
 L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {maxZoom: 19, subdomains: "abc",
   attribution: '&copy; colaboradores do <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, estilo <a href="https://www.hotosm.org/">Humanitarian OSM Team</a>, servido por <a href="https://openstreetmap.fr/">OSM France</a>'}).addTo(mapa);
-const camadas = {estado: L.layerGroup(), cidade: L.layerGroup(), cidadeComBairros: L.layerGroup(), bairro: L.layerGroup()};
+// 9/10: estado, cidade e bairro com estilos próprios e tamanho fixo (não cresce com os números); bairros agrupados até z 9
+const faixa = z => z - mapa.getMinZoom() + 5;   // o zoom de abertura (Brasil inteiro) vale 5 em qualquer tela
+const abs = f => f - 5 + mapa.getMinZoom();
+for (const [n, z] of [["pBairro", 410], ["pCidade", 420], ["pEstado", 430]]) mapa.createPane(n).style.zIndex = z;
+const PANE = {estado: "pEstado", cidade: "pCidade", bairro: "pBairro"};
+// 9/10: grupos sem número e de tamanho fixo, calculados com supercluster (leve): só o que está na tela vira círculo.
+// Cidades agrupadas até a faixa 7 (soltas na 8); bairros agrupados até a 10 (soltos a partir da 11)
+const camadas = {estado: L.layerGroup(), cidade: L.layerGroup(), bairro: L.layerGroup()};
+const DADOS = {cidade: [], bairro: []}, IDX = {}, ATE = {cidade: 7, bairro: 10};
+function indice(n) {
+  if (IDX[n] && IDX[n]._n === DADOS[n].length && IDX[n]._min === mapa.getMinZoom()) return IDX[n];
+  const ix = new Supercluster({radius: 55, minZoom: 0, maxZoom: abs(ATE[n])});
+  ix.load(DADOS[n].map((d, i) => ({type: "Feature", properties: {i}, geometry: {type: "Point", coordinates: [d.p.lon, d.p.lat]}})));
+  ix._n = DADOS[n].length; ix._min = mapa.getMinZoom(); return IDX[n] = ix;
+}
+function desenha(n) {
+  const g = camadas[n]; g.clearLayers();
+  if (!mapa.hasLayer(g) || !DADOS[n].length) return;
+  const b = mapa.getBounds().pad(.25), ix = indice(n);
+  for (const f of ix.getClusters([b.getWest(), b.getSouth(), b.getEast(), b.getNorth()], Math.round(mapa.getZoom()))) {
+    const [lon, lat] = f.geometry.coordinates;
+    if (f.properties.cluster) {
+      const id = f.properties.cluster_id;
+      L.marker([lat, lon], {icon: L.divIcon({html: "", className: "grp grp-" + n[0], iconSize: n === "cidade" ? [20, 20] : [13, 13]}), keyboard: false, pane: PANE[n]})
+        .on("click", () => mapa.setView([lat, lon], Math.min(ix.getClusterExpansionZoom(id), abs(ATE[n] + 1)))).addTo(g);
+    } else {
+      const d = DADOS[n][f.properties.i];
+      ponto(d.p).bindTooltip(rotulo(d.p), {direction: "top"}).on("click", d.abre).addTo(g);
+    }
+  }
+}
+const ESTILO = {estado: {radius: 14, color: "#ffffff", weight: 3, fillColor: "#a80911", fillOpacity: .85},
+  cidade: {radius: 8, color: "#a80911", weight: 2.5, fillColor: "#ffffff", fillOpacity: .85, opacity: .95},
+  bairro: {radius: 4.5, color: "#ffffff", weight: 1, fillColor: "#a80911", fillOpacity: .75}};
+const ponto = p => L.circleMarker([p.lat, p.lon], {...ESTILO[p.nivel], pane: PANE[p.nivel]});
 const COR = {fill: "#d3141e", borda: "#ffffff"};
 let pontos = [], porId = {}, marcado = null, ARQ = [], INFO = [], SUPS = new Set(["digital"]), atual = null;
 
-function raio(p) {
-  const k = {estado: 220, cidade: 60, bairro: 24}[p.nivel], min = {estado: 10, cidade: 7, bairro: 7}[p.nivel];
-  return Math.max(min, Math.min(28, Math.sqrt(p.numeros.nao_votaram || 0) / k));
-}
+function raio(p) { return ESTILO[p.nivel].radius; }
 function visiveis() {
-  const z = mapa.getZoom();
-  // cidades com bairros saem quando os bairros aparecem; as outras ficam em qualquer zoom
-  const quer = {estado: z <= 5, cidade: z >= 5, cidadeComBairros: z >= 5 && z <= 12, bairro: z >= 11};
+  // 9/10: faixas contadas a partir do zoom de abertura (Brasil inteiro), que vale como "5" em qualquer tela
+  const z = faixa(mapa.getZoom());
+  const quer = {estado: z <= 7, cidade: z >= 6 && z <= 10, bairro: z >= 9};   // cidades convivem com os bairros enquanto eles estão agrupados
   for (const n in camadas) quer[n] ? camadas[n].addTo(mapa) : camadas[n].remove();
+  desenha("cidade"); desenha("bairro");
+  if (z >= 6) carregaCidades();
+  if (z >= 9) carregaBairros();   // antes disso a tela pega meio Brasil: dezenas de milhares de bairros travariam o celular
 }
-mapa.on("zoomend", visiveis);
+mapa.on("zoomend moveend", visiveis);
 mapa.getContainer().appendChild(document.querySelector(".legenda"));   // a legenda fica dentro do mapa, sem invadir o painel
 
 // um arquivo: miniatura que abre no visualizador + botão de baixar
@@ -168,7 +204,7 @@ function abrir(p, voar) {
   <div><b>${esc(NOME[n.lidera] || n.lidera || "—")}</b><span>na frente por ${fmt(n.margem)} votos</span></div>
   <div style="grid-column:1/-1"><b>${fmt(n.viraveis)}</b><span>votos que ainda podem mudar: quem não votou, votou branco, nulo ou em outro candidato</span></div></div>`;
   const lam = [p.lambe.pb && cel(p.lambe.pb, "Lambe de rua: " + p.nome, "preto e branco", "imprimir"), p.lambe.cor && cel(p.lambe.cor, "Lambe de rua: " + p.nome, "colorido", "imprimir")].filter(Boolean);
-  h += `<h3>Lambe deste lugar</h3>` + (lam.length ? `<div class="item grupo"><div class="grid">${lam.join("")}</div></div>` : `<a class="zip gerar" href="${esc(linkGerar(p))}">Gerar o lambe deste lugar<small>na hora, para imprimir em A4, colorido ou em preto e branco</small></a>`);
+  h += `<h3>Material com número de abstenções deste lugar</h3>` + (lam.length ? `<div class="item grupo"><div class="grid">${lam.join("")}</div></div>` : `<a class="zip gerar" href="${esc(linkGerar(p))}">Gerar material<small>para imprimir ou compartilhar nas redes</small></a>`);
   if (p.publicos && p.publicos.length) h += `<h3>Por que este kit</h3>` + p.publicos.map(x => `<p class="pub"><b>${esc(PUB[x.publico] || x.publico.replace(/_/g, " "))}</b> · ${esc(x.motivo)}</p>`).join("");
   if (p.herda) h += `<p class="vazio" style="margin-top:22px">Este bairro ainda não tem kit próprio: abaixo, o kit da cidade de ${esc(p.herda)}.</p>`;
   const kit = p.kit || {}, temKit = (kit.imprimir || []).length + (kit.digital || []).length;
@@ -195,7 +231,7 @@ function abrir(p, voar) {
   // o painel muda o tamanho do mapa: recalcular antes de voar (invalidateSize durante o flyTo gera LatLng NaN)
   requestAnimationFrame(() => {
     mapa.invalidateSize({pan: false});
-    if (voar && temXY) mapa.flyTo([p.lat, p.lon], Math.max(mapa.getZoom(), ZOOM[p.nivel]), {duration: .8});
+    if (voar && temXY) mapa.flyTo([p.lat, p.lon], Math.max(mapa.getZoom(), ZOOM[p.nivel] + mapa.getMinZoom() - 5), {duration: .8});
   });
 }
 function fechar() {
@@ -313,16 +349,36 @@ q.addEventListener("keydown", e => {
 res.addEventListener("click", e => { const b = e.target.closest("button[data-i]"); if (b) escolher(+b.dataset.i); });
 document.addEventListener("click", e => { if (!e.target.closest(".busca")) res.classList.add("hide"); });
 
+// todas as cidades (lista leve) a partir de z 5; bairros de cada estado na tela a partir de z 6
+let CIDS = null, CX = null; const feitos = new Set();
+async function carregaCidades() {
+  if (CIDS) return; CIDS = [];
+  const l = await fetch("lugares/cidades.json").then(r => r.ok ? r.json() : []);
+  for (const [id, nome, u, lat, lon] of l) {
+    if (porId[id]) continue;
+    DADOS.cidade.push({p: {id, nivel: "cidade", nome, municipio: nome, uf: u, lat, lon}, abre: async () => { const p = await resolver(id); if (p) abrir(p, false); }});
+  }
+  desenha("cidade");
+}
+async function carregaBairros() {
+  if (!CX) CX = await fetch("lugares/caixas.json").then(r => r.ok ? r.json() : {});
+  const b = mapa.getBounds();
+  for (const [u, [s, w, n, e]] of Object.entries(CX)) {
+    if (feitos.has(u) || !b.intersects(L.latLngBounds([s, w], [n, e]))) continue;
+    feitos.add(u);
+    const d = await uf(u);
+    for (const x of d.bairros) if (x[3] != null) DADOS.bairro.push({p: bairroP(x, d), abre: () => abrir(bairroP(x, d), false)});
+    desenha("bairro");
+  }
+}
 fetch("mapa_dados.json").then(r => r.json()).then(d => {
   const ps = pontos = d.lugares; ARQ = d.arquivos; INFO = d.info || [];
-  const comBairros = new Set(ps.filter(p => p.nivel === "bairro").map(p => p.uf + "|" + norm(p.municipio)));
   for (const p of ps) {
     porId[p.id] = p;
     p._nome = norm(p.nome);
     p._busca = norm([p.nome, p.bairro, p.municipio, p.uf, p.nivel === "estado" ? p.uf : ""].join(" "));
-    const camada = p.nivel === "cidade" && comBairros.has(p.uf + "|" + norm(p.municipio)) ? "cidadeComBairros" : p.nivel;
-    L.circleMarker([p.lat, p.lon], {radius: raio(p), color: COR.borda, weight: 2, opacity: 1, fillColor: COR.fill, fillOpacity: .9})
-      .bindTooltip(rotulo(p), {direction: "top"}).on("click", () => abrir(p, false)).addTo(camadas[camada]);
+    if (p.nivel === "estado") ponto(p).bindTooltip(rotulo(p), {direction: "top"}).on("click", () => abrir(p, false)).addTo(camadas.estado);
+    else DADOS[p.nivel].push({p, abre: () => abrir(p, false)});
   }
   visiveis();
   const id = decodeURIComponent(location.hash.slice(1));
