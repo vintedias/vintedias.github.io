@@ -33,9 +33,9 @@ main{flex:1;display:flex;min-height:0;position:relative}
 .c .dl{position:absolute;right:6px;bottom:6px;width:30px;height:30px;border-radius:50%;background:#fffe;color:#2a0608;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;text-decoration:none;box-shadow:0 1px 4px #0006}
 .pub{margin:6px 0;font-size:15.5px;line-height:1.45}.pub b{color:#fff;font-weight:700}
 .vazio{color:var(--mut);font-size:14.5px}
-.zips{display:flex;flex-direction:column;gap:8px;margin-top:22px}.zips .zip{margin:0}.zips .zip:first-child{background:#fff;color:#2a0608;border-color:#fff}.zips .zip:first-child small{color:#5a2a2a}
+.zips{display:flex;flex-direction:column;gap:8px;margin-top:4px}.zips .zip{margin:0}.zips .zip:first-child{background:#fff;color:#2a0608;border-color:#fff}.zips .zip:first-child small{color:#5a2a2a}
 .zip{background:var(--card);color:#fff;border:1px solid var(--borda);border-radius:10px;padding:9px 14px;font-size:15px;font-weight:600;cursor:pointer;text-align:left;width:100%;margin-top:6px}.zip small{display:block;font-weight:400;color:var(--mut);font-size:13px}.zip:disabled{opacity:.7;cursor:progress}
-.sups{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}.sups button{background:var(--card);color:#fff;border:1px solid var(--borda);border-radius:10px;padding:8px 13px;font-size:15px;cursor:pointer}
+.sups{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}.sups button{background:var(--card);color:#fff;border:1px solid var(--borda);border-radius:10px;padding:8px 13px;font-size:15px;cursor:pointer}
 .sups button .x{margin-left:10px;font-size:17px}.sups button .x::before{content:"+"}.sups button.on{background:#fff;color:#2a0608;border-color:#fff;font-weight:600}.sups button.on .x::before{content:"×"}
 .legenda{position:absolute;left:12px;bottom:24px;z-index:700;background:#3d0405e6;border-radius:10px;padding:8px 12px;font-size:13.5px;color:#fff;pointer-events:none;max-width:70%}
 .leaflet-container{font:inherit}
@@ -207,19 +207,21 @@ function abrir(p, voar) {
   <div style="grid-column:1/-1"><b>${fmt(n.viraveis)}</b><span>votos que ainda podem mudar: quem não votou, votou branco, nulo ou em outro candidato</span></div></div>`;
   const lam = [p.lambe.pb && cel(p.lambe.pb, "Lambe de rua: " + p.nome, "preto e branco", "imprimir"), p.lambe.cor && cel(p.lambe.cor, "Lambe de rua: " + p.nome, "colorido", "imprimir")].filter(Boolean);
   h += `<h3>Material com número de abstenções deste lugar</h3>` + (lam.length ? `<div class="item grupo"><div class="grid">${lam.join("")}</div></div>` : `<a class="zip gerar" href="${esc(linkGerar(p))}">Gerar material<small>para imprimir ou compartilhar nas redes</small></a>`);
-  if (p.publicos && p.publicos.length) h += `<h3>Por que este kit</h3>` + p.publicos.map(x => `<p class="pub"><b>${esc(PUB[x.publico] || x.publico.replace(/_/g, " "))}</b> · ${esc(x.motivo)}</p>`).join("");
-  if (p.herda) h += `<p class="vazio" style="margin-top:22px">Este bairro ainda não tem kit próprio: abaixo, o kit da cidade de ${esc(p.herda)}.</p>`;
+  const porque = p.publicos && p.publicos.length ? `<h3>Por que este kit</h3>` + p.publicos.map(x => `<p class="pub"><b>${esc(PUB[x.publico] || x.publico.replace(/_/g, " "))}</b> · ${esc(x.motivo)}</p>`).join("") : "";
   const kit = p.kit || {}, temKit = (kit.imprimir || []).length + (kit.digital || []).length;
+  // 10/10: Kit sugerido → baixar → por que este kit → redes/imprimir → peças
+  h += `<h3>Kit sugerido</h3>`;
+  if (p.herda) h += `<p class="vazio">Este bairro ainda não tem kit próprio: abaixo, o kit da cidade de ${esc(p.herda)}.</p>`;
   if (temKit) {
-    h += `<h3>Kit sugerido</h3><div class="sups">${[["digital", "Para redes digitais"], ["imprimir", "Para imprimir"]].map(([v, r]) => `<button data-sup="${v}" class="${SUPS.has(v) ? "on" : ""}">${r}</button>`).join("")}</div>`;
+    h += `<div class="zips"><button class="zip" data-kit="tudo">↓ Baixar kit completo deste lugar<small>o lambe e todas as peças sugeridas, separadas em “para imprimir” e “para redes”</small></button>
+    <button class="zip" data-kit="imprimir">↓ Baixar kit para impressão<small>o lambe do lugar e as peças para imprimir</small></button>
+    <button class="zip" data-kit="digital">↓ Baixar kit para redes sociais<small>as peças para postar e mandar</small></button></div>`;
+    h += porque + `<div class="sups">${[["digital", "Para redes digitais"], ["imprimir", "Para imprimir"]].map(([v, r]) => `<button data-sup="${v}" class="${SUPS.has(v) ? "on" : ""}">${r}</button>`).join("")}</div>`;
     for (const [k, t] of [["imprimir", "para imprimir"], ["digital", "para redes"]]) {
       const xs = kit[k] || [];
       if (xs.length && SUPS.has(k)) h += `<div class="grupo"><p class="bloco">${t}</p>${blocoKit(xs, k)}</div>`;
     }
-    h += `<div class="zips"><button class="zip" data-kit="tudo">↓ Baixar kit completo deste lugar<small>o lambe e todas as peças sugeridas, separadas em “para imprimir” e “para redes”</small></button>
-    <button class="zip" data-kit="imprimir">↓ Baixar kit para impressão<small>o lambe do lugar e as peças para imprimir</small></button>
-    <button class="zip" data-kit="digital">↓ Baixar kit para redes sociais<small>as peças para postar e mandar</small></button></div>`;
-  } else h += `<h3>Kit sugerido</h3><p class="vazio">Em preparação.</p>`;
+  } else h += `<p class="vazio">Em preparação.</p>` + porque;
   const painel = document.getElementById("painel");
   painel.innerHTML = h; painel.classList.remove("hide"); painel.scrollTop = 0;
   painel.querySelector(".fechar").onclick = fechar;
