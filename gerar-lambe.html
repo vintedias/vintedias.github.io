@@ -21,7 +21,7 @@ p{margin:0 0 12px}.mut{color:var(--mut);font-size:16.5px}
 .chave{display:inline-flex;border:2px solid var(--verm);border-radius:12px;overflow:hidden;justify-self:start}.chave a{padding:10px 16px;font-weight:700;font-size:17px;text-decoration:none;color:var(--verm);background:#fff}.chave a.on{background:var(--verm);color:#fff}.p2{background:#fff;color:var(--verm);border:2px solid var(--verm)}.p3{background:#fff;color:#111;border:1px solid #b9b9b9;font-weight:600!important;font-size:17px!important}
 :focus-visible{outline:3px solid #111;outline-offset:3px}
 </style></head><body><main class="caixa">
-<nav><a href="mapa.html" id="volta">‹ Voltar ao mapa</a></nav>
+<nav><a href="mapa" id="volta">‹ Voltar ao mapa</a></nav>
 <h1 id="tit">Lambe do seu lugar</h1>
 <p class="mut" id="sub"></p>
 <div class="prev" id="prev">Desenhando o lambe…</div>
@@ -37,7 +37,7 @@ const Q = new URLSearchParams(location.search);
 const nome = Q.get('bairro') || '', cid = Q.get('cidade') || '', pb = Q.get('pb') === '1', seed = +(Q.get('seed') || 1);
 document.getElementById('tit').textContent = 'Lambe de ' + nome;
 document.getElementById('sub').textContent = (cid ? cid + ' · ' : '') + Number(Q.get('naovotaram') || 0).toLocaleString('pt-BR') + ' pessoas não votaram no 1º turno';
-if (Q.get('volta')) document.getElementById('volta').href = 'mapa.html#' + Q.get('volta');
+if (Q.get('volta')) document.getElementById('volta').href = 'mapa#' + Q.get('volta');
 function com(m) { const q = new URLSearchParams(location.search); for (const k in m) q.set(k, m[k]); return '?' + q.toString(); }
 // "para as redes" = colorido; "para imprimir" = preto e branco
 const vr = document.getElementById('vr'), vi = document.getElementById('vi');

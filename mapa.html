@@ -187,7 +187,7 @@ function blocoKit(idx, sup) {
 }
 function linkGerar(p) {
   const n = p.numeros, b = p.nivel === "bairro", nv = n.nao_votaram || 0;
-  return "gerar-lambe.html?" + new URLSearchParams({bairro: p.nome, cidade: b ? p.municipio : p.uf, escopo: b ? "bairro" : "cidade", naovotaram: nv, votos: n.viraveis || 0,
+  return "gerar-lambe?" + new URLSearchParams({bairro: p.nome, cidade: b ? p.municipio : p.uf, escopo: b ? "bairro" : "cidade", naovotaram: nv, votos: n.viraveis || 0,
     por_luz: nv <= 40000 ? 10 : nv <= 400000 ? 100 : 1000, fonte: "tse", locais: p.locais || 0, qr: "gerar/qr_tse.png", tam: "a4_300", seed: 1, pb: 0, volta: p.id});
 }
 function abrir(p, voar) {
