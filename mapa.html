@@ -88,7 +88,7 @@ h1{color:#111;font-stretch:85%;font-weight:800}.modo a{color:#111;background:#ff
 <script>
 const NOME = {"Flávio": "Flávio Bolsonaro", "Lula": "Lula"};
 const PUB = {nao_votou: "quem não votou", branco_nulo: "quem votou branco ou nulo", terceira_via: "quem votou em outro candidato", "70mais_familia": "70+ e grupo de família",
-  beneficiarios: "quem usa programa público", segurar_voto: "segurar o voto", disputa: "disputa apertada", trabalho_jovem: "trabalho e jovens", seguranca: "segurança pública", bolsa_familia: "Bolsa Família", saude: "saúde e covid", trabalho_6x1: "trabalho e escala 6x1", amazonia: "Amazônia", direita_mercado: "classe média escolarizada", ja_decidido_feed: "quem já decidiu", rua_impresso: "rua e impresso"};
+  beneficiarios: "quem usa programa público", segurar_voto: "segurar o voto", disputa: "disputa apertada", trabalho_jovem: "trabalho e jovens", seguranca: "segurança pública", bolsa_familia: "Bolsa Família", saude: "saúde", trabalho_6x1: "trabalho e escala 6x1", amazonia: "Amazônia", direita_mercado: "classe média escolarizada", ja_decidido_feed: "quem já decidiu", rua_impresso: "rua e impresso"};
 const fmt = n => (n || 0).toLocaleString("pt-BR");
 const norm = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
