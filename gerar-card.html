@@ -1,0 +1,81 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Card da sua cidade · Materiais até o 2º turno</title>
+<!-- 11/10: card com um número público da cidade, gerado na hora no navegador (mesmo sketch dos cards: pipeline/sketch/cards.js; textos: pipeline/data/cards_cidade.json, sessão Materiais) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+// QR feito aqui, a partir do link da fonte de cada tema
+function qrDataURL(u) { const q = qrcode(0, 'M'); q.addData(u || ''); q.make(); return q.createDataURL(10, 1); }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<script src="gerar/card.js"></script>
+<style>
+@font-face{font-family:Archivo;src:url(https://cdn.jsdelivr.net/npm/@fontsource-variable/archivo@5.2.8/files/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{--verm:#a80911;--verde:#2e6b39;--mut:#4d4d4d;--linha:#e2e2e2}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#111;font:400 19px/1.5 Archivo,-apple-system,Helvetica Neue,Arial,sans-serif}
+.caixa{max-width:640px;margin:0 auto;padding:24px 18px 48px}
+nav a{display:inline-block;color:#111;font-size:17px;margin:0 10px 8px 0;text-decoration:none;border:2px solid #111;border-radius:999px;padding:7px 16px;font-weight:800}nav a:hover{background:#111;color:#fff}
+h1{font-stretch:75%;font-weight:800;font-size:40px;line-height:1.05;margin:18px 0 10px}
+p{margin:0 0 12px}.mut{color:var(--mut);font-size:16.5px}
+.nota{background:var(--verde);color:#fff;border-radius:12px;padding:14px 16px;font-size:17px}
+.prev{margin:18px 0;border:1px solid var(--linha);border-radius:8px;overflow:hidden;background:#06100a;min-height:200px;display:flex;align-items:center;justify-content:center;color:#ccc}
+.prev canvas{width:100%!important;height:auto!important;display:block}
+.bts{display:grid;gap:10px}
+.bts button{font:inherit;font-weight:750;font-size:19px;border-radius:12px;padding:14px 16px;cursor:pointer;text-align:center}
+.p1{background:var(--verm);color:#fff;border:0}.p2{background:#fff;color:var(--verm);border:2px solid var(--verm)}.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rot{font-weight:700;font-size:16px;margin:14px 0 6px}
+.chave{display:inline-flex;flex-wrap:wrap;border:2px solid var(--verm);border-radius:12px;overflow:hidden}.chave a{padding:9px 14px;font-weight:700;font-size:16.5px;text-decoration:none;color:var(--verm);background:#fff}.chave a.on{background:var(--verm);color:#fff}
+.fmts{display:flex;flex-wrap:wrap;gap:6px}.fmts a{font-size:16px;text-decoration:none;color:#111;border:1.5px solid #111;border-radius:999px;padding:5px 13px}.fmts a.on{background:#111;color:#fff}
+:focus-visible{outline:3px solid #111;outline-offset:3px}
+</style></head><body><main class="caixa">
+<nav><a href="mapa" id="volta">‹ Voltar ao mapa</a></nav>
+<h1 id="tit">Card da sua cidade</h1>
+<p class="mut">Um número público da cidade, com a fonte no QR. Escolha o tema e o formato.</p>
+<div id="temas"></div>
+<p class="rot">Para</p><div class="chave" role="radiogroup" aria-label="Uso"><a id="vr" role="radio" href="#">As redes</a><a id="vi" role="radio" href="#">Imprimir</a></div>
+<div id="fmtbox"><p class="rot">Formato</p><div class="fmts" id="fmts"></div></div>
+<div class="prev" id="prev">Desenhando o card…</div>
+<div class="bts"><div class="duo"><button class="p1" id="compartilha">Compartilhar</button><button class="p2" id="baixa">Baixar</button></div></div>
+<p class="nota" id="nimp" style="margin-top:20px" hidden>O card nomeia um candidato: impresso leva nome e CPF de quem fez e a tiragem (Lei 9.504, art. 38). Preencha a linha do rodapé antes de imprimir. Cole só em parede ou muro particular, com autorização do dono. Nada no dia da eleição.</p>
+<p class="mut" style="margin-top:16px">Material criado a partir de fatos e dados públicos verificados, sem IA.</p>
+</main>
+<script>
+const Q = new URLSearchParams(location.search);
+const uf = (Q.get('uf') || '').toLowerCase(), id = Q.get('card') || '', fmt = Q.get('fmt') || 'feed', imp = fmt === 'lambe_pb';
+const TEMA = {bolsa_familia: 'Bolsa Família', farmacia_popular: 'Farmácia Popular', mais_medicos: 'Mais Médicos'};
+if (Q.get('volta')) document.getElementById('volta').href = 'mapa#' + Q.get('volta');
+function com(m) { const q = new URLSearchParams(location.search); for (const k in m) q.set(k, m[k]); return '?' + q.toString(); }
+const vr = document.getElementById('vr'), vi = document.getElementById('vi');
+vr.href = com({fmt: imp ? 'feed' : fmt}); vi.href = com({fmt: 'lambe_pb'});
+(imp ? vi : vr).classList.add('on'); vr.setAttribute('aria-checked', String(!imp)); vi.setAttribute('aria-checked', String(imp));
+document.getElementById('fmtbox').hidden = imp; document.getElementById('nimp').hidden = !imp;
+document.getElementById('fmts').innerHTML = [['feed', 'Feed'], ['story', 'Story / Status'], ['quadrado', 'Quadrado']]
+  .map(([k, n]) => `<a href="${com({fmt: k})}" class="${k === fmt ? 'on' : ''}">${n}</a>`).join('');
+// título e temas da cidade: o mesmo arquivo do estado que o sketch lê
+let atual = null;
+fetch('gerar/cidades/' + uf + '.json').then(r => r.json()).then(d => {
+  atual = d.cards.find(c => c.id === id); if (!atual) return;
+  document.getElementById('tit').textContent = 'Card de ' + atual.cidade;
+  const irmaos = d.cards.filter(c => c.cidade === atual.cidade && c.uf === atual.uf);
+  if (irmaos.length > 1) document.getElementById('temas').innerHTML = '<p class="rot">Tema</p><div class="chave" role="radiogroup" aria-label="Tema">' +
+    irmaos.map(c => `<a role="radio" aria-checked="${c.id === id}" class="${c.id === id ? 'on' : ''}" href="${com({card: c.id})}">${TEMA[c.tema] || c.tema}</a>`).join('') + '</div>';
+});
+// o sketch cria o canvas no body; aqui ele vai para a prévia quando termina
+const espera = setInterval(() => {
+  const c = document.querySelector('body > canvas, main canvas');
+  if (window.__done && c) { clearInterval(espera); const pv = document.getElementById('prev'); pv.textContent = ''; pv.appendChild(c); }
+}, 150);
+const slug = s => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+function arquivo(cb) {
+  const c = document.querySelector('canvas'); if (!c) return;
+  c.toBlob(b => cb(b, `card_${slug(atual ? atual.cidade : uf)}_${atual ? atual.tema : 'cidade'}_${fmt}.png`), 'image/png');
+}
+document.getElementById('compartilha').onclick = () => arquivo(async (b, n) => {
+  const f = new File([b], n, {type: 'image/png'});
+  try { if (navigator.canShare && navigator.canShare({files: [f]})) { await navigator.share({files: [f]}); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = n; a.click();
+});
+document.getElementById('baixa').onclick = () => arquivo((b, n) => {
+  const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = n; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 6e4);
+});
+</script></body></html>

@@ -88,7 +88,7 @@ h1{color:#111;font-stretch:85%;font-weight:800}.modo a{color:#111;background:#ff
 <script>
 const NOME = {"Flávio": "Flávio Bolsonaro", "Lula": "Lula"};
 const PUB = {nao_votou: "quem não votou", branco_nulo: "quem votou branco ou nulo", terceira_via: "quem votou em outro candidato", "70mais_familia": "70+ e grupo de família",
-  beneficiarios: "quem usa programa público", segurar_voto: "segurar o voto", disputa: "disputa apertada", trabalho_jovem: "trabalho e jovens", seguranca: "segurança pública", bolsa_familia: "Bolsa Família", saude: "saúde", trabalho_6x1: "trabalho e escala 6x1", amazonia: "Amazônia", direita_mercado: "classe média escolarizada", ja_decidido_feed: "quem já decidiu", rua_impresso: "rua e impresso"};
+  beneficiarios: "quem usa programa público", segurar_voto: "segurar o voto", disputa: "disputa apertada", trabalho_jovem: "trabalho e jovens", seguranca: "segurança pública", bolsa_familia: "Bolsa Família", saude: "saúde", trabalho_6x1: "trabalho e escala 6x1", amazonia: "Amazônia", litoral: "litoral", jovens: "jovens", direita_mercado: "classe média escolarizada", ja_decidido_feed: "quem já decidiu", rua_impresso: "rua e impresso"};
 const fmt = n => (n || 0).toLocaleString("pt-BR");
 const norm = s => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
@@ -190,6 +190,9 @@ function linkGerar(p) {
   return "gerar-lambe?" + new URLSearchParams({bairro: p.nome, cidade: b ? p.municipio : p.uf, escopo: b ? "bairro" : "cidade", naovotaram: nv, votos: n.viraveis || 0,
     por_luz: nv <= 40000 ? 10 : nv <= 400000 ? 100 : 1000, fonte: "tse", locais: p.locais || 0, qr: "gerar/qr_tse.png", tam: "a4_300", seed: 1, pb: 0, volta: p.id});
 }
+// 11/10: card com um número público da cidade (Bolsa Família, Farmácia Popular, Mais Médicos), gerado na hora em gerar-card.html
+const CC_TEMA = {bf: "Bolsa Família", fp: "Farmácia Popular", mm: "Mais Médicos"};
+function linkCard(p) { return "gerar-card?" + new URLSearchParams({uf: p.uf, card: p.cc[0], fmt: "feed", volta: p.id}); }
 function abrir(p, voar) {
   if (voar) mapa.stop();
   if (marcado) marcado.remove(), marcado = null;
@@ -207,6 +210,7 @@ function abrir(p, voar) {
   <div style="grid-column:1/-1"><b>${fmt(n.viraveis)}</b><span>votos que ainda podem mudar: quem não votou, votou branco, nulo ou em outro candidato</span></div></div>`;
   const lam = [p.lambe.pb && cel(p.lambe.pb, "Lambe de rua: " + p.nome, "preto e branco", "imprimir"), p.lambe.cor && cel(p.lambe.cor, "Lambe de rua: " + p.nome, "colorido", "imprimir")].filter(Boolean);
   h += `<h3>Material com número de abstenções deste lugar</h3>` + (lam.length ? `<div class="item grupo"><div class="grid">${lam.join("")}</div></div>` : `<a class="zip gerar" href="${esc(linkGerar(p))}">Gerar material<small>para imprimir ou compartilhar nas redes</small></a>`);
+  if (p.cc && p.cc.length) h += `<h3>Card com números ${p.nivel === "bairro" ? "da cidade" : "desta cidade"}</h3><a class="zip gerar" href="${esc(linkCard(p))}">Gerar card de ${esc(p.municipio || p.nome)}<small>${p.cc.map(x => CC_TEMA[x.split("_").pop()] || "").filter(Boolean).join(", ")}, com a fonte no QR</small></a>`;
   const porque = p.publicos && p.publicos.length ? `<h3>Por que este kit</h3>` + p.publicos.map(x => `<p class="pub"><b>${esc(PUB[x.publico] || x.publico.replace(/_/g, " "))}</b> · ${esc(x.motivo)}</p>`).join("") : "";
   const kit = p.kit || {}, temKit = (kit.imprimir || []).length + (kit.digital || []).length;
   // 10/10: Kit sugerido → baixar → por que este kit → Materiais Sugeridos Avulsos (redes/imprimir → peças)
@@ -307,7 +311,7 @@ function uf(u) {
 function bairroP(b, d) {
   const [id, nome, cid, lat, lon, aptos, nv, ap, lid, mg, vir, loc] = b, c = d._cid[cid] || porId[cid] || {};
   return {id, nivel: "bairro", uf: id.slice(0, 2).toUpperCase(), municipio: c.municipio || c.nome || "", bairro: nome, nome, lat: lat ?? c.lat, lon: lon ?? c.lon,
-          numeros: {aptos, nao_votaram: nv, abstencao_pct: ap, lidera: lid, margem: mg, viraveis: vir}, locais: loc, lambe: {}, kit: c.kit || {}, publicos: c.publicos || [], herda: c.nome || c.municipio};
+          numeros: {aptos, nao_votaram: nv, abstencao_pct: ap, lidera: lid, margem: mg, viraveis: vir}, locais: loc, lambe: {}, kit: c.kit || {}, publicos: c.publicos || [], herda: c.nome || c.municipio, cc: c.cc};
 }
 async function resolver(id) {
   if (porId[id]) return porId[id];
