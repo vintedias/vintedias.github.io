@@ -118,8 +118,8 @@ function render() {
   let b = null, bodyFit = null;
   for (let bs = bigFrom; bs >= bigTo; bs -= 4 * S) {
     const lines = wrapLines(C.big, bs, colW, BOLD);
-    if (lines.length * bs * 1.08 > bigMaxH && bs > bigTo) continue;
-    let yy = y + bs * 0.85 + lines.length * bs * 1.08;
+    if (alturaLinhas(lines) * bs * 1.08 > bigMaxH && bs - 4 * S >= bigTo) continue;   // 11/10: sem pular o último tamanho (título longo deixava b nulo)
+    let yy = y + bs * 0.85 + alturaLinhas(lines) * bs * 1.08;
     let b2 = null;
     if (C.big2) { b2 = fitSize(C.big2, colW, (FMT === 'story' ? 300 : 210) * S, Math.min(96 * S, bs), 40 * S, 1.08, BOLD); yy += 40 * S + wrapLines(C.kicker2, 28 * S, colW).length * 28 * S * 1.35 + b2.size * 0.85 + 12 * S + b2.lines.length * b2.size * 1.08; }
     const avail = fimCorpo - (yy + 44 * S);
