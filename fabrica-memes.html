@@ -33,7 +33,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 :focus-visible{outline:3px solid #111;outline-offset:3px}
 .emteste{background:#fff3d6;border:2px solid #e0b100;border-radius:12px;padding:10px 14px;font-size:16.5px;margin:8px 0 12px}.iron{background:#fff3f3;border-left:4px solid var(--verm);padding:9px 12px;font-weight:600;color:var(--verm);font-size:15.5px;margin-top:12px}.bts .larga{grid-column:1/-1}.lista b{font-weight:700}
 </style></head><body><main class="caixa">
-<nav><a href="./">‹ Início</a><a href="materiais">Todo o material</a></nav>
+<nav><a href="./">‹ Início</a></nav>
 <h1>Fábrica de memes</h1>
 <p class="emteste"><b>Fábrica em fase de testes.</b> Antes de postar, confira se o meme diz o que você quer dizer.</p>
 <p class="mut">Memes com moldes conhecidos e fatos com fonte, montados na hora no seu navegador, sem IA e sem rosto de candidato. O texto é sempre o do banco, conferido: a graça está na distância entre o que ele disse e o que fez.</p>
@@ -43,7 +43,6 @@ button:disabled{opacity:.45;cursor:not-allowed}
  <div><p class="rot">Fato</p><div class="lista" id="lista"></div><p class="mut" id="nada" hidden>Nenhum fato com essa palavra.</p></div>
  <div>
   <p class="rot" id="rotmolde">Molde</p><div class="chips" id="moldes"></div><p class="mut" id="sentido" style="margin-top:6px;font-size:15px"></p>
-  <p class="rot" id="rotfmt">Formato</p><div class="chips" id="fmts"></div>
   <div class="prev" id="prev" style="margin-top:12px">Carregando…</div>
   <p class="iron">Meme é ironia: para o feed de quem já decidiu e para responder a quem pergunta. Não mandar em grupo de família.</p>
   <div class="bts"><button class="p1" id="baixa">Baixar</button><button class="p2" id="comp">Compartilhar</button><button class="p3 larga" id="copia">Copiar legenda com a fonte</button></div>
@@ -55,10 +54,10 @@ button:disabled{opacity:.45;cursor:not-allowed}
 </main>
 <script>
 const $ = id => document.getElementById(id), Q = new URLSearchParams(location.search);
-const FMT = [['feed', 'Feed'], ['story', 'Story / Status'], ['original', 'Original'], ['figurinha', 'Figurinha']];
+// 13/10, pedido do usuário: um formato só, o da imagem do molde (sem fundo acrescentado); embaixo, só a faixa da fonte
 const semAc = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
-let MOLDES = {}, BANCO = {temas: {}, itens: []}, tema = '', fmt = FMT.some(f => f[0] === Q.get('fmt')) ? Q.get('fmt') : 'feed', atual = null, vez = 0;
+let MOLDES = {}, BANCO = {temas: {}, itens: []}, tema = '', fmt = 'original', atual = null, vez = 0;
 // 13/10: banco agrupado por fato (fatos[] e itens[] com "fato"); o visitante escolhe o fato e depois o molde
 const textoDe = m => [m.fato_titulo || '', m.linhas.join(' '), m.legenda, m.fonte, (MOLDES[m.molde] || {}).nome].join(' ');
 const nomeMolde = m => (MOLDES[m.molde] || {}).nome || m.molde;
@@ -74,8 +73,6 @@ Promise.all(['gerar/moldes.json', 'gerar/memes_moldes.json'].map(u => fetch(u).t
   $('temas').innerHTML = [['', 'Todos'], ...Object.entries(BANCO.temas || {}).filter(([k]) => usados.has(k))].map(([k, n]) => `<button data-k="${k}" class="${k === tema ? 'on' : ''}">${esc(n)}</button>`).join('');
   $('temas').onclick = e => { const b = e.target.closest('button'); if (!b) return; tema = b.dataset.k; [...$('temas').children].forEach(x => x.classList.toggle('on', x === b)); filtra(); };
   $('busca').oninput = filtra;
-  $('fmts').innerHTML = FMT.map(([k, n]) => `<button data-k="${k}" class="${k === fmt ? 'on' : ''}">${n}</button>`).join('');
-  $('fmts').onclick = e => { const b = e.target.closest('button'); if (!b) return; fmt = b.dataset.k; [...$('fmts').children].forEach(x => x.classList.toggle('on', x === b)); desenha(); };
   $('moldes').onclick = e => { const b = e.target.closest('button'); if (!b) return; escolhe(b.dataset.id); };
   $('lista').onclick = e => { const b = e.target.closest('button'); if (!b) return; escolhe(BANCO.itens.find(m => m.fato === b.dataset.fato).id);
     if (matchMedia('(max-width: 759px)').matches) $('rotmolde').scrollIntoView({block: 'start'}); };   // celular: a lista vem antes; ao escolher, vai para a prévia
@@ -103,9 +100,9 @@ function escolhe(id) {
 }
 async function desenha() {
   if (!atual) return; const minha = ++vez;
-  history.replaceState(null, '', '?' + new URLSearchParams({id: atual.id, fmt}));
+  history.replaceState(null, '', '?' + new URLSearchParams({id: atual.id}));
   const c = document.createElement('canvas');
-  try { await window.desenhaMolde(c, MOLDES[atual.molde], atual.linhas, {fmt, fonte: atual.fonte, faixa: true}); }
+  try { await window.desenhaMolde(c, MOLDES[atual.molde], atual.linhas, {fmt, faixa: false}); }   // 13/10, pedido do usuário: meme sem faixa de fonte, no limite da imagem do molde
   catch (e) { if (minha === vez) $('prev').textContent = 'Não foi possível desenhar este meme.'; return; }
   if (minha !== vez) return;   // outro clique chegou antes
   $('prev').textContent = ''; $('prev').appendChild(c);
@@ -113,8 +110,7 @@ async function desenha() {
 const slug = s => semAc(s).replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
 function arquivo(cb) {
   const c = $('prev').querySelector('canvas'); if (!c || !atual) return;
-  const fig = fmt === 'figurinha';
-  c.toBlob(b => cb(b, `meme_${slug(atual.id)}_${fmt}.${b && b.type === 'image/webp' ? 'webp' : 'png'}`), fig ? 'image/webp' : 'image/png', 0.92);
+  c.toBlob(b => cb(b, `meme_${slug(atual.id)}.png`), 'image/png');
 }
 $('baixa').onclick = () => arquivo((b, n) => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = n; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 6e4); });
 $('comp').onclick = () => arquivo(async (b, n) => {

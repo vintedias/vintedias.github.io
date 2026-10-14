@@ -107,28 +107,10 @@
    "forma": "falta"
   },
   {
-   "id": "f17_marielle",
-   "titulo": "Marielle: “respeitem a família” x “é militante do PSOL”",
-   "tema": "rio",
-   "forma": "acusacao_fato"
-  },
-  {
-   "id": "f18_milicia_adriano",
-   "titulo": "“Milícia do PT” x a medalha para Adriano",
-   "tema": "rio",
-   "forma": "acusacao_fato"
-  },
-  {
    "id": "f19_aviao",
    "titulo": "“Nunca entrei em avião de Vorcaro”",
    "tema": "master",
    "forma": "negacao"
-  },
-  {
-   "id": "f20_padroeira",
-   "titulo": "A padroeira: a acusação dele x o fato",
-   "tema": "fe",
-   "forma": "acusacao_fato"
   },
   {
    "id": "f21_rockbridge",
@@ -728,38 +710,6 @@
    "registro": "ironia"
   },
   {
-   "id": "f17_marielle__woman-cat",
-   "fato": "f17_marielle",
-   "fato_titulo": "Marielle: “respeitem a família” x “é militante do PSOL”",
-   "forma": "acusacao_fato",
-   "molde": "woman-cat",
-   "molde_sentido": "A mulher grita, exaltada; o gato, impassível, à mesa. Esquerda = quem acusa; direita = a coisa calma que desmente.",
-   "linhas": [
-    "Flávio: “era militante do PSOL (2018, votando contra a medalha para Marielle)”",
-    "Ele mesmo, em 2023: “Respeitem, pelo menos, a família da Marielle”"
-   ],
-   "legenda": "Em 2023, na CPMI do 8 de janeiro: “Respeitem, pelo menos, a família da Marielle”. Em abril de 2018, menos de um mês depois do assassinato, Flávio Bolsonaro foi o único deputado da Alerj a registrar voto contrário à Medalha Tiradentes para Marielle Franco: votava não porque ela era militante do PSOL, a única razão que deu.",
-   "fonte": "Senado, CPMI do 8 de janeiro, 11/07/2023; Alerj, notas taquigráficas de 12/04/2018 (único deputado a registrar voto contrário à Medalha Tiradentes a Marielle Franco)",
-   "tema": "rio",
-   "registro": "ironia"
-  },
-  {
-   "id": "f18_milicia_adriano__woman-cat",
-   "fato": "f18_milicia_adriano",
-   "fato_titulo": "“Milícia do PT” x a medalha para Adriano",
-   "forma": "acusacao_fato",
-   "molde": "woman-cat",
-   "molde_sentido": "A mulher grita, exaltada; o gato, impassível, à mesa. Esquerda = quem acusa; direita = a coisa calma que desmente.",
-   "linhas": [
-    "Flávio: “milícia do PT”",
-    "Em 2005 ele deu a Medalha Tiradentes a Adriano da Nóbrega"
-   ],
-   "legenda": "Em 24/09/2026, Flávio Bolsonaro atribuiu à “milícia do PT” a história da padroeira. Em 2005, como deputado estadual, deu a Medalha Tiradentes a Adriano Magalhães da Nóbrega, então preso, acusado de homicídio; Adriano foi apontado pelo MPRJ como chefe do “Escritório do Crime” e morreu em 2020 em operação policial. Não há acusação contra Flávio por isso.",
-   "fonte": "Vídeo de Flávio Bolsonaro, 24/09/2026 (“milícia do PT”); Alerj, PR 1067/2005, votação de 23/08/2005; MPRJ sobre o Escritório do Crime",
-   "tema": "rio",
-   "registro": "ironia"
-  },
-  {
    "id": "f19_aviao__fine",
    "fato": "f19_aviao",
    "fato_titulo": "“Nunca entrei em avião de Vorcaro”",
@@ -789,22 +739,6 @@
    "legenda": "“Nunca entrei em avião de Vorcaro”, disse Flávio Bolsonaro em 01/07/2026. A piauí documentou voo dele em 19/01/2025 num jato do qual uma empresa de Daniel Vorcaro, dono do Banco Master, tinha um terço; segundo a PF, empresas de Willer Tomaz pagaram voos para Flávio e a família em 2024 e 2025. Flávio responde que o avião era de Tomaz.",
    "fonte": "Flávio Bolsonaro, 01/07/2026; piauí, 23/09/2026 (voo de 19/01/2025 em jato do qual uma empresa de Daniel Vorcaro, dono do Banco Master, tinha um terço); PF via UOL, 10/10/2026 (voos pagos por empresas de Willer Tomaz). Flávio diz que o avião era de Willer Tomaz.",
    "tema": "master",
-   "registro": "ironia"
-  },
-  {
-   "id": "f20_padroeira__woman-cat",
-   "fato": "f20_padroeira",
-   "fato_titulo": "A padroeira: a acusação dele x o fato",
-   "forma": "acusacao_fato",
-   "molde": "woman-cat",
-   "molde_sentido": "A mulher grita, exaltada; o gato, impassível, à mesa. Esquerda = quem acusa; direita = a coisa calma que desmente.",
-   "linhas": [
-    "Flávio: “O PT espalhou a história da padroeira com ajuda de gente de dentro da CNBB”",
-    "O bispo da igreja onde ele foi batizado escreveu que Aparecida não deve ser padroeira (2001)"
-   ],
-   "legenda": "Em 27/09/2026 Flávio Bolsonaro disse que o PT espalhou a história da padroeira “com ajuda de gente de dentro” da CNBB, sem provas. A CNBB respondeu: “A mentira não se combate com outra mentira.” O bispo JB Carvalho, fundador da igreja onde Flávio foi batizado em 2024, escreveu em 2001 que o feriado de 12 de outubro é “ilegal” e pediu que Aparecida deixe de ser padroeira. Flávio nega qualquer plano contra a padroeira.",
-   "fonte": "Flávio Bolsonaro, ato de campanha, 27/09/2026; nota da CNBB, 27/09/2026; livro “A Bomba” (2001), de JB Carvalho, fundador da Comunidade das Nações, onde Flávio foi batizado em 2024 (Metrópoles, 27/09/2026)",
-   "tema": "fe",
    "registro": "ironia"
   },
   {

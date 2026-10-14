@@ -766,36 +766,5 @@
   "formas": [
    "negacao"
   ]
- },
- "woman-cat": {
-  "nome": "Woman Yelling at a Cat",
-  "img": "terceiros/moldes/woman-cat.jpg",
-  "origem": "https://knowyourmeme.com/memes/woman-yelling-at-a-cat",
-  "caixas": [
-   {
-    "anchor_x": 0.0,
-    "anchor_y": 0.0,
-    "scale_x": 0.55,
-    "scale_y": 0.15,
-    "font": "thin",
-    "color": "black",
-    "style": "default",
-    "angle": 0.0
-   },
-   {
-    "anchor_x": 0.56,
-    "anchor_y": 0.0,
-    "scale_x": 0.44,
-    "scale_y": 0.15,
-    "font": "thin",
-    "color": "black",
-    "style": "default",
-    "angle": 0.0
-   }
-  ],
-  "sentido": "A mulher grita, exaltada; o gato, impassível, à mesa. Esquerda = quem acusa; direita = a coisa calma que desmente.",
-  "formas": [
-   "acusacao_fato"
-  ]
  }
 }
