@@ -1,0 +1,131 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Fábrica de memes · Materiais até o 2º turno</title>
+<!-- 13/10: fábrica de memes com moldes conhecidos (decisão do usuário). Motor: gerar/moldes.js (window.desenhaMolde) e gerar/moldes.json; banco: gerar/memes_moldes.json
+     (sessão de materiais, pipeline/moldes_json.py; texto só do banco, sem texto livre); imagens dos moldes em moldes/. Página: sessão Página (pipeline/fabrica-memes → pacote). -->
+<script src="gerar/moldes.js"></script>
+<style>
+@font-face{font-family:Anton;src:url(https://cdn.jsdelivr.net/npm/@fontsource/anton@5.2.6/files/anton-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Archivo;src:url(https://cdn.jsdelivr.net/npm/@fontsource-variable/archivo@5.2.8/files/archivo-latin-wdth-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{--verm:#a80911;--verde:#2e6b39;--amar:#f5c518;--mut:#4d4d4d;--linha:#e2e2e2;--creme:#f7f3ea}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#111;font:400 18px/1.5 Archivo,-apple-system,Helvetica Neue,Arial,sans-serif}
+.caixa{max-width:1040px;margin:0 auto;padding:22px 16px 56px}
+nav a{display:inline-block;color:#111;font-size:16px;margin:0 10px 8px 0;text-decoration:none;border:2px solid #111;border-radius:999px;padding:6px 14px;font-weight:800}
+h1{font-stretch:75%;font-weight:800;font-size:40px;line-height:1.05;margin:14px 0 8px}
+p{margin:0 0 10px}.mut{color:var(--mut);font-size:16px}
+.rot{font-weight:700;font-size:15px;margin:14px 0 6px;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips button{font:inherit;font-size:16px;background:#fff;color:#111;border:1.5px solid #111;border-radius:999px;padding:5px 13px;cursor:pointer}.chips button.on{background:#111;color:#fff}
+input[type=search]{font:inherit;font-size:17px;width:100%;padding:10px 12px;border:1.5px solid #b9b9b9;border-radius:12px;margin-top:8px}
+.grade{display:grid;grid-template-columns:1fr;gap:18px;margin-top:10px}
+@media(min-width:760px){.grade{grid-template-columns:340px 1fr;align-items:start}}
+.lista{display:grid;gap:6px}.lista button{font:inherit;text-align:left;background:#fff;border:1.5px solid var(--linha);border-radius:12px;padding:10px 12px;cursor:pointer;line-height:1.3}
+.lista button.on{border-color:var(--verm);background:#fff6f6}.lista small{display:block;color:var(--mut);font-size:14px}
+.lista .ag{color:#8a5a00;font-weight:700}
+.prev{border:1px solid var(--linha);border-radius:10px;overflow:hidden;background:#111;min-height:220px;display:flex;align-items:center;justify-content:center;color:#ccc}
+.prev canvas{max-width:100%;height:auto;display:block;max-height:78vh}
+.bts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.bts button{font:inherit;font-weight:750;font-size:18px;border-radius:12px;padding:13px 14px;cursor:pointer}
+.p1{background:var(--verm);color:#fff;border:0}.p2{background:#fff;color:var(--verm);border:2px solid var(--verm)}.p3{background:#fff;color:#111;border:2px solid #111}
+button:disabled{opacity:.45;cursor:not-allowed}
+.nota{background:var(--verde);color:#fff;border-radius:12px;padding:12px 14px;font-size:16px;margin-top:14px}
+.fonte{font-size:15px;color:var(--mut);margin-top:10px}
+.aviso{background:#fff3d6;border-radius:12px;padding:10px 12px;font-size:15px;margin-top:10px;display:none}
+:focus-visible{outline:3px solid #111;outline-offset:3px}
+.emteste{background:#fff3d6;border:2px solid #e0b100;border-radius:12px;padding:10px 14px;font-size:16.5px;margin:8px 0 12px}.iron{background:#fff3f3;border-left:4px solid var(--verm);padding:9px 12px;font-weight:600;color:var(--verm);font-size:15.5px;margin-top:12px}.bts .larga{grid-column:1/-1}.lista b{font-weight:700}
+</style></head><body><main class="caixa">
+<nav><a href="./">‹ Início</a><a href="materiais">Todo o material</a></nav>
+<h1>Fábrica de memes</h1>
+<p class="emteste"><b>Fábrica em fase de testes.</b> Antes de postar, confira se o meme diz o que você quer dizer.</p>
+<p class="mut">Memes com moldes conhecidos e fatos com fonte, montados na hora no seu navegador, sem IA e sem rosto de candidato. O texto é sempre o do banco, conferido: a graça está na distância entre o que ele disse e o que fez.</p>
+<p class="rot">Tema</p><div class="chips" id="temas"></div>
+<input type="search" id="busca" placeholder="Ou procure por uma palavra: Vorcaro, veto, 6x1, fundo…" aria-label="Procurar meme">
+<div class="grade">
+ <div><p class="rot">Fato</p><div class="lista" id="lista"></div><p class="mut" id="nada" hidden>Nenhum fato com essa palavra.</p></div>
+ <div>
+  <p class="rot" id="rotmolde">Molde</p><div class="chips" id="moldes"></div><p class="mut" id="sentido" style="margin-top:6px;font-size:15px"></p>
+  <p class="rot" id="rotfmt">Formato</p><div class="chips" id="fmts"></div>
+  <div class="prev" id="prev" style="margin-top:12px">Carregando…</div>
+  <p class="iron">Meme é ironia: para o feed de quem já decidiu e para responder a quem pergunta. Não mandar em grupo de família.</p>
+  <div class="bts"><button class="p1" id="baixa">Baixar</button><button class="p2" id="comp">Compartilhar</button><button class="p3 larga" id="copia">Copiar legenda com a fonte</button></div>
+  <div class="aviso" id="aviso"></div>
+  <p class="fonte" id="fonte"></p>
+  <p class="nota">Material de eleitor. Poste do seu perfil e assine (Lei 9.504). Não edite o texto para dizer mais do que a fonte diz.</p>
+ </div>
+</div>
+</main>
+<script>
+const $ = id => document.getElementById(id), Q = new URLSearchParams(location.search);
+const FMT = [['feed', 'Feed'], ['story', 'Story / Status'], ['original', 'Original'], ['figurinha', 'Figurinha']];
+const semAc = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+let MOLDES = {}, BANCO = {temas: {}, itens: []}, tema = '', fmt = FMT.some(f => f[0] === Q.get('fmt')) ? Q.get('fmt') : 'feed', atual = null, vez = 0;
+// 13/10: banco agrupado por fato (fatos[] e itens[] com "fato"); o visitante escolhe o fato e depois o molde
+const textoDe = m => [m.fato_titulo || '', m.linhas.join(' '), m.legenda, m.fonte, (MOLDES[m.molde] || {}).nome].join(' ');
+const nomeMolde = m => (MOLDES[m.molde] || {}).nome || m.molde;
+let FATOS = [];
+Promise.all(['gerar/moldes.json', 'gerar/memes_moldes.json'].map(u => fetch(u).then(r => r.json()))).then(([mo, b]) => {
+  MOLDES = mo; BANCO = Array.isArray(b) ? {temas: {}, itens: b} : b;
+  BANCO.itens = BANCO.itens.filter(m => MOLDES[m.molde]);
+  // fatos: do banco novo; no banco antigo (sem "fatos"), cada item é o seu próprio fato
+  BANCO.itens.forEach(m => { if (!m.fato) { m.fato = m.id; m.fato_titulo = nomeMolde(m) + ': ' + (m.linhas.find(Boolean) || ''); } });
+  FATOS = (BANCO.fatos && BANCO.fatos.length ? BANCO.fatos : BANCO.itens.map(m => ({id: m.fato, titulo: m.fato_titulo, tema: m.tema})))
+    .filter(ft => BANCO.itens.some(m => m.fato === ft.id));
+  const usados = new Set(BANCO.itens.map(m => m.tema));
+  $('temas').innerHTML = [['', 'Todos'], ...Object.entries(BANCO.temas || {}).filter(([k]) => usados.has(k))].map(([k, n]) => `<button data-k="${k}" class="${k === tema ? 'on' : ''}">${esc(n)}</button>`).join('');
+  $('temas').onclick = e => { const b = e.target.closest('button'); if (!b) return; tema = b.dataset.k; [...$('temas').children].forEach(x => x.classList.toggle('on', x === b)); filtra(); };
+  $('busca').oninput = filtra;
+  $('fmts').innerHTML = FMT.map(([k, n]) => `<button data-k="${k}" class="${k === fmt ? 'on' : ''}">${n}</button>`).join('');
+  $('fmts').onclick = e => { const b = e.target.closest('button'); if (!b) return; fmt = b.dataset.k; [...$('fmts').children].forEach(x => x.classList.toggle('on', x === b)); desenha(); };
+  $('moldes').onclick = e => { const b = e.target.closest('button'); if (!b) return; escolhe(b.dataset.id); };
+  $('lista').onclick = e => { const b = e.target.closest('button'); if (!b) return; escolhe(BANCO.itens.find(m => m.fato === b.dataset.fato).id);
+    if (matchMedia('(max-width: 759px)').matches) $('rotmolde').scrollIntoView({block: 'start'}); };   // celular: a lista vem antes; ao escolher, vai para a prévia
+  filtra(); escolhe((BANCO.itens.find(m => m.id === Q.get('id')) || BANCO.itens[0] || {}).id);
+});
+function filtra() {
+  const ws = semAc($('busca').value.trim()).split(/\s+/).filter(Boolean);
+  const vis = FATOS.filter(ft => (!tema || ft.tema === tema) && ws.every(w => BANCO.itens.some(m => m.fato === ft.id && semAc(textoDe(m)).includes(w))));
+  $('lista').innerHTML = vis.map(ft => { const n = BANCO.itens.filter(m => m.fato === ft.id).length;
+    return `<button data-fato="${ft.id}" class="${atual && atual.fato === ft.id ? 'on' : ''}"><b>${esc(ft.titulo)}</b><small>${esc((BANCO.temas || {})[ft.tema] || '')} · ${n} ${n === 1 ? 'molde' : 'moldes'}</small></button>`; }).join('');
+  $('nada').hidden = vis.length > 0;
+}
+function escolhe(id) {
+  atual = BANCO.itens.find(m => m.id === id); if (!atual) return;
+  [...$('lista').children].forEach(x => x.classList.toggle('on', x.dataset.fato === atual.fato));
+  const irmaos = BANCO.itens.filter(m => m.fato === atual.fato);
+  $('moldes').innerHTML = irmaos.map(m => `<button data-id="${m.id}" class="${m.id === atual.id ? 'on' : ''}">${esc(nomeMolde(m))}</button>`).join('');
+  $('rotmolde').textContent = irmaos.length > 1 ? 'Molde (' + irmaos.length + ' para este fato)' : 'Molde';
+  $('sentido').textContent = atual.molde_sentido || '';
+  $('fonte').textContent = 'Fonte: ' + (atual.fonte || '');
+  const ag = atual.estado === 'aguarda';
+  $('aviso').style.display = ag ? 'block' : 'none'; $('aviso').textContent = ag ? 'Este meme aguarda conferência da fonte: a prévia serve só para ver o formato. Por isso não baixa.' : '';
+  $('baixa').disabled = $('comp').disabled = $('copia').disabled = ag;
+  desenha();
+}
+async function desenha() {
+  if (!atual) return; const minha = ++vez;
+  history.replaceState(null, '', '?' + new URLSearchParams({id: atual.id, fmt}));
+  const c = document.createElement('canvas');
+  try { await window.desenhaMolde(c, MOLDES[atual.molde], atual.linhas, {fmt, fonte: atual.fonte, faixa: true}); }
+  catch (e) { if (minha === vez) $('prev').textContent = 'Não foi possível desenhar este meme.'; return; }
+  if (minha !== vez) return;   // outro clique chegou antes
+  $('prev').textContent = ''; $('prev').appendChild(c);
+}
+const slug = s => semAc(s).replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+function arquivo(cb) {
+  const c = $('prev').querySelector('canvas'); if (!c || !atual) return;
+  const fig = fmt === 'figurinha';
+  c.toBlob(b => cb(b, `meme_${slug(atual.id)}_${fmt}.${b && b.type === 'image/webp' ? 'webp' : 'png'}`), fig ? 'image/webp' : 'image/png', 0.92);
+}
+$('baixa').onclick = () => arquivo((b, n) => { const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = n; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 6e4); });
+$('comp').onclick = () => arquivo(async (b, n) => {
+  const f = new File([b], n, {type: b.type});
+  try { if (navigator.canShare && navigator.canShare({files: [f]})) { await navigator.share({files: [f], text: atual.legenda || ''}); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = n; a.click();
+});
+$('copia').onclick = async e => {
+  if (!atual) return;
+  const t = (atual.legenda ? atual.legenda + '\n' : '') + 'Fonte: ' + (atual.fonte || '') + '\nMaterial de eleitor · sem IA';
+  try { await navigator.clipboard.writeText(t); e.target.textContent = 'Legenda copiada'; setTimeout(() => e.target.textContent = 'Copiar legenda com a fonte', 2000); }
+  catch (er) { prompt('Copie a legenda:', t); }
+};
+</script></body></html>

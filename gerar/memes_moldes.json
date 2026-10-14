@@ -1,0 +1,879 @@
+{
+ "temas": {
+  "master": "Caso Master",
+  "campanha": "Dinheiro da campanha",
+  "70mais": "Aposentados",
+  "senado": "Senado",
+  "trabalho": "Escala 6x1",
+  "pai": "Candidato do pai",
+  "constituicao": "Constituição",
+  "pandemia": "Pandemia"
+ },
+ "fatos": [
+  {
+   "id": "f01_fundo",
+   "titulo": "O fundo eleitoral que ele jurou não usar",
+   "tema": "campanha",
+   "forma": "promessa_ato"
+  },
+  {
+   "id": "f02_6x1",
+   "titulo": "A escala 6x1: promessa e PEC",
+   "tema": "trabalho",
+   "forma": "promessa_ato"
+  },
+  {
+   "id": "f03_prova_vida",
+   "titulo": "O voto sobre a prova de vida na pandemia",
+   "tema": "70mais",
+   "forma": "voto"
+  },
+  {
+   "id": "f04_quimio",
+   "titulo": "O voto sobre a quimioterapia oral em casa",
+   "tema": "70mais",
+   "forma": "voto"
+  },
+  {
+   "id": "f05_versoes_master",
+   "titulo": "As quatro versões sobre o dinheiro do filme",
+   "tema": "master",
+   "forma": "versoes"
+  },
+  {
+   "id": "f06_pagina_virada",
+   "titulo": "“Está tudo página virada”",
+   "tema": "master",
+   "forma": "negacao"
+  },
+  {
+   "id": "f07_jacare",
+   "titulo": "O jacaré e a vacina (pai de Flávio)",
+   "tema": "pandemia",
+   "forma": "negacao"
+  },
+  {
+   "id": "f08_cpi",
+   "titulo": "“CPI do Banco Master já!” e depois",
+   "tema": "master",
+   "forma": "pedido_resultado"
+  },
+  {
+   "id": "f09_sem_onus",
+   "titulo": "Viagens “sem ônus para o Senado”",
+   "tema": "senado",
+   "forma": "chique_simples"
+  },
+  {
+   "id": "f10_constituicao",
+   "titulo": "Mudar a Constituição: reformar o Judiciário como?",
+   "tema": "constituicao",
+   "forma": "pergunta_sem_resposta"
+  },
+  {
+   "id": "f11_pode_atender",
+   "titulo": "“Pode atender?”, véspera da prisão",
+   "tema": "master",
+   "forma": "espera"
+  },
+  {
+   "id": "f12_relacao_irmao",
+   "titulo": "“Só o filme” x “irmão, estou contigo sempre”",
+   "tema": "master",
+   "forma": "contradicao_citacoes"
+  },
+  {
+   "id": "f13_senado_leis",
+   "titulo": "Sete anos de Senado, nenhuma lei",
+   "tema": "senado",
+   "forma": "falta"
+  },
+  {
+   "id": "f14_indulto_pai",
+   "titulo": "O candidato do pai",
+   "tema": "pai",
+   "forma": "causa_consequencia"
+  },
+  {
+   "id": "f15_anistia",
+   "titulo": "Anistia e indulto aos condenados do 8 de janeiro",
+   "tema": "pai",
+   "forma": "uniao"
+  },
+  {
+   "id": "f16_13_discursos",
+   "titulo": "Sete anos de Senado, 13 discursos de tribuna",
+   "tema": "senado",
+   "forma": "falta"
+  },
+  {
+   "id": "f17_marielle",
+   "titulo": "Marielle: “respeitem a família” x “é militante do PSOL”",
+   "tema": "rio",
+   "forma": "acusacao_fato"
+  },
+  {
+   "id": "f18_milicia_adriano",
+   "titulo": "“Milícia do PT” x a medalha para Adriano",
+   "tema": "rio",
+   "forma": "acusacao_fato"
+  },
+  {
+   "id": "f19_aviao",
+   "titulo": "“Nunca entrei em avião de Vorcaro”",
+   "tema": "master",
+   "forma": "negacao"
+  },
+  {
+   "id": "f20_padroeira",
+   "titulo": "A padroeira: a acusação dele x o fato",
+   "tema": "fe",
+   "forma": "acusacao_fato"
+  },
+  {
+   "id": "f21_rockbridge",
+   "titulo": "Rockbridge: a pergunta que ficou sem resposta",
+   "tema": "campanha",
+   "forma": "pergunta_sem_resposta"
+  },
+  {
+   "id": "f22_pandemia_escolas",
+   "titulo": "“Então por que fechar escolas?”",
+   "tema": "pandemia",
+   "forma": "negacao"
+  },
+  {
+   "id": "f23_praias",
+   "titulo": "PEC das Praias: 3.000 a favor, 169.774 contra",
+   "tema": "praias",
+   "forma": "prioridade"
+  }
+ ],
+ "itens": [
+  {
+   "id": "f01_fundo__buttons",
+   "fato": "f01_fundo",
+   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
+   "forma": "promessa_ato",
+   "molde": "buttons",
+   "molde_sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
+   "linhas": [
+    "Não usar o fundo eleitoral, como prometeu em 2019",
+    "Pegar R$ 47 milhões do fundo eleitoral em 2026",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
+   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
+   "tema": "campanha",
+   "registro": "ironia"
+  },
+  {
+   "id": "f01_fundo__buff",
+   "fato": "f01_fundo",
+   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
+   "forma": "promessa_ato",
+   "molde": "buff",
+   "molde_sentido": "Doge musculoso = a versão forte, confiante, de antes; Cheems chorando = a versão fraca de agora. 'Antes era assim, hoje é assim.'",
+   "linhas": [
+    "Flávio em 2019: “jamais vou usar recursos desse fundo eleitoral”",
+    "Flávio em 2026: pegou R$ 47 milhões do fundo eleitoral"
+   ],
+   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
+   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
+   "tema": "campanha",
+   "registro": "ironia"
+  },
+  {
+   "id": "f01_fundo__gru",
+   "fato": "f01_fundo",
+   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
+   "forma": "promessa_ato",
+   "molde": "gru",
+   "molde_sentido": "Gru apresenta o plano em quatro quadros; o 3º quadro é a falha que ele só percebe ao reler no 4º (mesmo texto).",
+   "linhas": [
+    "Ser candidato a presidente",
+    "Não usar o fundo eleitoral, como prometeu em 2019",
+    "Pegar R$ 47 milhões do fundo eleitoral em 2026",
+    "Pegar R$ 47 milhões do fundo eleitoral em 2026"
+   ],
+   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
+   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
+   "tema": "campanha",
+   "registro": "ironia"
+  },
+  {
+   "id": "f01_fundo__db",
+   "fato": "f01_fundo",
+   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
+   "forma": "promessa_ato",
+   "molde": "db",
+   "molde_sentido": "O namorado olha a outra; a namorada, traída, olha para ele. Esquerda = tentação; meio = quem se distrai; direita = o compromisso traído.",
+   "linhas": [
+    "R$ 47 milhões do fundo eleitoral",
+    "Flávio Bolsonaro",
+    "“jamais vou usar recursos desse fundo eleitoral” (2019)"
+   ],
+   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
+   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
+   "tema": "campanha",
+   "registro": "ironia"
+  },
+  {
+   "id": "f01_fundo__spongebob",
+   "fato": "f01_fundo",
+   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
+   "forma": "promessa_ato",
+   "molde": "spongebob",
+   "molde_sentido": "Em cima, a frase de alguém; embaixo, a mesma frase repetida com deboche (letras alternadas). Quem repete ridiculariza a frase.",
+   "linhas": [
+    "Flávio em 2019: jamais vou usar recursos desse fundo eleitoral",
+    "Flávio em 2026: jamais vou usar recursos desse fundo eleitoral"
+   ],
+   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
+   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
+   "tema": "campanha",
+   "registro": "ironia"
+  },
+  {
+   "id": "f01_fundo__harold",
+   "fato": "f01_fundo",
+   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
+   "forma": "promessa_ato",
+   "molde": "harold",
+   "molde_sentido": "O senhor sorri escondendo a dor. Voz de quem lê, aguentando uma situação ruim.",
+   "linhas": [
+    "Eu, que pago imposto, ouvindo “jamais vou usar o fundo eleitoral”",
+    "e vendo R$ 47 milhões do fundo na campanha dele"
+   ],
+   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
+   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
+   "tema": "campanha",
+   "registro": "ironia"
+  },
+  {
+   "id": "f01_fundo__exit",
+   "fato": "f01_fundo",
+   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
+   "forma": "promessa_ato",
+   "molde": "exit",
+   "molde_sentido": "O carro desvia na última hora da reta (o esperado) para a saída (o que escolheu de fato).",
+   "linhas": [
+    "Não usar o fundo eleitoral, como prometeu em 2019",
+    "Pegar R$ 47 milhões do fundo eleitoral em 2026",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
+   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
+   "tema": "campanha",
+   "registro": "ironia"
+  },
+  {
+   "id": "f01_fundo__puppet",
+   "fato": "f01_fundo",
+   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
+   "forma": "promessa_ato",
+   "molde": "puppet",
+   "molde_sentido": "O fantoche olha de lado, desconfiado, duas vezes. 'Eu quando ouço X'.",
+   "linhas": [
+    "Eu quando Flávio diz “jamais vou usar recursos desse fundo eleitoral”",
+    "e a prestação de contas mostra R$ 47 milhões do fundo eleitoral"
+   ],
+   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
+   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
+   "tema": "campanha",
+   "registro": "ironia"
+  },
+  {
+   "id": "f02_6x1__buttons",
+   "fato": "f02_6x1",
+   "fato_titulo": "A escala 6x1: promessa e PEC",
+   "forma": "promessa_ato",
+   "molde": "buttons",
+   "molde_sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
+   "linhas": [
+    "Acabar com a escala 6x1",
+    "Assinar a PEC que mantém as 44 horas",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "Flávio Bolsonaro promete o fim da escala 6x1 e é um dos 40 autores da PEC 12/2026, que mantém as 44 horas semanais.",
+   "fonte": "Senado Federal, PEC 12/2026 (15º de 40 autores, 28/05/2026); fala de 06/10/2026",
+   "tema": "trabalho",
+   "registro": "ironia"
+  },
+  {
+   "id": "f02_6x1__gru",
+   "fato": "f02_6x1",
+   "fato_titulo": "A escala 6x1: promessa e PEC",
+   "forma": "promessa_ato",
+   "molde": "gru",
+   "molde_sentido": "Gru apresenta o plano em quatro quadros; o 3º quadro é a falha que ele só percebe ao reler no 4º (mesmo texto).",
+   "linhas": [
+    "Ser candidato a presidente",
+    "Acabar com a escala 6x1",
+    "Assinar a PEC que mantém as 44 horas",
+    "Assinar a PEC que mantém as 44 horas"
+   ],
+   "legenda": "Flávio Bolsonaro promete o fim da escala 6x1 e é um dos 40 autores da PEC 12/2026, que mantém as 44 horas semanais.",
+   "fonte": "Senado Federal, PEC 12/2026 (15º de 40 autores, 28/05/2026); fala de 06/10/2026",
+   "tema": "trabalho",
+   "registro": "ironia"
+  },
+  {
+   "id": "f02_6x1__harold",
+   "fato": "f02_6x1",
+   "fato_titulo": "A escala 6x1: promessa e PEC",
+   "forma": "promessa_ato",
+   "molde": "harold",
+   "molde_sentido": "O senhor sorri escondendo a dor. Voz de quem lê, aguentando uma situação ruim.",
+   "linhas": [
+    "Eu, na escala 6x1, ouvindo que ele acaba com a 6x1",
+    "e ele assinou a PEC que mantém as 44 horas"
+   ],
+   "legenda": "Flávio Bolsonaro promete o fim da escala 6x1 e é um dos 40 autores da PEC 12/2026, que mantém as 44 horas semanais.",
+   "fonte": "Senado Federal, PEC 12/2026 (15º de 40 autores, 28/05/2026); fala de 06/10/2026",
+   "tema": "trabalho",
+   "registro": "ironia"
+  },
+  {
+   "id": "f02_6x1__exit",
+   "fato": "f02_6x1",
+   "fato_titulo": "A escala 6x1: promessa e PEC",
+   "forma": "promessa_ato",
+   "molde": "exit",
+   "molde_sentido": "O carro desvia na última hora da reta (o esperado) para a saída (o que escolheu de fato).",
+   "linhas": [
+    "Acabar com a escala 6x1",
+    "Assinar a PEC que mantém as 44 horas",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "Flávio Bolsonaro promete o fim da escala 6x1 e é um dos 40 autores da PEC 12/2026, que mantém as 44 horas semanais.",
+   "fonte": "Senado Federal, PEC 12/2026 (15º de 40 autores, 28/05/2026); fala de 06/10/2026",
+   "tema": "trabalho",
+   "registro": "ironia"
+  },
+  {
+   "id": "f03_prova_vida__buttons",
+   "fato": "f03_prova_vida",
+   "fato_titulo": "O voto sobre a prova de vida na pandemia",
+   "forma": "voto",
+   "molde": "buttons",
+   "molde_sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
+   "linhas": [
+    "Suspender a prova de vida dos aposentados na pandemia",
+    "Votar para manter a prova de vida na pandemia (2021)",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "Em 27/09/2021, Flávio Bolsonaro votou para manter o veto à suspensão da prova de vida do INSS na pandemia. O Senado derrubou o veto por 54 a 8.",
+   "fonte": "Senado Federal, 27/09/2021: veto à suspensão da prova de vida (VET 47/2021, PL 385/2021) derrubado por 54 a 8; ele votou para manter",
+   "tema": "70mais",
+   "registro": "ironia"
+  },
+  {
+   "id": "f03_prova_vida__harold",
+   "fato": "f03_prova_vida",
+   "fato_titulo": "O voto sobre a prova de vida na pandemia",
+   "forma": "voto",
+   "molde": "harold",
+   "molde_sentido": "O senhor sorri escondendo a dor. Voz de quem lê, aguentando uma situação ruim.",
+   "linhas": [
+    "Eu, aposentado, fazendo a prova de vida na pandemia",
+    "e descobrindo que ele votou pra manter a prova de vida"
+   ],
+   "legenda": "Em 27/09/2021, Flávio Bolsonaro votou para manter o veto à suspensão da prova de vida do INSS na pandemia. O Senado derrubou o veto por 54 a 8.",
+   "fonte": "Senado Federal, 27/09/2021: veto à suspensão da prova de vida (VET 47/2021, PL 385/2021) derrubado por 54 a 8; ele votou para manter",
+   "tema": "70mais",
+   "registro": "ironia"
+  },
+  {
+   "id": "f04_quimio__buttons",
+   "fato": "f04_quimio",
+   "fato_titulo": "O voto sobre a quimioterapia oral em casa",
+   "forma": "voto",
+   "molde": "buttons",
+   "molde_sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
+   "linhas": [
+    "Derrubar o veto e garantir a quimioterapia oral em casa",
+    "Manter o veto à quimioterapia oral em casa pelos planos",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "Flávio Bolsonaro votou para manter o veto ao projeto que obrigava os planos de saúde a cobrir quimioterapia oral em casa (Senado, 08/02/2022).",
+   "fonte": "Senado Federal, 08/02/2022: veto ao PL 6.330/2019 (quimioterapia oral em casa pelos planos); ele votou para manter",
+   "tema": "70mais",
+   "registro": "ironia"
+  },
+  {
+   "id": "f04_quimio__harold",
+   "fato": "f04_quimio",
+   "fato_titulo": "O voto sobre a quimioterapia oral em casa",
+   "forma": "voto",
+   "molde": "harold",
+   "molde_sentido": "O senhor sorri escondendo a dor. Voz de quem lê, aguentando uma situação ruim.",
+   "linhas": [
+    "Eu, pagando plano de saúde, pedindo quimioterapia oral em casa",
+    "e descobrindo que ele votou pra manter o veto"
+   ],
+   "legenda": "Flávio Bolsonaro votou para manter o veto ao projeto que obrigava os planos de saúde a cobrir quimioterapia oral em casa (Senado, 08/02/2022).",
+   "fonte": "Senado Federal, 08/02/2022: veto ao PL 6.330/2019 (quimioterapia oral em casa pelos planos); ele votou para manter",
+   "tema": "70mais",
+   "registro": "ironia"
+  },
+  {
+   "id": "f05_versoes_master__gru",
+   "fato": "f05_versoes_master",
+   "fato_titulo": "As quatro versões sobre o dinheiro do filme",
+   "forma": "versoes",
+   "molde": "gru",
+   "molde_sentido": "Gru apresenta o plano em quatro quadros; o 3º quadro é a falha que ele só percebe ao reler no 4º (mesmo texto).",
+   "linhas": [
+    "Dizer que Vorcaro não tem relação com o filme",
+    "Confirmar que pediu dinheiro a ele",
+    "Dizer “eu menti” na GloboNews",
+    "Dizer “eu menti” na GloboNews"
+   ],
+   "legenda": "As quatro versões de Flávio Bolsonaro sobre o dinheiro de Daniel Vorcaro, dono do Banco Master, para o filme do pai: “mentira” (13/05, manhã), “pedi, sim” (13/05, tarde), “eu menti” (14/05, GloboNews, segundo g1 e CNN) e “página virada” (20/08).",
+   "fonte": "Intercept e CNN, 13/05/2026; GloboNews 14/05/2026 (24:55), segundo g1 e CNN; CNN 20/08/2026. Investigado por suspeita; não há denúncia; ele nega.",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f05_versoes_master__gb",
+   "fato": "f05_versoes_master",
+   "fato_titulo": "As quatro versões sobre o dinheiro do filme",
+   "forma": "versoes",
+   "molde": "gb",
+   "molde_sentido": "Cérebro em expansão, escalada irônica; o último degrau, o mais 'iluminado', é o mais absurdo.",
+   "linhas": [
+    "“Mentira.”",
+    "“Pedi recursos, sim.”",
+    "“Eu menti.”",
+    "“Está tudo página virada.”"
+   ],
+   "legenda": "As quatro versões de Flávio Bolsonaro sobre o dinheiro de Daniel Vorcaro, dono do Banco Master, para o filme do pai: “mentira” (13/05, manhã), “pedi, sim” (13/05, tarde), “eu menti” (14/05, GloboNews, segundo g1 e CNN) e “página virada” (20/08).",
+   "fonte": "Intercept e CNN, 13/05/2026; GloboNews 14/05/2026 (24:55), segundo g1 e CNN; CNN 20/08/2026. Investigado por suspeita; não há denúncia; ele nega.",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f05_versoes_master__khaby-lame",
+   "fato": "f05_versoes_master",
+   "fato_titulo": "As quatro versões sobre o dinheiro do filme",
+   "forma": "versoes",
+   "molde": "khaby-lame",
+   "molde_sentido": "Em cima a solução complicada; embaixo Khaby dá de ombros e aponta a óbvia. O molde ENDOSSA o que está embaixo.",
+   "linhas": [
+    "“Mentira” · “pedi, sim” · “eu menti” · “está tudo página virada”",
+    "O filme do pai foi pago pelo dono do Banco Master"
+   ],
+   "legenda": "As quatro versões de Flávio Bolsonaro sobre o dinheiro de Daniel Vorcaro, dono do Banco Master, para o filme do pai: “mentira” (13/05, manhã), “pedi, sim” (13/05, tarde), “eu menti” (14/05, GloboNews, segundo g1 e CNN) e “página virada” (20/08).",
+   "fonte": "Intercept e CNN, 13/05/2026; GloboNews 14/05/2026 (24:55), segundo g1 e CNN; CNN 20/08/2026. Investigado por suspeita; não há denúncia; ele nega.",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f06_pagina_virada__fine",
+   "fato": "f06_pagina_virada",
+   "fato_titulo": "“Está tudo página virada”",
+   "forma": "negacao",
+   "molde": "fine",
+   "molde_sentido": "O cachorro, no meio do incêndio, diz 'isto está bem'. Negação da catástrofe. O cachorro é quem nega.",
+   "linhas": [
+    "Banqueiro preso, inquérito na PF, filme do pai pago por ele",
+    "está tudo página virada"
+   ],
+   "legenda": "“Está tudo página virada”, disse Flávio Bolsonaro à CNN em 20/08/2026 sobre o filme do pai pago por Daniel Vorcaro, dono do Banco Master, preso desde março de 2026.",
+   "fonte": "Flávio Bolsonaro à CNN Brasil, 20/08/2026. Daniel Vorcaro, dono do Banco Master, preso preventivamente desde março de 2026 por uma fraude de R$ 12 bilhões contra um banco público.",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f06_pagina_virada__uno",
+   "fato": "f06_pagina_virada",
+   "fato_titulo": "“Está tudo página virada”",
+   "forma": "negacao",
+   "molde": "uno",
+   "molde_sentido": "A carta diz 'faça X ou compre 25 cartas'; o jogador prefere comprar 25. Recusa absurda de uma coisa simples.",
+   "linhas": [
+    "Explique o filme pago pelo dono do Banco Master ou compre 25 cartas",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "“Está tudo página virada”, disse Flávio Bolsonaro à CNN em 20/08/2026 sobre o filme do pai pago por Daniel Vorcaro, dono do Banco Master, preso desde março de 2026.",
+   "fonte": "Flávio Bolsonaro à CNN Brasil, 20/08/2026. Daniel Vorcaro, dono do Banco Master, preso preventivamente desde março de 2026 por uma fraude de R$ 12 bilhões contra um banco público.",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f07_jacare__fine",
+   "fato": "f07_jacare",
+   "fato_titulo": "O jacaré e a vacina (pai de Flávio)",
+   "forma": "negacao",
+   "molde": "fine",
+   "molde_sentido": "O cachorro, no meio do incêndio, diz 'isto está bem'. Negação da catástrofe. O cachorro é quem nega.",
+   "linhas": [
+    "Pandemia, dezembro de 2020. Jair Bolsonaro, pai de Flávio, sobre a vacina:",
+    "“Se você virar um jacaré o problema é de você, pô!”"
+   ],
+   "legenda": "Sobre a vacina da Pfizer, em 17/12/2020: “se você virar um jacaré o problema é de você, pô!”. Isso aconteceu no governo de Jair Bolsonaro, pai de Flávio.",
+   "fonte": "Planalto: discurso em Porto Seguro, 17/12/2020 (cópia no Internet Archive)",
+   "tema": "pandemia",
+   "registro": "ironia"
+  },
+  {
+   "id": "f08_cpi__buff",
+   "fato": "f08_cpi",
+   "fato_titulo": "“CPI do Banco Master já!” e depois",
+   "forma": "pedido_resultado",
+   "molde": "buff",
+   "molde_sentido": "Doge musculoso = a versão forte, confiante, de antes; Cheems chorando = a versão fraca de agora. 'Antes era assim, hoje é assim.'",
+   "linhas": [
+    "Flávio em maio: “CPI do Banco Master já!”",
+    "Flávio em agosto: “tá tudo página virada”"
+   ],
+   "legenda": "Em 13/05/2026 Flávio Bolsonaro postou “CPI do Banco Master já!”. O pedido de CPMI, de 30/04/2026, não foi lido pela presidência do Congresso. Em agosto: “está tudo página virada”.",
+   "fonte": "Post de Flávio Bolsonaro, 13/05/2026 (“CPI do Banco Master já!”); pedido de CPMI de 30/04/2026 não lido (Alcolumbre, 21/05/2026); CNN Brasil, 20/08/2026",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f08_cpi__pigeon",
+   "fato": "f08_cpi",
+   "fato_titulo": "“CPI do Banco Master já!” e depois",
+   "forma": "pedido_resultado",
+   "molde": "pigeon",
+   "molde_sentido": "O homem aponta uma borboleta e pergunta 'isso é um pombo?': confunde uma coisa com outra, com cara de sério.",
+   "linhas": [
+    "Flávio Bolsonaro",
+    "um post pedindo CPI (13/05)",
+    "Isso é uma CPI?"
+   ],
+   "legenda": "Em 13/05/2026 Flávio Bolsonaro postou “CPI do Banco Master já!”. O pedido de CPMI, de 30/04/2026, não foi lido pela presidência do Congresso. Em agosto: “está tudo página virada”.",
+   "fonte": "Post de Flávio Bolsonaro, 13/05/2026 (“CPI do Banco Master já!”); pedido de CPMI de 30/04/2026 não lido (Alcolumbre, 21/05/2026); CNN Brasil, 20/08/2026",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f08_cpi__pablo",
+   "fato": "f08_cpi",
+   "fato_titulo": "“CPI do Banco Master já!” e depois",
+   "forma": "pedido_resultado",
+   "molde": "pablo",
+   "molde_sentido": "Pablo Escobar sozinho, esperando, em três cenas. Espera triste e longa.",
+   "linhas": [
+    "Eu esperando a CPI do Master que Flávio pediu em maio",
+    ""
+   ],
+   "legenda": "Em 13/05/2026 Flávio Bolsonaro postou “CPI do Banco Master já!”. O pedido de CPMI, de 30/04/2026, não foi lido pela presidência do Congresso. Em agosto: “está tudo página virada”.",
+   "fonte": "Post de Flávio Bolsonaro, 13/05/2026 (“CPI do Banco Master já!”); pedido de CPMI de 30/04/2026 não lido (Alcolumbre, 21/05/2026); CNN Brasil, 20/08/2026",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f08_cpi__bernie",
+   "fato": "f08_cpi",
+   "fato_titulo": "“CPI do Banco Master já!” e depois",
+   "forma": "pedido_resultado",
+   "molde": "bernie",
+   "molde_sentido": "Bernie 'mais uma vez pedindo': insistência resignada de quem já pediu muitas vezes.",
+   "linhas": [
+    "Eu, mais uma vez, pedindo",
+    "a CPI do Banco Master que Flávio pediu em maio"
+   ],
+   "legenda": "Em 13/05/2026 Flávio Bolsonaro postou “CPI do Banco Master já!”. O pedido de CPMI, de 30/04/2026, não foi lido pela presidência do Congresso. Em agosto: “está tudo página virada”.",
+   "fonte": "Post de Flávio Bolsonaro, 13/05/2026 (“CPI do Banco Master já!”); pedido de CPMI de 30/04/2026 não lido (Alcolumbre, 21/05/2026); CNN Brasil, 20/08/2026",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f09_sem_onus__pooh",
+   "fato": "f09_sem_onus",
+   "fato_titulo": "Viagens “sem ônus para o Senado”",
+   "forma": "chique_simples",
+   "molde": "pooh",
+   "molde_sentido": "Pooh comum diz de um jeito simples; Pooh de smoking diz o mesmo de um jeito chique. A frase chique vira tradução pomposa da verdade.",
+   "linhas": [
+    "Viagem que não se sabe quem pagou",
+    "Viagem “sem ônus para o Senado”"
+   ],
+   "legenda": "Viagens de Flávio Bolsonaro aos Estados Unidos em maio e outubro de 2025 registradas como “sem ônus para o Senado Federal”. Não há registro de quem pagou.",
+   "fonte": "Senado Federal, requerimentos de missão (EUA, maio e outubro de 2025): “sem ônus para o Senado Federal”",
+   "tema": "senado",
+   "registro": "ironia"
+  },
+  {
+   "id": "f10_constituicao__right",
+   "fato": "f10_constituicao",
+   "fato_titulo": "Mudar a Constituição: reformar o Judiciário como?",
+   "forma": "pergunta_sem_resposta",
+   "molde": "right",
+   "molde_sentido": "Anakin diz algo; Padmé pergunta, confiante; Anakin cala; Padmé repete a pergunta, preocupada. O silêncio é a resposta.",
+   "linhas": [
+    "Flávio Bolsonaro",
+    "Você",
+    "Vou mudar a Constituição: reformar o Judiciário",
+    "Reformar como?",
+    "Reformar como?"
+   ],
+   "legenda": "Em 06/10/2026 Flávio Bolsonaro disse que, com maioria no Congresso, vai “mudar a Constituição e redemocratizar o país”. No dia seguinte listou reforma do Judiciário, maioridade penal, reforma tributária e fim da reeleição; o que muda no Judiciário, não detalhou.",
+   "fonte": "Discurso em Goiânia, 06/10/2026; CNN e SBT, 07/10/2026: defende reforma do Judiciário, sem detalhar",
+   "tema": "constituicao",
+   "registro": "ironia"
+  },
+  {
+   "id": "f11_pode_atender__pablo",
+   "fato": "f11_pode_atender",
+   "fato_titulo": "“Pode atender?”, véspera da prisão",
+   "forma": "espera",
+   "molde": "pablo",
+   "molde_sentido": "Pablo Escobar sozinho, esperando, em três cenas. Espera triste e longa.",
+   "linhas": [
+    "Flávio esperando Vorcaro atender: 15 e 16 de novembro",
+    "“Pode atender?”"
+   ],
+   "legenda": "Em 15 e 16/11/2025: “Pode atender?”, chamadas perdidas. Em 17/11, Daniel Vorcaro, dono do Banco Master, foi preso em Guarulhos. Flávio Bolsonaro é investigado por suspeita; não há denúncia; ele nega.",
+   "fonte": "Mensagens no celular de Daniel Vorcaro, dono do Banco Master (PF); Intercept 13/05/2026; Estadão 24/09/2026. Vorcaro preso em 17/11/2025.",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f12_relacao_irmao__buff",
+   "fato": "f12_relacao_irmao",
+   "fato_titulo": "“Só o filme” x “irmão, estou contigo sempre”",
+   "forma": "contradicao_citacoes",
+   "molde": "buff",
+   "molde_sentido": "Doge musculoso = a versão forte, confiante, de antes; Cheems chorando = a versão fraca de agora. 'Antes era assim, hoje é assim.'",
+   "linhas": [
+    "Flávio, novembro de 2025: “Irmão, estou e estarei contigo sempre”",
+    "Flávio, no JN, agosto de 2026: “a única relação que eu tinha com ele era sobre esse filme”"
+   ],
+   "legenda": "Na véspera da prisão de Daniel Vorcaro, dono do Banco Master (16/11/2025): “Irmão, estou e estarei contigo sempre, não tem meia conversa entre a gente.” No JN (28/08/2026): “A única relação que eu tinha com ele, Renata, era sobre esse filme e mais nada.”",
+   "fonte": "Mensagem de 16/11/2025 no celular de Daniel Vorcaro, dono do Banco Master (PF; Intercept 13/05/2026 e Estadão 24/09/2026); Jornal Nacional, 28/08/2026",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f12_relacao_irmao__puppet",
+   "fato": "f12_relacao_irmao",
+   "fato_titulo": "“Só o filme” x “irmão, estou contigo sempre”",
+   "forma": "contradicao_citacoes",
+   "molde": "puppet",
+   "molde_sentido": "O fantoche olha de lado, desconfiado, duas vezes. 'Eu quando ouço X'.",
+   "linhas": [
+    "Eu quando ouço “a única relação que eu tinha com ele era sobre esse filme”",
+    "e lembro de “Irmão, estou e estarei contigo sempre”"
+   ],
+   "legenda": "Na véspera da prisão de Daniel Vorcaro, dono do Banco Master (16/11/2025): “Irmão, estou e estarei contigo sempre, não tem meia conversa entre a gente.” No JN (28/08/2026): “A única relação que eu tinha com ele, Renata, era sobre esse filme e mais nada.”",
+   "fonte": "Mensagem de 16/11/2025 no celular de Daniel Vorcaro, dono do Banco Master (PF; Intercept 13/05/2026 e Estadão 24/09/2026); Jornal Nacional, 28/08/2026",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f13_senado_leis__megamind",
+   "fato": "f13_senado_leis",
+   "fato_titulo": "Sete anos de Senado, nenhuma lei",
+   "forma": "falta",
+   "molde": "megamind",
+   "molde_sentido": "Megamind espreita e pergunta 'no X?': provocação a quem não tem X.",
+   "linhas": [
+    "Sete anos de Senado e nenhuma lei aprovada?"
+   ],
+   "legenda": "Em sete anos de Senado, Flávio Bolsonaro apresentou 53 projetos. Nenhum virou lei.",
+   "fonte": "Senado Federal, proposições 2019–2026: 53 projetos, nenhum virou lei",
+   "tema": "senado",
+   "registro": "ironia"
+  },
+  {
+   "id": "f14_indulto_pai__pikachu",
+   "fato": "f14_indulto_pai",
+   "fato_titulo": "O candidato do pai",
+   "forma": "causa_consequencia",
+   "molde": "pikachu",
+   "molde_sentido": "Pikachu surpreso com a consequência óbvia do que ele mesmo fez. Causa, depois espanto.",
+   "linhas": [
+    "Em 2025 disse que o candidato do pai teria de garantir o indulto ao pai. Em 2026, o candidato é ele."
+   ],
+   "legenda": "Em junho de 2025, Flávio Bolsonaro disse à Folha que o candidato apoiado por Jair Bolsonaro, pai de Flávio, teria de garantir o indulto ao pai e, se o STF barrasse, falou em “possibilidade de uso da força”. O pai foi condenado em 11/09/2025 a 27 anos e 3 meses por tentativa de golpe de Estado. Em 2026, o candidato é Flávio.",
+   "fonte": "Folha de S.Paulo, junho de 2025 (via ICL Notícias 16/06/2025 e Portal Tela 14/06/2025); STF, 11/09/2025: Jair Bolsonaro, pai de Flávio, condenado a 27 anos e 3 meses",
+   "tema": "pai",
+   "registro": "ironia"
+  },
+  {
+   "id": "f15_anistia__handshake",
+   "fato": "f15_anistia",
+   "fato_titulo": "Anistia e indulto aos condenados do 8 de janeiro",
+   "forma": "uniao",
+   "molde": "handshake",
+   "molde_sentido": "Dois braços se apertam: concordância entre dois lados sobre algo.",
+   "linhas": [
+    "Flávio Bolsonaro",
+    "Condenados do 8 de janeiro",
+    "“Vamos indultar sim essas pessoas” (Record, 30/08/2026)"
+   ],
+   "legenda": "“A gente vai trabalhar no Congresso para que aconteça a anistia e, caso não dê tempo de acontecer, nós vamos indultar sim essas pessoas”: Flávio Bolsonaro à Record, 30/08/2026, sobre os condenados do 8 de janeiro.",
+   "fonte": "Record, entrevista de 30/08/2026 (17:58–18:08); Itatiaia, 18/08/2026",
+   "tema": "pai",
+   "registro": "ironia"
+  },
+  {
+   "id": "f16_13_discursos__megamind",
+   "fato": "f16_13_discursos",
+   "fato_titulo": "Sete anos de Senado, 13 discursos de tribuna",
+   "forma": "falta",
+   "molde": "megamind",
+   "molde_sentido": "Megamind espreita e pergunta 'no X?': provocação a quem não tem X.",
+   "linhas": [
+    "Sete anos de Senado e 13 discursos de tribuna?"
+   ],
+   "legenda": "Em sete anos de Senado, Flávio Bolsonaro fez 13 discursos de tribuna (pronunciamentos 2019–2026, Dados Abertos do Senado).",
+   "fonte": "Dados Abertos do Senado, pronunciamentos 2019–2026 (cálculo próprio)",
+   "tema": "senado",
+   "registro": "ironia"
+  },
+  {
+   "id": "f17_marielle__woman-cat",
+   "fato": "f17_marielle",
+   "fato_titulo": "Marielle: “respeitem a família” x “é militante do PSOL”",
+   "forma": "acusacao_fato",
+   "molde": "woman-cat",
+   "molde_sentido": "A mulher grita, exaltada; o gato, impassível, à mesa. Esquerda = quem acusa; direita = a coisa calma que desmente.",
+   "linhas": [
+    "Flávio: “era militante do PSOL (2018, votando contra a medalha para Marielle)”",
+    "Ele mesmo, em 2023: “Respeitem, pelo menos, a família da Marielle”"
+   ],
+   "legenda": "Em 2023, na CPMI do 8 de janeiro: “Respeitem, pelo menos, a família da Marielle”. Em abril de 2018, menos de um mês depois do assassinato, Flávio Bolsonaro foi o único deputado da Alerj a registrar voto contrário à Medalha Tiradentes para Marielle Franco: votava não porque ela era militante do PSOL, a única razão que deu.",
+   "fonte": "Senado, CPMI do 8 de janeiro, 11/07/2023; Alerj, notas taquigráficas de 12/04/2018 (único deputado a registrar voto contrário à Medalha Tiradentes a Marielle Franco)",
+   "tema": "rio",
+   "registro": "ironia"
+  },
+  {
+   "id": "f18_milicia_adriano__woman-cat",
+   "fato": "f18_milicia_adriano",
+   "fato_titulo": "“Milícia do PT” x a medalha para Adriano",
+   "forma": "acusacao_fato",
+   "molde": "woman-cat",
+   "molde_sentido": "A mulher grita, exaltada; o gato, impassível, à mesa. Esquerda = quem acusa; direita = a coisa calma que desmente.",
+   "linhas": [
+    "Flávio: “milícia do PT”",
+    "Em 2005 ele deu a Medalha Tiradentes a Adriano da Nóbrega"
+   ],
+   "legenda": "Em 24/09/2026, Flávio Bolsonaro atribuiu à “milícia do PT” a história da padroeira. Em 2005, como deputado estadual, deu a Medalha Tiradentes a Adriano Magalhães da Nóbrega, então preso, acusado de homicídio; Adriano foi apontado pelo MPRJ como chefe do “Escritório do Crime” e morreu em 2020 em operação policial. Não há acusação contra Flávio por isso.",
+   "fonte": "Vídeo de Flávio Bolsonaro, 24/09/2026 (“milícia do PT”); Alerj, PR 1067/2005, votação de 23/08/2005; MPRJ sobre o Escritório do Crime",
+   "tema": "rio",
+   "registro": "ironia"
+  },
+  {
+   "id": "f19_aviao__fine",
+   "fato": "f19_aviao",
+   "fato_titulo": "“Nunca entrei em avião de Vorcaro”",
+   "forma": "negacao",
+   "molde": "fine",
+   "molde_sentido": "O cachorro, no meio do incêndio, diz 'isto está bem'. Negação da catástrofe. O cachorro é quem nega.",
+   "linhas": [
+    "Voo de 19/01/2025 num jato do qual uma empresa de Vorcaro tinha um terço (piauí); voos pagos por empresas de Willer Tomaz (PF)",
+    "Nunca entrei em avião de Vorcaro"
+   ],
+   "legenda": "“Nunca entrei em avião de Vorcaro”, disse Flávio Bolsonaro em 01/07/2026. A piauí documentou voo dele em 19/01/2025 num jato do qual uma empresa de Daniel Vorcaro, dono do Banco Master, tinha um terço; segundo a PF, empresas de Willer Tomaz pagaram voos para Flávio e a família em 2024 e 2025. Flávio responde que o avião era de Tomaz.",
+   "fonte": "Flávio Bolsonaro, 01/07/2026; piauí, 23/09/2026 (voo de 19/01/2025 em jato do qual uma empresa de Daniel Vorcaro, dono do Banco Master, tinha um terço); PF via UOL, 10/10/2026 (voos pagos por empresas de Willer Tomaz). Flávio diz que o avião era de Willer Tomaz.",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f19_aviao__uno",
+   "fato": "f19_aviao",
+   "fato_titulo": "“Nunca entrei em avião de Vorcaro”",
+   "forma": "negacao",
+   "molde": "uno",
+   "molde_sentido": "A carta diz 'faça X ou compre 25 cartas'; o jogador prefere comprar 25. Recusa absurda de uma coisa simples.",
+   "linhas": [
+    "Explique o voo de 19 de janeiro de 2025 ou compre 25 cartas",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "“Nunca entrei em avião de Vorcaro”, disse Flávio Bolsonaro em 01/07/2026. A piauí documentou voo dele em 19/01/2025 num jato do qual uma empresa de Daniel Vorcaro, dono do Banco Master, tinha um terço; segundo a PF, empresas de Willer Tomaz pagaram voos para Flávio e a família em 2024 e 2025. Flávio responde que o avião era de Tomaz.",
+   "fonte": "Flávio Bolsonaro, 01/07/2026; piauí, 23/09/2026 (voo de 19/01/2025 em jato do qual uma empresa de Daniel Vorcaro, dono do Banco Master, tinha um terço); PF via UOL, 10/10/2026 (voos pagos por empresas de Willer Tomaz). Flávio diz que o avião era de Willer Tomaz.",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f20_padroeira__woman-cat",
+   "fato": "f20_padroeira",
+   "fato_titulo": "A padroeira: a acusação dele x o fato",
+   "forma": "acusacao_fato",
+   "molde": "woman-cat",
+   "molde_sentido": "A mulher grita, exaltada; o gato, impassível, à mesa. Esquerda = quem acusa; direita = a coisa calma que desmente.",
+   "linhas": [
+    "Flávio: “O PT espalhou a história da padroeira com ajuda de gente de dentro da CNBB”",
+    "O bispo da igreja onde ele foi batizado escreveu que Aparecida não deve ser padroeira (2001)"
+   ],
+   "legenda": "Em 27/09/2026 Flávio Bolsonaro disse que o PT espalhou a história da padroeira “com ajuda de gente de dentro” da CNBB, sem provas. A CNBB respondeu: “A mentira não se combate com outra mentira.” O bispo JB Carvalho, fundador da igreja onde Flávio foi batizado em 2024, escreveu em 2001 que o feriado de 12 de outubro é “ilegal” e pediu que Aparecida deixe de ser padroeira. Flávio nega qualquer plano contra a padroeira.",
+   "fonte": "Flávio Bolsonaro, ato de campanha, 27/09/2026; nota da CNBB, 27/09/2026; livro “A Bomba” (2001), de JB Carvalho, fundador da Comunidade das Nações, onde Flávio foi batizado em 2024 (Metrópoles, 27/09/2026)",
+   "tema": "fe",
+   "registro": "ironia"
+  },
+  {
+   "id": "f21_rockbridge__right",
+   "fato": "f21_rockbridge",
+   "fato_titulo": "Rockbridge: a pergunta que ficou sem resposta",
+   "forma": "pergunta_sem_resposta",
+   "molde": "right",
+   "molde_sentido": "Anakin diz algo; Padmé pergunta, confiante; Anakin cala; Padmé repete a pergunta, preocupada. O silêncio é a resposta.",
+   "linhas": [
+    "Flávio Bolsonaro",
+    "Você",
+    "A campanha não recebeu verba nem estrutura estrangeira",
+    "E o Conselho de Tecnologia endereçado a você?",
+    "E o Conselho de Tecnologia endereçado a você?"
+   ],
+   "legenda": "A assessoria de Flávio Bolsonaro disse à Folha que a campanha não recebeu verba nem estrutura estrangeira; em 26/09/2026 ele não quis comentar os contatos com a Rockbridge. O Intercept (29/09) publicou um documento de “Conselho de Tecnologia” endereçado a ele; Pedro Sang disse que foi “só uma ideia que nunca prosperou”.",
+   "fonte": "Assessoria de Flávio Bolsonaro à Folha (setembro de 2026); Intercept, 29/09/2026 (documento do “Conselho de Tecnologia” endereçado a Flávio; Pedro Sang: “só uma ideia que nunca prosperou”); Folha, 26/09/2026: Flávio não quis comentar",
+   "tema": "campanha",
+   "registro": "ironia"
+  },
+  {
+   "id": "f22_pandemia_escolas__fine",
+   "fato": "f22_pandemia_escolas",
+   "fato_titulo": "“Então por que fechar escolas?”",
+   "forma": "negacao",
+   "molde": "fine",
+   "molde_sentido": "O cachorro, no meio do incêndio, diz 'isto está bem'. Negação da catástrofe. O cachorro é quem nega.",
+   "linhas": [
+    "Março de 2020, pandemia chegando. Jair Bolsonaro, pai de Flávio, em cadeia nacional:",
+    "Então por que fechar escolas?"
+   ],
+   "legenda": "Em cadeia nacional, 24/03/2020, Jair Bolsonaro, pai de Flávio: “O grupo de risco é o das pessoas acima dos 60 anos. Então por que fechar escolas?”. Isso aconteceu no governo de Jair Bolsonaro, pai de Flávio.",
+   "fonte": "Planalto: pronunciamento em cadeia nacional de rádio e TV, 24/03/2020",
+   "tema": "pandemia",
+   "registro": "ironia"
+  },
+  {
+   "id": "f22_pandemia_escolas__uno",
+   "fato": "f22_pandemia_escolas",
+   "fato_titulo": "“Então por que fechar escolas?”",
+   "forma": "negacao",
+   "molde": "uno",
+   "molde_sentido": "A carta diz 'faça X ou compre 25 cartas'; o jogador prefere comprar 25. Recusa absurda de uma coisa simples.",
+   "linhas": [
+    "Feche as escolas em março de 2020 ou compre 25 cartas",
+    "Jair Bolsonaro, pai de Flávio"
+   ],
+   "legenda": "Em cadeia nacional, 24/03/2020, Jair Bolsonaro, pai de Flávio: “O grupo de risco é o das pessoas acima dos 60 anos. Então por que fechar escolas?”. Isso aconteceu no governo de Jair Bolsonaro, pai de Flávio.",
+   "fonte": "Planalto: pronunciamento em cadeia nacional de rádio e TV, 24/03/2020",
+   "tema": "pandemia",
+   "registro": "ironia"
+  },
+  {
+   "id": "f23_praias__pool",
+   "fato": "f23_praias",
+   "fato_titulo": "PEC das Praias: 3.000 a favor, 169.774 contra",
+   "forma": "prioridade",
+   "molde": "pool",
+   "molde_sentido": "A mãe cuida de um filho enquanto o outro se afoga: prioridade errada.",
+   "linhas": [
+    "A PEC das Praias (relator, com parecer favorável desde 2022)",
+    "169.774 pessoas contra na consulta pública do Senado",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "Flávio Bolsonaro é relator da PEC das Praias desde 2022, com parecer favorável. Na consulta pública do Senado, 3.000 pessoas apoiam e 169.774 são contra (até 10/10/2026).",
+   "fonte": "Senado Federal: PEC 3/2022, relator desde 06/04/2022; consulta pública e-Cidadania, 3.000 Sim e 169.774 Não (até 10/10/2026)",
+   "tema": "praias",
+   "registro": "ironia"
+  }
+ ]
+}

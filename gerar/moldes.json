@@ -1,0 +1,801 @@
+{
+ "bernie": {
+  "nome": "Bernie I Am Once Again Asking",
+  "img": "terceiros/moldes/bernie.jpg",
+  "origem": "https://knowyourmeme.com/memes/i-am-once-again-asking-for-your-financial-support",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.02,
+    "scale_x": 1.0,
+    "scale_y": 0.18,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.85,
+    "scale_x": 1.0,
+    "scale_y": 0.14,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Bernie 'mais uma vez pedindo': insistência resignada de quem já pediu muitas vezes.",
+  "formas": [
+   "pedido_resultado"
+  ]
+ },
+ "buff": {
+  "nome": "Buff Doge vs. Cheems",
+  "img": "terceiros/moldes/buff.png",
+  "origem": "https://knowyourmeme.com/memes/swole-doge-vs-cheems",
+  "caixas": [
+   {
+    "anchor_x": 0.02,
+    "anchor_y": 0.74,
+    "scale_x": 0.46,
+    "scale_y": 0.24,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.52,
+    "anchor_y": 0.76,
+    "scale_x": 0.46,
+    "scale_y": 0.22,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Doge musculoso = a versão forte, confiante, de antes; Cheems chorando = a versão fraca de agora. 'Antes era assim, hoje é assim.'",
+  "formas": [
+   "promessa_ato",
+   "pedido_resultado",
+   "contradicao_citacoes"
+  ]
+ },
+ "buttons": {
+  "nome": "Two Buttons",
+  "img": "terceiros/moldes/buttons.jpg",
+  "origem": "https://knowyourmeme.com/memes/daily-struggle",
+  "caixas": [
+   {
+    "anchor_x": 0.06,
+    "anchor_y": 0.04,
+    "scale_x": 0.36,
+    "scale_y": 0.2,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.48,
+    "anchor_y": 0.02,
+    "scale_x": 0.42,
+    "scale_y": 0.2,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.02,
+    "anchor_y": 0.84,
+    "scale_x": 0.96,
+    "scale_y": 0.14,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
+  "formas": [
+   "promessa_ato",
+   "voto"
+  ]
+ },
+ "db": {
+  "nome": "Distracted Boyfriend",
+  "img": "terceiros/moldes/db.jpg",
+  "origem": "https://knowyourmeme.com/memes/distracted-boyfriend",
+  "caixas": [
+   {
+    "anchor_x": 0.12,
+    "anchor_y": 0.7,
+    "scale_x": 0.325,
+    "scale_y": 0.1,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.55,
+    "anchor_y": 0.45,
+    "scale_x": 0.175,
+    "scale_y": 0.1,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.74,
+    "anchor_y": 0.66,
+    "scale_x": 0.2,
+    "scale_y": 0.1,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "O namorado olha a outra; a namorada, traída, olha para ele. Esquerda = tentação; meio = quem se distrai; direita = o compromisso traído.",
+  "formas": [
+   "promessa_ato"
+  ]
+ },
+ "exit": {
+  "nome": "Left Exit 12 Off Ramp",
+  "img": "terceiros/moldes/exit.png",
+  "origem": "https://knowyourmeme.com/memes/left-exit-12-off-ramp",
+  "caixas": [
+   {
+    "anchor_x": 0.24,
+    "anchor_y": 0.15,
+    "scale_x": 0.15,
+    "scale_y": 0.22,
+    "font": "thin",
+    "color": "#BBBBBB",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.53,
+    "anchor_y": 0.15,
+    "scale_x": 0.22,
+    "scale_y": 0.22,
+    "font": "thin",
+    "color": "#BBBBBB",
+    "style": "thin",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.46,
+    "anchor_y": 0.85,
+    "scale_x": 0.32,
+    "scale_y": 0.1,
+    "font": "thin",
+    "color": "white",
+    "style": "default",
+    "angle": 9.0
+   }
+  ],
+  "sentido": "O carro desvia na última hora da reta (o esperado) para a saída (o que escolheu de fato).",
+  "formas": [
+   "promessa_ato"
+  ]
+ },
+ "fine": {
+  "nome": "This is Fine",
+  "img": "terceiros/moldes/fine.png",
+  "origem": "http://gunshowcomic.com/648",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.8,
+    "scale_x": 1.0,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "O cachorro, no meio do incêndio, diz 'isto está bem'. Negação da catástrofe. O cachorro é quem nega.",
+  "formas": [
+   "negacao"
+  ]
+ },
+ "gb": {
+  "nome": "Galaxy Brain",
+  "img": "terceiros/moldes/gb.jpg",
+  "origem": "https://knowyourmeme.com/memes/galaxy-brain",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.0,
+    "scale_x": 0.49,
+    "scale_y": 0.245,
+    "font": "thin",
+    "color": "black",
+    "style": "none",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.255,
+    "scale_x": 0.49,
+    "scale_y": 0.246,
+    "font": "thin",
+    "color": "black",
+    "style": "none",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.51,
+    "scale_x": 0.489,
+    "scale_y": 0.224,
+    "font": "thin",
+    "color": "black",
+    "style": "none",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.746,
+    "scale_x": 0.49,
+    "scale_y": 0.255,
+    "font": "thin",
+    "color": "black",
+    "style": "none",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Cérebro em expansão, escalada irônica; o último degrau, o mais 'iluminado', é o mais absurdo.",
+  "formas": [
+   "versoes"
+  ]
+ },
+ "gru": {
+  "nome": "Gru's Plan",
+  "img": "terceiros/moldes/gru.jpg",
+  "origem": "https://knowyourmeme.com/memes/grus-plan",
+  "caixas": [
+   {
+    "anchor_x": 0.275,
+    "anchor_y": 0.2,
+    "scale_x": 0.2075,
+    "scale_y": 0.2,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.78,
+    "anchor_y": 0.2,
+    "scale_x": 0.205,
+    "scale_y": 0.2,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.28,
+    "anchor_y": 0.7,
+    "scale_x": 0.205,
+    "scale_y": 0.2,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.78,
+    "anchor_y": 0.7,
+    "scale_x": 0.205,
+    "scale_y": 0.2,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Gru apresenta o plano em quatro quadros; o 3º quadro é a falha que ele só percebe ao reler no 4º (mesmo texto).",
+  "formas": [
+   "promessa_ato",
+   "versoes"
+  ]
+ },
+ "handshake": {
+  "nome": "Epic Handshake",
+  "img": "terceiros/moldes/handshake.jpg",
+  "origem": "https://www.deviantart.com/miloslavvonranda/art/EPIC-handshake-by-Dillon-and-Dutch-325709082",
+  "caixas": [
+   {
+    "anchor_x": -0.0275,
+    "anchor_y": 0.3,
+    "scale_x": 0.4,
+    "scale_y": 0.4,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": -45.0
+   },
+   {
+    "anchor_x": 0.4,
+    "anchor_y": 0.35,
+    "scale_x": 0.4,
+    "scale_y": 0.4,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": 27.5
+   },
+   {
+    "anchor_x": 0.15,
+    "anchor_y": 0.1,
+    "scale_x": 0.5,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Dois braços se apertam: concordância entre dois lados sobre algo.",
+  "formas": [
+   "uniao"
+  ]
+ },
+ "harold": {
+  "nome": "Hide the Pain Harold",
+  "img": "terceiros/moldes/harold.jpg",
+  "origem": "https://knowyourmeme.com/memes/hide-the-pain-harold",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.8,
+    "scale_x": 1.0,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "O senhor sorri escondendo a dor. Voz de quem lê, aguentando uma situação ruim.",
+  "formas": [
+   "promessa_ato",
+   "voto"
+  ]
+ },
+ "khaby-lame": {
+  "nome": "Khaby Lame Shrug",
+  "img": "terceiros/moldes/khaby-lame.jpg",
+  "origem": "https://knowyourmeme.com/photos/2132291-khaby-lame-shrug-its-that-simple",
+  "caixas": [
+   {
+    "anchor_x": 0.02,
+    "anchor_y": 0.02,
+    "scale_x": 0.45,
+    "scale_y": 0.47,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.02,
+    "anchor_y": 0.51,
+    "scale_x": 0.45,
+    "scale_y": 0.47,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Em cima a solução complicada; embaixo Khaby dá de ombros e aponta a óbvia. O molde ENDOSSA o que está embaixo.",
+  "formas": [
+   "versoes"
+  ]
+ },
+ "megamind": {
+  "nome": "Megamind peeking (no X?)",
+  "img": "terceiros/moldes/megamind.png",
+  "origem": "https://knowyourmeme.com/memes/megamind-no-bitches",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.02,
+    "scale_x": 1.0,
+    "scale_y": 0.22,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Megamind espreita e pergunta 'no X?': provocação a quem não tem X.",
+  "formas": [
+   "falta"
+  ]
+ },
+ "pablo": {
+  "nome": "Sad Pablo Escobar",
+  "img": "terceiros/moldes/pablo.jpg",
+  "origem": "https://knowyourmeme.com/memes/sad-pablo-escobar",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 0.18,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.82,
+    "scale_x": 1.0,
+    "scale_y": 0.18,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Pablo Escobar sozinho, esperando, em três cenas. Espera triste e longa.",
+  "formas": [
+   "espera",
+   "pedido_resultado"
+  ]
+ },
+ "pigeon": {
+  "nome": "Is This a Pigeon?",
+  "img": "terceiros/moldes/pigeon.jpg",
+  "origem": "https://knowyourmeme.com/memes/is-this-a-pigeon",
+  "caixas": [
+   {
+    "anchor_x": 0.15,
+    "anchor_y": 0.0,
+    "scale_x": 0.35,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.71,
+    "anchor_y": 0.3,
+    "scale_x": 0.175,
+    "scale_y": 0.1,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.8,
+    "scale_x": 1.0,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "khaki",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "O homem aponta uma borboleta e pergunta 'isso é um pombo?': confunde uma coisa com outra, com cara de sério.",
+  "formas": [
+   "pedido_resultado"
+  ]
+ },
+ "pikachu": {
+  "nome": "Surprised Pikachu",
+  "img": "terceiros/moldes/pikachu.jpg",
+  "origem": "https://knowyourmeme.com/memes/surprised-pikachu",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.02,
+    "scale_x": 1.0,
+    "scale_y": 0.3,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Pikachu surpreso com a consequência óbvia do que ele mesmo fez. Causa, depois espanto.",
+  "formas": [
+   "causa_consequencia"
+  ]
+ },
+ "pooh": {
+  "nome": "Tuxedo Winnie the Pooh",
+  "img": "terceiros/moldes/pooh.png",
+  "origem": "https://knowyourmeme.com/memes/tuxedo-winnie-the-pooh",
+  "caixas": [
+   {
+    "anchor_x": 0.5,
+    "anchor_y": 0.0,
+    "scale_x": 0.5,
+    "scale_y": 0.5,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.5,
+    "anchor_y": 0.5,
+    "scale_x": 0.5,
+    "scale_y": 0.5,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Pooh comum diz de um jeito simples; Pooh de smoking diz o mesmo de um jeito chique. A frase chique vira tradução pomposa da verdade.",
+  "formas": [
+   "chique_simples"
+  ]
+ },
+ "pool": {
+  "nome": "Mother Ignoring Kid Drowning In A Pool",
+  "img": "terceiros/moldes/pool.png",
+  "origem": "https://knowyourmeme.com/memes/mother-ignoring-kid-drowning-in-a-pool",
+  "caixas": [
+   {
+    "anchor_x": 0.33,
+    "anchor_y": 0.4,
+    "scale_x": 0.4,
+    "scale_y": 0.15,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.05,
+    "anchor_y": 0.85,
+    "scale_x": 0.4,
+    "scale_y": 0.15,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.6,
+    "anchor_y": 0.65,
+    "scale_x": 0.4,
+    "scale_y": 0.15,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "A mãe cuida de um filho enquanto o outro se afoga: prioridade errada.",
+  "formas": [
+   "prioridade"
+  ]
+ },
+ "puppet": {
+  "nome": "Monkey Puppet (olhar de lado)",
+  "img": "terceiros/moldes/puppet.jpg",
+  "origem": "https://knowyourmeme.com/memes/awkward-look-monkey-puppet",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.01,
+    "scale_x": 1.0,
+    "scale_y": 0.13,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.15,
+    "scale_x": 1.0,
+    "scale_y": 0.13,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "O fantoche olha de lado, desconfiado, duas vezes. 'Eu quando ouço X'.",
+  "formas": [
+   "promessa_ato",
+   "contradicao_citacoes"
+  ]
+ },
+ "right": {
+  "nome": "Anakin and Padme Change the World For the Better",
+  "img": "terceiros/moldes/right.png",
+  "origem": "https://www.reddit.com/r/MemeTemplatesOfficial/comments/nia6wu/im_going_to_change_the_world_for_the_better_right/",
+  "caixas": [
+   {
+    "anchor_x": 0.09,
+    "anchor_y": 0.01,
+    "scale_x": 0.25,
+    "scale_y": 0.1,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.65,
+    "anchor_y": 0.01,
+    "scale_x": 0.25,
+    "scale_y": 0.1,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.399,
+    "scale_x": 0.499,
+    "scale_y": 0.1,
+    "font": "thin",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.502,
+    "anchor_y": 0.399,
+    "scale_x": 0.499,
+    "scale_y": 0.1,
+    "font": "thin",
+    "color": "khaki",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.502,
+    "anchor_y": 0.9,
+    "scale_x": 0.499,
+    "scale_y": 0.1,
+    "font": "thin",
+    "color": "khaki",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Anakin diz algo; Padmé pergunta, confiante; Anakin cala; Padmé repete a pergunta, preocupada. O silêncio é a resposta.",
+  "formas": [
+   "pergunta_sem_resposta"
+  ]
+ },
+ "spongebob": {
+  "nome": "Mocking Spongebob",
+  "img": "terceiros/moldes/spongebob.jpg",
+  "origem": "http://knowyourmeme.com/memes/mocking-spongebob",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.8,
+    "scale_x": 1.0,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "white",
+    "style": "mock",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Em cima, a frase de alguém; embaixo, a mesma frase repetida com deboche (letras alternadas). Quem repete ridiculariza a frase.",
+  "formas": [
+   "promessa_ato"
+  ]
+ },
+ "uno": {
+  "nome": "UNO Draw 25 Cards",
+  "img": "terceiros/moldes/uno.jpg",
+  "origem": "https://knowyourmeme.com/memes/uno-draw-25-cards",
+  "caixas": [
+   {
+    "anchor_x": 0.02,
+    "anchor_y": 0.03,
+    "scale_x": 0.46,
+    "scale_y": 0.3,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.5,
+    "anchor_y": 0.02,
+    "scale_x": 0.5,
+    "scale_y": 0.2,
+    "font": "thick",
+    "color": "white",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "A carta diz 'faça X ou compre 25 cartas'; o jogador prefere comprar 25. Recusa absurda de uma coisa simples.",
+  "formas": [
+   "negacao"
+  ]
+ },
+ "woman-cat": {
+  "nome": "Woman Yelling at a Cat",
+  "img": "terceiros/moldes/woman-cat.jpg",
+  "origem": "https://knowyourmeme.com/memes/woman-yelling-at-a-cat",
+  "caixas": [
+   {
+    "anchor_x": 0.0,
+    "anchor_y": 0.0,
+    "scale_x": 0.55,
+    "scale_y": 0.15,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   },
+   {
+    "anchor_x": 0.56,
+    "anchor_y": 0.0,
+    "scale_x": 0.44,
+    "scale_y": 0.15,
+    "font": "thin",
+    "color": "black",
+    "style": "default",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "A mulher grita, exaltada; o gato, impassível, à mesa. Esquerda = quem acusa; direita = a coisa calma que desmente.",
+  "formas": [
+   "acusacao_fato"
+  ]
+ }
+}
