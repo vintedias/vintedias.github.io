@@ -422,7 +422,8 @@
   ],
   "sentido": "Em cima a solução complicada; embaixo Khaby dá de ombros e aponta a óbvia. O molde ENDOSSA o que está embaixo.",
   "formas": [
-   "versoes"
+   "versoes",
+   "acusacao_fato"
   ]
  },
  "megamind": {
@@ -641,7 +642,8 @@
   "sentido": "O fantoche olha de lado, desconfiado, duas vezes. 'Eu quando ouço X'.",
   "formas": [
    "promessa_ato",
-   "contradicao_citacoes"
+   "contradicao_citacoes",
+   "acusacao_fato"
   ]
  },
  "right": {
