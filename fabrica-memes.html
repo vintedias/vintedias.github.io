@@ -36,7 +36,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 <nav><a href="./">‹ Início</a></nav>
 <h1>Fábrica de memes</h1>
 <p class="emteste"><b>Fábrica em fase de testes.</b> Antes de postar, confira se o meme diz o que você quer dizer.</p>
-<p class="mut">Memes com moldes conhecidos e fatos com fonte, montados na hora no seu navegador, sem IA e sem rosto de candidato. O texto é sempre o do banco, conferido: a graça está na distância entre o que ele disse e o que fez.</p>
+<p class="mut">Memes com moldes conhecidos e fatos com fonte, montados na hora no seu navegador, sem IA e sem rosto de candidato. O texto é sempre o do banco de dados, conferido: a graça está na distância entre o que ele disse e o que fez.</p>
 <p class="rot">Tema</p><div class="chips" id="temas"></div>
 <input type="search" id="busca" placeholder="Ou procure por uma palavra: Vorcaro, veto, 6x1, fundo…" aria-label="Procurar meme">
 <div class="grade">
@@ -45,7 +45,8 @@ button:disabled{opacity:.45;cursor:not-allowed}
   <p class="rot" id="rotmolde">Molde</p><div class="chips" id="moldes"></div><p class="mut" id="sentido" style="margin-top:6px;font-size:15px"></p>
   <div class="prev" id="prev" style="margin-top:12px">Carregando…</div>
   <p class="iron">Meme é ironia: para o feed de quem já decidiu e para responder a quem pergunta. Não mandar em grupo de família.</p>
-  <div class="bts"><button class="p1" id="baixa">Baixar</button><button class="p2" id="comp">Compartilhar</button><button class="p3 larga" id="copia">Copiar legenda com a fonte</button></div>
+  <div class="bts"><button class="p1" id="baixa">Baixar</button><button class="p2" id="comp">Compartilhar</button><button class="p3 larga" id="copia">Copiar legenda com a fonte</button><button class="p2 larga" id="todos" hidden>Baixar todos os moldes deste fato (carrossel)</button></div>
+  <p class="mut" id="todosnota" hidden style="font-size:15px;margin-top:8px"></p>
   <div class="aviso" id="aviso"></div>
   <p class="fonte" id="fonte"></p>
   <p class="nota">Material de eleitor. Poste do seu perfil e assine (Lei 9.504). Não edite o texto para dizer mais do que a fonte diz.</p>
@@ -96,6 +97,9 @@ function escolhe(id) {
   const ag = atual.estado === 'aguarda';
   $('aviso').style.display = ag ? 'block' : 'none'; $('aviso').textContent = ag ? 'Este meme aguarda conferência da fonte: a prévia serve só para ver o formato. Por isso não baixa.' : '';
   $('baixa').disabled = $('comp').disabled = $('copia').disabled = ag;
+  const prontos = irmaos.filter(m => m.estado !== 'aguarda');   // carrossel: só os conferidos
+  $('todos').hidden = prontos.length < 2; $('todos').textContent = `Baixar os ${prontos.length} moldes deste fato (carrossel)`;
+  $('todosnota').hidden = true;
   desenha();
 }
 async function desenha() {
@@ -118,9 +122,43 @@ $('comp').onclick = () => arquivo(async (b, n) => {
   try { if (navigator.canShare && navigator.canShare({files: [f]})) { await navigator.share({files: [f], text: atual.legenda || ''}); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
   const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = n; a.click();
 });
+const legendaDe = m => (m.legenda ? m.legenda + '\n' : '') + 'Fonte: ' + (m.fonte || '') + '\nMaterial de eleitor · sem IA';
+// 13/10, pedido da sessão de materiais (inspiração: carrossel de um fato em vários formatos): todos os moldes do fato de uma vez,
+// em 1080x1350 com barras brancas (a prévia segue no formato do molde), com a legenda. Celular: compartilha os N arquivos juntos (WhatsApp/Instagram montam o carrossel); computador: zip com legenda.txt
+const carregaZip = () => window.JSZip ? Promise.resolve() : new Promise((ok, er) => { const s = document.createElement('script');
+  s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js'; s.onload = ok; s.onerror = er; document.head.appendChild(s); });
+$('todos').onclick = async e => {
+  if (!atual) return; const bt = e.currentTarget, rot = bt.textContent, nota = $('todosnota');
+  const ms = BANCO.itens.filter(m => m.fato === atual.fato && m.estado !== 'aguarda'), leg = legendaDe(atual);
+  let copiou = false; try { await navigator.clipboard.writeText(leg); copiou = true; } catch (er) {}   // antes de desenhar, enquanto o clique vale
+  bt.disabled = true;
+  try {
+    const arqs = [];
+    for (const [i, m] of ms.entries()) {
+      bt.textContent = `Montando ${i + 1} de ${ms.length}…`;
+      const c = document.createElement('canvas');
+      await window.desenhaMolde(c, MOLDES[m.molde], m.linhas, {fmt: 'feed', faixa: false, fundo: '#ffffff'});   // todos em 1080x1350: o carrossel do Instagram corta pela proporção da 1ª
+      const b = await new Promise(r => c.toBlob(r, 'image/png'));
+      arqs.push(new File([b], `${String(i + 1).padStart(2, '0')}_meme_${slug(m.id)}.png`, {type: 'image/png'}));
+    }
+    const msg = copiou ? 'Legenda com a fonte copiada: cole junto ao postar.' : '';
+    let foi = false;
+    if (matchMedia('(pointer: coarse)').matches && navigator.canShare && navigator.canShare({files: arqs})) {
+      try { await navigator.share({files: arqs, text: atual.legenda || ''}); foi = true; } catch (er) { if (er && er.name === 'AbortError') foi = true; }
+    }
+    if (!foi) {
+      await carregaZip(); const z = new JSZip();
+      arqs.forEach(f => z.file(f.name, f)); z.file('legenda.txt', leg + '\n');
+      const b = await z.generateAsync({type: 'blob'}), a = document.createElement('a');
+      a.href = URL.createObjectURL(b); a.download = `memes_${slug(atual.fato)}.zip`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 6e4);
+    }
+    nota.textContent = msg; nota.hidden = !msg;
+  } catch (er) { nota.textContent = 'Não foi possível montar todos agora. Baixe um por um pelos botões acima.'; nota.hidden = false; }
+  bt.disabled = false; bt.textContent = rot;
+};
 $('copia').onclick = async e => {
   if (!atual) return;
-  const t = (atual.legenda ? atual.legenda + '\n' : '') + 'Fonte: ' + (atual.fonte || '') + '\nMaterial de eleitor · sem IA';
+  const t = legendaDe(atual);
   try { await navigator.clipboard.writeText(t); e.target.textContent = 'Legenda copiada'; setTimeout(() => e.target.textContent = 'Copiar legenda com a fonte', 2000); }
   catch (er) { prompt('Copie a legenda:', t); }
 };

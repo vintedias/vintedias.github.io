@@ -63,48 +63,6 @@
    "contradicao_citacoes"
   ]
  },
- "buttons": {
-  "nome": "Two Buttons",
-  "img": "terceiros/moldes/buttons.jpg",
-  "origem": "https://knowyourmeme.com/memes/daily-struggle",
-  "caixas": [
-   {
-    "anchor_x": 0.06,
-    "anchor_y": 0.04,
-    "scale_x": 0.36,
-    "scale_y": 0.2,
-    "font": "thin",
-    "color": "black",
-    "style": "default",
-    "angle": 0.0
-   },
-   {
-    "anchor_x": 0.48,
-    "anchor_y": 0.02,
-    "scale_x": 0.42,
-    "scale_y": 0.2,
-    "font": "thin",
-    "color": "black",
-    "style": "default",
-    "angle": 0.0
-   },
-   {
-    "anchor_x": 0.02,
-    "anchor_y": 0.84,
-    "scale_x": 0.96,
-    "scale_y": 0.14,
-    "font": "thick",
-    "color": "white",
-    "style": "default",
-    "angle": 0.0
-   }
-  ],
-  "sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
-  "formas": [
-   "promessa_ato",
-   "voto"
-  ]
- },
  "db": {
   "nome": "Distracted Boyfriend",
   "img": "terceiros/moldes/db.jpg",
@@ -144,6 +102,48 @@
   "sentido": "O namorado olha a outra; a namorada, traída, olha para ele. Esquerda = tentação; meio = quem se distrai; direita = o compromisso traído.",
   "formas": [
    "promessa_ato"
+  ]
+ },
+ "ds": {
+  "nome": "Daily Struggle",
+  "img": "terceiros/moldes/ds.jpg",
+  "origem": "https://knowyourmeme.com/memes/daily-struggle",
+  "caixas": [
+   {
+    "anchor_x": 0.085,
+    "anchor_y": 0.105,
+    "scale_x": 0.32,
+    "scale_y": 0.095,
+    "font": "thin",
+    "color": "black",
+    "style": "none",
+    "angle": 12.5
+   },
+   {
+    "anchor_x": 0.455,
+    "anchor_y": 0.085,
+    "scale_x": 0.23,
+    "scale_y": 0.09,
+    "font": "thin",
+    "color": "black",
+    "style": "none",
+    "angle": 10.5
+   },
+   {
+    "anchor_x": 0.04,
+    "anchor_y": 0.82,
+    "scale_x": 0.92,
+    "scale_y": 0.15,
+    "font": "thick",
+    "color": "white",
+    "style": "upper",
+    "angle": 0.0
+   }
+  ],
+  "sentido": "Dois botões e o homem suando (a mesma cena do Two Buttons, na versão que circula sem assinatura): os dois botões são opções dele e a graça é a contradição entre elas.",
+  "formas": [
+   "promessa_ato",
+   "voto"
   ]
  },
  "exit": {
@@ -216,57 +216,6 @@
   "sentido": "O cachorro, no meio do incêndio, diz 'isto está bem'. Negação da catástrofe. O cachorro é quem nega.",
   "formas": [
    "negacao"
-  ]
- },
- "gb": {
-  "nome": "Galaxy Brain",
-  "img": "terceiros/moldes/gb.jpg",
-  "origem": "https://knowyourmeme.com/memes/galaxy-brain",
-  "caixas": [
-   {
-    "anchor_x": 0.0,
-    "anchor_y": 0.0,
-    "scale_x": 0.49,
-    "scale_y": 0.245,
-    "font": "thin",
-    "color": "black",
-    "style": "none",
-    "angle": 0.0
-   },
-   {
-    "anchor_x": 0.0,
-    "anchor_y": 0.255,
-    "scale_x": 0.49,
-    "scale_y": 0.246,
-    "font": "thin",
-    "color": "black",
-    "style": "none",
-    "angle": 0.0
-   },
-   {
-    "anchor_x": 0.0,
-    "anchor_y": 0.51,
-    "scale_x": 0.489,
-    "scale_y": 0.224,
-    "font": "thin",
-    "color": "black",
-    "style": "none",
-    "angle": 0.0
-   },
-   {
-    "anchor_x": 0.0,
-    "anchor_y": 0.746,
-    "scale_x": 0.49,
-    "scale_y": 0.255,
-    "font": "thin",
-    "color": "black",
-    "style": "none",
-    "angle": 0.0
-   }
-  ],
-  "sentido": "Cérebro em expansão, escalada irônica; o último degrau, o mais 'iluminado', é o mais absurdo.",
-  "formas": [
-   "versoes"
   ]
  },
  "gru": {
@@ -423,7 +372,8 @@
   "sentido": "Em cima a solução complicada; embaixo Khaby dá de ombros e aponta a óbvia. O molde ENDOSSA o que está embaixo.",
   "formas": [
    "versoes",
-   "acusacao_fato"
+   "acusacao_fato",
+   "ausencia"
   ]
  },
  "megamind": {
@@ -517,7 +467,8 @@
   ],
   "sentido": "O homem aponta uma borboleta e pergunta 'isso é um pombo?': confunde uma coisa com outra, com cara de sério.",
   "formas": [
-   "pedido_resultado"
+   "pedido_resultado",
+   "confusao"
   ]
  },
  "pikachu": {
@@ -643,7 +594,8 @@
   "formas": [
    "promessa_ato",
    "contradicao_citacoes",
-   "acusacao_fato"
+   "acusacao_fato",
+   "ausencia"
   ]
  },
  "right": {
@@ -704,6 +656,7 @@
   ],
   "sentido": "Anakin diz algo; Padmé pergunta, confiante; Anakin cala; Padmé repete a pergunta, preocupada. O silêncio é a resposta.",
   "formas": [
+   "desigual",
    "pergunta_sem_resposta"
   ]
  },

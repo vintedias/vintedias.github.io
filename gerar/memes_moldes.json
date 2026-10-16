@@ -129,26 +129,27 @@
    "titulo": "PEC das Praias: 3.000 a favor, 169.774 contra",
    "tema": "praias",
    "forma": "prioridade"
+  },
+  {
+   "id": "f25_distracao_master_lula",
+   "titulo": "A distração: “o Master é do Lula” x as mensagens dele",
+   "tema": "master",
+   "forma": "prioridade"
+  },
+  {
+   "id": "f26_plano_6x1",
+   "titulo": "O plano de governo dele não fala em 6x1",
+   "tema": "trabalho",
+   "forma": "ausencia"
+  },
+  {
+   "id": "f28_meta_flavio22",
+   "titulo": "A IA da Meta não sabe quem é Flávio",
+   "tema": "pai",
+   "forma": "confusao"
   }
  ],
  "itens": [
-  {
-   "id": "f01_fundo__buttons",
-   "fato": "f01_fundo",
-   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
-   "forma": "promessa_ato",
-   "molde": "buttons",
-   "molde_sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
-   "linhas": [
-    "Não usar o fundo eleitoral, como prometeu em 2019",
-    "Pegar R$ 47 milhões do fundo eleitoral em 2026",
-    "Flávio Bolsonaro"
-   ],
-   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
-   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
-   "tema": "campanha",
-   "registro": "ironia"
-  },
   {
    "id": "f01_fundo__buff",
    "fato": "f01_fundo",
@@ -159,24 +160,6 @@
    "linhas": [
     "Flávio em 2019: “jamais vou usar recursos desse fundo eleitoral”",
     "Flávio em 2026: pegou R$ 47 milhões do fundo eleitoral"
-   ],
-   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
-   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
-   "tema": "campanha",
-   "registro": "ironia"
-  },
-  {
-   "id": "f01_fundo__gru",
-   "fato": "f01_fundo",
-   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
-   "forma": "promessa_ato",
-   "molde": "gru",
-   "molde_sentido": "Gru apresenta o plano em quatro quadros; o 3º quadro é a falha que ele só percebe ao reler no 4º (mesmo texto).",
-   "linhas": [
-    "Ser candidato a presidente",
-    "Não usar o fundo eleitoral, como prometeu em 2019",
-    "Pegar R$ 47 milhões do fundo eleitoral em 2026",
-    "Pegar R$ 47 milhões do fundo eleitoral em 2026"
    ],
    "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
    "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
@@ -266,38 +249,20 @@
    "registro": "ironia"
   },
   {
-   "id": "f02_6x1__buttons",
-   "fato": "f02_6x1",
-   "fato_titulo": "A escala 6x1: promessa e PEC",
+   "id": "f01_fundo__ds",
+   "fato": "f01_fundo",
+   "fato_titulo": "O fundo eleitoral que ele jurou não usar",
    "forma": "promessa_ato",
-   "molde": "buttons",
-   "molde_sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
+   "molde": "ds",
+   "molde_sentido": "Dois botões e o homem suando (a mesma cena do Two Buttons, na versão que circula sem assinatura): os dois botões são opções dele e a graça é a contradição entre elas.",
    "linhas": [
-    "Acabar com a escala 6x1",
-    "Assinar a PEC que mantém as 44 horas",
+    "Não usar o fundo eleitoral, como prometeu em 2019",
+    "Pegar R$ 47 milhões do fundo eleitoral em 2026",
     "Flávio Bolsonaro"
    ],
-   "legenda": "Flávio Bolsonaro promete o fim da escala 6x1 e é um dos 40 autores da PEC 12/2026, que mantém as 44 horas semanais.",
-   "fonte": "Senado Federal, PEC 12/2026 (15º de 40 autores, 28/05/2026); fala de 06/10/2026",
-   "tema": "trabalho",
-   "registro": "ironia"
-  },
-  {
-   "id": "f02_6x1__gru",
-   "fato": "f02_6x1",
-   "fato_titulo": "A escala 6x1: promessa e PEC",
-   "forma": "promessa_ato",
-   "molde": "gru",
-   "molde_sentido": "Gru apresenta o plano em quatro quadros; o 3º quadro é a falha que ele só percebe ao reler no 4º (mesmo texto).",
-   "linhas": [
-    "Ser candidato a presidente",
-    "Acabar com a escala 6x1",
-    "Assinar a PEC que mantém as 44 horas",
-    "Assinar a PEC que mantém as 44 horas"
-   ],
-   "legenda": "Flávio Bolsonaro promete o fim da escala 6x1 e é um dos 40 autores da PEC 12/2026, que mantém as 44 horas semanais.",
-   "fonte": "Senado Federal, PEC 12/2026 (15º de 40 autores, 28/05/2026); fala de 06/10/2026",
-   "tema": "trabalho",
+   "legenda": "Em 04/12/2019, Flávio Bolsonaro disse em vídeo: “eu, Flávio Bolsonaro, jamais vou usar recursos desse fundo eleitoral”. Em 2026, a campanha dele recebeu R$ 47 milhões do fundo.",
+   "fonte": "Vídeo no canal de Flávio Bolsonaro no YouTube, 04/12/2019 (01:52–01:58); prestação de contas no TSE, 2026",
+   "tema": "campanha",
    "registro": "ironia"
   },
   {
@@ -334,20 +299,20 @@
    "registro": "ironia"
   },
   {
-   "id": "f03_prova_vida__buttons",
-   "fato": "f03_prova_vida",
-   "fato_titulo": "O voto sobre a prova de vida na pandemia",
-   "forma": "voto",
-   "molde": "buttons",
-   "molde_sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
+   "id": "f02_6x1__ds",
+   "fato": "f02_6x1",
+   "fato_titulo": "A escala 6x1: promessa e PEC",
+   "forma": "promessa_ato",
+   "molde": "ds",
+   "molde_sentido": "Dois botões e o homem suando (a mesma cena do Two Buttons, na versão que circula sem assinatura): os dois botões são opções dele e a graça é a contradição entre elas.",
    "linhas": [
-    "Suspender a prova de vida dos aposentados na pandemia",
-    "Votar para manter a prova de vida na pandemia (2021)",
+    "Acabar com a escala 6x1",
+    "Assinar a PEC que mantém as 44 horas",
     "Flávio Bolsonaro"
    ],
-   "legenda": "Em 27/09/2021, Flávio Bolsonaro votou para manter o veto à suspensão da prova de vida do INSS na pandemia. O Senado derrubou o veto por 54 a 8.",
-   "fonte": "Senado Federal, 27/09/2021: veto à suspensão da prova de vida (VET 47/2021, PL 385/2021) derrubado por 54 a 8; ele votou para manter",
-   "tema": "70mais",
+   "legenda": "Flávio Bolsonaro promete o fim da escala 6x1 e é um dos 40 autores da PEC 12/2026, que mantém as 44 horas semanais.",
+   "fonte": "Senado Federal, PEC 12/2026 (15º de 40 autores, 28/05/2026); fala de 06/10/2026",
+   "tema": "trabalho",
    "registro": "ironia"
   },
   {
@@ -363,23 +328,6 @@
    ],
    "legenda": "Em 27/09/2021, Flávio Bolsonaro votou para manter o veto à suspensão da prova de vida do INSS na pandemia. O Senado derrubou o veto por 54 a 8.",
    "fonte": "Senado Federal, 27/09/2021: veto à suspensão da prova de vida (VET 47/2021, PL 385/2021) derrubado por 54 a 8; ele votou para manter",
-   "tema": "70mais",
-   "registro": "ironia"
-  },
-  {
-   "id": "f04_quimio__buttons",
-   "fato": "f04_quimio",
-   "fato_titulo": "O voto sobre a quimioterapia oral em casa",
-   "forma": "voto",
-   "molde": "buttons",
-   "molde_sentido": "Um homem sua diante de dois botões; os dois são opções dele e a graça é a contradição entre elas (ou o dilema falso).",
-   "linhas": [
-    "Derrubar o veto e garantir a quimioterapia oral em casa",
-    "Manter o veto à quimioterapia oral em casa pelos planos",
-    "Flávio Bolsonaro"
-   ],
-   "legenda": "Flávio Bolsonaro votou para manter o veto ao projeto que obrigava os planos de saúde a cobrir quimioterapia oral em casa (Senado, 08/02/2022).",
-   "fonte": "Senado Federal, 08/02/2022: veto ao PL 6.330/2019 (quimioterapia oral em casa pelos planos); ele votou para manter",
    "tema": "70mais",
    "registro": "ironia"
   },
@@ -407,28 +355,10 @@
    "molde": "gru",
    "molde_sentido": "Gru apresenta o plano em quatro quadros; o 3º quadro é a falha que ele só percebe ao reler no 4º (mesmo texto).",
    "linhas": [
-    "Dizer que Vorcaro não tem relação com o filme",
+    "Plano de Flávio: dizer que Vorcaro não tem relação com o filme",
     "Confirmar que pediu dinheiro a ele",
     "Dizer “eu menti” na GloboNews",
     "Dizer “eu menti” na GloboNews"
-   ],
-   "legenda": "As quatro versões de Flávio Bolsonaro sobre o dinheiro de Daniel Vorcaro, dono do Banco Master, para o filme do pai: “mentira” (13/05, manhã), “pedi, sim” (13/05, tarde), “eu menti” (14/05, GloboNews, segundo g1 e CNN) e “página virada” (20/08).",
-   "fonte": "Intercept e CNN, 13/05/2026; GloboNews 14/05/2026 (24:55), segundo g1 e CNN; CNN 20/08/2026. Investigado por suspeita; não há denúncia; ele nega.",
-   "tema": "master",
-   "registro": "ironia"
-  },
-  {
-   "id": "f05_versoes_master__gb",
-   "fato": "f05_versoes_master",
-   "fato_titulo": "As quatro versões sobre o dinheiro do filme",
-   "forma": "versoes",
-   "molde": "gb",
-   "molde_sentido": "Cérebro em expansão, escalada irônica; o último degrau, o mais 'iluminado', é o mais absurdo.",
-   "linhas": [
-    "“Mentira.”",
-    "“Pedi recursos, sim.”",
-    "“Eu menti.”",
-    "“Está tudo página virada.”"
    ],
    "legenda": "As quatro versões de Flávio Bolsonaro sobre o dinheiro de Daniel Vorcaro, dono do Banco Master, para o filme do pai: “mentira” (13/05, manhã), “pedi, sim” (13/05, tarde), “eu menti” (14/05, GloboNews, segundo g1 e CNN) e “página virada” (20/08).",
    "fonte": "Intercept e CNN, 13/05/2026; GloboNews 14/05/2026 (24:55), segundo g1 e CNN; CNN 20/08/2026. Investigado por suspeita; não há denúncia; ele nega.",
@@ -807,6 +737,72 @@
    "legenda": "Flávio Bolsonaro é relator da PEC das Praias desde 2022, com parecer favorável. Na consulta pública do Senado, 3.000 pessoas apoiam e 169.774 são contra (até 10/10/2026).",
    "fonte": "Senado Federal: PEC 3/2022, relator desde 06/04/2022; consulta pública e-Cidadania, 3.000 Sim e 169.774 Não (até 10/10/2026)",
    "tema": "praias",
+   "registro": "ironia"
+  },
+  {
+   "id": "f25_distracao_master_lula__pool",
+   "fato": "f25_distracao_master_lula",
+   "fato_titulo": "A distração: “o Master é do Lula” x as mensagens dele",
+   "forma": "prioridade",
+   "molde": "pool",
+   "molde_sentido": "A mãe cuida de um filho enquanto o outro se afoga: prioridade errada.",
+   "linhas": [
+    "Camiseta “o Master é do Lula” (09/05/2026)",
+    "Quatro dias depois vieram a público as mensagens dele com o dono do Master",
+    "Flávio Bolsonaro"
+   ],
+   "legenda": "Em 09/05/2026, em evento do PL em Santa Catarina, Flávio Bolsonaro usou a camiseta “o Pix é do Bolsonaro, o Master é do Lula”. Em 13/05 vieram a público as mensagens e áudios dele com Daniel Vorcaro, dono do Banco Master, preso preventivamente desde março de 2026, sobre o dinheiro do filme do pai.",
+   "fonte": "Evento do PL em Santa Catarina, 09/05/2026 (CNN Brasil, linha do tempo); Intercept, 13/05/2026",
+   "tema": "master",
+   "registro": "ironia"
+  },
+  {
+   "id": "f26_plano_6x1__khaby-lame",
+   "fato": "f26_plano_6x1",
+   "fato_titulo": "O plano de governo dele não fala em 6x1",
+   "forma": "ausencia",
+   "molde": "khaby-lame",
+   "molde_sentido": "Em cima a solução complicada; embaixo Khaby dá de ombros e aponta a óbvia. O molde ENDOSSA o que está embaixo.",
+   "linhas": [
+    "Esperar o voto de Flávio Bolsonaro para saber o que ele pensa da 6x1",
+    "Ler o plano de governo dele: não fala em 6x1"
+   ],
+   "legenda": "O plano de governo de Flávio Bolsonaro, registrado no TSE, não fala em 6x1.",
+   "fonte": "Plano de governo de Flávio Bolsonaro, TSE, 2026 (p. 44–45)",
+   "tema": "trabalho",
+   "registro": "ironia"
+  },
+  {
+   "id": "f26_plano_6x1__puppet",
+   "fato": "f26_plano_6x1",
+   "fato_titulo": "O plano de governo dele não fala em 6x1",
+   "forma": "ausencia",
+   "molde": "puppet",
+   "molde_sentido": "O fantoche olha de lado, desconfiado, duas vezes. 'Eu quando ouço X'.",
+   "linhas": [
+    "Eu procurando “6x1” no plano de governo de Flávio Bolsonaro",
+    "Não tem."
+   ],
+   "legenda": "O plano de governo de Flávio Bolsonaro, registrado no TSE, não fala em 6x1.",
+   "fonte": "Plano de governo de Flávio Bolsonaro, TSE, 2026 (p. 44–45)",
+   "tema": "trabalho",
+   "registro": "ironia"
+  },
+  {
+   "id": "f28_meta_flavio22__pigeon",
+   "fato": "f28_meta_flavio22",
+   "fato_titulo": "A IA da Meta não sabe quem é Flávio",
+   "forma": "confusao",
+   "molde": "pigeon",
+   "molde_sentido": "O homem aponta uma borboleta e pergunta 'isso é um pombo?': confunde uma coisa com outra, com cara de sério.",
+   "linhas": [
+    "Filtro de candidatos da IA da Meta, 14/10",
+    "“Flávio 22”",
+    "Isso é um Flávio qualquer?"
+   ],
+   "legenda": "Na manhã de 14/10, em testes do Poder360 e do Terra, a IA da Meta no WhatsApp recusou “Lula 13”, “Luiz Inácio” e “Flávio Bolsonaro 22”, mas gerou “Flávio 22”. A Meta diz que bloqueia temporariamente imagens de candidatos, também por primeiro nome e número; depois, “Flávio 22” passou a ser recusado. A coligação de Lula acionou o TSE.",
+   "fonte": "Testes de Poder360 e Terra, manhã de 14/10/2026; nota da Meta ao g1 (via Jornal da Paraíba)",
+   "tema": "pai",
    "registro": "ironia"
   }
  ]

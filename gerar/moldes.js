@@ -1,7 +1,7 @@
 // Motor da fábrica de memes: desenha um molde conhecido (gerar/moldes.json) com as linhas do banco (gerar/memes_moldes.json) num canvas.
 // Mesma lógica do pipeline/memes_tpl.py: fonte "thick" = Anton/Impact branca com contorno preto em caixa alta; "thin" = Arial negrito preta;
 // estilo "mock" alterna maiúsculas e minúsculas. Faixa de fonte embaixo (regra 8) e enquadramento em feed (1080x1350) ou story (1080x1920).
-// Uso: await desenhaMolde(canvas, moldeCfg, linhas, { fmt: 'original'|'feed'|'story', fonte: '...', faixa: true, base: 'gerar/' })
+// Uso: await desenhaMolde(canvas, moldeCfg, linhas, { fmt: 'original'|'feed'|'story'|'figurinha', fonte: '...', faixa: true, base: 'gerar/', fundo: '#121214' })
 (function () {
   const W = 1080;
   const COR = { white: '#fff', black: '#000', khaki: '#f0e68c', yellow: '#fadc28' };
@@ -30,15 +30,15 @@
     let size = Math.floor(h * 0.9), lines = [], lh = 0;
     for (; size > 10; size -= 2) {
       ctx.font = (thick ? '400 ' : '700 ') + size + 'px ' + (thick ? FONTE_THICK : FONTE_THIN);
-      lines = quebra(ctx, txt, w - 8); lh = size * 1.05;
+      lines = quebra(ctx, txt, w - 8); lh = size * (thick ? 1.2 : 1.1);   // Anton pede mais entrelinha que a métrica do em-box
       if (lines.length * lh <= h && lines.every(l => ctx.measureText(l).width <= w - 8)) break;
     }
     // baseline alfabética: a Anton/Impact estoura o topo do em-box com 'top'; a primeira linha nunca sobe acima da caixa
     let yy = Math.max(y + 2, y + (h - lines.length * lh) / 2);
     ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'center'; ctx.lineJoin = 'round';
+    const asc = Math.min((ctx.measureText('ÁÇM').actualBoundingBoxAscent || size * 0.86), lh - 2);   // uma medida por caixa (com acento), senão a entrelinha varia por linha
     for (const l of lines) {
-      const mt = ctx.measureText(l); const asc = mt.actualBoundingBoxAscent || size * 0.86;   // topo real do glifo, para não cortar
-      const by = yy + Math.min(asc, lh - 2) + 2;
+      const by = yy + asc + 2;
       if (thick) { ctx.lineWidth = Math.max(4, size / 6); ctx.strokeStyle = '#000'; ctx.strokeText(l, x + w / 2, by); }
       ctx.fillStyle = COR[c.color || 'white'] || c.color || '#fff'; ctx.fillText(l, x + w / 2, by);
       yy += lh;
@@ -56,7 +56,7 @@
     const s = Math.min(W / im.width, (outH - faixaH) / im.height), iw = Math.round(im.width * s), ih = Math.round(im.height * s);
     canvas.width = outW; canvas.height = outH;
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#121214'; ctx.fillRect(0, 0, outW, outH);
+    ctx.fillStyle = opt.fundo || '#121214'; ctx.fillRect(0, 0, outW, outH);   // opt.fundo: cor das barras do enquadramento (ex.: '#fff' para carrossel)
     const top = Math.max(0, Math.round((outH - faixaH - ih) / 2)), left = Math.round((outW - iw) / 2);
     ctx.drawImage(im, left, top, iw, ih);
     ctx.save(); ctx.translate(left, top);
