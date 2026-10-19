@@ -147,6 +147,18 @@
    "titulo": "A IA da Meta não sabe quem é Flávio",
    "tema": "pai",
    "forma": "confusao"
+  },
+  {
+   "id": "f32_6x1_porque",
+   "titulo": "Votou pelo fim da 6x1 a 11 dias da eleição",
+   "tema": "trabalho",
+   "forma": "pergunta_sem_resposta"
+  },
+  {
+   "id": "f33_6x1_plano",
+   "titulo": "O plano de ser o 1 do placar",
+   "tema": "trabalho",
+   "forma": "versoes"
   }
  ],
  "itens": [
@@ -803,6 +815,43 @@
    "legenda": "Na manhã de 14/10, em testes do Poder360 e do Terra, a IA da Meta no WhatsApp recusou “Lula 13”, “Luiz Inácio” e “Flávio Bolsonaro 22”, mas gerou “Flávio 22”. A Meta diz que bloqueia temporariamente imagens de candidatos, também por primeiro nome e número; depois, “Flávio 22” passou a ser recusado. A coligação de Lula acionou o TSE.",
    "fonte": "Testes de Poder360 e Terra, manhã de 14/10/2026; nota da Meta ao g1 (via Jornal da Paraíba)",
    "tema": "pai",
+   "registro": "ironia"
+  },
+  {
+   "id": "f32_6x1_porque__right",
+   "fato": "f32_6x1_porque",
+   "fato_titulo": "Votou pelo fim da 6x1 a 11 dias da eleição",
+   "forma": "pergunta_sem_resposta",
+   "molde": "right",
+   "molde_sentido": "Anakin diz algo; Padmé pergunta, confiante; Anakin cala; Padmé repete a pergunta, preocupada. O silêncio é a resposta.",
+   "linhas": [
+    "Flávio",
+    "Você",
+    "Vou votar a favor do fim da 6x1",
+    "Porque é bom pro trabalhador, né?",
+    "Porque é bom pro trabalhador, né?"
+   ],
+   "legenda": "“Vou votar a favor do fim da 6x1, mas a gente defende algo ainda melhor”, disse Flávio Bolsonaro em 13/10 (SBT News). Em 14/10, a 11 dias da eleição, votou a favor, a distância (Estadão). Em 2020, tinha sido o único voto contra adiar o Enem na pandemia (75 a 1).",
+   "fonte": "SBT News, 13/10/2026; Senado, 14/10/2026",
+   "tema": "trabalho",
+   "registro": "ironia"
+  },
+  {
+   "id": "f33_6x1_plano__gru",
+   "fato": "f33_6x1_plano",
+   "fato_titulo": "O plano de ser o 1 do placar",
+   "forma": "versoes",
+   "molde": "gru",
+   "molde_sentido": "Gru apresenta o plano em quatro quadros; o 3º quadro é a falha que ele só percebe ao reler no 4º (mesmo texto).",
+   "linhas": [
+    "Plano de Flávio: ser o único a votar contra o fundo da ciência",
+    "Ser o único a votar contra adiar o Enem na pandemia",
+    "Fim da 6x1 a 11 dias da eleição",
+    "Fim da 6x1 a 11 dias da eleição"
+   ],
+   "legenda": "No Senado, Flávio Bolsonaro foi o único voto contra o projeto que protege o fundo da ciência (71 a 1, 2020) e contra adiar o Enem na pandemia (75 a 1, 2020). No fim da escala 6x1 (75 a 1, 14/10/2026), a 11 dias da eleição, votou a favor.",
+   "fonte": "Senado Federal, votações nominais de 13/08/2020 e 19/05/2020; PEC 221/2019, 14/10/2026",
+   "tema": "trabalho",
    "registro": "ironia"
   }
  ]
