@@ -1,123 +1,123 @@
 {
- "gerado": "2026-10-25 20:45:12",
- "tse_hora": "20:44:00",
- "secoes_pct": 69.92,
+ "gerado": "2026-10-25 20:46:21",
+ "tse_hora": "20:45:40",
+ "secoes_pct": 71.74,
  "apurado": {
-  "lula": 43036824,
-  "flavio": 41609295,
-  "pct_lula": 50.84,
-  "pct_flavio": 49.16
+  "lula": 43869750,
+  "flavio": 42324081,
+  "pct_lula": 50.9,
+  "pct_flavio": 49.1
  },
- "votos_apurados_frac": 0.6846,
- "votos_faltam": 39000143,
+ "votos_apurados_frac": 0.6969,
+ "votos_faltam": 37485254,
  "projecao": {
-  "lula": 51.81,
-  "flavio": 48.19,
-  "sd": 0.41,
+  "lula": 51.79,
+  "flavio": 48.21,
+  "sd": 0.38,
   "ic90": [
-   51.11,
-   52.47
+   51.16,
+   52.41
   ],
   "p_lula": 1.0,
   "p_flavio": 0.0,
   "ic95": [
-   50.97,
-   52.6
+   51.03,
+   52.52
   ]
  },
  "com_pesquisas": {
-  "lula": 51.69,
-  "sd": 0.41,
+  "lula": 51.7,
+  "sd": 0.37,
   "p_lula": 1.0,
   "prior_lula": 49.0,
   "prior_sd": 2.0,
-  "peso_apuracao": 0.959
+  "peso_apuracao": 0.965
  },
- "swing_nacional_logit": 0.1249,
- "inclinacao": -0.0465,
- "x_ref": -0.0763,
- "sd_nat": 0.0562,
- "razao_comparecimento": 1.0371,
+ "swing_nacional_logit": 0.125,
+ "inclinacao": -0.0464,
+ "x_ref": -0.0741,
+ "sd_nat": 0.0551,
+ "razao_comparecimento": 1.0373,
  "ufs": [
   {
    "uf": "AC",
    "regiao": "Norte",
-   "secoes_pct": 97.2,
+   "secoes_pct": 98.1,
    "lula_1T": 30.8,
-   "lula_apurado": 33.4,
-   "lula_proj": 33.6,
+   "lula_apurado": 33.5,
+   "lula_proj": 33.5,
    "ic90": [
     33.5,
-    33.7
+    33.6
    ],
-   "swing_logit": 0.104,
+   "swing_logit": 0.102,
    "n_mun_obs": 22,
-   "razao_comp": 0.93
+   "razao_comp": 0.929
   },
   {
    "uf": "AL",
    "regiao": "Nordeste",
-   "secoes_pct": 89.8,
+   "secoes_pct": 91.0,
    "lula_1T": 57.5,
-   "lula_apurado": 61.7,
+   "lula_apurado": 61.5,
    "lula_proj": 60.7,
    "ic90": [
     60.4,
-    61.0
+    60.9
    ],
-   "swing_logit": 0.164,
+   "swing_logit": 0.162,
    "n_mun_obs": 102,
    "razao_comp": 1.042
   },
   {
    "uf": "AM",
    "regiao": "Norte",
-   "secoes_pct": 89.7,
+   "secoes_pct": 90.4,
    "lula_1T": 51.7,
-   "lula_apurado": 53.0,
-   "lula_proj": 54.0,
+   "lula_apurado": 53.1,
+   "lula_proj": 53.9,
    "ic90": [
     53.8,
     54.1
    ],
-   "swing_logit": 0.124,
+   "swing_logit": 0.123,
    "n_mun_obs": 62,
    "razao_comp": 0.98
   },
   {
    "uf": "AP",
    "regiao": "Norte",
-   "secoes_pct": 98.3,
+   "secoes_pct": 98.6,
    "lula_1T": 50.0,
-   "lula_apurado": 52.7,
+   "lula_apurado": 52.8,
    "lula_proj": 52.7,
    "ic90": [
     52.7,
     52.8
    ],
-   "swing_logit": 0.122,
+   "swing_logit": 0.123,
    "n_mun_obs": 16,
    "razao_comp": 0.917
   },
   {
    "uf": "BA",
    "regiao": "Nordeste",
-   "secoes_pct": 52.6,
+   "secoes_pct": 54.7,
    "lula_1T": 69.9,
    "lula_apurado": 71.2,
-   "lula_proj": 71.9,
+   "lula_proj": 71.6,
    "ic90": [
-    70.9,
-    72.7
+    70.8,
+    72.4
    ],
-   "swing_logit": 0.108,
-   "n_mun_obs": 340,
-   "razao_comp": 1.061
+   "swing_logit": 0.107,
+   "n_mun_obs": 346,
+   "razao_comp": 1.062
   },
   {
    "uf": "CE",
    "regiao": "Nordeste",
-   "secoes_pct": 73.4,
+   "secoes_pct": 74.7,
    "lula_1T": 66.9,
    "lula_apurado": 67.6,
    "lula_proj": 68.6,
@@ -125,9 +125,9 @@
     68.1,
     69.0
    ],
-   "swing_logit": 0.117,
-   "n_mun_obs": 160,
-   "razao_comp": 1.047
+   "swing_logit": 0.118,
+   "n_mun_obs": 163,
+   "razao_comp": 1.046
   },
   {
    "uf": "DF",
@@ -162,22 +162,22 @@
   {
    "uf": "GO",
    "regiao": "Centro-Oeste",
-   "secoes_pct": 79.0,
+   "secoes_pct": 81.2,
    "lula_1T": 36.7,
    "lula_apurado": 39.7,
-   "lula_proj": 40.3,
+   "lula_proj": 40.2,
    "ic90": [
     39.8,
-    40.7
+    40.6
    ],
    "swing_logit": 0.131,
-   "n_mun_obs": 196,
+   "n_mun_obs": 198,
    "razao_comp": 1.027
   },
   {
    "uf": "MA",
    "regiao": "Nordeste",
-   "secoes_pct": 90.0,
+   "secoes_pct": 90.5,
    "lula_1T": 67.4,
    "lula_apurado": 68.8,
    "lula_proj": 69.2,
@@ -192,22 +192,22 @@
   {
    "uf": "MG",
    "regiao": "Sudeste",
-   "secoes_pct": 61.9,
+   "secoes_pct": 63.9,
    "lula_1T": 47.3,
    "lula_apurado": 50.0,
-   "lula_proj": 50.2,
+   "lula_proj": 50.3,
    "ic90": [
-    49.4,
+    49.5,
     51.0
    ],
    "swing_logit": 0.12,
-   "n_mun_obs": 540,
+   "n_mun_obs": 547,
    "razao_comp": 1.053
   },
   {
    "uf": "MS",
    "regiao": "Centro-Oeste",
-   "secoes_pct": 97.5,
+   "secoes_pct": 97.6,
    "lula_1T": 37.2,
    "lula_apurado": 40.4,
    "lula_proj": 40.3,
@@ -215,29 +215,29 @@
     40.3,
     40.4
    ],
-   "swing_logit": 0.117,
+   "swing_logit": 0.116,
    "n_mun_obs": 79,
    "razao_comp": 1.044
   },
   {
    "uf": "MT",
    "regiao": "Centro-Oeste",
-   "secoes_pct": 86.7,
+   "secoes_pct": 87.5,
    "lula_1T": 30.9,
    "lula_apurado": 33.4,
    "lula_proj": 33.9,
    "ic90": [
     33.6,
-    34.2
+    34.1
    ],
-   "swing_logit": 0.108,
+   "swing_logit": 0.107,
    "n_mun_obs": 138,
    "razao_comp": 1.026
   },
   {
    "uf": "PA",
    "regiao": "Norte",
-   "secoes_pct": 87.6,
+   "secoes_pct": 88.4,
    "lula_1T": 52.9,
    "lula_apurado": 54.5,
    "lula_proj": 54.8,
@@ -247,15 +247,15 @@
    ],
    "swing_logit": 0.099,
    "n_mun_obs": 143,
-   "razao_comp": 1.011
+   "razao_comp": 1.01
   },
   {
    "uf": "PB",
    "regiao": "Nordeste",
-   "secoes_pct": 94.2,
+   "secoes_pct": 94.5,
    "lula_1T": 65.0,
    "lula_apurado": 68.0,
-   "lula_proj": 67.6,
+   "lula_proj": 67.5,
    "ic90": [
     67.4,
     67.7
@@ -267,73 +267,73 @@
   {
    "uf": "PE",
    "regiao": "Nordeste",
-   "secoes_pct": 73.6,
+   "secoes_pct": 74.5,
    "lula_1T": 67.2,
-   "lula_apurado": 70.2,
+   "lula_apurado": 70.1,
    "lula_proj": 69.4,
    "ic90": [
     68.9,
-    70.0
+    69.9
    ],
    "swing_logit": 0.146,
-   "n_mun_obs": 176,
+   "n_mun_obs": 177,
    "razao_comp": 1.06
   },
   {
    "uf": "PI",
    "regiao": "Nordeste",
-   "secoes_pct": 67.6,
+   "secoes_pct": 70.3,
    "lula_1T": 74.7,
-   "lula_apurado": 75.8,
-   "lula_proj": 75.8,
+   "lula_apurado": 75.9,
+   "lula_proj": 75.7,
    "ic90": [
     75.2,
-    76.3
+    76.2
    ],
-   "swing_logit": 0.115,
-   "n_mun_obs": 193,
-   "razao_comp": 1.014
+   "swing_logit": 0.113,
+   "n_mun_obs": 196,
+   "razao_comp": 1.015
   },
   {
    "uf": "PR",
    "regiao": "Sul",
-   "secoes_pct": 98.0,
+   "secoes_pct": 98.1,
    "lula_1T": 34.2,
-   "lula_apurado": 37.3,
+   "lula_apurado": 37.4,
    "lula_proj": 37.4,
    "ic90": [
     37.4,
     37.4
    ],
    "swing_logit": 0.115,
-   "n_mun_obs": 398,
+   "n_mun_obs": 399,
    "razao_comp": 1.042
   },
   {
    "uf": "RJ",
    "regiao": "Sudeste",
-   "secoes_pct": 18.8,
+   "secoes_pct": 21.0,
    "lula_1T": 42.6,
-   "lula_apurado": 45.9,
+   "lula_apurado": 46.4,
    "lula_proj": 48.0,
    "ic90": [
-    46.0,
-    49.9
+    46.2,
+    49.8
    ],
-   "swing_logit": 0.183,
-   "n_mun_obs": 57,
-   "razao_comp": 1.026
+   "swing_logit": 0.189,
+   "n_mun_obs": 58,
+   "razao_comp": 1.028
   },
   {
    "uf": "RN",
    "regiao": "Nordeste",
-   "secoes_pct": 87.1,
+   "secoes_pct": 87.9,
    "lula_1T": 63.2,
    "lula_apurado": 66.1,
    "lula_proj": 65.8,
    "ic90": [
     65.5,
-    66.1
+    66.0
    ],
    "swing_logit": 0.15,
    "n_mun_obs": 163,
@@ -342,7 +342,7 @@
   {
    "uf": "RO",
    "regiao": "Norte",
-   "secoes_pct": 88.5,
+   "secoes_pct": 88.7,
    "lula_1T": 27.7,
    "lula_apurado": 30.6,
    "lula_proj": 30.4,
@@ -357,76 +357,76 @@
   {
    "uf": "RR",
    "regiao": "Norte",
-   "secoes_pct": 82.0,
+   "secoes_pct": 82.7,
    "lula_1T": 24.3,
-   "lula_apurado": 28.3,
-   "lula_proj": 27.8,
+   "lula_apurado": 28.2,
+   "lula_proj": 27.7,
    "ic90": [
     27.4,
-    28.2
+    28.1
    ],
-   "swing_logit": 0.142,
+   "swing_logit": 0.14,
    "n_mun_obs": 15,
    "razao_comp": 0.938
   },
   {
    "uf": "RS",
    "regiao": "Sul",
-   "secoes_pct": 82.5,
+   "secoes_pct": 83.7,
    "lula_1T": 39.1,
    "lula_apurado": 42.0,
-   "lula_proj": 42.2,
+   "lula_proj": 42.1,
    "ic90": [
     41.8,
     42.5
    ],
    "swing_logit": 0.11,
-   "n_mun_obs": 451,
-   "razao_comp": 1.047
+   "n_mun_obs": 454,
+   "razao_comp": 1.046
   },
   {
    "uf": "SC",
    "regiao": "Sul",
-   "secoes_pct": 90.1,
+   "secoes_pct": 90.8,
    "lula_1T": 27.3,
    "lula_apurado": 30.8,
    "lula_proj": 30.5,
    "ic90": [
-    30.3,
+    30.4,
     30.7
    ],
    "swing_logit": 0.118,
-   "n_mun_obs": 286,
+   "n_mun_obs": 288,
    "razao_comp": 1.033
   },
   {
    "uf": "SE",
    "regiao": "Nordeste",
-   "secoes_pct": 21.7,
+   "secoes_pct": 23.1,
    "lula_1T": 67.2,
-   "lula_apurado": 67.1,
-   "lula_proj": 70.0,
+   "lula_apurado": 67.3,
+   "lula_proj": 69.9,
    "ic90": [
-    68.3,
-    71.6
+    68.2,
+    71.5
    ],
-   "swing_logit": 0.157,
+   "swing_logit": 0.156,
    "n_mun_obs": 24,
-   "razao_comp": 1.053
+   "razao_comp": 1.052
   },
   {
    "uf": "SP",
    "regiao": "Sudeste",
-   "secoes_pct": 54.1,
+   "secoes_pct": 55.3,
    "lula_1T": 42.4,
-   "lula_apurado": 44.1,
+   "lula_apurado": 44.2,
    "lula_proj": 45.9,
    "ic90": [
-    44.8,
+    44.9,
     46.9
    ],
-   "swing_logit": 0.136,
-   "n_mun_obs": 519,
+   "swing_logit": 0.137,
+   "n_mun_obs": 526,
    "razao_comp": 1.053
   },
   {
@@ -449,7 +449,7 @@
   {
    "uf": "SP",
    "nome": "SÃO PAULO",
-   "secoes_pct": 40.4,
+   "secoes_pct": 42.3,
    "lula_1T": 52.5,
    "lula_apurado": 55.6,
    "lula_proj_falta": 55.6,
@@ -458,7 +458,7 @@
   {
    "uf": "RJ",
    "nome": "RIO DE JANEIRO",
-   "secoes_pct": 9.7,
+   "secoes_pct": 12.6,
    "lula_1T": 47.8,
    "lula_apurado": 54.8,
    "lula_proj_falta": 54.8,
@@ -476,7 +476,7 @@
   {
    "uf": "CE",
    "nome": "FORTALEZA",
-   "secoes_pct": 99.2,
+   "secoes_pct": 99.4,
    "lula_1T": 57.6,
    "lula_apurado": 60.1,
    "lula_proj_falta": 60.1,
@@ -485,9 +485,9 @@
   {
    "uf": "BA",
    "nome": "SALVADOR",
-   "secoes_pct": 47.8,
+   "secoes_pct": 49.2,
    "lula_1T": 70.7,
-   "lula_apurado": 73.3,
+   "lula_apurado": 73.2,
    "lula_proj_falta": 73.2,
    "validos1": 1447014
   },
@@ -521,7 +521,7 @@
   {
    "uf": "PE",
    "nome": "RECIFE",
-   "secoes_pct": 63.0,
+   "secoes_pct": 63.6,
    "lula_1T": 59.0,
    "lula_apurado": 61.7,
    "lula_proj_falta": 61.7,
@@ -539,7 +539,7 @@
   {
    "uf": "GO",
    "nome": "GOIÂNIA",
-   "secoes_pct": 84.0,
+   "secoes_pct": 84.9,
    "lula_1T": 34.0,
    "lula_apurado": 37.1,
    "lula_proj_falta": 37.1,
@@ -548,7 +548,7 @@
   {
    "uf": "RS",
    "nome": "PORTO ALEGRE",
-   "secoes_pct": 92.6,
+   "secoes_pct": 93.3,
    "lula_1T": 53.7,
    "lula_apurado": 55.8,
    "lula_proj_falta": 55.8,
@@ -584,10 +584,10 @@
   {
    "uf": "AL",
    "nome": "MACEIÓ",
-   "secoes_pct": 71.8,
+   "secoes_pct": 75.8,
    "lula_1T": 44.0,
-   "lula_apurado": 47.9,
-   "lula_proj_falta": 47.9,
+   "lula_apurado": 47.8,
+   "lula_proj_falta": 47.8,
    "validos1": 496116
   },
   {
@@ -602,16 +602,16 @@
   {
    "uf": "RJ",
    "nome": "DUQUE DE CAXIAS",
-   "secoes_pct": 57.4,
+   "secoes_pct": 61.0,
    "lula_1T": 40.0,
-   "lula_apurado": 45.9,
-   "lula_proj_falta": 45.9,
+   "lula_apurado": 45.8,
+   "lula_proj_falta": 45.8,
    "validos1": 491446
   },
   {
    "uf": "PI",
    "nome": "TERESINA",
-   "secoes_pct": 68.7,
+   "secoes_pct": 69.0,
    "lula_1T": 66.0,
    "lula_apurado": 68.5,
    "lula_proj_falta": 68.5,
@@ -620,16 +620,16 @@
   {
    "uf": "RJ",
    "nome": "SÃO GONÇALO",
-   "secoes_pct": 14.2,
+   "secoes_pct": 19.5,
    "lula_1T": 43.6,
-   "lula_apurado": 46.4,
-   "lula_proj_falta": 46.5,
+   "lula_apurado": 46.8,
+   "lula_proj_falta": 46.8,
    "validos1": 472652
   },
   {
    "uf": "PB",
    "nome": "JOÃO PESSOA",
-   "secoes_pct": 79.9,
+   "secoes_pct": 80.0,
    "lula_1T": 50.5,
    "lula_apurado": 54.2,
    "lula_proj_falta": 54.2,
@@ -638,7 +638,7 @@
   {
    "uf": "SP",
    "nome": "SÃO BERNARDO DO CAMPO",
-   "secoes_pct": 59.3,
+   "secoes_pct": 60.0,
    "lula_1T": 52.8,
    "lula_apurado": 55.3,
    "lula_proj_falta": 55.3,
@@ -692,10 +692,10 @@
   {
    "uf": "MG",
    "nome": "UBERLÂNDIA",
-   "secoes_pct": 28.3,
+   "secoes_pct": 31.5,
    "lula_1T": 44.2,
-   "lula_apurado": 45.7,
-   "lula_proj_falta": 45.8,
+   "lula_apurado": 46.2,
+   "lula_proj_falta": 46.2,
    "validos1": 409921
   },
   {
@@ -737,7 +737,7 @@
   {
    "uf": "SC",
    "nome": "JOINVILLE",
-   "secoes_pct": 86.3,
+   "secoes_pct": 88.4,
    "lula_1T": 22.8,
    "lula_apurado": 26.1,
    "lula_proj_falta": 26.1,
@@ -755,10 +755,10 @@
   {
    "uf": "BA",
    "nome": "FEIRA DE SANTANA",
-   "secoes_pct": 8.3,
+   "secoes_pct": 13.5,
    "lula_1T": 61.5,
-   "lula_apurado": 80.6,
-   "lula_proj_falta": 79.3,
+   "lula_apurado": 74.3,
+   "lula_proj_falta": 73.7,
    "validos1": 340031
   },
   {
@@ -782,18 +782,18 @@
   {
    "uf": "RJ",
    "nome": "NITERÓI",
-   "secoes_pct": 11.8,
+   "secoes_pct": 13.5,
    "lula_1T": 52.5,
-   "lula_apurado": 57.7,
-   "lula_proj_falta": 57.7,
+   "lula_apurado": 57.9,
+   "lula_proj_falta": 57.8,
    "validos1": 318715
   },
   {
    "uf": "MG",
    "nome": "JUIZ DE FORA",
-   "secoes_pct": 58.0,
+   "secoes_pct": 60.7,
    "lula_1T": 54.4,
-   "lula_apurado": 56.5,
+   "lula_apurado": 56.6,
    "lula_proj_falta": 56.6,
    "validos1": 305690
   },
@@ -809,252 +809,260 @@
  ],
  "trajetoria": [
   {
-   "sec": 68.74,
-   "lula": 50.84
-  },
-  {
-   "sec": 68.74,
-   "lula": 50.84
-  },
-  {
-   "sec": 68.76,
-   "lula": 50.84
-  },
-  {
-   "sec": 68.8,
-   "lula": 50.84
-  },
-  {
-   "sec": 68.82,
-   "lula": 50.84
-  },
-  {
-   "sec": 68.84,
-   "lula": 50.84
-  },
-  {
-   "sec": 68.86,
-   "lula": 50.84
-  },
-  {
-   "sec": 68.95,
-   "lula": 50.84
-  },
-  {
-   "sec": 68.97,
-   "lula": 50.84
-  },
-  {
-   "sec": 68.99,
-   "lula": 50.84
-  },
-  {
-   "sec": 69.02,
-   "lula": 50.84
-  },
-  {
-   "sec": 69.05,
-   "lula": 50.84
-  },
-  {
-   "sec": 69.08,
-   "lula": 50.84
-  },
-  {
-   "sec": 69.12,
-   "lula": 50.84
-  },
-  {
-   "sec": 69.24,
-   "lula": 50.85
-  },
-  {
-   "sec": 69.3,
-   "lula": 50.85
-  },
-  {
-   "sec": 69.38,
-   "lula": 50.85
-  },
-  {
-   "sec": 69.46,
-   "lula": 50.85
-  },
-  {
-   "sec": 69.57,
-   "lula": 50.85
-  },
-  {
-   "sec": 69.78,
-   "lula": 50.84
+   "sec": 69.98,
+   "lula": 50.9
   },
   {
    "sec": 69.98,
-   "lula": 50.83
+   "lula": 50.9
   },
   {
-   "sec": 70.23,
-   "lula": 50.82
+   "sec": 70.0,
+   "lula": 50.9
   },
   {
-   "sec": 70.46,
-   "lula": 50.84
+   "sec": 70.03,
+   "lula": 50.89
   },
   {
-   "sec": 70.67,
+   "sec": 70.05,
+   "lula": 50.89
+  },
+  {
+   "sec": 70.07,
+   "lula": 50.89
+  },
+  {
+   "sec": 70.09,
+   "lula": 50.89
+  },
+  {
+   "sec": 70.17,
+   "lula": 50.89
+  },
+  {
+   "sec": 70.2,
+   "lula": 50.89
+  },
+  {
+   "sec": 70.22,
+   "lula": 50.89
+  },
+  {
+   "sec": 70.24,
+   "lula": 50.89
+  },
+  {
+   "sec": 70.26,
+   "lula": 50.89
+  },
+  {
+   "sec": 70.29,
+   "lula": 50.9
+  },
+  {
+   "sec": 70.38,
+   "lula": 50.9
+  },
+  {
+   "sec": 70.43,
+   "lula": 50.9
+  },
+  {
+   "sec": 70.5,
+   "lula": 50.9
+  },
+  {
+   "sec": 70.58,
+   "lula": 50.9
+  },
+  {
+   "sec": 70.68,
+   "lula": 50.9
+  },
+  {
+   "sec": 70.77,
+   "lula": 50.89
+  },
+  {
+   "sec": 70.9,
+   "lula": 50.89
+  },
+  {
+   "sec": 71.1,
+   "lula": 50.89
+  },
+  {
+   "sec": 71.35,
    "lula": 50.87
   },
   {
-   "sec": 70.98,
-   "lula": 50.86
+   "sec": 71.49,
+   "lula": 50.89
   },
   {
-   "sec": 71.26,
-   "lula": 50.88
+   "sec": 71.76,
+   "lula": 50.91
   },
   {
-   "sec": 71.59,
-   "lula": 50.87
+   "sec": 71.99,
+   "lula": 50.93
   },
   {
-   "sec": 71.95,
-   "lula": 50.88
-  },
-  {
-   "sec": 72.49,
+   "sec": 72.25,
    "lula": 50.92
   },
   {
-   "sec": 72.81,
+   "sec": 72.58,
+   "lula": 50.94
+  },
+  {
+   "sec": 72.94,
+   "lula": 50.92
+  },
+  {
+   "sec": 73.25,
    "lula": 50.94
   },
   {
    "sec": 73.6,
+   "lula": 50.99
+  },
+  {
+   "sec": 74.05,
    "lula": 51.01
   },
   {
-   "sec": 74.46,
-   "lula": 51.0
+   "sec": 74.73,
+   "lula": 51.08
   },
   {
-   "sec": 75.38,
-   "lula": 50.98
+   "sec": 75.75,
+   "lula": 51.06
   },
   {
-   "sec": 76.09,
-   "lula": 51.03
+   "sec": 76.43,
+   "lula": 51.06
   },
   {
-   "sec": 77.35,
-   "lula": 51.3
+   "sec": 77.18,
+   "lula": 51.1
   },
   {
-   "sec": 78.02,
-   "lula": 51.32
+   "sec": 78.34,
+   "lula": 51.34
   },
   {
-   "sec": 81.96,
-   "lula": 51.52
+   "sec": 78.84,
+   "lula": 51.35
   },
   {
-   "sec": 83.13,
+   "sec": 82.79,
    "lula": 51.55
   },
   {
-   "sec": 84.21,
-   "lula": 51.54
+   "sec": 83.84,
+   "lula": 51.57
   },
   {
-   "sec": 85.72,
-   "lula": 51.5
-  },
-  {
-   "sec": 87.07,
-   "lula": 51.46
-  },
-  {
-   "sec": 89.14,
-   "lula": 51.42
-  },
-  {
-   "sec": 92.23,
+   "sec": 85.13,
    "lula": 51.56
   },
   {
-   "sec": 93.22,
-   "lula": 51.65
+   "sec": 86.58,
+   "lula": 51.49
   },
   {
-   "sec": 93.83,
-   "lula": 51.66
+   "sec": 87.68,
+   "lula": 51.49
   },
   {
-   "sec": 93.92,
-   "lula": 51.66
+   "sec": 89.09,
+   "lula": 51.5
   },
   {
-   "sec": 94.03,
-   "lula": 51.66
+   "sec": 92.78,
+   "lula": 51.64
   },
   {
-   "sec": 94.14,
-   "lula": 51.66
-  },
-  {
-   "sec": 94.28,
-   "lula": 51.66
-  },
-  {
-   "sec": 94.42,
-   "lula": 51.67
-  },
-  {
-   "sec": 94.59,
-   "lula": 51.67
-  },
-  {
-   "sec": 94.75,
+   "sec": 93.44,
    "lula": 51.68
   },
   {
-   "sec": 94.95,
+   "sec": 94.16,
+   "lula": 51.67
+  },
+  {
+   "sec": 94.25,
+   "lula": 51.67
+  },
+  {
+   "sec": 94.34,
+   "lula": 51.67
+  },
+  {
+   "sec": 94.46,
+   "lula": 51.67
+  },
+  {
+   "sec": 94.58,
+   "lula": 51.67
+  },
+  {
+   "sec": 94.72,
+   "lula": 51.68
+  },
+  {
+   "sec": 94.87,
+   "lula": 51.68
+  },
+  {
+   "sec": 95.03,
    "lula": 51.69
   },
   {
-   "sec": 95.15,
+   "sec": 95.21,
    "lula": 51.69
   },
   {
    "sec": 95.4,
+   "lula": 51.7
+  },
+  {
+   "sec": 95.62,
    "lula": 51.71
   },
   {
-   "sec": 95.67,
+   "sec": 95.88,
    "lula": 51.73
   },
   {
-   "sec": 95.98,
-   "lula": 51.73
+   "sec": 96.16,
+   "lula": 51.74
   },
   {
-   "sec": 96.34,
-   "lula": 51.76
+   "sec": 96.49,
+   "lula": 51.75
   },
   {
-   "sec": 96.79,
+   "sec": 96.9,
    "lula": 51.78
   },
   {
-   "sec": 97.36,
+   "sec": 97.41,
    "lula": 51.81
   },
   {
-   "sec": 98.12,
+   "sec": 98.07,
    "lula": 51.82
   },
   {
+   "sec": 99.41,
+   "lula": 51.8
+  },
+  {
    "sec": 100.0,
-   "lula": 51.81
+   "lula": 51.8
   }
  ]
 }
