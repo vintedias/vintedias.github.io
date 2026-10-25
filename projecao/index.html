@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="60"><meta name="robots" content="noindex">
+<title>Projeção do 2º turno</title>
+<meta name="description" content="Projeção da apuração do 2º turno de 2026 a partir dos dados oficiais do TSE, município a município, com a série de pesquisas desde o 1º turno.">
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--grid:#e6e6e6;--verm:#c8102e;--azul:#1f4e9c;--ic:#f3c6cc;--trilho:#eee}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141414;--fg:#eee;--mut:#aaa;--grid:#2c2c2c;--ic:#5a1f27;--trilho:#2a2a2a}}
+:root[data-theme=dark]{--bg:#141414;--fg:#eee;--mut:#aaa;--grid:#2c2c2c;--ic:#5a1f27;--trilho:#2a2a2a}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,Inter,Segoe UI,Roboto,sans-serif}
+main{max-width:820px;margin:0 auto;padding:24px 16px 60px}
+h1{font-size:1.6rem;margin:0 0 4px} h2{font-size:1.15rem;margin:36px 0 8px} .sub{color:var(--mut);margin:0 0 20px}
+.placar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.box{border:1px solid var(--grid);border-radius:10px;padding:12px 14px} .box .k{color:var(--mut);font-size:.85rem} .box .v{font-size:1.7rem;font-weight:700}
+.big{font-size:2.2rem;font-weight:800;margin:8px 0 0} .big small{font-size:1rem;font-weight:400;color:var(--mut)}
+svg.chart,svg.agulha{width:100%;height:auto;display:block}
+.grid{stroke:var(--grid)} .tick{fill:var(--mut);font-size:12px} .lbl{fill:var(--fg);font-size:12px} .meio{stroke:var(--fg);stroke-dasharray:3 3;opacity:.5}
+.marca{stroke:var(--mut);stroke-dasharray:2 3}
+.pt.pos{fill:var(--verm)} .pt.pre{fill:none;stroke:var(--mut)} .campo{stroke:var(--verm);opacity:.35} .campo.pre{stroke:var(--mut)}
+.media{fill:none;stroke:var(--verm);stroke-width:3}
+.banda{fill:var(--ic);opacity:.7} path.bruto{fill:none;stroke:var(--mut);stroke-width:2} circle.bruto{fill:var(--mut)} path.proj{fill:none;stroke:var(--verm);stroke-width:3} circle.proj{fill:var(--verm)}
+.lbl.proj{fill:var(--verm);font-weight:700} .lbl.bruto{fill:var(--mut)}
+.trilho{fill:var(--trilho)} .ic{fill:var(--ic)} .ponteiro{stroke:var(--verm);stroke-width:4}
+table{border-collapse:collapse;width:100%;font-size:.9rem} th,td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--grid)} th{color:var(--mut);font-weight:600}
+.wrap{overflow-x:auto} p.nota{color:var(--mut);font-size:.9rem} code{font-size:.85em}
+</style></head><body><main>
+<h1>Projeção do 2º turno</h1>
+<p class="sub">Dados oficiais do TSE das 20:15:09 de 25/10/2026 · 37,4% das seções · cerca de 37,2% dos votos. Modelo próprio, município a município (método abaixo).</p>
+
+<p class="big">Lula <small>probabilidade de vitória pela apuração: 88%</small></p>
+<svg viewBox="0 0 760 90" class="agulha" role="img" aria-label="Projeção final">
+<rect x="20" y="36" width="720" height="14" rx="7" class="trilho"/>
+<rect x="344.0" y="36" width="229.8" height="14" rx="7" class="ic"/>
+<line x1="380.0" y1="26" x2="380.0" y2="60" class="meio"/><text x="380.0" y="76" class="tick" text-anchor="middle">50%</text>
+<line x1="459.8" y1="28" x2="459.8" y2="58" class="ponteiro"/>
+<text x="459.8" y="18" class="lbl" text-anchor="middle">Lula 51,3% (90%: 49,4 a 53,2)</text>
+<text x="20" y="76" class="tick">← Flávio</text><text x="740" y="76" class="tick" text-anchor="end">Lula →</text>
+</svg>
+<div class="placar">
+<div class="box"><div class="k">Apurado até agora (entre os dois)</div><div class="v">Lula 49,8% · Flávio 50,2%</div></div>
+<div class="box"><div class="k">Projeção do resultado final</div><div class="v">Lula 51,3% · Flávio 48,7%</div><div class="k">intervalo de 90%: Lula entre 49,4% e 53,2%</div></div>
+</div>
+<p>Por que a projeção difere do apurado: o que já foi totalizado vem de estados e cidades que contam mais rápido (Paraná, Centro-Oeste, interior). Comparando cada município com o seu próprio 1º turno, o deslocamento em favor de Lula é parecido em todo o país (swing nacional +0.116 em logit, cerca de 2,9 pontos), e o que falta (Rio, São Paulo, Bahia, Pernambuco, capitais) tem mais peso de Lula no 1º turno. Comparecimento no que já foi apurado: 3,3% acima do 1º turno.</p>
+<p class="nota">Combinando com as pesquisas de véspera (média Lula 49,0%, erro histórico ±2,0): Lula 50,7% ± 1,0; a apuração já responde por 75% do peso.</p>
+
+<h2>Como a projeção andou durante a noite</h2>
+<p class="nota">Linha cinza: o que o TSE mostra (apurado bruto). Linha vermelha: projeção do final, com faixa de 90%. Uma projeção boa fica estável enquanto o bruto ainda se mexe.</p>
+<svg viewBox="0 0 760 300" class="chart" role="img" aria-label="Evolução da apuração e da projeção">
+<line x1="46" y1="260.0" x2="744" y2="260.0" class="grid"/><text x="40" y="264.0" class="tick" text-anchor="end">46%</text>
+<line x1="46" y1="211.2" x2="744" y2="211.2" class="grid"/><text x="40" y="215.2" class="tick" text-anchor="end">48%</text>
+<line x1="46" y1="162.4" x2="744" y2="162.4" class="grid"/><text x="40" y="166.4" class="tick" text-anchor="end">50%</text>
+<line x1="46" y1="113.6" x2="744" y2="113.6" class="grid"/><text x="40" y="117.6" class="tick" text-anchor="end">52%</text>
+<line x1="46" y1="64.8" x2="744" y2="64.8" class="grid"/><text x="40" y="68.8" class="tick" text-anchor="end">54%</text>
+<line x1="46" y1="16.0" x2="744" y2="16.0" class="grid"/><text x="40" y="20.0" class="tick" text-anchor="end">56%</text>
+<line x1="46" y1="162.4" x2="744" y2="162.4" class="meio"/>
+<text x="46.0" y="276" class="tick" text-anchor="middle">0%</text>
+<text x="115.8" y="276" class="tick" text-anchor="middle">10%</text>
+<text x="185.6" y="276" class="tick" text-anchor="middle">20%</text>
+<text x="255.4" y="276" class="tick" text-anchor="middle">30%</text>
+<text x="325.2" y="276" class="tick" text-anchor="middle">40%</text>
+<text x="395.0" y="276" class="tick" text-anchor="middle">50%</text>
+<text x="464.8" y="276" class="tick" text-anchor="middle">60%</text>
+<text x="534.6" y="276" class="tick" text-anchor="middle">70%</text>
+<text x="604.4" y="276" class="tick" text-anchor="middle">80%</text>
+<text x="674.2" y="276" class="tick" text-anchor="middle">90%</text>
+<text x="744.0" y="276" class="tick" text-anchor="middle">100%</text>
+<text x="395" y="294" class="tick" text-anchor="middle">votos apurados (estimativa do total)</text>
+<path d="M212.5,68.9 L240.7,76.8 L257.0,75.8 L281.7,79.2 L289.2,79.9 L294.4,81.6 L305.6,83.6 L305.6,177.0 L294.4,176.8 L289.2,175.3 L281.7,176.1 L257.0,182.2 L240.7,186.6 L212.5,186.8 Z" class="banda"/>
+<path d="M212.5,178.0 L240.7,176.1 L257.0,176.3 L281.7,172.2 L289.2,171.4 L294.4,171.9 L305.6,166.5" class="bruto"/>
+<circle cx="212.5" cy="178.0" r="3" class="bruto"><title>None: apurado Lula 49,36%</title></circle>
+<circle cx="240.7" cy="176.1" r="3" class="bruto"><title>20:07:19: apurado Lula 49,44%</title></circle>
+<circle cx="257.0" cy="176.3" r="3" class="bruto"><title>20:09:58: apurado Lula 49,43%</title></circle>
+<circle cx="281.7" cy="172.2" r="3" class="bruto"><title>20:12:58: apurado Lula 49,60%</title></circle>
+<circle cx="289.2" cy="171.4" r="3" class="bruto"><title>20:14:39: apurado Lula 49,63%</title></circle>
+<circle cx="294.4" cy="171.9" r="3" class="bruto"><title>20:15:09: apurado Lula 49,61%</title></circle>
+<circle cx="305.6" cy="166.5" r="3" class="bruto"><title>20:15:09: apurado Lula 49,83%</title></circle>
+<path d="M212.5,129.7 L240.7,130.7 L257.0,129.0 L281.7,128.7 L289.2,127.8 L294.4,128.5 L305.6,129.9" class="proj"/>
+<circle cx="212.5" cy="129.7" r="3" class="proj"><title>None: projeção Lula 51,34%</title></circle>
+<circle cx="240.7" cy="130.7" r="3" class="proj"><title>20:07:19: projeção Lula 51,30%</title></circle>
+<circle cx="257.0" cy="129.0" r="3" class="proj"><title>20:09:58: projeção Lula 51,37%</title></circle>
+<circle cx="281.7" cy="128.7" r="3" class="proj"><title>20:12:58: projeção Lula 51,38%</title></circle>
+<circle cx="289.2" cy="127.8" r="3" class="proj"><title>20:14:39: projeção Lula 51,42%</title></circle>
+<circle cx="294.4" cy="128.5" r="3" class="proj"><title>20:15:09: projeção Lula 51,39%</title></circle>
+<circle cx="305.6" cy="129.9" r="3" class="proj"><title>20:15:09: projeção Lula 51,33%</title></circle>
+<text x="311.6" y="123.9" class="lbl proj">projeção 51,3%</text>
+<text x="311.6" y="180.5" class="lbl bruto">apurado 49,8%</text>
+</svg>
+
+<h2>As pesquisas desde o 1º turno</h2>
+<p class="nota">Lula em votos válidos. Pontos vazios: campo anterior ao 1º turno. Linha: média ponderada no tempo (meia-vida 3 dias, peso pela amostra). O 1º turno real foi Lula 49,0% entre os dois; as pesquisas de véspera do 1º turno davam Lula à frente e erraram cerca de 2,5 pontos contra Flávio.</p>
+<svg viewBox="0 0 760 300" class="chart" role="img" aria-label="Pesquisas de 2º turno, Lula em votos válidos">
+<line x1="46" y1="260.0" x2="744" y2="260.0" class="grid"/><text x="40" y="264.0" class="tick" text-anchor="end">44%</text>
+<line x1="46" y1="211.2" x2="744" y2="211.2" class="grid"/><text x="40" y="215.2" class="tick" text-anchor="end">46%</text>
+<line x1="46" y1="162.4" x2="744" y2="162.4" class="grid"/><text x="40" y="166.4" class="tick" text-anchor="end">48%</text>
+<line x1="46" y1="113.6" x2="744" y2="113.6" class="grid"/><text x="40" y="117.6" class="tick" text-anchor="end">50%</text>
+<line x1="46" y1="64.8" x2="744" y2="64.8" class="grid"/><text x="40" y="68.8" class="tick" text-anchor="end">52%</text>
+<line x1="46" y1="16.0" x2="744" y2="16.0" class="grid"/><text x="40" y="20.0" class="tick" text-anchor="end">54%</text>
+<line x1="46" y1="113.6" x2="744" y2="113.6" class="meio"/>
+<text x="46.0" y="276" class="tick" text-anchor="middle">28/9</text>
+<text x="122.1" y="276" class="tick" text-anchor="middle">1/10</text>
+<text x="198.3" y="276" class="tick" text-anchor="middle">4/10</text>
+<text x="274.4" y="276" class="tick" text-anchor="middle">7/10</text>
+<text x="350.6" y="276" class="tick" text-anchor="middle">10/10</text>
+<text x="426.7" y="276" class="tick" text-anchor="middle">13/10</text>
+<text x="502.9" y="276" class="tick" text-anchor="middle">16/10</text>
+<text x="579.0" y="276" class="tick" text-anchor="middle">19/10</text>
+<text x="655.2" y="276" class="tick" text-anchor="middle">22/10</text>
+<text x="731.3" y="276" class="tick" text-anchor="middle">25/10</text>
+<line x1="198.3" y1="16" x2="198.3" y2="260" class="marca"/><text x="202.3" y="28" class="lbl">1º turno: Lula 49,0% (entre os dois)</text>
+<line x1="46.0" y1="74.6" x2="122.1" y2="74.6" class="campo pre"/><circle cx="122.1" cy="74.6" r="4" class="pt pre"><title>Datafolha (campo até 01/10): Lula 51,6%</title></circle>
+<line x1="71.4" y1="74.6" x2="172.9" y2="74.6" class="campo pre"/><circle cx="172.9" cy="74.6" r="4" class="pt pre"><title>AtlasIntel (campo até 03/10): Lula 51,6%</title></circle>
+<line x1="147.5" y1="142.9" x2="172.9" y2="142.9" class="campo pre"/><circle cx="172.9" cy="142.9" r="4" class="pt pre"><title>Quaest (campo até 03/10): Lula 48,8%</title></circle>
+<line x1="-4.8" y1="138.0" x2="96.8" y2="138.0" class="campo pre"/><circle cx="96.8" cy="138.0" r="4" class="pt pre"><title>Real Time Big Data (campo até 30/09): Lula 49,0%</title></circle>
+<line x1="-30.1" y1="106.3" x2="46.0" y2="106.3" class="campo pre"/><circle cx="46.0" cy="106.3" r="4" class="pt pre"><title>Meio/Ideia (campo até 28/09): Lula 50,3%</title></circle>
+<line x1="96.8" y1="186.8" x2="147.5" y2="186.8" class="campo pre"/><circle cx="147.5" cy="186.8" r="4" class="pt pre"><title>Gerp (campo até 02/10): Lula 47,0%</title></circle>
+<line x1="223.7" y1="186.8" x2="274.4" y2="186.8" class="campo pos"/><circle cx="274.4" cy="186.8" r="4" class="pt pos"><title>PoderData/Aya (campo até 07/10): Lula 47,0%</title></circle>
+<line x1="249.1" y1="162.4" x2="274.4" y2="162.4" class="campo pos"/><circle cx="274.4" cy="162.4" r="4" class="pt pos"><title>Datafolha (campo até 07/10): Lula 48,0%</title></circle>
+<line x1="172.9" y1="181.9" x2="299.8" y2="181.9" class="campo pos"/><circle cx="299.8" cy="181.9" r="4" class="pt pos"><title>AtlasIntel (campo até 08/10): Lula 47,2%</title></circle>
+<line x1="249.1" y1="179.5" x2="299.8" y2="179.5" class="campo pos"/><circle cx="299.8" cy="179.5" r="4" class="pt pos"><title>Ipespe/Abrapel (campo até 08/10): Lula 47,3%</title></circle>
+<line x1="223.7" y1="91.6" x2="274.4" y2="91.6" class="campo pos"/><circle cx="274.4" cy="91.6" r="4" class="pt pos"><title>Vox Brasil (campo até 07/10): Lula 50,9%</title></circle>
+<line x1="274.4" y1="189.2" x2="325.2" y2="189.2" class="campo pos"/><circle cx="325.2" cy="189.2" r="4" class="pt pos"><title>DataTrends (campo até 09/10): Lula 46,9%</title></circle>
+<line x1="350.6" y1="162.4" x2="401.3" y2="162.4" class="campo pos"/><circle cx="401.3" cy="162.4" r="4" class="pt pos"><title>BTG/Nexus (campo até 12/10): Lula 48,0%</title></circle>
+<line x1="350.6" y1="140.4" x2="426.7" y2="140.4" class="campo pos"/><circle cx="426.7" cy="140.4" r="4" class="pt pos"><title>Quaest (campo até 13/10): Lula 48,9%</title></circle>
+<line x1="426.7" y1="138.0" x2="452.1" y2="138.0" class="campo pos"/><circle cx="452.1" cy="138.0" r="4" class="pt pos"><title>Indexa/Broadcast (campo até 14/10): Lula 49,0%</title></circle>
+<line x1="426.7" y1="125.8" x2="477.5" y2="125.8" class="campo pos"/><circle cx="477.5" cy="125.8" r="4" class="pt pos"><title>CNT/MDA (campo até 15/10): Lula 49,5%</title></circle>
+<line x1="426.7" y1="142.9" x2="477.5" y2="142.9" class="campo pos"/><circle cx="477.5" cy="142.9" r="4" class="pt pos"><title>Ipespe/Abrapel (campo até 15/10): Lula 48,8%</title></circle>
+<line x1="426.7" y1="113.6" x2="477.5" y2="113.6" class="campo pos"/><circle cx="477.5" cy="113.6" r="4" class="pt pos"><title>Datafolha (campo até 15/10): Lula 50,0%</title></circle>
+<line x1="426.7" y1="140.4" x2="553.6" y2="140.4" class="campo pos"/><circle cx="553.6" cy="140.4" r="4" class="pt pos"><title>AtlasIntel (campo até 18/10): Lula 48,9%</title></circle>
+<line x1="477.5" y1="150.2" x2="528.3" y2="150.2" class="campo pos"/><circle cx="528.3" cy="150.2" r="4" class="pt pos"><title>DataTrends (campo até 17/10): Lula 48,5%</title></circle>
+<line x1="401.3" y1="140.4" x2="502.9" y2="140.4" class="campo pos"/><circle cx="502.9" cy="140.4" r="4" class="pt pos"><title>Veritá (campo até 16/10): Lula 48,9%</title></circle>
+<line x1="502.9" y1="120.9" x2="553.6" y2="120.9" class="campo pos"/><circle cx="553.6" cy="120.9" r="4" class="pt pos"><title>BTG/Nexus (campo até 18/10): Lula 49,7%</title></circle>
+<line x1="477.5" y1="140.4" x2="579.0" y2="140.4" class="campo pos"/><circle cx="579.0" cy="140.4" r="4" class="pt pos"><title>Meio/Ideia (campo até 19/10): Lula 48,9%</title></circle>
+<line x1="502.9" y1="138.0" x2="604.4" y2="138.0" class="campo pos"/><circle cx="604.4" cy="138.0" r="4" class="pt pos"><title>Palver (campo até 20/10): Lula 49,0%</title></circle>
+<line x1="528.3" y1="127.3" x2="604.4" y2="127.3" class="campo pos"/><circle cx="604.4" cy="127.3" r="4" class="pt pos"><title>Quaest (campo até 20/10): Lula 49,4%</title></circle>
+<line x1="579.0" y1="140.4" x2="604.4" y2="140.4" class="campo pos"/><circle cx="604.4" cy="140.4" r="4" class="pt pos"><title>Futura (campo até 20/10): Lula 48,9%</title></circle>
+<line x1="579.0" y1="138.0" x2="629.8" y2="138.0" class="campo pos"/><circle cx="629.8" cy="138.0" r="4" class="pt pos"><title>PoderData/Aya (campo até 21/10): Lula 49,0%</title></circle>
+<line x1="579.0" y1="186.8" x2="629.8" y2="186.8" class="campo pos"/><circle cx="629.8" cy="186.8" r="4" class="pt pos"><title>Gerp (campo até 21/10): Lula 47,0%</title></circle>
+<line x1="579.0" y1="162.4" x2="655.2" y2="162.4" class="campo pos"/><circle cx="655.2" cy="162.4" r="4" class="pt pos"><title>Real Time Big Data (campo até 22/10): Lula 48,0%</title></circle>
+<line x1="604.4" y1="113.6" x2="655.2" y2="113.6" class="campo pos"/><circle cx="655.2" cy="113.6" r="4" class="pt pos"><title>Datafolha (campo até 22/10): Lula 50,0%</title></circle>
+<line x1="604.4" y1="99.0" x2="655.2" y2="99.0" class="campo pos"/><circle cx="655.2" cy="99.0" r="4" class="pt pos"><title>Vox Brasil (campo até 22/10): Lula 50,6%</title></circle>
+<line x1="502.9" y1="147.8" x2="604.4" y2="147.8" class="campo pos"/><circle cx="604.4" cy="147.8" r="4" class="pt pos"><title>Instituto França (campo até 20/10): Lula 48,6%</title></circle>
+<line x1="629.8" y1="130.7" x2="680.5" y2="130.7" class="campo pos"/><circle cx="680.5" cy="130.7" r="4" class="pt pos"><title>CNT/MDA (campo até 23/10): Lula 49,3%</title></circle>
+<line x1="553.6" y1="133.1" x2="680.5" y2="133.1" class="campo pos"/><circle cx="680.5" cy="133.1" r="4" class="pt pos"><title>AtlasIntel (campo até 23/10): Lula 49,2%</title></circle>
+<line x1="655.2" y1="162.4" x2="705.9" y2="162.4" class="campo pos"/><circle cx="705.9" cy="162.4" r="4" class="pt pos"><title>Gerp (campo até 24/10): Lula 48,0%</title></circle>
+<line x1="680.5" y1="138.0" x2="705.9" y2="138.0" class="campo pos"/><circle cx="705.9" cy="138.0" r="4" class="pt pos"><title>PoderData/Aya (campo até 24/10): Lula 49,0%</title></circle>
+<line x1="680.5" y1="125.8" x2="705.9" y2="125.8" class="campo pos"/><circle cx="705.9" cy="125.8" r="4" class="pt pos"><title>BTG/Nexus (campo até 24/10): Lula 49,5%</title></circle>
+<line x1="680.5" y1="138.0" x2="705.9" y2="138.0" class="campo pos"/><circle cx="705.9" cy="138.0" r="4" class="pt pos"><title>Datafolha (campo até 24/10): Lula 49,0%</title></circle>
+<line x1="680.5" y1="116.0" x2="705.9" y2="116.0" class="campo pos"/><circle cx="705.9" cy="116.0" r="4" class="pt pos"><title>Futura (campo até 24/10): Lula 49,9%</title></circle>
+<line x1="680.5" y1="138.0" x2="705.9" y2="138.0" class="campo pos"/><circle cx="705.9" cy="138.0" r="4" class="pt pos"><title>Quaest (campo até 24/10): Lula 49,0%</title></circle>
+<path d="M274.4,149.8 L299.8,164.7 L325.2,169.6 L350.6,169.6 L376.0,169.6 L401.3,167.5 L426.7,160.2 L452.1,154.7 L477.5,141.5 L502.9,141.1 L528.3,142.4 L553.6,139.4 L579.0,139.5 L604.4,139.1 L629.8,143.7 L655.2,138.6 L680.5,137.2 L705.9,137.1 L731.3,137.1" class="media"/>
+<text x="727.3" y="129.1" class="lbl" text-anchor="end">média final: Lula 49,0%</text>
+</svg>
+<div class="wrap"><table><thead><tr><th>Instituto</th><th>campo</th><th>n</th><th>Flávio</th><th>Lula</th></tr></thead><tbody><tr><td>Gerp</td><td>22/10 a 24/10</td><td>2400</td><td>52%</td><td>48%</td></tr><tr><td>PoderData/Aya</td><td>23/10 a 24/10</td><td>4000</td><td>51%</td><td>49%</td></tr><tr><td>BTG/Nexus</td><td>23/10 a 24/10</td><td>2000</td><td>50,5%</td><td>49,5%</td></tr><tr><td>Datafolha</td><td>23/10 a 24/10</td><td>4050</td><td>51%</td><td>49%</td></tr><tr><td>Futura</td><td>23/10 a 24/10</td><td>2000</td><td>50,1%</td><td>49,9%</td></tr><tr><td>Quaest</td><td>23/10 a 24/10</td><td>3702</td><td>51%</td><td>49%</td></tr><tr><td>CNT/MDA</td><td>21/10 a 23/10</td><td>2032</td><td>50,7%</td><td>49,3%</td></tr><tr><td>AtlasIntel</td><td>18/10 a 23/10</td><td>4990</td><td>50,8%</td><td>49,2%</td></tr><tr><td>Real Time Big Data</td><td>19/10 a 22/10</td><td>2000</td><td>52%</td><td>48%</td></tr><tr><td>Datafolha</td><td>20/10 a 22/10</td><td>2520</td><td>50%</td><td>50%</td></tr><tr><td>Vox Brasil</td><td>20/10 a 22/10</td><td>2100</td><td>49,4%</td><td>50,6%</td></tr><tr><td>PoderData/Aya</td><td>19/10 a 21/10</td><td>4000</td><td>51%</td><td>49%</td></tr><tr><td>Gerp</td><td>19/10 a 21/10</td><td>2400</td><td>53%</td><td>47%</td></tr><tr><td>Palver</td><td>16/10 a 20/10</td><td>5000</td><td>51%</td><td>49%</td></tr><tr><td>Quaest</td><td>17/10 a 20/10</td><td>2154</td><td>50,56%</td><td>49,44%</td></tr><tr><td>Futura</td><td>19/10 a 20/10</td><td>2000</td><td>51,1%</td><td>48,9%</td></tr><tr><td>Instituto França</td><td>16/10 a 20/10</td><td>3000</td><td>51,4%</td><td>48,6%</td></tr><tr><td>Meio/Ideia</td><td>15/10 a 19/10</td><td>1500</td><td>51,1%</td><td>48,9%</td></tr><tr><td>AtlasIntel</td><td>13/10 a 18/10</td><td>4998</td><td>51,1%</td><td>48,9%</td></tr><tr><td>BTG/Nexus</td><td>16/10 a 18/10</td><td>2002</td><td>50,3%</td><td>49,7%</td></tr><tr><td>DataTrends</td><td>15/10 a 17/10</td><td>2000</td><td>51,5%</td><td>48,5%</td></tr><tr><td>Veritá</td><td>12/10 a 16/10</td><td>15554</td><td>51,1%</td><td>48,9%</td></tr><tr><td>CNT/MDA</td><td>13/10 a 15/10</td><td>2014</td><td>50,5%</td><td>49,5%</td></tr><tr><td>Ipespe/Abrapel</td><td>13/10 a 15/10</td><td>1500</td><td>51,2%</td><td>48,8%</td></tr><tr><td>Datafolha</td><td>13/10 a 15/10</td><td>–</td><td>50%</td><td>50%</td></tr><tr><td>Indexa/Broadcast</td><td>13/10 a 14/10</td><td>2000</td><td>51%</td><td>49%</td></tr><tr><td>Quaest</td><td>10/10 a 13/10</td><td>2154</td><td>51,1%</td><td>48,9%</td></tr><tr><td>BTG/Nexus</td><td>10/10 a 12/10</td><td>2000</td><td>52%</td><td>48%</td></tr><tr><td>DataTrends</td><td>07/10 a 09/10</td><td>2000</td><td>53,1%</td><td>46,9%</td></tr><tr><td>AtlasIntel</td><td>03/10 a 08/10</td><td>5026</td><td>52,8%</td><td>47,2%</td></tr><tr><td>Ipespe/Abrapel</td><td>06/10 a 08/10</td><td>1500</td><td>52,7%</td><td>47,3%</td></tr><tr><td>PoderData/Aya</td><td>05/10 a 07/10</td><td>3000</td><td>53%</td><td>47%</td></tr><tr><td>Datafolha</td><td>06/10 a 07/10</td><td>2520</td><td>52%</td><td>48%</td></tr><tr><td>Vox Brasil</td><td>05/10 a 07/10</td><td>2100</td><td>49,1%</td><td>50,9%</td></tr></tbody></table></div>
+
+<h2>Por estado</h2>
+<div class="wrap"><table><thead><tr><th>UF</th><th>seções apuradas</th><th>Lula 1º turno</th><th>Lula apurado</th><th>Lula projeção</th><th>90%</th><th>swing (logit)</th></tr></thead><tbody>
+<tr><td>DF</td><td>95,0%</td><td>42,6%</td><td>45,7%</td><td><b>45,7%</b></td><td>45,5 a 45,8</td><td>+0,116</td></tr>
+<tr><td>GO</td><td>38,7%</td><td>36,7%</td><td>38,9%</td><td><b>40,4%</b></td><td>38,5 a 42,4</td><td>+0,137</td></tr>
+<tr><td>MS</td><td>92,0%</td><td>37,2%</td><td>39,9%</td><td><b>40,1%</b></td><td>39,8 a 40,3</td><td>+0,111</td></tr>
+<tr><td>MT</td><td>64,9%</td><td>30,9%</td><td>34,1%</td><td><b>33,8%</b></td><td>32,8 a 34,8</td><td>+0,104</td></tr>
+<tr><td>AL</td><td>60,6%</td><td>57,5%</td><td>64,0%</td><td><b>60,9%</b></td><td>59,5 a 62,2</td><td>+0,169</td></tr>
+<tr><td>BA</td><td>17,1%</td><td>69,9%</td><td>70,3%</td><td><b>70,9%</b></td><td>68,6 a 73,0</td><td>+0,091</td></tr>
+<tr><td>CE</td><td>34,3%</td><td>66,9%</td><td>65,5%</td><td><b>67,9%</b></td><td>66,0 a 69,6</td><td>+0,080</td></tr>
+<tr><td>MA</td><td>62,9%</td><td>67,4%</td><td>67,4%</td><td><b>69,3%</b></td><td>68,4 a 70,2</td><td>+0,131</td></tr>
+<tr><td>PB</td><td>86,8%</td><td>65,0%</td><td>68,0%</td><td><b>67,5%</b></td><td>67,1 a 67,9</td><td>+0,155</td></tr>
+<tr><td>PE</td><td>25,5%</td><td>67,2%</td><td>71,7%</td><td><b>70,3%</b></td><td>68,1 a 72,3</td><td>+0,180</td></tr>
+<tr><td>PI</td><td>7,5%</td><td>74,7%</td><td>77,5%</td><td><b>75,5%</b></td><td>72,8 a 78,0</td><td>+0,080</td></tr>
+<tr><td>RN</td><td>50,3%</td><td>63,2%</td><td>67,6%</td><td><b>65,8%</b></td><td>64,2 a 67,4</td><td>+0,141</td></tr>
+<tr><td>SE</td><td>4,9%</td><td>67,2%</td><td>70,1%</td><td><b>68,8%</b></td><td>64,4 a 72,9</td><td>+0,123</td></tr>
+<tr><td>AC</td><td>75,1%</td><td>30,8%</td><td>33,9%</td><td><b>34,2%</b></td><td>33,4 a 35,0</td><td>+0,109</td></tr>
+<tr><td>AM</td><td>79,5%</td><td>51,7%</td><td>52,1%</td><td><b>54,3%</b></td><td>53,7 a 54,8</td><td>+0,128</td></tr>
+<tr><td>AP</td><td>67,3%</td><td>50,0%</td><td>54,2%</td><td><b>53,3%</b></td><td>52,0 a 54,5</td><td>+0,134</td></tr>
+<tr><td>PA</td><td>69,4%</td><td>52,9%</td><td>54,0%</td><td><b>54,8%</b></td><td>53,9 a 55,6</td><td>+0,095</td></tr>
+<tr><td>RO</td><td>55,2%</td><td>27,7%</td><td>32,8%</td><td><b>31,3%</b></td><td>30,1 a 32,6</td><td>+0,107</td></tr>
+<tr><td>RR</td><td>30,9%</td><td>24,3%</td><td>32,3%</td><td><b>29,5%</b></td><td>26,7 a 32,5</td><td>+0,138</td></tr>
+<tr><td>TO</td><td>90,6%</td><td>46,3%</td><td>48,6%</td><td><b>48,4%</b></td><td>48,0 a 48,7</td><td>+0,094</td></tr>
+<tr><td>ES</td><td>86,7%</td><td>40,8%</td><td>43,7%</td><td><b>43,4%</b></td><td>42,9 a 43,8</td><td>+0,099</td></tr>
+<tr><td>MG</td><td>31,6%</td><td>47,3%</td><td>50,0%</td><td><b>49,8%</b></td><td>47,6 a 51,9</td><td>+0,103</td></tr>
+<tr><td>RJ</td><td>2,3%</td><td>42,6%</td><td>44,4%</td><td><b>44,5%</b></td><td>40,7 a 48,4</td><td>+0,089</td></tr>
+<tr><td>SP</td><td>12,4%</td><td>42,4%</td><td>41,6%</td><td><b>45,5%</b></td><td>42,7 a 48,4</td><td>+0,128</td></tr>
+<tr><td>PR</td><td>80,8%</td><td>34,2%</td><td>37,4%</td><td><b>37,2%</b></td><td>36,6 a 37,8</td><td>+0,113</td></tr>
+<tr><td>RS</td><td>46,9%</td><td>39,1%</td><td>40,8%</td><td><b>41,9%</b></td><td>40,2 a 43,6</td><td>+0,107</td></tr>
+<tr><td>SC</td><td>41,1%</td><td>27,3%</td><td>32,7%</td><td><b>30,2%</b></td><td>28,6 a 31,8</td><td>+0,109</td></tr>
+</tbody></table></div>
+
+<h2>Maiores cidades</h2>
+<div class="wrap"><table><thead><tr><th>Cidade</th><th>seções apuradas</th><th>Lula 1º turno</th><th>Lula apurado</th><th>Lula esperado no que falta</th></tr></thead><tbody>
+<tr><td>São Paulo (SP)</td><td>6,7%</td><td>52,5%</td><td>54,9%</td><td>55,0%</td></tr>
+<tr><td>Rio De Janeiro (RJ)</td><td>3,1%</td><td>47,8%</td><td>47,8%</td><td>47,9%</td></tr>
+<tr><td>Brasília (DF)</td><td>95,0%</td><td>42,6%</td><td>45,7%</td><td>45,7%</td></tr>
+<tr><td>Fortaleza (CE)</td><td>69,0%</td><td>57,6%</td><td>59,5%</td><td>59,5%</td></tr>
+<tr><td>Salvador (BA)</td><td>24,6%</td><td>70,7%</td><td>73,8%</td><td>73,8%</td></tr>
+<tr><td>Belo Horizonte (MG)</td><td>94,1%</td><td>46,1%</td><td>49,1%</td><td>49,1%</td></tr>
+<tr><td>Manaus (AM)</td><td>99,0%</td><td>40,6%</td><td>44,1%</td><td>44,1%</td></tr>
+<tr><td>Curitiba (PR)</td><td>93,2%</td><td>34,6%</td><td>37,8%</td><td>37,8%</td></tr>
+<tr><td>Recife (PE)</td><td>14,1%</td><td>59,0%</td><td>62,6%</td><td>62,6%</td></tr>
+<tr><td>Belém (PA)</td><td>96,4%</td><td>52,3%</td><td>54,9%</td><td>54,9%</td></tr>
+<tr><td>Goiânia (GO)</td><td>47,7%</td><td>34,0%</td><td>38,0%</td><td>38,0%</td></tr>
+<tr><td>Porto Alegre (RS)</td><td>40,3%</td><td>53,7%</td><td>56,4%</td><td>56,4%</td></tr>
+<tr><td>Guarulhos (SP)</td><td>0,0%</td><td>45,0%</td><td>–</td><td>48,2%</td></tr>
+<tr><td>Campinas (SP)</td><td>0,0%</td><td>42,3%</td><td>82,1%</td><td>45,7%</td></tr>
+<tr><td>São Luís (MA)</td><td>95,6%</td><td>59,6%</td><td>62,0%</td><td>62,0%</td></tr>
+<tr><td>Maceió (AL)</td><td>21,9%</td><td>44,0%</td><td>48,0%</td><td>48,0%</td></tr>
+<tr><td>Campo Grande (MS)</td><td>98,9%</td><td>35,6%</td><td>38,9%</td><td>38,9%</td></tr>
+<tr><td>Duque De Caxias (RJ)</td><td>0,4%</td><td>40,0%</td><td>50,4%</td><td>45,5%</td></tr>
+<tr><td>Teresina (PI)</td><td>2,5%</td><td>66,0%</td><td>69,8%</td><td>69,2%</td></tr>
+<tr><td>São Gonçalo (RJ)</td><td>0,0%</td><td>43,6%</td><td>–</td><td>45,9%</td></tr>
+<tr><td>João Pessoa (PB)</td><td>72,6%</td><td>50,5%</td><td>54,1%</td><td>54,1%</td></tr>
+<tr><td>São Bernardo Do Campo (SP)</td><td>0,6%</td><td>52,8%</td><td>49,5%</td><td>53,1%</td></tr>
+<tr><td>Nova Iguaçu (RJ)</td><td>2,1%</td><td>36,2%</td><td>39,9%</td><td>39,6%</td></tr>
+<tr><td>Natal (RN)</td><td>33,0%</td><td>52,6%</td><td>56,4%</td><td>56,4%</td></tr>
+<tr><td>Osasco (SP)</td><td>3,2%</td><td>48,8%</td><td>53,2%</td><td>53,0%</td></tr>
+</tbody></table></div>
+
+<h2>Método</h2>
+<p>1. Base: resultado do 1º turno em cada um dos 5.571 municípios (TSE, dados por seção). 2. Apuração: JSON oficial do TSE por município, baixado a cada rodada. 3. Em cada município já com votos, mede-se o deslocamento da fração de Lula entre os dois candidatos, em logit, em relação ao 1º turno. 4. O deslocamento de cada estado é a média ponderada dos seus municípios, encolhida para a média nacional quando há poucos votos; o deslocamento também varia com a força de Lula no 1º turno (inclinação -0.043: Lula ganha mais onde era mais fraco). 5. O que falta em cada município recebe o seu 1º turno mais esse deslocamento; o número de votos que faltam é o do 1º turno vezes a razão de comparecimento observada no estado. 6. Simulação de Monte Carlo (3.000 cenários) com três fontes de erro: um choque nacional (o que ainda não foi apurado pode se comportar diferente do que já foi; cai à medida que a apuração avança), um por estado (menor quanto mais apurado) e o ruído município a município medido nos que já estão quase completos. 7. A probabilidade é a fração de cenários em que cada um termina na frente.</p>
+<p class="nota">Limites: seções dentro de um mesmo município não entram em ordem aleatória (as primeiras totalizadas tendem a vir de locais menores); o modelo encolhe o deslocamento de municípios pouco apurados para o do estado, mas um viés sistemático nessa ordem entraria na projeção. Exterior não entra (0,3% dos votos). Nada aqui é resultado oficial: o resultado é o do TSE.</p>
+<p class="nota">Página atualizada automaticamente a cada minuto enquanto a apuração anda; gerada em 2026-10-25 20:19:08 (hora de Brasília). Resultado oficial: <a href="https://resultados.tse.jus.br/">resultados.tse.jus.br</a>.</p>
+</main></body></html>
