@@ -1,47 +1,47 @@
 {
- "gerado": "2026-10-25 20:20:05",
- "tse_hora": "20:15:09",
- "secoes_pct": 37.4,
+ "gerado": "2026-10-25 20:21:03",
+ "tse_hora": "20:19:49",
+ "secoes_pct": 42.29,
  "apurado": {
-  "lula": 23177639,
-  "flavio": 23239963,
-  "pct_lula": 49.93,
-  "pct_flavio": 50.07
+  "lula": 24601834,
+  "flavio": 24717602,
+  "pct_lula": 49.88,
+  "pct_flavio": 50.12
  },
- "votos_apurados_frac": 0.3764,
- "votos_faltam": 76911426,
+ "votos_apurados_frac": 0.4,
+ "votos_faltam": 73976904,
  "projecao": {
-  "lula": 51.38,
-  "flavio": 48.62,
-  "sd": 1.14,
+  "lula": 51.46,
+  "flavio": 48.54,
+  "sd": 1.05,
   "ic90": [
-   49.49,
-   53.26
+   49.73,
+   53.21
   ],
-  "p_lula": 0.877,
-  "p_flavio": 0.123
+  "p_lula": 0.923,
+  "p_flavio": 0.077
  },
  "com_pesquisas": {
-  "lula": 50.8,
-  "sd": 0.99,
-  "p_lula": 0.791,
+  "lula": 50.93,
+  "sd": 0.93,
+  "p_lula": 0.842,
   "prior_lula": 49.0,
   "prior_sd": 2.0,
-  "peso_apuracao": 0.756
+  "peso_apuracao": 0.785
  },
- "swing_nacional_logit": 0.1162,
- "inclinacao": -0.043,
- "x_ref": -0.107,
- "sd_nat": 0.079,
+ "swing_nacional_logit": 0.118,
+ "inclinacao": -0.0431,
+ "x_ref": -0.1106,
+ "sd_nat": 0.0775,
  "razao_comparecimento": 1.0329,
  "ufs": [
   {
    "uf": "AC",
    "regiao": "Norte",
-   "secoes_pct": 75.5,
+   "secoes_pct": 75.6,
    "lula_1T": 30.8,
    "lula_apurado": 33.9,
-   "lula_proj": 34.3,
+   "lula_proj": 34.2,
    "ic90": [
     33.5,
     35.0
@@ -53,22 +53,22 @@
   {
    "uf": "AL",
    "regiao": "Nordeste",
-   "secoes_pct": 64.0,
+   "secoes_pct": 64.2,
    "lula_1T": 57.5,
    "lula_apurado": 63.8,
    "lula_proj": 60.8,
    "ic90": [
-    59.6,
+    59.7,
     62.0
    ],
    "swing_logit": 0.167,
    "n_mun_obs": 100,
-   "razao_comp": 1.042
+   "razao_comp": 1.041
   },
   {
    "uf": "AM",
    "regiao": "Norte",
-   "secoes_pct": 79.9,
+   "secoes_pct": 80.0,
    "lula_1T": 51.7,
    "lula_apurado": 52.1,
    "lula_proj": 54.3,
@@ -83,7 +83,7 @@
   {
    "uf": "AP",
    "regiao": "Norte",
-   "secoes_pct": 70.3,
+   "secoes_pct": 70.4,
    "lula_1T": 50.0,
    "lula_apurado": 54.0,
    "lula_proj": 53.2,
@@ -98,30 +98,30 @@
   {
    "uf": "BA",
    "regiao": "Nordeste",
-   "secoes_pct": 18.0,
+   "secoes_pct": 19.0,
    "lula_1T": 69.9,
-   "lula_apurado": 70.3,
-   "lula_proj": 70.9,
+   "lula_apurado": 70.5,
+   "lula_proj": 71.0,
    "ic90": [
-    68.7,
-    73.1
+    68.9,
+    73.0
    ],
-   "swing_logit": 0.088,
+   "swing_logit": 0.093,
    "n_mun_obs": 185,
-   "razao_comp": 1.072
+   "razao_comp": 1.073
   },
   {
    "uf": "CE",
    "regiao": "Nordeste",
-   "secoes_pct": 36.4,
+   "secoes_pct": 37.3,
    "lula_1T": 66.9,
    "lula_apurado": 65.7,
    "lula_proj": 67.9,
    "ic90": [
-    66.2,
-    69.7
+    66.3,
+    69.5
    ],
-   "swing_logit": 0.083,
+   "swing_logit": 0.082,
    "n_mun_obs": 129,
    "razao_comp": 1.044
   },
@@ -143,103 +143,103 @@
   {
    "uf": "ES",
    "regiao": "Sudeste",
-   "secoes_pct": 88.1,
+   "secoes_pct": 88.4,
    "lula_1T": 40.8,
    "lula_apurado": 43.8,
    "lula_proj": 43.4,
    "ic90": [
-    43.0,
+    43.1,
     43.8
    ],
-   "swing_logit": 0.099,
+   "swing_logit": 0.1,
    "n_mun_obs": 74,
-   "razao_comp": 1.024
+   "razao_comp": 1.023
   },
   {
    "uf": "GO",
    "regiao": "Centro-Oeste",
-   "secoes_pct": 40.1,
+   "secoes_pct": 41.7,
    "lula_1T": 36.7,
    "lula_apurado": 38.7,
    "lula_proj": 40.5,
    "ic90": [
-    38.5,
-    42.5
+    38.7,
+    42.3
    ],
-   "swing_logit": 0.136,
+   "swing_logit": 0.137,
    "n_mun_obs": 121,
    "razao_comp": 1.029
   },
   {
    "uf": "MA",
    "regiao": "Nordeste",
-   "secoes_pct": 63.6,
+   "secoes_pct": 64.7,
    "lula_1T": 67.4,
-   "lula_apurado": 67.5,
+   "lula_apurado": 67.4,
    "lula_proj": 69.3,
    "ic90": [
-    68.4,
-    70.2
+    68.5,
+    70.1
    ],
-   "swing_logit": 0.131,
-   "n_mun_obs": 206,
-   "razao_comp": 1.013
+   "swing_logit": 0.13,
+   "n_mun_obs": 207,
+   "razao_comp": 1.014
   },
   {
    "uf": "MG",
    "regiao": "Sudeste",
-   "secoes_pct": 32.6,
+   "secoes_pct": 33.8,
    "lula_1T": 47.3,
    "lula_apurado": 50.0,
-   "lula_proj": 49.8,
+   "lula_proj": 49.9,
    "ic90": [
-    47.7,
-    52.0
+    47.9,
+    51.9
    ],
-   "swing_logit": 0.104,
-   "n_mun_obs": 351,
+   "swing_logit": 0.105,
+   "n_mun_obs": 359,
    "razao_comp": 1.054
   },
   {
    "uf": "MS",
    "regiao": "Centro-Oeste",
-   "secoes_pct": 92.0,
+   "secoes_pct": 92.5,
    "lula_1T": 37.2,
-   "lula_apurado": 39.9,
+   "lula_apurado": 40.0,
    "lula_proj": 40.1,
    "ic90": [
-    39.8,
-    40.4
+    39.9,
+    40.3
    ],
    "swing_logit": 0.111,
-   "n_mun_obs": 74,
+   "n_mun_obs": 75,
    "razao_comp": 1.047
   },
   {
    "uf": "MT",
    "regiao": "Centro-Oeste",
-   "secoes_pct": 64.9,
+   "secoes_pct": 66.3,
    "lula_1T": 30.9,
-   "lula_apurado": 34.1,
-   "lula_proj": 33.8,
+   "lula_apurado": 34.0,
+   "lula_proj": 33.9,
    "ic90": [
-    32.9,
+    33.0,
     34.8
    ],
-   "swing_logit": 0.104,
+   "swing_logit": 0.106,
    "n_mun_obs": 131,
-   "razao_comp": 1.021
+   "razao_comp": 1.022
   },
   {
    "uf": "PA",
    "regiao": "Norte",
-   "secoes_pct": 69.4,
+   "secoes_pct": 71.0,
    "lula_1T": 52.9,
-   "lula_apurado": 54.0,
-   "lula_proj": 54.8,
+   "lula_apurado": 54.1,
+   "lula_proj": 54.7,
    "ic90": [
-    53.9,
-    55.7
+    54.0,
+    55.5
    ],
    "swing_logit": 0.095,
    "n_mun_obs": 138,
@@ -248,182 +248,182 @@
   {
    "uf": "PB",
    "regiao": "Nordeste",
-   "secoes_pct": 86.8,
+   "secoes_pct": 87.3,
    "lula_1T": 65.0,
    "lula_apurado": 68.0,
    "lula_proj": 67.5,
    "ic90": [
-    67.1,
+    67.2,
     67.9
    ],
    "swing_logit": 0.155,
-   "n_mun_obs": 214,
+   "n_mun_obs": 215,
    "razao_comp": 1.056
   },
   {
    "uf": "PE",
    "regiao": "Nordeste",
-   "secoes_pct": 25.5,
+   "secoes_pct": 33.8,
    "lula_1T": 67.2,
    "lula_apurado": 71.7,
    "lula_proj": 70.3,
    "ic90": [
-    68.2,
-    72.3
+    68.5,
+    72.0
    ],
-   "swing_logit": 0.18,
-   "n_mun_obs": 137,
-   "razao_comp": 1.044
+   "swing_logit": 0.174,
+   "n_mun_obs": 145,
+   "razao_comp": 1.049
   },
   {
    "uf": "PI",
    "regiao": "Nordeste",
-   "secoes_pct": 7.5,
+   "secoes_pct": 11.5,
    "lula_1T": 74.7,
-   "lula_apurado": 77.5,
-   "lula_proj": 75.6,
+   "lula_apurado": 77.7,
+   "lula_proj": 75.7,
    "ic90": [
-    72.9,
+    73.3,
     78.1
    ],
-   "swing_logit": 0.079,
-   "n_mun_obs": 77,
-   "razao_comp": 1.014
+   "swing_logit": 0.088,
+   "n_mun_obs": 94,
+   "razao_comp": 1.011
   },
   {
    "uf": "PR",
    "regiao": "Sul",
-   "secoes_pct": 80.8,
+   "secoes_pct": 86.8,
    "lula_1T": 34.2,
    "lula_apurado": 37.4,
-   "lula_proj": 37.2,
+   "lula_proj": 37.3,
    "ic90": [
-    36.7,
-    37.8
+    36.9,
+    37.7
    ],
-   "swing_logit": 0.113,
-   "n_mun_obs": 372,
+   "swing_logit": 0.115,
+   "n_mun_obs": 383,
    "razao_comp": 1.044
   },
   {
    "uf": "RJ",
    "regiao": "Sudeste",
-   "secoes_pct": 2.3,
+   "secoes_pct": 3.7,
    "lula_1T": 42.6,
-   "lula_apurado": 44.4,
-   "lula_proj": 44.7,
+   "lula_apurado": 43.9,
+   "lula_proj": 45.4,
    "ic90": [
-    41.0,
-    48.5
+    42.3,
+    48.7
    ],
-   "swing_logit": 0.088,
-   "n_mun_obs": 18,
-   "razao_comp": 1.01
+   "swing_logit": 0.118,
+   "n_mun_obs": 24,
+   "razao_comp": 1.012
   },
   {
    "uf": "RN",
    "regiao": "Nordeste",
-   "secoes_pct": 50.3,
+   "secoes_pct": 58.0,
    "lula_1T": 63.2,
-   "lula_apurado": 67.6,
-   "lula_proj": 65.9,
+   "lula_apurado": 66.9,
+   "lula_proj": 65.7,
    "ic90": [
-    64.3,
-    67.3
+    64.5,
+    67.0
    ],
    "swing_logit": 0.141,
-   "n_mun_obs": 149,
-   "razao_comp": 1.038
+   "n_mun_obs": 151,
+   "razao_comp": 1.034
   },
   {
    "uf": "RO",
    "regiao": "Norte",
-   "secoes_pct": 55.2,
+   "secoes_pct": 62.4,
    "lula_1T": 27.7,
-   "lula_apurado": 32.8,
-   "lula_proj": 31.4,
+   "lula_apurado": 32.1,
+   "lula_proj": 30.9,
    "ic90": [
-    30.2,
-    32.6
+    30.0,
+    31.9
    ],
-   "swing_logit": 0.107,
-   "n_mun_obs": 38,
-   "razao_comp": 0.996
+   "swing_logit": 0.104,
+   "n_mun_obs": 42,
+   "razao_comp": 0.999
   },
   {
    "uf": "RR",
    "regiao": "Norte",
-   "secoes_pct": 30.9,
+   "secoes_pct": 40.6,
    "lula_1T": 24.3,
-   "lula_apurado": 32.3,
-   "lula_proj": 29.6,
+   "lula_apurado": 31.6,
+   "lula_proj": 29.2,
    "ic90": [
-    26.9,
-    32.7
+    27.2,
+    31.3
    ],
-   "swing_logit": 0.138,
+   "swing_logit": 0.156,
    "n_mun_obs": 15,
-   "razao_comp": 0.919
+   "razao_comp": 0.925
   },
   {
    "uf": "RS",
    "regiao": "Sul",
-   "secoes_pct": 46.9,
+   "secoes_pct": 54.1,
    "lula_1T": 39.1,
-   "lula_apurado": 40.8,
-   "lula_proj": 41.9,
+   "lula_apurado": 41.0,
+   "lula_proj": 42.1,
    "ic90": [
-    40.3,
-    43.7
+    40.7,
+    43.4
    ],
-   "swing_logit": 0.107,
-   "n_mun_obs": 320,
-   "razao_comp": 1.052
+   "swing_logit": 0.111,
+   "n_mun_obs": 345,
+   "razao_comp": 1.05
   },
   {
    "uf": "SC",
    "regiao": "Sul",
-   "secoes_pct": 41.2,
+   "secoes_pct": 49.8,
    "lula_1T": 27.3,
-   "lula_apurado": 32.7,
-   "lula_proj": 30.2,
+   "lula_apurado": 32.2,
+   "lula_proj": 30.4,
    "ic90": [
-    28.7,
-    31.9
+    29.2,
+    31.8
    ],
-   "swing_logit": 0.108,
-   "n_mun_obs": 220,
-   "razao_comp": 1.047
+   "swing_logit": 0.117,
+   "n_mun_obs": 236,
+   "razao_comp": 1.042
   },
   {
    "uf": "SE",
    "regiao": "Nordeste",
-   "secoes_pct": 4.9,
+   "secoes_pct": 6.9,
    "lula_1T": 67.2,
-   "lula_apurado": 70.1,
-   "lula_proj": 68.9,
+   "lula_apurado": 68.8,
+   "lula_proj": 69.3,
    "ic90": [
-    64.6,
+    65.3,
     73.0
    ],
-   "swing_logit": 0.123,
+   "swing_logit": 0.146,
    "n_mun_obs": 10,
-   "razao_comp": 1.053
+   "razao_comp": 1.043
   },
   {
    "uf": "SP",
    "regiao": "Sudeste",
-   "secoes_pct": 12.4,
+   "secoes_pct": 12.7,
    "lula_1T": 42.4,
-   "lula_apurado": 41.6,
+   "lula_apurado": 41.5,
    "lula_proj": 45.6,
    "ic90": [
-    42.7,
-    48.4
+    42.9,
+    48.3
    ],
-   "swing_logit": 0.128,
-   "n_mun_obs": 229,
-   "razao_comp": 1.041
+   "swing_logit": 0.129,
+   "n_mun_obs": 233,
+   "razao_comp": 1.04
   },
   {
    "uf": "TO",
@@ -454,10 +454,10 @@
   {
    "uf": "RJ",
    "nome": "RIO DE JANEIRO",
-   "secoes_pct": 3.1,
+   "secoes_pct": 3.5,
    "lula_1T": 47.8,
-   "lula_apurado": 47.8,
-   "lula_proj_falta": 47.9,
+   "lula_apurado": 48.7,
+   "lula_proj_falta": 48.8,
    "validos1": 3471874
   },
   {
@@ -472,7 +472,7 @@
   {
    "uf": "CE",
    "nome": "FORTALEZA",
-   "secoes_pct": 72.2,
+   "secoes_pct": 73.0,
    "lula_1T": 57.6,
    "lula_apurado": 59.5,
    "lula_proj_falta": 59.5,
@@ -481,10 +481,10 @@
   {
    "uf": "BA",
    "nome": "SALVADOR",
-   "secoes_pct": 25.0,
+   "secoes_pct": 26.2,
    "lula_1T": 70.7,
-   "lula_apurado": 73.8,
-   "lula_proj_falta": 73.7,
+   "lula_apurado": 73.9,
+   "lula_proj_falta": 73.9,
    "validos1": 1447014
   },
   {
@@ -508,25 +508,25 @@
   {
    "uf": "PR",
    "nome": "CURITIBA",
-   "secoes_pct": 93.2,
+   "secoes_pct": 96.0,
    "lula_1T": 34.6,
-   "lula_apurado": 37.8,
-   "lula_proj_falta": 37.8,
+   "lula_apurado": 37.7,
+   "lula_proj_falta": 37.7,
    "validos1": 1093434
   },
   {
    "uf": "PE",
    "nome": "RECIFE",
-   "secoes_pct": 14.1,
+   "secoes_pct": 20.3,
    "lula_1T": 59.0,
-   "lula_apurado": 62.6,
-   "lula_proj_falta": 62.6,
+   "lula_apurado": 62.9,
+   "lula_proj_falta": 62.9,
    "validos1": 983138
   },
   {
    "uf": "PA",
    "nome": "BELÉM",
-   "secoes_pct": 96.4,
+   "secoes_pct": 96.5,
    "lula_1T": 52.3,
    "lula_apurado": 54.9,
    "lula_proj_falta": 54.9,
@@ -535,19 +535,19 @@
   {
    "uf": "GO",
    "nome": "GOIÂNIA",
-   "secoes_pct": 48.9,
+   "secoes_pct": 52.6,
    "lula_1T": 34.0,
-   "lula_apurado": 38.0,
-   "lula_proj_falta": 38.0,
+   "lula_apurado": 37.8,
+   "lula_proj_falta": 37.8,
    "validos1": 791095
   },
   {
    "uf": "RS",
    "nome": "PORTO ALEGRE",
-   "secoes_pct": 40.3,
+   "secoes_pct": 47.4,
    "lula_1T": 53.7,
-   "lula_apurado": 56.4,
-   "lula_proj_falta": 56.4,
+   "lula_apurado": 56.6,
+   "lula_proj_falta": 56.6,
    "validos1": 776777
   },
   {
@@ -556,7 +556,7 @@
    "secoes_pct": 0.0,
    "lula_1T": 45.0,
    "lula_apurado": null,
-   "lula_proj_falta": 48.2,
+   "lula_proj_falta": 48.3,
    "validos1": 713469
   },
   {
@@ -589,7 +589,7 @@
   {
    "uf": "MS",
    "nome": "CAMPO GRANDE",
-   "secoes_pct": 98.9,
+   "secoes_pct": 99.1,
    "lula_1T": 35.6,
    "lula_apurado": 38.9,
    "lula_proj_falta": 38.9,
@@ -598,34 +598,34 @@
   {
    "uf": "RJ",
    "nome": "DUQUE DE CAXIAS",
-   "secoes_pct": 0.4,
+   "secoes_pct": 1.8,
    "lula_1T": 40.0,
-   "lula_apurado": 50.4,
-   "lula_proj_falta": 45.5,
+   "lula_apurado": 44.9,
+   "lula_proj_falta": 44.5,
    "validos1": 491446
   },
   {
    "uf": "PI",
    "nome": "TERESINA",
-   "secoes_pct": 2.5,
+   "secoes_pct": 2.7,
    "lula_1T": 66.0,
-   "lula_apurado": 69.8,
+   "lula_apurado": 69.7,
    "lula_proj_falta": 69.2,
    "validos1": 484190
   },
   {
    "uf": "RJ",
    "nome": "SÃO GONÇALO",
-   "secoes_pct": 0.0,
+   "secoes_pct": 0.7,
    "lula_1T": 43.6,
-   "lula_apurado": null,
-   "lula_proj_falta": 45.9,
+   "lula_apurado": 53.5,
+   "lula_proj_falta": 49.7,
    "validos1": 472652
   },
   {
    "uf": "PB",
    "nome": "JOÃO PESSOA",
-   "secoes_pct": 72.6,
+   "secoes_pct": 72.8,
    "lula_1T": 50.5,
    "lula_apurado": 54.1,
    "lula_proj_falta": 54.1,
@@ -637,7 +637,7 @@
    "secoes_pct": 0.6,
    "lula_1T": 52.8,
    "lula_apurado": 49.5,
-   "lula_proj_falta": 53.1,
+   "lula_proj_falta": 53.2,
    "validos1": 460151
   },
   {
@@ -646,16 +646,16 @@
    "secoes_pct": 2.1,
    "lula_1T": 36.2,
    "lula_apurado": 39.9,
-   "lula_proj_falta": 39.6,
+   "lula_proj_falta": 39.8,
    "validos1": 449880
   },
   {
    "uf": "RN",
    "nome": "NATAL",
-   "secoes_pct": 33.0,
+   "secoes_pct": 40.4,
    "lula_1T": 52.6,
-   "lula_apurado": 56.4,
-   "lula_proj_falta": 56.4,
+   "lula_apurado": 56.1,
+   "lula_proj_falta": 56.1,
    "validos1": 436377
   },
   {
@@ -706,16 +706,16 @@
   {
    "uf": "PE",
    "nome": "JABOATÃO DOS GUARARAPES",
-   "secoes_pct": 23.6,
+   "secoes_pct": 33.4,
    "lula_1T": 57.5,
-   "lula_apurado": 62.2,
-   "lula_proj_falta": 62.2,
+   "lula_apurado": 61.9,
+   "lula_proj_falta": 61.9,
    "validos1": 372048
   },
   {
    "uf": "MT",
    "nome": "CUIABÁ",
-   "secoes_pct": 99.2,
+   "secoes_pct": 99.3,
    "lula_1T": 37.1,
    "lula_apurado": 40.4,
    "lula_proj_falta": 40.4,
@@ -724,7 +724,7 @@
   {
    "uf": "MG",
    "nome": "CONTAGEM",
-   "secoes_pct": 49.1,
+   "secoes_pct": 51.1,
    "lula_1T": 43.9,
    "lula_apurado": 46.7,
    "lula_proj_falta": 46.7,
@@ -733,10 +733,10 @@
   {
    "uf": "SC",
    "nome": "JOINVILLE",
-   "secoes_pct": 21.4,
+   "secoes_pct": 30.1,
    "lula_1T": 22.8,
-   "lula_apurado": 26.1,
-   "lula_proj_falta": 26.0,
+   "lula_apurado": 26.2,
+   "lula_proj_falta": 26.2,
    "validos1": 352869
   },
   {
@@ -754,7 +754,7 @@
    "secoes_pct": 0.0,
    "lula_1T": 61.5,
    "lula_apurado": null,
-   "lula_proj_falta": 63.0,
+   "lula_proj_falta": 63.1,
    "validos1": 340031
   },
   {
@@ -763,13 +763,13 @@
    "secoes_pct": 0.0,
    "lula_1T": 59.2,
    "lula_apurado": null,
-   "lula_proj_falta": 61.6,
+   "lula_proj_falta": 62.2,
    "validos1": 335671
   },
   {
    "uf": "SC",
    "nome": "FLORIANÓPOLIS",
-   "secoes_pct": 98.6,
+   "secoes_pct": 98.9,
    "lula_1T": 45.6,
    "lula_apurado": 48.4,
    "lula_proj_falta": 48.4,
@@ -781,22 +781,22 @@
    "secoes_pct": 0.0,
    "lula_1T": 52.5,
    "lula_apurado": null,
-   "lula_proj_falta": 54.5,
+   "lula_proj_falta": 55.2,
    "validos1": 318715
   },
   {
    "uf": "MG",
    "nome": "JUIZ DE FORA",
-   "secoes_pct": 18.6,
+   "secoes_pct": 22.5,
    "lula_1T": 54.4,
-   "lula_apurado": 55.4,
+   "lula_apurado": 55.5,
    "lula_proj_falta": 55.5,
    "validos1": 305690
   },
   {
    "uf": "PR",
    "nome": "LONDRINA",
-   "secoes_pct": 88.5,
+   "secoes_pct": 91.3,
    "lula_1T": 27.1,
    "lula_apurado": 31.0,
    "lula_proj_falta": 31.0,
