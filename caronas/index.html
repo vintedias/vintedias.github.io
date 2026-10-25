@@ -62,6 +62,30 @@ input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--borda)
 .escolhendo #mapa{outline:4px solid var(--acao);outline-offset:-4px;cursor:crosshair}
 .faixa{display:none;background:var(--acao);color:#fff;text-align:center;padding:8px;font-weight:700}
 .escolhendo .faixa{display:block}
+.bconv{position:fixed;right:12px;bottom:12px;z-index:1500;background:#111;color:#fff;border:0;border-radius:999px;padding:12px 16px;font-weight:700;font-size:15px;box-shadow:0 2px 10px rgba(0,0,0,.35);cursor:pointer;display:none}
+.bconv.tem{display:block}
+.bconv .n{background:var(--acao);border-radius:999px;padding:1px 7px;margin-left:6px;font-size:13px}
+.chat{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-end;justify-content:center;z-index:2500}
+.chat.aberto{display:flex}
+.chat .cx{background:var(--fundo);color:var(--tx);width:100%;max-width:560px;border-radius:16px 16px 0 0;height:80dvh;display:flex;flex-direction:column}
+@media (min-width:700px){.chat{align-items:center}.chat .cx{border-radius:16px;height:70vh}}
+.chat .topo{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--borda)}
+.chat .topo b{flex:1;font-size:16px}
+.chat .topo button{background:none;border:1px solid var(--borda);border-radius:8px;padding:6px 10px;color:var(--tx);cursor:pointer}
+.chat .corpo{flex:1;overflow:auto;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.msg{max-width:82%;padding:8px 12px;border-radius:14px;font-size:15px;line-height:1.35;white-space:pre-wrap;word-break:break-word}
+.msg.eu{align-self:flex-end;background:var(--acao);color:#fff;border-bottom-right-radius:4px}
+.msg.outro{align-self:flex-start;background:var(--pano);border-bottom-left-radius:4px}
+.msg small{display:block;font-size:11px;opacity:.7;margin-top:2px}
+.chat .envio{display:flex;gap:8px;padding:10px 14px 16px;border-top:1px solid var(--borda)}
+.chat .envio input{flex:1}
+.chat .envio button{border:0;border-radius:10px;background:var(--acao);color:#fff;font-weight:700;padding:0 16px;cursor:pointer}
+.cl{padding:0 14px 14px}
+.cl .c1{padding:12px 0;border-bottom:1px solid var(--borda);cursor:pointer}
+.cl .c1 b{display:block}
+.cl .c1 span{color:var(--mut);font-size:14px}
+.cl .c1 .novo{color:var(--acao);font-weight:700}
+.item a.conv,.pop a.conv{display:inline-block;margin-top:6px;background:#111;color:#fff;text-decoration:none;padding:7px 12px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;margin-right:6px}
 footer{padding:10px 16px 22px;color:var(--mut);font-size:12px;border-top:1px solid var(--borda)}
 footer a{color:inherit}
 </style>
@@ -69,7 +93,7 @@ footer a{color:inherit}
 <body>
 <header>
   <h1>Carona pra votar <small>votação prorrogada até 19h · Brasil inteiro</small></h1>
-  <p>Quem precisa ir votar marca onde está e onde vota. Quem tem carro marca onde está. O contato é direto pelo WhatsApp. Dê zoom na sua cidade ou use o GPS.</p>
+  <p>Quem precisa ir votar marca onde está e onde vota. Quem tem carro marca onde está. A conversa é aqui mesmo na página (WhatsApp é opcional). Dê zoom na sua cidade ou use o GPS.</p>
 </header>
 <div class="botoes">
   <button class="b-carona" id="bCarona">Preciso de carona</button>
@@ -78,7 +102,7 @@ footer a{color:inherit}
 <div class="faixa" id="faixa">Toque no mapa para marcar o lugar</div>
 <div id="mapa"></div>
 <section class="lista" id="lista"><h2>Perto de você</h2><div class="vazio">Carregando…</div></section>
-<footer>Iniciativa de eleitores, sem partido. Os dados ficam só aqui e somem em 24 horas. Seu nome e WhatsApp ficam visíveis para quem abrir a página: use um número que você pode mostrar. Não compartilhe este link com quem você não confia. Combine o ponto de encontro pelo WhatsApp e confira quem é a pessoa antes de entrar no carro.</footer>
+<footer>Iniciativa de eleitores, sem partido. Os dados ficam só aqui e somem em 24 horas. Seu nome fica visível para quem abrir a página; o WhatsApp só se você quiser informar. Não compartilhe este link com quem você não confia. Combine o ponto de encontro pela conversa e confira quem é a pessoa antes de entrar no carro.</footer>
 
 <div class="folha" id="folha">
 <form id="form" autocomplete="off">
@@ -86,8 +110,8 @@ footer a{color:inherit}
   <p class="sub" id="fSub">Marque onde você está e onde vota. Motoristas perto de você vão ver seu pedido.</p>
   <label>Seu nome (ou apelido)</label>
   <input name="nome" maxlength="40" required placeholder="Ex.: Ana">
-  <label>Seu WhatsApp com DDD</label>
-  <input name="zap" inputmode="numeric" required placeholder="32 9xxxx-xxxx">
+  <label>Seu WhatsApp com DDD (opcional)</label>
+  <input name="zap" inputmode="numeric" placeholder="Deixe em branco para conversar só aqui">
   <label id="lA">Onde você está agora</label>
   <div class="local" id="locA">
     <div class="linha"><input placeholder="Rua, número, bairro, cidade" data-busca="A"><button type="button" data-mapa="A">No mapa</button><button type="button" data-gps="A" title="Usar minha localização">GPS</button></div>
@@ -110,6 +134,13 @@ footer a{color:inherit}
   <div class="acoes"><button type="button" class="canc" id="canc">Cancelar</button><button type="submit" class="env" id="env">Publicar</button></div>
 </form>
 </div>
+<button class="bconv" id="bconv">Conversas<span class="n" id="nconv"></span></button>
+<div class="chat" id="chat"><div class="cx">
+  <div class="topo"><button type="button" id="cvolta" style="display:none">‹ Voltar</button><b id="ctit">Conversas</b><button type="button" id="cfecha">Fechar</button></div>
+  <div class="cl" id="clista"></div>
+  <div class="corpo" id="ccorpo" style="display:none"></div>
+  <form class="envio" id="cenvio" style="display:none"><input id="ctexto" maxlength="300" placeholder="Escreva aqui" autocomplete="off"><button type="submit">Enviar</button></form>
+</div></div>
 <div class="aviso" id="aviso"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -121,6 +152,9 @@ const JF = [-21.7642, -43.3496];
 const ADMIN = new URLSearchParams(location.search).get('admin') || '';
 let meus = {}; try { meus = JSON.parse(localStorage.getItem('caronas_meus') || '{}'); } catch {}
 let aqui = null; // posição do leitor
+let EU; try { EU = JSON.parse(localStorage.getItem('caronas_eu') || 'null'); } catch {}
+if (!EU || !EU.eu) { const r = () => Math.random().toString(36).slice(2); EU = { eu: (r() + r()).slice(0, 16), chave: r() + r() + r() }; localStorage.setItem('caronas_eu', JSON.stringify(EU)); }
+const meuNome = () => localStorage.getItem('caronas_nome') || '';
 const mapa = L.map('mapa', { zoomControl: true }).setView([-15.5, -50], 4);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(mapa);
 const camada = L.layerGroup().addTo(mapa);
@@ -141,7 +175,7 @@ function htmlItem(i, ref) {
   const d = ref ? km(ref[0], ref[1], i.lat, i.lon) : null;
   const quem = i.tipo === 'carro' ? `Tem carro · ${i.vagas} ${i.vagas > 1 ? 'vagas' : 'vaga'}` : `Precisa de carona · ${i.vagas} ${i.vagas > 1 ? 'pessoas' : 'pessoa'}`;
   const voto = i.tipo === 'carona' && i.vlat != null ? ` · vota a ${fmtKm(km(i.lat, i.lon, i.vlat, i.vlon))} de onde está` : '';
-  return `<b>${esc(i.nome)}</b><div class="meta">${quem}${voto}${d != null ? ' · ' + fmtKm(d) + ' de você' : ''} · ${hora(i.t)}</div>${i.obs ? `<div class="meta">${esc(i.obs)}</div>` : ''}<a class="zap" target="_blank" rel="noopener" href="${zapLink(i)}">Chamar no WhatsApp</a>${podeApagar(i) ? `<button type="button" class="x" data-rm="${i.id}">${meus[i.id] ? 'Já resolvi, tirar' : 'Remover'}</button>` : ''}`;
+  return `<b>${esc(i.nome)}</b><div class="meta">${quem}${voto}${d != null ? ' · ' + fmtKm(d) + ' de você' : ''} · ${hora(i.t)}</div>${i.obs ? `<div class="meta">${esc(i.obs)}</div>` : ''}${i.eu && i.eu !== EU.eu ? `<a class="conv" data-conv-item="${i.id}">Conversar aqui</a>` : ''}${i.zap ? `<a class="zap" target="_blank" rel="noopener" href="${zapLink(i)}">WhatsApp</a>` : ''}${podeApagar(i) ? `<button type="button" class="x" data-rm="${i.id}">${meus[i.id] ? 'Já resolvi, tirar' : 'Remover'}</button>` : ''}`;
 }
 let itens = [];
 function desenhar() {
@@ -179,7 +213,7 @@ function abrir(t) {
   tipo = t; pontos = { A: null, B: null };
   for (const k of ['A', 'B']) { if (marcas[k]) { mapa.removeLayer(marcas[k]); marcas[k] = null; } setOk(k, null); form.querySelector(`[data-busca="${k}"]`).value = ''; }
   document.getElementById('fTit').textContent = t === 'carro' ? 'Tenho carro' : 'Preciso de carona';
-  document.getElementById('fSub').textContent = t === 'carro' ? 'Marque onde você está com o carro. Quem precisa vai te chamar no WhatsApp.' : 'Marque onde você está e onde vota. Quem tem carro vai te chamar no WhatsApp.';
+  document.getElementById('fSub').textContent = t === 'carro' ? 'Marque onde você está com o carro. Quem precisa vai falar com você aqui na página.' : 'Marque onde você está e onde vota. Quem tem carro vai falar com você aqui na página.';
   document.getElementById('lA').textContent = t === 'carro' ? 'Onde você está com o carro' : 'Onde você está agora';
   document.getElementById('blocoB').style.display = t === 'carro' ? 'none' : '';
   document.getElementById('lVagas').textContent = t === 'carro' ? 'Quantas vagas no carro' : 'Quantas pessoas vão';
@@ -227,10 +261,11 @@ form.addEventListener('submit', async e => {
   e.preventDefault(); const erro = document.getElementById('erro'); erro.textContent = '';
   const fd = new FormData(form);
   const zap = String(fd.get('zap')).replace(/\D/g, '').replace(/^55/, '');
-  if (zap.length < 10 || zap.length > 11) return erro.textContent = 'WhatsApp precisa ter DDD + número (10 ou 11 dígitos).';
+  if (zap && (zap.length < 10 || zap.length > 11)) return erro.textContent = 'WhatsApp precisa ter DDD + número (10 ou 11 dígitos), ou fique em branco.';
+  localStorage.setItem('caronas_nome', String(fd.get('nome')).trim());
   if (!pontos.A) return erro.textContent = 'Marque onde você está (busca, GPS ou no mapa).';
   if (tipo === 'carona' && !pontos.B) return erro.textContent = 'Marque onde você vota.';
-  const corpo = { tipo, nome: fd.get('nome'), zap, lat: pontos.A[0], lon: pontos.A[1], vlat: pontos.B ? pontos.B[0] : null, vlon: pontos.B ? pontos.B[1] : null, vagas: +fd.get('vagas'), obs: fd.get('obs') };
+  const corpo = { ...EU, tipo, nome: fd.get('nome'), zap, lat: pontos.A[0], lon: pontos.A[1], vlat: pontos.B ? pontos.B[0] : null, vlon: pontos.B ? pontos.B[1] : null, vagas: +fd.get('vagas'), obs: fd.get('obs') };
   document.getElementById('env').disabled = true;
   try {
     const r = await fetch(API + '/items', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) });
@@ -238,11 +273,55 @@ form.addEventListener('submit', async e => {
     if (!r.ok) throw new Error(j.erro || 'erro');
     meus[j.id] = j.token; localStorage.setItem('caronas_meus', JSON.stringify(meus));
     for (const k of ['A', 'B']) if (marcas[k]) { mapa.removeLayer(marcas[k]); marcas[k] = null; }
-    form.reset(); fechar(); aviso('Publicado. Quando alguém te chamar, volte aqui e toque em "Já resolvi".'); carregar();
+    form.reset(); fechar(); aviso('Publicado. Deixe a página aberta: as conversas chegam no botão "Conversas".'); carregar();
   } catch (err) { erro.textContent = err.message || 'Não consegui publicar. Tente de novo.'; }
   document.getElementById('env').disabled = false;
 });
-carregar(); setInterval(carregar, 15000);
+// ---- conversas ----
+const chat = document.getElementById('chat'), clista = document.getElementById('clista'), ccorpo = document.getElementById('ccorpo'), cenvio = document.getElementById('cenvio');
+let convs = [], convAberta = null, vistos = {}; try { vistos = JSON.parse(localStorage.getItem('caronas_vistos') || '{}'); } catch {}
+const naoLidas = c => c.msgs.filter(m => m.de === 'outro' && m.t > (vistos[c.id] || 0)).length;
+async function convAPI(b) { const r = await fetch(API + '/conv', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...EU, ...b }) }); const j = await r.json(); if (!r.ok) throw new Error(j.erro || 'erro'); return j; }
+async function lerConvs() {
+  try { const j = await convAPI({ so_ler: true }); convs = j.convs.sort((a, b) => b.t - a.t); } catch { return; }
+  if (chat.classList.contains('aberto')) { if (convAberta) { const c = convs.find(x => x.id === convAberta); if (c) mostrarConv(c); } else mostrarLista(); }
+  const n = convs.reduce((s, c) => s + naoLidas(c), 0);
+  const b = document.getElementById('bconv'); b.classList.toggle('tem', convs.length > 0); document.getElementById('nconv').textContent = n || ''; document.getElementById('nconv').style.display = n ? '' : 'none';
+}
+function mostrarLista() {
+  convAberta = null; document.getElementById('cvolta').style.display = 'none'; document.getElementById('ctit').textContent = 'Conversas';
+  clista.style.display = ''; ccorpo.style.display = 'none'; cenvio.style.display = 'none';
+  clista.innerHTML = convs.length ? convs.map(c => { const u = c.msgs[c.msgs.length - 1], n = naoLidas(c); return `<div class="c1" data-abre="${c.id}"><b>${esc(c.comigo)} <span>· ${c.tipo === 'carro' ? 'tem carro' : 'precisa de carona'}</span></b><span class="${n ? 'novo' : ''}">${n ? n + ' nova' + (n > 1 ? 's' : '') + ' · ' : ''}${u ? esc(u.texto).slice(0, 60) : ''}</span></div>`; }).join('') : '<div class="vazio">Nenhuma conversa ainda. Toque em "Conversar aqui" num aviso do mapa.</div>';
+}
+function mostrarConv(c) {
+  convAberta = c.id; document.getElementById('cvolta').style.display = ''; document.getElementById('ctit').textContent = c.comigo;
+  clista.style.display = 'none'; ccorpo.style.display = ''; cenvio.style.display = '';
+  const fim = ccorpo.scrollHeight - ccorpo.scrollTop - ccorpo.clientHeight < 40;
+  ccorpo.innerHTML = c.msgs.map(m => `<div class="msg ${m.de}">${esc(m.texto)}<small>${hora(m.t)}</small></div>`).join('') || '<div class="vazio">Diga oi e combine onde se encontrar.</div>';
+  if (fim || !ccorpo.dataset.r) { ccorpo.scrollTop = ccorpo.scrollHeight; ccorpo.dataset.r = 1; }
+  vistos[c.id] = Date.now(); localStorage.setItem('caronas_vistos', JSON.stringify(vistos));
+}
+function abrirChat() { chat.classList.add('aberto'); mostrarLista(); lerConvs(); }
+document.getElementById('bconv').onclick = abrirChat;
+document.getElementById('cfecha').onclick = () => { chat.classList.remove('aberto'); convAberta = null; lerConvs(); };
+document.getElementById('cvolta').onclick = mostrarLista;
+clista.addEventListener('click', e => { const d = e.target.closest('[data-abre]'); if (!d) return; const c = convs.find(x => x.id === d.dataset.abre); if (c) { delete ccorpo.dataset.r; mostrarConv(c); } });
+document.addEventListener('click', async e => {
+  const a = e.target.closest('[data-conv-item]'); if (!a) return;
+  const item = a.dataset.convItem; const ja = convs.find(c => c.item === item);
+  mapa.closePopup(); chat.classList.add('aberto');
+  if (ja) { delete ccorpo.dataset.r; mostrarConv(ja); return; }
+  let nome = meuNome(); if (!nome) { nome = (prompt('Seu nome (ou apelido), para a outra pessoa saber quem está falando:') || '').trim(); if (!nome) { chat.classList.remove('aberto'); return; } localStorage.setItem('caronas_nome', nome); }
+  const it = itens.find(x => x.id === item);
+  const texto = it && it.tipo === 'carro' ? `Oi ${it.nome}, preciso de carona pra votar. Pode me ajudar?` : `Oi${it ? ' ' + it.nome : ''}, tenho carro e posso te levar. Onde te encontro?`;
+  try { const j = await convAPI({ item, nome, texto }); convs.unshift(j.conv); delete ccorpo.dataset.r; mostrarConv(j.conv); } catch (err) { chat.classList.remove('aberto'); aviso(err.message); }
+});
+cenvio.addEventListener('submit', async e => {
+  e.preventDefault(); const inp = document.getElementById('ctexto'); const texto = inp.value.trim(); if (!texto || !convAberta) return;
+  inp.value = '';
+  try { const j = await convAPI({ conv: convAberta, texto }); const i = convs.findIndex(c => c.id === j.conv.id); if (i >= 0) convs[i] = j.conv; else convs.unshift(j.conv); mostrarConv(j.conv); } catch (err) { aviso(err.message); inp.value = texto; }
+});
+carregar(); setInterval(carregar, 15000); lerConvs(); setInterval(lerConvs, 5000);
 if (navigator.geolocation) navigator.geolocation.getCurrentPosition(p => { aqui = [p.coords.latitude, p.coords.longitude]; mapa.setView(aqui, 14); desenhar(); }, () => {}, { timeout: 8000 });
 })();
 </script>
