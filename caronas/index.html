@@ -1,4 +1,250 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Carona pra votar</title>
-<meta http-equiv="refresh" content="0;url=https://tend-lang-fridge-newly.trycloudflare.com/">
-<style>body{font:17px/1.5 -apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;padding:32px 20px;color:#111}a{color:#a80911;font-weight:700}</style></head>
-<body><p>Abrindo o mapa de caronas para votar…</p><p>Se não abrir, toque aqui: <a href="https://tend-lang-fridge-newly.trycloudflare.com/">https://tend-lang-fridge-newly.trycloudflare.com/</a></p></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Carona pra votar</title>
+<meta name="description" content="Quem precisa de carona pra votar e quem tem carro se encontram no mapa. 2º turno, votação prorrogada até 19h.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+:root{--acao:#a80911;--acao-hov:#8c070d;--carro:#1d5c2c;--fundo:#fff;--tx:#111;--mut:#5a5a5a;--borda:#ddd;--pano:#f5f3ef}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fundo:#141414;--tx:#f3f3f3;--mut:#b5b5b5;--borda:#333;--pano:#1f1f1f}}
+:root[data-theme="dark"]{--fundo:#141414;--tx:#f3f3f3;--mut:#b5b5b5;--borda:#333;--pano:#1f1f1f}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font:16px/1.4 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--fundo);color:var(--tx);display:flex;flex-direction:column;min-height:100dvh}
+header{padding:10px 16px 8px;border-bottom:1px solid var(--borda)}
+header h1{margin:0;font-size:20px;letter-spacing:-.01em}
+header h1 small{font-weight:400;color:var(--mut);font-size:14px;margin-left:6px}
+header p{margin:4px 0 0;color:var(--mut);font-size:14px}
+.botoes{display:flex;gap:8px;padding:10px 16px;border-bottom:1px solid var(--borda)}
+.botoes button{flex:1;padding:12px 8px;border:0;border-radius:10px;font-size:16px;font-weight:700;color:#fff;cursor:pointer}
+.b-carona{background:var(--acao)} .b-carona:hover{background:var(--acao-hov)}
+.b-carro{background:var(--carro)}
+#mapa{flex:1;min-height:52vh}
+.leaflet-container{background:#e9e5de;font:inherit}
+.lista{padding:8px 16px 24px;max-height:40vh;overflow:auto;border-top:1px solid var(--borda)}
+.lista h2{font-size:14px;color:var(--mut);margin:6px 0 8px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.item{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--borda)}
+.item .pin{width:12px;height:12px;border-radius:50%;margin-top:5px;flex:none}
+.item b{display:block}
+.item .meta{color:var(--mut);font-size:14px}
+.item a.zap,.pop a.zap{display:inline-block;margin-top:6px;background:#1ebe5d;color:#fff;text-decoration:none;padding:7px 12px;border-radius:8px;font-weight:700;font-size:14px}
+.item button.x,.pop button.x{margin-top:6px;margin-left:8px;background:none;border:1px solid var(--borda);border-radius:8px;padding:6px 10px;color:var(--mut);cursor:pointer;font-size:13px}
+.pop{font-size:14px;line-height:1.35;color:#111}
+.pop b{font-size:15px}
+.vazio{color:var(--mut);padding:10px 0}
+/* folha do formulário */
+.folha{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:flex-end;justify-content:center;z-index:2000}
+.folha.aberta{display:flex}
+.folha form{background:var(--fundo);color:var(--tx);width:100%;max-width:560px;border-radius:16px 16px 0 0;padding:16px 16px 28px;max-height:92dvh;overflow:auto}
+@media (min-width:700px){.folha{align-items:center}.folha form{border-radius:16px}}
+.folha h2{margin:0 0 4px;font-size:18px}
+.folha p.sub{margin:0 0 12px;color:var(--mut);font-size:14px}
+label{display:block;font-size:14px;font-weight:600;margin:12px 0 4px}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--borda);border-radius:8px;font:inherit;background:var(--fundo);color:var(--tx)}
+.local{border:1px solid var(--borda);border-radius:8px;padding:8px}
+.local .linha{display:flex;gap:6px}
+.local .linha input{flex:1}
+.local .linha button{flex:none;border:1px solid var(--borda);background:var(--pano);color:var(--tx);border-radius:8px;padding:0 10px;cursor:pointer;font-size:14px}
+.local .ok{font-size:13px;margin-top:6px;color:var(--mut)}
+.local .ok.tem{color:var(--carro);font-weight:600}
+.sug{list-style:none;margin:4px 0 0;padding:0;border:1px solid var(--borda);border-radius:8px;display:none;max-height:150px;overflow:auto}
+.sug li{padding:8px 10px;border-bottom:1px solid var(--borda);cursor:pointer;font-size:14px}
+.sug li:last-child{border:0}
+.acoes{display:flex;gap:8px;margin-top:16px}
+.acoes button{flex:1;padding:12px;border:0;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer}
+.acoes .env{color:#fff;background:var(--acao)}
+.acoes .canc{background:var(--pano);color:var(--tx)}
+.erro{color:var(--acao);font-size:14px;margin-top:8px;min-height:1.2em}
+.aviso{position:fixed;top:10px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:10px 14px;border-radius:10px;font-size:14px;z-index:3000;display:none;max-width:90vw}
+.escolhendo #mapa{outline:4px solid var(--acao);outline-offset:-4px;cursor:crosshair}
+.faixa{display:none;background:var(--acao);color:#fff;text-align:center;padding:8px;font-weight:700}
+.escolhendo .faixa{display:block}
+footer{padding:10px 16px 22px;color:var(--mut);font-size:12px;border-top:1px solid var(--borda)}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<header>
+  <h1>Carona pra votar <small>votação prorrogada até 19h · Brasil inteiro</small></h1>
+  <p>Quem precisa ir votar marca onde está e onde vota. Quem tem carro marca onde está. O contato é direto pelo WhatsApp. Dê zoom na sua cidade ou use o GPS.</p>
+</header>
+<div class="botoes">
+  <button class="b-carona" id="bCarona">Preciso de carona</button>
+  <button class="b-carro" id="bCarro">Tenho carro</button>
+</div>
+<div class="faixa" id="faixa">Toque no mapa para marcar o lugar</div>
+<div id="mapa"></div>
+<section class="lista" id="lista"><h2>Perto de você</h2><div class="vazio">Carregando…</div></section>
+<footer>Iniciativa de eleitores, sem partido. Os dados ficam só aqui e somem em 24 horas. Seu nome e WhatsApp ficam visíveis para quem abrir a página: use um número que você pode mostrar. Não compartilhe este link com quem você não confia. Combine o ponto de encontro pelo WhatsApp e confira quem é a pessoa antes de entrar no carro.</footer>
+
+<div class="folha" id="folha">
+<form id="form" autocomplete="off">
+  <h2 id="fTit">Preciso de carona</h2>
+  <p class="sub" id="fSub">Marque onde você está e onde vota. Motoristas perto de você vão ver seu pedido.</p>
+  <label>Seu nome (ou apelido)</label>
+  <input name="nome" maxlength="40" required placeholder="Ex.: Ana">
+  <label>Seu WhatsApp com DDD</label>
+  <input name="zap" inputmode="numeric" required placeholder="32 9xxxx-xxxx">
+  <label id="lA">Onde você está agora</label>
+  <div class="local" id="locA">
+    <div class="linha"><input placeholder="Rua, número, bairro, cidade" data-busca="A"><button type="button" data-mapa="A">No mapa</button><button type="button" data-gps="A" title="Usar minha localização">GPS</button></div>
+    <ul class="sug" data-sug="A"></ul>
+    <div class="ok" data-ok="A">Ainda não marcado</div>
+  </div>
+  <div id="blocoB">
+    <label>Onde você vota (escola, colégio, endereço)</label>
+    <div class="local" id="locB">
+      <div class="linha"><input placeholder="Nome da escola e cidade" data-busca="B"><button type="button" data-mapa="B">No mapa</button></div>
+      <ul class="sug" data-sug="B"></ul>
+      <div class="ok" data-ok="B">Ainda não marcado</div>
+    </div>
+  </div>
+  <label id="lVagas">Quantas pessoas vão</label>
+  <select name="vagas"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+  <label>Observação (opcional)</label>
+  <input name="obs" maxlength="140" placeholder="Ex.: estou com criança / saio a partir das 17h30">
+  <div class="erro" id="erro"></div>
+  <div class="acoes"><button type="button" class="canc" id="canc">Cancelar</button><button type="submit" class="env" id="env">Publicar</button></div>
+</form>
+</div>
+<div class="aviso" id="aviso"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="api.js"></script>
+<script>
+(function(){
+const API = (location.hostname === 'localhost' || location.hostname === '127.0.0.1' ? location.origin : (window.CARONAS_API || location.origin)) + '/api';
+const JF = [-21.7642, -43.3496];
+const ADMIN = new URLSearchParams(location.search).get('admin') || '';
+let meus = {}; try { meus = JSON.parse(localStorage.getItem('caronas_meus') || '{}'); } catch {}
+let aqui = null; // posição do leitor
+const mapa = L.map('mapa', { zoomControl: true }).setView([-15.5, -50], 4);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(mapa);
+const camada = L.layerGroup().addTo(mapa);
+const icone = cor => L.divIcon({ className: '', html: `<div style="width:18px;height:18px;border-radius:50%;background:${cor};border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.5)"></div>`, iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -10] });
+const icVoto = L.divIcon({ className: '', html: '<div style="width:12px;height:12px;background:#a80911;border:2px solid #fff;transform:rotate(45deg);box-shadow:0 1px 3px rgba(0,0,0,.5)"></div>', iconSize: [12, 12], iconAnchor: [6, 6] });
+const COR = { carona: '#a80911', carro: '#1d5c2c' };
+const esc = s => String(s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const km = (a, b, c, d) => { const r = Math.PI / 180, x = (c - a) * r, y = (d - b) * r, h = Math.sin(x / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin(y / 2) ** 2; return 12742 * Math.asin(Math.sqrt(h)); };
+const fmtKm = k => k < 1 ? Math.round(k * 1000) + ' m' : k.toFixed(1).replace('.', ',') + ' km';
+const hora = t => new Date(t).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+function aviso(t) { const a = document.getElementById('aviso'); a.textContent = t; a.style.display = 'block'; clearTimeout(aviso.k); aviso.k = setTimeout(() => a.style.display = 'none', 3500); }
+function zapLink(i) {
+  const msg = i.tipo === 'carro' ? `Oi ${i.nome}, vi no mapa Carona pra votar que você tem carro. Preciso de carona pra votar. Pode me ajudar?` : `Oi ${i.nome}, vi no mapa Carona pra votar que você precisa de carona. Tenho carro, posso te levar. Onde te encontro?`;
+  return `https://wa.me/55${i.zap}?text=${encodeURIComponent(msg)}`;
+}
+function podeApagar(i) { return !!(meus[i.id] || ADMIN); }
+function htmlItem(i, ref) {
+  const d = ref ? km(ref[0], ref[1], i.lat, i.lon) : null;
+  const quem = i.tipo === 'carro' ? `Tem carro · ${i.vagas} ${i.vagas > 1 ? 'vagas' : 'vaga'}` : `Precisa de carona · ${i.vagas} ${i.vagas > 1 ? 'pessoas' : 'pessoa'}`;
+  const voto = i.tipo === 'carona' && i.vlat != null ? ` · vota a ${fmtKm(km(i.lat, i.lon, i.vlat, i.vlon))} de onde está` : '';
+  return `<b>${esc(i.nome)}</b><div class="meta">${quem}${voto}${d != null ? ' · ' + fmtKm(d) + ' de você' : ''} · ${hora(i.t)}</div>${i.obs ? `<div class="meta">${esc(i.obs)}</div>` : ''}<a class="zap" target="_blank" rel="noopener" href="${zapLink(i)}">Chamar no WhatsApp</a>${podeApagar(i) ? `<button type="button" class="x" data-rm="${i.id}">${meus[i.id] ? 'Já resolvi, tirar' : 'Remover'}</button>` : ''}`;
+}
+let itens = [];
+function desenhar() {
+  camada.clearLayers();
+  const ref = aqui || [mapa.getCenter().lat, mapa.getCenter().lng];
+  for (const i of itens) {
+    const m = L.marker([i.lat, i.lon], { icon: icone(COR[i.tipo]) }).bindPopup(`<div class="pop">${htmlItem(i, aqui)}</div>`, { maxWidth: 260 });
+    camada.addLayer(m);
+    if (i.tipo === 'carona' && i.vlat != null) {
+      camada.addLayer(L.polyline([[i.lat, i.lon], [i.vlat, i.vlon]], { color: '#a80911', weight: 2, dashArray: '4 5', opacity: .7 }));
+      camada.addLayer(L.marker([i.vlat, i.vlon], { icon: icVoto }).bindTooltip('Onde ' + esc(i.nome) + ' vota'));
+    }
+  }
+  const ord = itens.slice().sort((a, b) => km(ref[0], ref[1], a.lat, a.lon) - km(ref[0], ref[1], b.lat, b.lon));
+  const nC = itens.filter(i => i.tipo === 'carro').length, nP = itens.length - nC;
+  const l = document.getElementById('lista');
+  l.innerHTML = `<h2>${nP} ${nP === 1 ? 'pedido' : 'pedidos'} de carona · ${nC} ${nC === 1 ? 'carro' : 'carros'}${aqui ? ' · perto de você' : ' · perto do centro do mapa'}</h2>` +
+    (ord.length ? ord.map(i => `<div class="item"><div class="pin" style="background:${COR[i.tipo]}"></div><div>${htmlItem(i, ref)}</div></div>`).join('') : '<div class="vazio">Ninguém marcou ainda. Seja a primeira pessoa.</div>');
+}
+async function carregar() {
+  try { const r = await fetch(API + '/items', { cache: 'no-store' }); const j = await r.json(); itens = j.items || []; desenhar(); }
+  catch { document.querElementById && 0; const v = document.querySelector('#lista .vazio'); if (v) v.textContent = 'Não consegui carregar. Tente de novo em instantes.'; }
+}
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-rm]'); if (!b) return;
+  const id = b.dataset.rm; if (!confirm('Tirar este aviso do mapa?')) return;
+  const r = await fetch(API + '/items/' + id + '/remove', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: meus[id] || ADMIN }) });
+  if (r.ok) { delete meus[id]; localStorage.setItem('caronas_meus', JSON.stringify(meus)); mapa.closePopup(); carregar(); } else aviso('Não consegui remover.');
+});
+
+// ---- formulário ----
+const folha = document.getElementById('folha'), form = document.getElementById('form');
+let tipo = 'carona', pontos = { A: null, B: null }, marcas = { A: null, B: null }, escolhendo = null;
+function abrir(t) {
+  tipo = t; pontos = { A: null, B: null };
+  for (const k of ['A', 'B']) { if (marcas[k]) { mapa.removeLayer(marcas[k]); marcas[k] = null; } setOk(k, null); form.querySelector(`[data-busca="${k}"]`).value = ''; }
+  document.getElementById('fTit').textContent = t === 'carro' ? 'Tenho carro' : 'Preciso de carona';
+  document.getElementById('fSub').textContent = t === 'carro' ? 'Marque onde você está com o carro. Quem precisa vai te chamar no WhatsApp.' : 'Marque onde você está e onde vota. Quem tem carro vai te chamar no WhatsApp.';
+  document.getElementById('lA').textContent = t === 'carro' ? 'Onde você está com o carro' : 'Onde você está agora';
+  document.getElementById('blocoB').style.display = t === 'carro' ? 'none' : '';
+  document.getElementById('lVagas').textContent = t === 'carro' ? 'Quantas vagas no carro' : 'Quantas pessoas vão';
+  document.getElementById('env').style.background = t === 'carro' ? 'var(--carro)' : 'var(--acao)';
+  document.getElementById('erro').textContent = '';
+  folha.classList.add('aberta');
+}
+function fechar() { folha.classList.remove('aberta'); sairEscolha(); }
+function setOk(k, txt) { const o = form.querySelector(`[data-ok="${k}"]`); o.textContent = txt || 'Ainda não marcado'; o.classList.toggle('tem', !!txt); }
+function marcar(k, lat, lon, rot) {
+  pontos[k] = [lat, lon];
+  if (marcas[k]) mapa.removeLayer(marcas[k]);
+  marcas[k] = L.marker([lat, lon], { icon: k === 'B' ? icVoto : icone(COR[tipo]), zIndexOffset: 1000 }).addTo(mapa);
+  setOk(k, (k === 'B' ? 'Vota em: ' : 'Está em: ') + (rot || `${lat.toFixed(4)}, ${lon.toFixed(4)}`));
+}
+async function buscar(k, q) {
+  const ul = form.querySelector(`[data-sug="${k}"]`);
+  if (q.length < 3) { ul.style.display = 'none'; return; }
+  const b = mapa.getBounds();
+  const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&countrycodes=br&accept-language=pt-BR&viewbox=${b.getWest()},${b.getNorth()},${b.getEast()},${b.getSouth()}&bounded=0&q=${encodeURIComponent(q)}`;
+  try {
+    const r = await fetch(url); const res = await r.json();
+    ul.innerHTML = res.length ? res.map(x => `<li data-lat="${x.lat}" data-lon="${x.lon}">${esc(x.display_name.split(',').slice(0, 3).join(','))}</li>`).join('') : '<li>Nada encontrado. Toque em "No mapa" e marque o lugar.</li>';
+    ul.style.display = 'block';
+  } catch { ul.innerHTML = '<li>Busca indisponível. Use "No mapa".</li>'; ul.style.display = 'block'; }
+}
+let tmr; form.addEventListener('input', e => { const k = e.target.dataset.busca; if (!k) return; clearTimeout(tmr); tmr = setTimeout(() => buscar(k, e.target.value.trim()), 500); });
+form.addEventListener('click', e => {
+  const li = e.target.closest('.sug li'); if (li && li.dataset.lat) { const k = li.parentElement.dataset.sug; marcar(k, +li.dataset.lat, +li.dataset.lon, li.textContent); li.parentElement.style.display = 'none'; mapa.setView([+li.dataset.lat, +li.dataset.lon], 15); return; }
+  const bm = e.target.closest('[data-mapa]'); if (bm) { entrarEscolha(bm.dataset.mapa); return; }
+  const bg = e.target.closest('[data-gps]'); if (bg) {
+    if (!navigator.geolocation) return aviso('Sem GPS neste aparelho.');
+    aviso('Buscando sua localização…');
+    navigator.geolocation.getCurrentPosition(p => { marcar('A', p.coords.latitude, p.coords.longitude, 'sua localização'); aqui = [p.coords.latitude, p.coords.longitude]; mapa.setView(aqui, 15); aviso('Localização marcada.'); }, () => aviso('Não consegui pegar a localização. Use a busca ou o mapa.'), { enableHighAccuracy: true, timeout: 10000 });
+  }
+});
+function entrarEscolha(k) { escolhendo = k; folha.classList.remove('aberta'); document.body.classList.add('escolhendo'); document.getElementById('faixa').textContent = k === 'B' ? 'Toque no mapa onde você vota' : (tipo === 'carro' ? 'Toque no mapa onde está o carro' : 'Toque no mapa onde você está'); }
+function sairEscolha() { escolhendo = null; document.body.classList.remove('escolhendo'); }
+mapa.on('click', e => { if (!escolhendo) return; marcar(escolhendo, e.latlng.lat, e.latlng.lng, 'ponto marcado no mapa'); sairEscolha(); folha.classList.add('aberta'); });
+document.getElementById('bCarona').onclick = () => abrir('carona');
+document.getElementById('bCarro').onclick = () => abrir('carro');
+document.getElementById('canc').onclick = fechar;
+folha.addEventListener('click', e => { if (e.target === folha) fechar(); });
+form.addEventListener('submit', async e => {
+  e.preventDefault(); const erro = document.getElementById('erro'); erro.textContent = '';
+  const fd = new FormData(form);
+  const zap = String(fd.get('zap')).replace(/\D/g, '').replace(/^55/, '');
+  if (zap.length < 10 || zap.length > 11) return erro.textContent = 'WhatsApp precisa ter DDD + número (10 ou 11 dígitos).';
+  if (!pontos.A) return erro.textContent = 'Marque onde você está (busca, GPS ou no mapa).';
+  if (tipo === 'carona' && !pontos.B) return erro.textContent = 'Marque onde você vota.';
+  const corpo = { tipo, nome: fd.get('nome'), zap, lat: pontos.A[0], lon: pontos.A[1], vlat: pontos.B ? pontos.B[0] : null, vlon: pontos.B ? pontos.B[1] : null, vagas: +fd.get('vagas'), obs: fd.get('obs') };
+  document.getElementById('env').disabled = true;
+  try {
+    const r = await fetch(API + '/items', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.erro || 'erro');
+    meus[j.id] = j.token; localStorage.setItem('caronas_meus', JSON.stringify(meus));
+    for (const k of ['A', 'B']) if (marcas[k]) { mapa.removeLayer(marcas[k]); marcas[k] = null; }
+    form.reset(); fechar(); aviso('Publicado. Quando alguém te chamar, volte aqui e toque em "Já resolvi".'); carregar();
+  } catch (err) { erro.textContent = err.message || 'Não consegui publicar. Tente de novo.'; }
+  document.getElementById('env').disabled = false;
+});
+carregar(); setInterval(carregar, 15000);
+if (navigator.geolocation) navigator.geolocation.getCurrentPosition(p => { aqui = [p.coords.latitude, p.coords.longitude]; mapa.setView(aqui, 14); desenhar(); }, () => {}, { timeout: 8000 });
+})();
+</script>
+</body>
+</html>
