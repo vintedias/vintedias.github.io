@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-25 22:36:22",
+ "gerado": "2026-10-25 22:56:09",
  "tse_hora": "21:34:51",
  "secoes_pct": 99.9,
  "apurado": {
-  "lula": 64031587,
-  "flavio": 59642978,
+  "lula": 64034435,
+  "flavio": 59644592,
   "pct_lula": 51.77,
   "pct_flavio": 48.23
  },
  "votos_apurados_frac": 0.9997,
- "votos_faltam": 35843,
+ "votos_faltam": 31482,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -36,7 +36,7 @@
  "swing_nacional_logit": 0.1304,
  "inclinacao": -0.045,
  "x_ref": -0.0426,
- "sd_nat": 0.0017,
+ "sd_nat": 0.0016,
  "razao_comparecimento": 1.0398,
  "ufs": [
   {
@@ -192,7 +192,7 @@
   {
    "uf": "MG",
    "regiao": "Sudeste",
-   "secoes_pct": 99.8,
+   "secoes_pct": 99.9,
    "lula_1T": 47.3,
    "lula_apurado": 50.4,
    "lula_proj": 50.4,
@@ -201,7 +201,7 @@
     50.4
    ],
    "swing_logit": 0.128,
-   "n_mun_obs": 848,
+   "n_mun_obs": 849,
    "razao_comp": 1.051
   },
   {
@@ -817,31 +817,15 @@
    "lula": 51.77
   },
   {
-   "sec": 99.97,
+   "sec": 99.98,
    "lula": 51.77
   },
   {
-   "sec": 99.97,
+   "sec": 99.98,
    "lula": 51.77
   },
   {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
+   "sec": 99.98,
    "lula": 51.77
   },
   {
@@ -894,6 +878,18 @@
   },
   {
    "sec": 99.98,
+   "lula": 51.78
+  },
+  {
+   "sec": 99.98,
+   "lula": 51.78
+  },
+  {
+   "sec": 99.99,
+   "lula": 51.78
+  },
+  {
+   "sec": 99.99,
    "lula": 51.78
   },
   {
