@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-25 22:09:11",
+ "gerado": "2026-10-25 22:10:28",
  "tse_hora": "21:34:51",
  "secoes_pct": 99.9,
  "apurado": {
-  "lula": 64028742,
-  "flavio": 59641110,
+  "lula": 64030578,
+  "flavio": 59642588,
   "pct_lula": 51.77,
   "pct_flavio": 48.23
  },
  "votos_apurados_frac": 0.9997,
- "votos_faltam": 40755,
+ "votos_faltam": 37344,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -36,7 +36,7 @@
  "swing_nacional_logit": 0.1304,
  "inclinacao": -0.045,
  "x_ref": -0.0426,
- "sd_nat": 0.0018,
+ "sd_nat": 0.0017,
  "razao_comparecimento": 1.0398,
  "ufs": [
   {
@@ -809,30 +809,6 @@
  ],
  "trajetoria": [
   {
-   "sec": 99.96,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.96,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
    "sec": 99.97,
    "lula": 51.77
   },
@@ -887,6 +863,22 @@
   {
    "sec": 99.98,
    "lula": 51.77
+  },
+  {
+   "sec": 99.98,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.98,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.98,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.98,
+   "lula": 51.78
   },
   {
    "sec": 99.98,
