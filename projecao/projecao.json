@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-25 21:46:50",
+ "gerado": "2026-10-25 21:47:36",
  "tse_hora": "21:34:51",
  "secoes_pct": 99.9,
  "apurado": {
-  "lula": 63998602,
-  "flavio": 59628606,
+  "lula": 64002138,
+  "flavio": 59630061,
   "pct_lula": 51.77,
   "pct_flavio": 48.23
  },
- "votos_apurados_frac": 0.9993,
- "votos_faltam": 84095,
+ "votos_apurados_frac": 0.9994,
+ "votos_faltam": 77728,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -36,7 +36,7 @@
  "swing_nacional_logit": 0.1304,
  "inclinacao": -0.0449,
  "x_ref": -0.0429,
- "sd_nat": 0.0026,
+ "sd_nat": 0.0025,
  "razao_comparecimento": 1.0398,
  "ufs": [
   {
@@ -50,7 +50,7 @@
     33.4,
     33.4
    ],
-   "swing_logit": 0.098,
+   "swing_logit": 0.099,
    "n_mun_obs": 22,
    "razao_comp": 0.929
   },
@@ -267,7 +267,7 @@
   {
    "uf": "PE",
    "regiao": "Nordeste",
-   "secoes_pct": 99.7,
+   "secoes_pct": 99.9,
    "lula_1T": 67.2,
    "lula_apurado": 69.2,
    "lula_proj": 69.2,
@@ -813,55 +813,51 @@
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
-   "sec": 99.93,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
@@ -958,7 +954,7 @@
   },
   {
    "sec": 99.97,
-   "lula": 51.77
+   "lula": 51.78
   },
   {
    "sec": 99.97,
@@ -966,7 +962,7 @@
   },
   {
    "sec": 99.97,
-   "lula": 51.77
+   "lula": 51.78
   },
   {
    "sec": 99.98,
