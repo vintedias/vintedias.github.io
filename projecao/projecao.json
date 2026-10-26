@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-25 21:29:10",
- "tse_hora": "21:28:40",
+ "gerado": "2026-10-25 21:30:04",
+ "tse_hora": "21:29:41",
  "secoes_pct": 99.88,
  "apurado": {
-  "lula": 63954242,
-  "flavio": 59608466,
+  "lula": 63957441,
+  "flavio": 59611003,
   "pct_lula": 51.76,
   "pct_flavio": 48.24
  },
- "votos_apurados_frac": 0.9988,
- "votos_faltam": 147778,
+ "votos_apurados_frac": 0.9989,
+ "votos_faltam": 141763,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -36,7 +36,7 @@
  "swing_nacional_logit": 0.1305,
  "inclinacao": -0.0448,
  "x_ref": -0.0434,
- "sd_nat": 0.0035,
+ "sd_nat": 0.0034,
  "razao_comparecimento": 1.0398,
  "ufs": [
   {
@@ -207,7 +207,7 @@
   {
    "uf": "MS",
    "regiao": "Centro-Oeste",
-   "secoes_pct": 99.9,
+   "secoes_pct": 100.0,
    "lula_1T": 37.2,
    "lula_apurado": 40.4,
    "lula_proj": 40.4,
@@ -267,7 +267,7 @@
   {
    "uf": "PE",
    "regiao": "Nordeste",
-   "secoes_pct": 99.6,
+   "secoes_pct": 99.7,
    "lula_1T": 67.2,
    "lula_apurado": 69.2,
    "lula_proj": 69.2,
@@ -277,7 +277,7 @@
    ],
    "swing_logit": 0.134,
    "n_mun_obs": 185,
-   "razao_comp": 1.062
+   "razao_comp": 1.063
   },
   {
    "uf": "PI",
@@ -432,7 +432,7 @@
   {
    "uf": "TO",
    "regiao": "Norte",
-   "secoes_pct": 99.7,
+   "secoes_pct": 100.0,
    "lula_1T": 46.3,
    "lula_apurado": 48.6,
    "lula_proj": 48.6,
@@ -584,7 +584,7 @@
   {
    "uf": "AL",
    "nome": "MACEIÓ",
-   "secoes_pct": 99.9,
+   "secoes_pct": 100.0,
    "lula_1T": 44.0,
    "lula_apurado": 48.0,
    "lula_proj_falta": 48.0,
@@ -593,7 +593,7 @@
   {
    "uf": "MS",
    "nome": "CAMPO GRANDE",
-   "secoes_pct": 99.8,
+   "secoes_pct": 100.0,
    "lula_1T": 35.6,
    "lula_apurado": 38.9,
    "lula_proj_falta": 38.9,
@@ -813,14 +813,6 @@
    "lula": 51.76
   },
   {
-   "sec": 99.88,
-   "lula": 51.76
-  },
-  {
-   "sec": 99.88,
-   "lula": 51.76
-  },
-  {
    "sec": 99.89,
    "lula": 51.76
   },
@@ -889,39 +881,27 @@
    "lula": 51.76
   },
   {
-   "sec": 99.89,
+   "sec": 99.9,
    "lula": 51.76
   },
   {
-   "sec": 99.89,
+   "sec": 99.9,
    "lula": 51.76
   },
   {
-   "sec": 99.89,
+   "sec": 99.9,
    "lula": 51.76
   },
   {
-   "sec": 99.89,
+   "sec": 99.9,
    "lula": 51.76
   },
   {
-   "sec": 99.89,
+   "sec": 99.9,
    "lula": 51.76
   },
   {
-   "sec": 99.89,
-   "lula": 51.76
-  },
-  {
-   "sec": 99.89,
-   "lula": 51.76
-  },
-  {
-   "sec": 99.89,
-   "lula": 51.76
-  },
-  {
-   "sec": 99.89,
+   "sec": 99.9,
    "lula": 51.76
   },
   {
@@ -990,10 +970,6 @@
   },
   {
    "sec": 99.93,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.94,
    "lula": 51.77
   },
   {
