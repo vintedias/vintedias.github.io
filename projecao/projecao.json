@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-25 21:21:46",
- "tse_hora": "21:20:50",
+ "gerado": "2026-10-25 21:22:45",
+ "tse_hora": "21:21:50",
  "secoes_pct": 99.83,
  "apurado": {
-  "lula": 63919246,
-  "flavio": 59582151,
+  "lula": 63923020,
+  "flavio": 59585526,
   "pct_lula": 51.76,
   "pct_flavio": 48.24
  },
- "votos_apurados_frac": 0.9983,
- "votos_faltam": 211087,
+ "votos_apurados_frac": 0.9984,
+ "votos_faltam": 202787,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -36,8 +36,8 @@
  "swing_nacional_logit": 0.1305,
  "inclinacao": -0.0447,
  "x_ref": -0.0435,
- "sd_nat": 0.0041,
- "razao_comparecimento": 1.0399,
+ "sd_nat": 0.004,
+ "razao_comparecimento": 1.0398,
  "ufs": [
   {
    "uf": "AC",
@@ -162,7 +162,7 @@
   {
    "uf": "GO",
    "regiao": "Centro-Oeste",
-   "secoes_pct": 99.8,
+   "secoes_pct": 99.9,
    "lula_1T": 36.7,
    "lula_apurado": 40.3,
    "lula_proj": 40.3,
@@ -305,9 +305,9 @@
     37.4,
     37.4
    ],
-   "swing_logit": 0.115,
+   "swing_logit": 0.116,
    "n_mun_obs": 399,
-   "razao_comp": 1.042
+   "razao_comp": 1.041
   },
   {
    "uf": "RJ",
@@ -422,7 +422,7 @@
    "lula_apurado": 46.1,
    "lula_proj": 46.2,
    "ic90": [
-    46.1,
+    46.2,
     46.2
    ],
    "swing_logit": 0.141,
@@ -449,7 +449,7 @@
   {
    "uf": "SP",
    "nome": "SÃO PAULO",
-   "secoes_pct": 99.7,
+   "secoes_pct": 99.8,
    "lula_1T": 52.5,
    "lula_apurado": 55.5,
    "lula_proj_falta": 55.5,
@@ -809,39 +809,35 @@
  ],
  "trajetoria": [
   {
-   "sec": 99.83,
+   "sec": 99.84,
    "lula": 51.76
   },
   {
-   "sec": 99.83,
+   "sec": 99.84,
    "lula": 51.76
   },
   {
-   "sec": 99.83,
+   "sec": 99.84,
    "lula": 51.76
   },
   {
-   "sec": 99.83,
+   "sec": 99.84,
    "lula": 51.76
   },
   {
-   "sec": 99.83,
+   "sec": 99.84,
    "lula": 51.76
   },
   {
-   "sec": 99.83,
+   "sec": 99.84,
    "lula": 51.76
   },
   {
-   "sec": 99.83,
+   "sec": 99.84,
    "lula": 51.76
   },
   {
-   "sec": 99.83,
-   "lula": 51.76
-  },
-  {
-   "sec": 99.83,
+   "sec": 99.84,
    "lula": 51.76
   },
   {
@@ -897,23 +893,15 @@
    "lula": 51.76
   },
   {
-   "sec": 99.86,
+   "sec": 99.87,
    "lula": 51.76
   },
   {
-   "sec": 99.86,
+   "sec": 99.87,
    "lula": 51.76
   },
   {
-   "sec": 99.86,
-   "lula": 51.76
-  },
-  {
-   "sec": 99.86,
-   "lula": 51.76
-  },
-  {
-   "sec": 99.86,
+   "sec": 99.87,
    "lula": 51.76
   },
   {
@@ -965,18 +953,10 @@
    "lula": 51.76
   },
   {
-   "sec": 99.9,
+   "sec": 99.88,
    "lula": 51.76
   },
   {
-   "sec": 99.9,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.91,
-   "lula": 51.77
-  },
-  {
    "sec": 99.91,
    "lula": 51.77
   },
@@ -1026,6 +1006,10 @@
   },
   {
    "sec": 99.92,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.93,
    "lula": 51.77
   },
   {
@@ -1054,7 +1038,7 @@
   },
   {
    "sec": 99.97,
-   "lula": 51.77
+   "lula": 51.78
   },
   {
    "sec": 99.98,
