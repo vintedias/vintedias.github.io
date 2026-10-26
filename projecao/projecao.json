@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-25 21:32:47",
- "tse_hora": "21:31:51",
- "secoes_pct": 99.89,
+ "gerado": "2026-10-25 21:33:44",
+ "tse_hora": "21:32:51",
+ "secoes_pct": 99.9,
  "apurado": {
-  "lula": 63968934,
-  "flavio": 59616607,
+  "lula": 63970078,
+  "flavio": 59617380,
   "pct_lula": 51.76,
   "pct_flavio": 48.24
  },
  "votos_apurados_frac": 0.999,
- "votos_faltam": 124539,
+ "votos_faltam": 122484,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -36,7 +36,7 @@
  "swing_nacional_logit": 0.1305,
  "inclinacao": -0.0448,
  "x_ref": -0.0432,
- "sd_nat": 0.0032,
+ "sd_nat": 0.0031,
  "razao_comparecimento": 1.0398,
  "ufs": [
   {
@@ -476,7 +476,7 @@
   {
    "uf": "CE",
    "nome": "FORTALEZA",
-   "secoes_pct": 99.9,
+   "secoes_pct": 100.0,
    "lula_1T": 57.6,
    "lula_apurado": 60.1,
    "lula_proj_falta": 60.1,
@@ -821,19 +821,11 @@
    "lula": 51.76
   },
   {
-   "sec": 99.9,
+   "sec": 99.91,
    "lula": 51.76
   },
   {
-   "sec": 99.9,
-   "lula": 51.76
-  },
-  {
-   "sec": 99.9,
-   "lula": 51.76
-  },
-  {
-   "sec": 99.9,
+   "sec": 99.91,
    "lula": 51.76
   },
   {
@@ -934,10 +926,6 @@
   },
   {
    "sec": 99.93,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.94,
    "lula": 51.77
   },
   {
