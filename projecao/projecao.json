@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-25 22:18:15",
+ "gerado": "2026-10-25 22:18:59",
  "tse_hora": "21:34:51",
  "secoes_pct": 99.9,
  "apurado": {
-  "lula": 64030578,
-  "flavio": 59642588,
+  "lula": 64031390,
+  "flavio": 59642927,
   "pct_lula": 51.77,
   "pct_flavio": 48.23
  },
  "votos_apurados_frac": 0.9997,
- "votos_faltam": 37344,
+ "votos_faltam": 36066,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -237,7 +237,7 @@
   {
    "uf": "PA",
    "regiao": "Norte",
-   "secoes_pct": 99.9,
+   "secoes_pct": 100.0,
    "lula_1T": 52.9,
    "lula_apurado": 55.0,
    "lula_proj": 55.0,
@@ -849,15 +849,7 @@
    "lula": 51.77
   },
   {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.97,
+   "sec": 99.98,
    "lula": 51.77
   },
   {
@@ -874,7 +866,11 @@
   },
   {
    "sec": 99.98,
-   "lula": 51.77
+   "lula": 51.78
+  },
+  {
+   "sec": 99.98,
+   "lula": 51.78
   },
   {
    "sec": 99.98,
