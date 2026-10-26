@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-25 21:57:28",
+ "gerado": "2026-10-25 21:58:16",
  "tse_hora": "21:34:51",
  "secoes_pct": 99.9,
  "apurado": {
-  "lula": 64002138,
-  "flavio": 59630061,
+  "lula": 64006455,
+  "flavio": 59630714,
   "pct_lula": 51.77,
   "pct_flavio": 48.23
  },
  "votos_apurados_frac": 0.9994,
- "votos_faltam": 77728,
+ "votos_faltam": 73156,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -35,8 +35,8 @@
  },
  "swing_nacional_logit": 0.1304,
  "inclinacao": -0.0449,
- "x_ref": -0.0429,
- "sd_nat": 0.0025,
+ "x_ref": -0.0428,
+ "sd_nat": 0.0024,
  "razao_comparecimento": 1.0398,
  "ufs": [
   {
@@ -177,7 +177,7 @@
   {
    "uf": "MA",
    "regiao": "Nordeste",
-   "secoes_pct": 99.8,
+   "secoes_pct": 99.9,
    "lula_1T": 67.4,
    "lula_apurado": 69.5,
    "lula_proj": 69.5,
@@ -410,7 +410,7 @@
     69.5,
     69.5
    ],
-   "swing_logit": 0.148,
+   "swing_logit": 0.147,
    "n_mun_obs": 75,
    "razao_comp": 1.043
   },
@@ -809,7 +809,7 @@
  ],
  "trajetoria": [
   {
-   "sec": 99.93,
+   "sec": 99.94,
    "lula": 51.77
   },
   {
@@ -869,35 +869,7 @@
    "lula": 51.77
   },
   {
-   "sec": 99.95,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.95,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.95,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.95,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.95,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.95,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.95,
-   "lula": 51.77
-  },
-  {
-   "sec": 99.95,
+   "sec": 99.96,
    "lula": 51.77
   },
   {
@@ -946,6 +918,30 @@
   },
   {
    "sec": 99.96,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.96,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.96,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.96,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.96,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.96,
+   "lula": 51.77
+  },
+  {
+   "sec": 99.97,
    "lula": 51.77
   },
   {
@@ -958,7 +954,11 @@
   },
   {
    "sec": 99.97,
-   "lula": 51.77
+   "lula": 51.78
+  },
+  {
+   "sec": 99.97,
+   "lula": 51.78
   },
   {
    "sec": 99.97,
