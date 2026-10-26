@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-26 01:04:15",
- "tse_hora": "23:09:21",
+ "gerado": "2026-10-26 19:55:19",
+ "tse_hora": "23:27:02",
  "secoes_pct": 100.0,
  "apurado": {
-  "lula": 64040761,
-  "flavio": 59647934,
+  "lula": 64050750,
+  "flavio": 59643925,
   "pct_lula": 51.78,
   "pct_flavio": 48.22
  },
- "votos_apurados_frac": 0.9998,
- "votos_faltam": 21844,
+ "votos_apurados_frac": 0.9999,
+ "votos_faltam": 16852,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -34,10 +34,10 @@
   "peso_apuracao": 1.0
  },
  "swing_nacional_logit": 0.1304,
- "inclinacao": -0.045,
- "x_ref": -0.0425,
- "sd_nat": 0.0013,
- "razao_comparecimento": 1.0398,
+ "inclinacao": -0.0449,
+ "x_ref": -0.0423,
+ "sd_nat": 0.0012,
+ "razao_comparecimento": 1.0399,
  "ufs": [
   {
    "uf": "AC",
@@ -50,7 +50,7 @@
     33.4,
     33.4
    ],
-   "swing_logit": 0.098,
+   "swing_logit": 0.099,
    "n_mun_obs": 22,
    "razao_comp": 0.929
   },
@@ -125,7 +125,7 @@
     68.9,
     68.9
    ],
-   "swing_logit": 0.132,
+   "swing_logit": 0.131,
    "n_mun_obs": 184,
    "razao_comp": 1.042
   },
@@ -192,7 +192,7 @@
   {
    "uf": "MG",
    "regiao": "Sudeste",
-   "secoes_pct": 99.9,
+   "secoes_pct": 100.0,
    "lula_1T": 47.3,
    "lula_apurado": 50.4,
    "lula_proj": 50.4,
@@ -200,8 +200,8 @@
     50.4,
     50.4
    ],
-   "swing_logit": 0.128,
-   "n_mun_obs": 850,
+   "swing_logit": 0.127,
+   "n_mun_obs": 853,
    "razao_comp": 1.051
   },
   {
@@ -267,7 +267,7 @@
   {
    "uf": "PE",
    "regiao": "Nordeste",
-   "secoes_pct": 99.9,
+   "secoes_pct": 100.0,
    "lula_1T": 67.2,
    "lula_apurado": 69.2,
    "lula_proj": 69.2,
@@ -275,7 +275,7 @@
     69.2,
     69.2
    ],
-   "swing_logit": 0.134,
+   "swing_logit": 0.135,
    "n_mun_obs": 185,
    "razao_comp": 1.062
   },
@@ -365,14 +365,14 @@
     27.5,
     27.5
    ],
-   "swing_logit": 0.134,
+   "swing_logit": 0.135,
    "n_mun_obs": 15,
    "razao_comp": 0.941
   },
   {
    "uf": "RS",
    "regiao": "Sul",
-   "secoes_pct": 100.0,
+   "secoes_pct": 99.8,
    "lula_1T": 39.1,
    "lula_apurado": 42.2,
    "lula_proj": 42.2,
@@ -380,7 +380,7 @@
     42.2,
     42.2
    ],
-   "swing_logit": 0.111,
+   "swing_logit": 0.11,
    "n_mun_obs": 497,
    "razao_comp": 1.043
   },
@@ -410,7 +410,7 @@
     69.5,
     69.5
    ],
-   "swing_logit": 0.148,
+   "swing_logit": 0.147,
    "n_mun_obs": 75,
    "razao_comp": 1.043
   },
@@ -647,7 +647,7 @@
   {
    "uf": "RJ",
    "nome": "NOVA IGUAÇU",
-   "secoes_pct": 99.9,
+   "secoes_pct": 100.0,
    "lula_1T": 36.2,
    "lula_apurado": 41.0,
    "lula_proj_falta": 41.0,
@@ -809,59 +809,7 @@
  ],
  "trajetoria": [
   {
-   "sec": 99.98,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.98,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.98,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.98,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.98,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.98,
-   "lula": 51.78
-  },
-  {
    "sec": 99.99,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.99,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.99,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.99,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.99,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.99,
-   "lula": 51.78
-  },
-  {
-   "sec": 99.99,
-   "lula": 51.78
-  },
-  {
-   "sec": 100.0,
    "lula": 51.78
   },
   {
