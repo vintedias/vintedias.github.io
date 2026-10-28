@@ -1,15 +1,15 @@
 {
- "gerado": "2026-10-26 19:55:19",
+ "gerado": "2026-10-28 16:37:57",
  "tse_hora": "23:27:02",
  "secoes_pct": 100.0,
  "apurado": {
-  "lula": 64050750,
-  "flavio": 59643925,
+  "lula": 64052585,
+  "flavio": 59647621,
   "pct_lula": 51.78,
   "pct_flavio": 48.22
  },
  "votos_apurados_frac": 0.9999,
- "votos_faltam": 16852,
+ "votos_faltam": 11073,
  "projecao": {
   "lula": 51.78,
   "flavio": 48.22,
@@ -36,7 +36,7 @@
  "swing_nacional_logit": 0.1304,
  "inclinacao": -0.0449,
  "x_ref": -0.0423,
- "sd_nat": 0.0012,
+ "sd_nat": 0.0009,
  "razao_comparecimento": 1.0399,
  "ufs": [
   {
